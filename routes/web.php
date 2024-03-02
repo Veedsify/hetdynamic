@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
+use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ResidencyController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
+//Pages
 Route::get("/about", [AboutController::class, 'showAboutPage'])->name("about");
 Route::get("/contact", [ContactController::class, 'showContactPage'])->name("contact");
 Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
@@ -32,3 +34,7 @@ Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPag
 //Blog
 Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
+
+
+//Faq
+Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");

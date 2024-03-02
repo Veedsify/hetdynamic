@@ -9,6 +9,6 @@ class ContactController extends Controller
     //
     public function showContactPage()
     {
-        return view('contact');
+        return view('pages.contact');
     }
 }

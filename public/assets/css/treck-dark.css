@@ -9,7 +9,7 @@ body.boxed-wrapper .page-wrapper,
 
 .main-menu__wrapper-inner,
 .video-one__left {
-    background-color: var(--treck-black);
+    background-color: var(--HetDynamic-black);
 }
 
 .main-menu__contact-list li .text p,
@@ -53,7 +53,7 @@ body.boxed-wrapper .page-wrapper,
 .team-one__title a,
 .contact-one__address-top-title h3,
 .blog-one__title a {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
 }
 
 .main-menu__top-menu li a:before {
@@ -64,7 +64,7 @@ body.boxed-wrapper .page-wrapper,
 .main-menu .main-menu__list>li:hover>a,
 .stricky-header .main-menu__list>li.current>a,
 .stricky-header .main-menu__list>li:hover>a {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
     text-shadow: 0.05px 0 0 rgb(255 255 255 / 80%);
 }
 
@@ -74,7 +74,7 @@ body.boxed-wrapper .page-wrapper,
 }
 
 .stricky-header.main-menu {
-    background-color: var(--treck-black);
+    background-color: var(--HetDynamic-black);
 }
 
 
@@ -155,12 +155,12 @@ body.boxed-wrapper .page-wrapper,
 }
 
 .testimonial-one__carousel.owl-theme .owl-nav .owl-prev {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
     background-color: #121315;
 }
 
 .testimonial-one__carousel.owl-theme .owl-nav .owl-next {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
     background-color: #121315;
 }
 
@@ -199,7 +199,7 @@ body.boxed-wrapper .page-wrapper,
 }
 
 .contact-one__address-box {
-    background-color: var(--treck-black);
+    background-color: var(--HetDynamic-black);
 }
 
 .contact-one__address-top {
@@ -213,20 +213,20 @@ body.boxed-wrapper .page-wrapper,
 }
 
 .contact-one__address-faq .faq-one-accrodion .accrodion {
-    background-color: var(--treck-black);
+    background-color: var(--HetDynamic-black);
     border-bottom: 1px solid #323339;
 }
 
 .contact-one__address-faq .faq-one-accrodion .accrodion-title h4 {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
 }
 
 .contact-one__address-faq .faq-one-accrodion .accrodion.active .accrodion-title h4 {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
 }
 
 .contact-one__address-faq .faq-one-accrodion .accrodion.active .accrodion-title h4::before {
-    color: var(--treck-white);
+    color: var(--HetDynamic-white);
 }
 
 .brand-one__inner {

@@ -9,6 +9,6 @@ class ResidencyController extends Controller
     //
     public function showResidencyPagesDetails($pageId)
     {
-        return view('residency-details', ['pageId' => $pageId]);
+        return view('pages.residency-details', ['pageId' => $pageId]);
     }
 }

@@ -113,7 +113,7 @@
                                <div class="main-menu__top-right">
                                    <ul class="list-unstyled main-menu__top-menu">
                                        <li><a href="{{ route('login') }}">Login</a></li>
-                                       <li><a href="faq.html">Faq’s</a></li>
+                                       <li><a href="{{ route('faq') }}">Faq’s</a></li>
                                        <li><a href="{{ route('contact') }}">Contact</a></li>
                                    </ul>
                                </div>

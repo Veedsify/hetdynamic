@@ -4,7 +4,7 @@
     --treck-gray-rgb: 114, 114, 114;
     --treck-white: #ffffff;
     --treck-white-rgb: 255, 255, 255;
-    --treck-base: #1b8d4a;
+    --treck-base: #17a753;
     --treck-base-rgb: 226, 9, 53;
     --treck-black: #16171a;
     --treck-black-rgb: 22, 23, 26;
@@ -1392,7 +1392,8 @@ ul {
 .mobile-nav__content .main-menu__list>li>ul>li>ul>li>a>button {
     width: 30px;
     height: 30px;
-    /* background-color: var(--treck-base); */ /* background color removed */
+    /* background-color: var(--treck-base); */
+    /* background color removed */
     background-color: transparent;
     border: none;
     outline: none;
@@ -1421,7 +1422,8 @@ ul {
 .mobile-nav__content .main-menu__list>li>ul>li>ul>li>a>button.expanded {
     -webkit-transform: rotate(0deg);
     transform: rotate(0deg);
-    /* background-color: #fff; */ /* background color removed */
+    /* background-color: #fff; */
+    /* background color removed */
     color: var(--treck-base)
 }
 

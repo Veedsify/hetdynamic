@@ -9,6 +9,6 @@ class IndexController extends Controller
     //
     public function showIndexPage()
     {
-        return view('index');
+        return view('pages.index');
     }
 }

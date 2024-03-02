@@ -52,6 +52,7 @@
 
 <body>
     @yield('content')
+    <x-searchmodal />
     <script src="/assets/vendors/jquery/jquery-3.6.4.min.js"></script>
     <script src="/assets/vendors/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="/assets/vendors/jarallax/jarallax.min.js"></script>

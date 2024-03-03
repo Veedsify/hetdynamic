@@ -401,7 +401,7 @@
                         <div class="section-title__border-box"></div>
                     </div>
                     <h2 class="section-title__title">Meet HetDynamic Expert Visa
-                        <br> Consultatns
+                        <br> Consultants
                     </h2>
                 </div>
                 <div class="row">

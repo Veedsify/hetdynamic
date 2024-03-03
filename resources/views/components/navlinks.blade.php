@@ -8,9 +8,9 @@
             <li class="dropdown">
                 <a href="#">Study</a>
                 <ul class="sub-menu">
-                    <li><a href="about.html">Canada - Express Entry</a></li>
-                    <li><a href="team.html">Turkey</a></li>
-                    <li><a href="team-details.html">Malta</a></li>
+                    <li><a href="{{ route('coaching.details', 'canada') }}">Canada - Express Entry</a></li>
+                    <li><a href="{{ route('coaching.details', 'turkey') }}">Turkey</a></li>
+                    <li><a href="{{ route('coaching.details', 'malta') }}">Malta</a></li>
                 </ul>
             </li>
             <li class="dropdown">

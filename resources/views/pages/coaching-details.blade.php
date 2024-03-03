@@ -18,15 +18,15 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/study-bg.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Coaching Details</h2>
+                    <h2>Study Details</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>-</span></li>
-                        <li class="active">Coaching Details</li>
+                        <li class="active">Study Details</li>
                     </ul>
                 </div>
             </div>
@@ -37,59 +37,7 @@
         <section class="coaching-details">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-4 col-lg-5">
-                        <div class="coaching-details__sidebar">
-                            <div class="coaching-details__services-list">
-                                <ul class="coaching-details__services list-unstyled">
-                                    <li>
-                                        <a href="#">Citizenship Test</a>
-                                    </li>
-                                    <li class="active">
-                                        <a href="#">IELTS Coaching</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">TOFEL Coaching</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">PTE Coaching</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">OET Coaching</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">SAT Coaching</a>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div class="banner-one">
-                                <div class="banner-one__shape-1">
-                                    <img src="/assets/images/shapes/banner-one-shape-1.png" alt="">
-                                </div>
-                                <div class="banner-one__bg"
-                                    style="background-image: url(/assets/images/backgrounds/banner-one-bg.jpg);"></div>
-                                <div class="banner-one__img">
-                                    <img src="/assets/images/resources/banner-one-img.png" alt="">
-                                </div>
-                                <h3 class="banner-one__title">100%
-                                    <br> Guarantee
-                                    <br> Approval
-                                </h3>
-                                <div class="banner-one__btn-box">
-                                    <a href="#" class="banner-one__btn">Apply Now</a>
-                                </div>
-                            </div>
-                            <div class="countries-details__documents">
-                                <div class="icon">
-                                    <span class="icon-pdf-file"></span>
-                                </div>
-                                <div class="content">
-                                    <h3><a href="#">IELTS Application Form</a></h3>
-                                    <p>3.9KB</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-xl-8 col-lg-7">
+                    <div class="col-12">
                         <div class="coaching-details__right">
                             <div class="coaching-details__img">
                                 <img src="/assets/images/coaching/coaching-details-img-1.jpg" alt="">

@@ -677,13 +677,13 @@
                                 <div class="coaching-three__hover">
                                     <p>2 weeks preparation</p>
                                     <div class="coaching-three__arrow">
-                                        <a href="coaching-details.html"><span class="icon-up-right"></span></a>
+                                        <a href="/coaching/1"><span class="icon-up-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="coaching-three__content">
                                 <div class="coaching-three__title-box">
-                                    <h3 class="coaching-three__title"><a href="coaching-details.html">OET Coaching</a>
+                                    <h3 class="coaching-three__title"><a href="/coaching/1">OET Coaching</a>
                                     </h3>
                                 </div>
                                 <p class="coaching-three__text">There are many variations of passages the majority
@@ -703,13 +703,13 @@
                                 <div class="coaching-three__hover">
                                     <p>2 weeks preparation</p>
                                     <div class="coaching-three__arrow">
-                                        <a href="coaching-details.html"><span class="icon-up-right"></span></a>
+                                        <a href="/coaching/1"><span class="icon-up-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="coaching-three__content">
                                 <div class="coaching-three__title-box">
-                                    <h3 class="coaching-three__title"><a href="coaching-details.html">IELTS Coaching</a>
+                                    <h3 class="coaching-three__title"><a href="/coaching/1">IELTS Coaching</a>
                                     </h3>
                                 </div>
                                 <p class="coaching-three__text">There are many variations of passages the majority
@@ -729,13 +729,13 @@
                                 <div class="coaching-three__hover">
                                     <p>2 weeks preparation</p>
                                     <div class="coaching-three__arrow">
-                                        <a href="coaching-details.html"><span class="icon-up-right"></span></a>
+                                        <a href="/coaching/1"><span class="icon-up-right"></span></a>
                                     </div>
                                 </div>
                             </div>
                             <div class="coaching-three__content">
                                 <div class="coaching-three__title-box">
-                                    <h3 class="coaching-three__title"><a href="coaching-details.html">TOFEL Coaching</a>
+                                    <h3 class="coaching-three__title"><a href="/coaching/1">TOFEL Coaching</a>
                                     </h3>
                                 </div>
                                 <p class="coaching-three__text">There are many variations of passages the majority

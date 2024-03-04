@@ -533,10 +533,10 @@
                                         <div class="coaching-one__shape-1">
                                             <img src="/assets/images/shapes/coaching-one-shape-1.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__title"><a href="coaching-details.html">Citizenship
+                                        <h3 class="coaching-one__title"><a href="/coaching/1">Citizenship
                                                 Test</a></h3>
                                         <div class="coaching-one__arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__arrow"><i
                                                     class="icon-up-right"></i></a>
                                         </div>
                                     </div>
@@ -545,12 +545,12 @@
                                         <div class="coaching-one__hover-icon">
                                             <img src="/assets/images/icon/coaching-one-hover-icon.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__hover-title"><a href="coaching-details.html">Citizenship
+                                        <h3 class="coaching-one__hover-title"><a href="/coaching/1">Citizenship
                                                 Test</a></h3>
                                         <p class="coaching-one__hover-text">IELTS is an English language test
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__hover-arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__hover-arrow"><i
                                                     class="icon-down"></i></a>
                                         </div>
                                     </div>
@@ -569,10 +569,10 @@
                                         <div class="coaching-one__shape-1">
                                             <img src="/assets/images/shapes/coaching-one-shape-1.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__title"><a href="coaching-details.html">IELTS
+                                        <h3 class="coaching-one__title"><a href="/coaching/1">IELTS
                                                 Coaching</a></h3>
                                         <div class="coaching-one__arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__arrow"><i
                                                     class="icon-up-right"></i></a>
                                         </div>
                                     </div>
@@ -581,12 +581,12 @@
                                         <div class="coaching-one__hover-icon">
                                             <img src="/assets/images/icon/coaching-one-hover-icon.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__hover-title"><a href="coaching-details.html">IELTS
+                                        <h3 class="coaching-one__hover-title"><a href="/coaching/1">IELTS
                                                 Coaching</a></h3>
                                         <p class="coaching-one__hover-text">IELTS is an English language test
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__hover-arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__hover-arrow"><i
                                                     class="icon-down"></i></a>
                                         </div>
                                     </div>
@@ -605,10 +605,10 @@
                                         <div class="coaching-one__shape-1">
                                             <img src="/assets/images/shapes/coaching-one-shape-1.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__title"><a href="coaching-details.html">TOEFL
+                                        <h3 class="coaching-one__title"><a href="/coaching/1">TOEFL
                                                 Coaching</a></h3>
                                         <div class="coaching-one__arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__arrow"><i
                                                     class="icon-up-right"></i></a>
                                         </div>
                                     </div>
@@ -617,12 +617,12 @@
                                         <div class="coaching-one__hover-icon">
                                             <img src="/assets/images/icon/coaching-one-hover-icon.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__hover-title"><a href="coaching-details.html">TOEFL
+                                        <h3 class="coaching-one__hover-title"><a href="/coaching/1">TOEFL
                                                 Coaching</a></h3>
                                         <p class="coaching-one__hover-text">IELTS is an English language test
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__hover-arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__hover-arrow"><i
                                                     class="icon-down"></i></a>
                                         </div>
                                     </div>
@@ -641,10 +641,10 @@
                                         <div class="coaching-one__shape-1">
                                             <img src="/assets/images/shapes/coaching-one-shape-1.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__title"><a href="coaching-details.html">PTE Coaching</a>
+                                        <h3 class="coaching-one__title"><a href="/coaching/1">PTE Coaching</a>
                                         </h3>
                                         <div class="coaching-one__arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__arrow"><i
                                                     class="icon-up-right"></i></a>
                                         </div>
                                     </div>
@@ -653,12 +653,12 @@
                                         <div class="coaching-one__hover-icon">
                                             <img src="/assets/images/icon/coaching-one-hover-icon.png" alt="">
                                         </div>
-                                        <h3 class="coaching-one__hover-title"><a href="coaching-details.html">PTE
+                                        <h3 class="coaching-one__hover-title"><a href="/coaching/1">PTE
                                                 Coaching</a></h3>
                                         <p class="coaching-one__hover-text">IELTS is an English language test
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
-                                            <a href="coaching-details.html" class="coaching-one__hover-arrow"><i
+                                            <a href="/coaching/1" class="coaching-one__hover-arrow"><i
                                                     class="icon-down"></i></a>
                                         </div>
                                     </div>

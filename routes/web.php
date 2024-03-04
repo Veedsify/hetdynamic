@@ -3,6 +3,7 @@
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
@@ -35,6 +36,10 @@ Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPag
 Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
 
-
 //Faq
 Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
+
+
+//Coaching
+Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");
+Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesDetails'])->name("coaching.details");

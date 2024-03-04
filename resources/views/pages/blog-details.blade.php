@@ -19,7 +19,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -284,7 +284,7 @@
                                             <div class="item">
                                                 <div class="sidebar__project-single">
                                                     <div class="sidebar__project-bg"
-                                                        style="background-image: url(assets/images/backgrounds/sidebar-project-bg.jpg);">
+                                                        style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
                                                     </div>
                                                     <p>Traveling Visa</p>
                                                 </div>

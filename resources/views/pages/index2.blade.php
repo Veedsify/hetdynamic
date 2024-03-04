@@ -673,7 +673,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="100ms">
                         <div class="coaching-two__single">
                             <div class="coaching-two__arrow-box">
-                                <a href="coaching-details.html" class="coaching-two__arrow"><span
+                                <a href="/coaching/1" class="coaching-two__arrow"><span
                                         class="icon-up-right"></span></a>
                             </div>
                             <div class="coaching-two__img-box">
@@ -682,7 +682,7 @@
                                 </div>
                             </div>
                             <div class="coaching-two__content">
-                                <h3 class="coaching-two__title"><a href="coaching-details.html">OET
+                                <h3 class="coaching-two__title"><a href="/coaching/1">OET
                                         <br> Coaching</a></h3>
                                 <p class="coaching-two__text">There are many variations of passages the majority.</p>
                             </div>
@@ -693,7 +693,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="200ms">
                         <div class="coaching-two__single">
                             <div class="coaching-two__arrow-box">
-                                <a href="coaching-details.html" class="coaching-two__arrow"><span
+                                <a href="/coaching/1" class="coaching-two__arrow"><span
                                         class="icon-up-right"></span></a>
                             </div>
                             <div class="coaching-two__img-box">
@@ -702,7 +702,7 @@
                                 </div>
                             </div>
                             <div class="coaching-two__content">
-                                <h3 class="coaching-two__title"><a href="coaching-details.html">IELTS
+                                <h3 class="coaching-two__title"><a href="/coaching/1">IELTS
                                         <br> Coaching</a></h3>
                                 <p class="coaching-two__text">There are many variations of passages the majority.</p>
                             </div>
@@ -713,7 +713,7 @@
                     <div class="col-xl-4 col-lg-4 wow fadeInUp" data-wow-delay="300ms">
                         <div class="coaching-two__single">
                             <div class="coaching-two__arrow-box">
-                                <a href="coaching-details.html" class="coaching-two__arrow"><span
+                                <a href="/coaching/1" class="coaching-two__arrow"><span
                                         class="icon-up-right"></span></a>
                             </div>
                             <div class="coaching-two__img-box">
@@ -722,7 +722,7 @@
                                 </div>
                             </div>
                             <div class="coaching-two__content">
-                                <h3 class="coaching-two__title"><a href="coaching-details.html">TOFEL
+                                <h3 class="coaching-two__title"><a href="/coaching/1">TOFEL
                                         <br> Coaching</a></h3>
                                 <p class="coaching-two__text">There are many variations of passages the majority.</p>
                             </div>

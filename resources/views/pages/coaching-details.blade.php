@@ -18,7 +18,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -66,7 +66,7 @@
                                     <img src="/assets/images/shapes/banner-one-shape-1.png" alt="">
                                 </div>
                                 <div class="banner-one__bg"
-                                    style="background-image: url(assets/images/backgrounds/banner-one-bg.jpg);"></div>
+                                    style="background-image: url(/assets/images/backgrounds/banner-one-bg.jpg);"></div>
                                 <div class="banner-one__img">
                                     <img src="/assets/images/resources/banner-one-img.png" alt="">
                                 </div>

@@ -65,6 +65,14 @@
                                 </div>
                             </form>
                         </div>
+
+
+                        <div id="app">
+                            <!-- Your application content goes here -->
+                        </div>
+                        <div id="app2">
+                            <!-- Your application content goes here -->
+                        </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="login-page__single">
@@ -146,4 +154,7 @@
     <!-- /.search-popup -->
 
     <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+    {{-- @viteReactRefresh
+    @vite('resources/js/app.jsx')
+    @vite('resources/js/app2.jsx') --}}
 @endsection

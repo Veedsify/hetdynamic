@@ -1,0 +1,21 @@
+{
+  "_index-Db4yID4i.js": {
+    "file": "assets/index-Db4yID4i.js"
+  },
+  "resources/js/app.jsx": {
+    "file": "assets/app-CKzSETk5.js",
+    "src": "resources/js/app.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index-Db4yID4i.js"
+    ]
+  },
+  "resources/js/app2.jsx": {
+    "file": "assets/app2-Dpg-5RQa.js",
+    "src": "resources/js/app2.jsx",
+    "isEntry": true,
+    "imports": [
+      "_index-Db4yID4i.js"
+    ]
+  }
+}

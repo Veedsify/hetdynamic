@@ -9,6 +9,7 @@ use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\ResidencyController;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+
+//Admin Routes
+require_once  __DIR__ . '/admin/admin.php';
 
 Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
@@ -38,7 +42,6 @@ Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->n
 
 //Faq
 Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
-
 
 //Coaching
 Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");

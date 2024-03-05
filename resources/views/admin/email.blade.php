@@ -1,22 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/png" href="../assets/images/logos/favicon.png">
-
-    <!-- Core Css -->
-    <link rel="stylesheet" href="../assets/css/styles.css">
-
-    <title>Modernize Bootstrap Admin</title>
-</head>
-
-<body>
+﻿@extends('../layouts/admin/adminlayout')
+@section('content')
     <div class="toast toast-onload align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
         aria-atomic="true">
         <div class="toast-body hstack align-items-start gap-6">
@@ -25,8 +8,8 @@
                 <h5 class="text-white fs-3 mb-1">Welcome to Modernize</h5>
                 <h6 class="text-white fs-2 mb-0">Easy to costomize the Template!!!</h6>
             </div>
-            <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none"
-                data-bs-dismiss="toast" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none" data-bs-dismiss="toast"
+                aria-label="Close"></button>
         </div>
     </div>
     <!-- Preloader -->
@@ -39,15 +22,17 @@
             <div><!-- ---------------------------------- -->
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->
-           <div class="brand-logo d-flex align-items-center justify-content-between">
-    <a href="index.html" class="text-nowrap logo-img">
-      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150" class="dark-logo" alt="Logo-Dark">
-      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150"  class="light-logo" alt="Logo-light">
-    </a>
-    <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
-      <i class="ti ti-x"></i>
-    </a>
-  </div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="text-nowrap logo-img">
+                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
+                            width="150" class="dark-logo" alt="Logo-Dark">
+                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
+                            width="150" class="light-logo" alt="Logo-light">
+                    </a>
+                    <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+                        <i class="ti ti-x"></i>
+                    </a>
+                </div>
 
 
 
@@ -120,15 +105,14 @@
                                                                     <div
                                                                         class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
                                                                         <img src="../assets/images/svgs/icon-dd-chat.svg"
-                                                                            alt="" class="img-fluid"
-                                                                            width="24" height="24">
+                                                                            alt="" class="img-fluid" width="24"
+                                                                            height="24">
                                                                     </div>
                                                                     <div class="d-inline-block">
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Chat Application
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">New
+                                                                        <span class="fs-2 d-block text-body-secondary">New
                                                                             messages arrived</span>
                                                                     </div>
                                                                 </a>
@@ -143,8 +127,7 @@
                                                                     <div class="d-inline-block">
                                                                         <h6 class="mb-1 fw-semibold fs-3">Invoice App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             latest invoice</span>
                                                                     </div>
                                                                 </a>
@@ -160,8 +143,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Contact Application
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">2
+                                                                        <span class="fs-2 d-block text-body-secondary">2
                                                                             Unsaved Contacts</span>
                                                                     </div>
                                                                 </a>
@@ -176,8 +158,7 @@
                                                                     <div class="d-inline-block">
                                                                         <h6 class="mb-1 fw-semibold fs-3">Email App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             new emails</span>
                                                                     </div>
                                                                 </a>
@@ -214,8 +195,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Calendar App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             dates</span>
                                                                     </div>
                                                                 </a>
@@ -231,8 +211,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Contact List Table
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Add
+                                                                        <span class="fs-2 d-block text-body-secondary">Add
                                                                             new contact</span>
                                                                     </div>
                                                                 </a>
@@ -260,8 +239,8 @@
                                                 <div class="row align-items-center py-3">
                                                     <div class="col-8">
                                                         <a class="fw-semibold text-dark d-flex align-items-center lh-1"
-                                                            href="#"><i
-                                                                class="ti ti-help fs-6 me-2"></i>Frequently Asked
+                                                            href="#"><i class="ti ti-help fs-6 me-2"></i>Frequently
+                                                            Asked
                                                             Questions</a>
                                                     </div>
                                                     <div class="col-4">
@@ -352,12 +331,10 @@
                                     <!-- ------------------------------- -->
                                     <li class="nav-item">
                                         <a class="nav-link moon dark-layout" href="javascript:void(0)">
-                                            <iconify-icon icon="solar:moon-line-duotone"
-                                                class="moon fs-7"></iconify-icon>
+                                            <iconify-icon icon="solar:moon-line-duotone" class="moon fs-7"></iconify-icon>
                                         </a>
                                         <a class="nav-link sun light-layout" href="javascript:void(0)">
-                                            <iconify-icon icon="solar:sun-2-line-duotone"
-                                                class="sun fs-7"></iconify-icon>
+                                            <iconify-icon icon="solar:sun-2-line-duotone" class="sun fs-7"></iconify-icon>
                                         </a>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -373,8 +350,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-en.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-en.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">English (UK)</p>
@@ -382,8 +359,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-cn.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-cn.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">中国人 (Chinese)</p>
@@ -391,8 +368,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-fr.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-fr.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">français (French)</p>
@@ -400,8 +377,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-sa.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-sa.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">عربي (Arabic)</p>
@@ -539,9 +516,8 @@
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <div class="d-flex align-items-center">
                                                 <div class="user-profile-img">
-                                                    <img src="../assets/images/profile/user-1.jpg"
-                                                        class="rounded-circle" width="35" height="35"
-                                                        alt="">
+                                                    <img src="../assets/images/profile/user-1.jpg" class="rounded-circle"
+                                                        width="35" height="35" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -552,9 +528,8 @@
                                                     <h5 class="mb-0 fs-5 fw-semibold">User Profile</h5>
                                                 </div>
                                                 <div class="d-flex align-items-center py-9 mx-7 border-bottom">
-                                                    <img src="../assets/images/profile/user-1.jpg"
-                                                        class="rounded-circle" width="80" height="80"
-                                                        alt="">
+                                                    <img src="../assets/images/profile/user-1.jpg" class="rounded-circle"
+                                                        width="80" height="80" alt="">
                                                     <div class="ms-3">
                                                         <h5 class="mb-1 fs-3">Mathew Anderson</h5>
                                                         <span class="mb-1 d-block">Designer</span>
@@ -577,12 +552,11 @@
                                                                 Settings</span>
                                                         </div>
                                                     </a>
-                                                    <a href="app-email.html"
-                                                        class="py-8 px-7 d-flex align-items-center">
+                                                    <a href="app-email.html" class="py-8 px-7 d-flex align-items-center">
                                                         <span
                                                             class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                                            <img src="../assets/images/svgs/icon-inbox.svg"
-                                                                alt="" width="24" height="24">
+                                                            <img src="../assets/images/svgs/icon-inbox.svg" alt=""
+                                                                width="24" height="24">
                                                         </span>
                                                         <div class="w-75 d-inline-block v-middle ps-3">
                                                             <h6 class="mb-1 fs-3 fw-semibold lh-base">My Inbox</h6>
@@ -590,12 +564,11 @@
                                                                 Emails</span>
                                                         </div>
                                                     </a>
-                                                    <a href="app-notes.html"
-                                                        class="py-8 px-7 d-flex align-items-center">
+                                                    <a href="app-notes.html" class="py-8 px-7 d-flex align-items-center">
                                                         <span
                                                             class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                                            <img src="../assets/images/svgs/icon-tasks.svg"
-                                                                alt="" width="24" height="24">
+                                                            <img src="../assets/images/svgs/icon-tasks.svg" alt=""
+                                                                width="24" height="24">
                                                         </span>
                                                         <div class="w-75 d-inline-block v-middle ps-3">
                                                             <h6 class="mb-1 fs-3 fw-semibold lh-base">My Task</h6>
@@ -665,9 +638,8 @@
                                                 <a href="app-chat.html" class="d-flex align-items-center">
                                                     <div
                                                         class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                                        <img src="../assets/images/svgs/icon-dd-chat.svg"
-                                                            alt="" class="img-fluid" width="24"
-                                                            height="24">
+                                                        <img src="../assets/images/svgs/icon-dd-chat.svg" alt=""
+                                                            class="img-fluid" width="24" height="24">
                                                     </div>
                                                     <div class="d-inline-block">
                                                         <h6 class="mb-1 bg-hover-primary">Chat Application</h6>
@@ -695,9 +667,8 @@
                                                 <a href="../main/app-cotact.html" class="d-flex align-items-center">
                                                     <div
                                                         class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                                        <img src="../assets/images/svgs/icon-dd-mobile.svg"
-                                                            alt="" class="img-fluid" width="24"
-                                                            height="24">
+                                                        <img src="../assets/images/svgs/icon-dd-mobile.svg" alt=""
+                                                            class="img-fluid" width="24" height="24">
                                                     </div>
                                                     <div class="d-inline-block">
                                                         <h6 class="mb-1 bg-hover-primary">Contact Application</h6>
@@ -725,9 +696,8 @@
                                                 <a href="page-user-profile.html" class="d-flex align-items-center">
                                                     <div
                                                         class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                                        <img src="../assets/images/svgs/icon-dd-cart.svg"
-                                                            alt="" class="img-fluid" width="24"
-                                                            height="24">
+                                                        <img src="../assets/images/svgs/icon-dd-cart.svg" alt=""
+                                                            class="img-fluid" width="24" height="24">
                                                     </div>
                                                     <div class="d-inline-block">
                                                         <h6 class="mb-1 bg-hover-primary">User Profile</h6>
@@ -740,9 +710,8 @@
                                                 <a href="app-calendar.html" class="d-flex align-items-center">
                                                     <div
                                                         class="text-bg-light rounded-1 me-3 p-6 d-flex align-items-center justify-content-center">
-                                                        <img src="../assets/images/svgs/icon-dd-date.svg"
-                                                            alt="" class="img-fluid" width="24"
-                                                            height="24">
+                                                        <img src="../assets/images/svgs/icon-dd-date.svg" alt=""
+                                                            class="img-fluid" width="24" height="24">
                                                     </div>
                                                     <div class="d-inline-block">
                                                         <h6 class="mb-1 bg-hover-primary">Calendar App</h6>
@@ -798,16 +767,16 @@
                                                         href="authentication-register.html">Register Now</a>
                                                 </li>
                                                 <li class="sidebar-item py-2">
-                                                    <a class="fw-semibold text-dark"
-                                                        href="authentication-error.html">404 Error Page</a>
+                                                    <a class="fw-semibold text-dark" href="authentication-error.html">404
+                                                        Error Page</a>
                                                 </li>
                                                 <li class="sidebar-item py-2">
                                                     <a class="fw-semibold text-dark" href="app-notes.html">Notes
                                                         App</a>
                                                 </li>
                                                 <li class="sidebar-item py-2">
-                                                    <a class="fw-semibold text-dark"
-                                                        href="page-user-profile.html">User Application</a>
+                                                    <a class="fw-semibold text-dark" href="page-user-profile.html">User
+                                                        Application</a>
                                                 </li>
                                                 <li class="sidebar-item py-2">
                                                     <a class="fw-semibold text-dark"
@@ -850,8 +819,7 @@
                     <nav class="navbar navbar-expand-xl container-fluid p-0">
                         <ul class="navbar-nav">
                             <li class="nav-item d-block d-xl-none">
-                                <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse"
-                                    href="javascript:void(0)">
+                                <a class="nav-link sidebartoggler ms-n3" id="sidebarCollapse" href="javascript:void(0)">
                                     <i class="ti ti-menu-2"></i>
                                 </a>
                             </li>
@@ -859,8 +827,8 @@
                                 <a href="index.html" class="text-nowrap nav-link">
                                     <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" width="180"
                                         alt="">
-                                    <img src="../assets/images/logos/light-logo.svg" class="light-logo"
-                                        width="180" alt="">
+                                    <img src="../assets/images/logos/light-logo.svg" class="light-logo" width="180"
+                                        alt="">
                                 </a>
                             </li>
                             <li class="nav-item d-none d-xl-block">
@@ -898,8 +866,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Chat Application
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">New
+                                                                        <span class="fs-2 d-block text-body-secondary">New
                                                                             messages arrived</span>
                                                                     </div>
                                                                 </a>
@@ -914,8 +881,7 @@
                                                                     <div class="d-inline-block">
                                                                         <h6 class="mb-1 fw-semibold fs-3">Invoice App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             latest invoice</span>
                                                                     </div>
                                                                 </a>
@@ -931,8 +897,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Contact Application
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">2
+                                                                        <span class="fs-2 d-block text-body-secondary">2
                                                                             Unsaved Contacts</span>
                                                                     </div>
                                                                 </a>
@@ -947,8 +912,7 @@
                                                                     <div class="d-inline-block">
                                                                         <h6 class="mb-1 fw-semibold fs-3">Email App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             new emails</span>
                                                                     </div>
                                                                 </a>
@@ -985,8 +949,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Calendar App
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Get
+                                                                        <span class="fs-2 d-block text-body-secondary">Get
                                                                             dates</span>
                                                                     </div>
                                                                 </a>
@@ -1002,8 +965,7 @@
                                                                         <h6 class="mb-1 fw-semibold fs-3">
                                                                             Contact List Table
                                                                         </h6>
-                                                                        <span
-                                                                            class="fs-2 d-block text-body-secondary">Add
+                                                                        <span class="fs-2 d-block text-body-secondary">Add
                                                                             new contact</span>
                                                                     </div>
                                                                 </a>
@@ -1031,8 +993,8 @@
                                                 <div class="row align-items-center py-3">
                                                     <div class="col-8">
                                                         <a class="fw-semibold text-dark d-flex align-items-center lh-1"
-                                                            href="#"><i
-                                                                class="ti ti-help fs-6 me-2"></i>Frequently Asked
+                                                            href="#"><i class="ti ti-help fs-6 me-2"></i>Frequently
+                                                            Asked
                                                             Questions</a>
                                                     </div>
                                                     <div class="col-4">
@@ -1121,12 +1083,10 @@
                                     <!-- ------------------------------- -->
                                     <li class="nav-item">
                                         <a class="nav-link moon dark-layout" href="javascript:void(0)">
-                                            <iconify-icon icon="solar:moon-line-duotone"
-                                                class="moon fs-7"></iconify-icon>
+                                            <iconify-icon icon="solar:moon-line-duotone" class="moon fs-7"></iconify-icon>
                                         </a>
                                         <a class="nav-link sun light-layout" href="javascript:void(0)">
-                                            <iconify-icon icon="solar:sun-2-line-duotone"
-                                                class="sun fs-7"></iconify-icon>
+                                            <iconify-icon icon="solar:sun-2-line-duotone" class="sun fs-7"></iconify-icon>
                                         </a>
                                     </li>
                                     <li class="nav-item dropdown">
@@ -1142,8 +1102,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-en.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-en.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">English (UK)</p>
@@ -1151,8 +1111,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-cn.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-cn.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">中国人 (Chinese)</p>
@@ -1160,8 +1120,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-fr.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-fr.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">français (French)</p>
@@ -1169,8 +1129,8 @@
                                                 <a href="javascript:void(0)"
                                                     class="d-flex align-items-center gap-2 py-3 px-4 dropdown-item">
                                                     <div class="position-relative">
-                                                        <img src="../assets/images/svgs/icon-flag-sa.svg"
-                                                            alt="" width="20px" height="20px"
+                                                        <img src="../assets/images/svgs/icon-flag-sa.svg" alt=""
+                                                            width="20px" height="20px"
                                                             class="rounded-circle object-fit-cover round-20">
                                                     </div>
                                                     <p class="mb-0 fs-3">عربي (Arabic)</p>
@@ -1308,9 +1268,8 @@
                                             data-bs-toggle="dropdown" aria-expanded="false">
                                             <div class="d-flex align-items-center">
                                                 <div class="user-profile-img">
-                                                    <img src="../assets/images/profile/user-1.jpg"
-                                                        class="rounded-circle" width="35" height="35"
-                                                        alt="">
+                                                    <img src="../assets/images/profile/user-1.jpg" class="rounded-circle"
+                                                        width="35" height="35" alt="">
                                                 </div>
                                             </div>
                                         </a>
@@ -2130,8 +2089,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a class="text-muted text-decoration-none"
-                                                    href="index.html">Home</a>
+                                                <a class="text-muted text-decoration-none" href="index.html">Home</a>
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">Email</li>
                                         </ol>
@@ -2172,8 +2130,7 @@
                                     </li>
                                     <li class="list-group-item border-0 p-0 mx-9">
                                         <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1"
-                                            href="javascript:void(0)"><i
-                                                class="ti ti-brand-telegram fs-5"></i>Sent</a>
+                                            href="javascript:void(0)"><i class="ti ti-brand-telegram fs-5"></i>Sent</a>
                                     </li>
                                     <li class="list-group-item border-0 p-0 mx-9">
                                         <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1"
@@ -2514,8 +2471,7 @@
                                                         <div class="chat-box email-box mh-n100 p-9"
                                                             data-simplebar="init">
 
-                                                            <div class="chat-list chat active-chat"
-                                                                data-user-id="1">
+                                                            <div class="chat-list chat active-chat" data-user-id="1">
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
@@ -2559,13 +2515,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2575,19 +2528,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2597,7 +2548,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -2648,13 +2600,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2664,19 +2613,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2686,7 +2633,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -2737,13 +2685,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2753,19 +2698,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2775,7 +2718,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -2826,13 +2770,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2842,19 +2783,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2864,7 +2803,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -2915,13 +2855,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2931,19 +2868,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -2953,7 +2888,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -3004,13 +2940,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3020,19 +2953,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3042,7 +2973,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -3093,13 +3025,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3109,19 +3038,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3131,7 +3058,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -3182,13 +3110,10 @@
                                                                         class="d-block d-sm-flex align-items-center gap-4">
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-adobe.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3198,19 +3123,17 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
                                                                         <a href="javascript:void(0)"
                                                                             class="hstack gap-3 file-chat-hover">
-                                                                            <div
-                                                                                class="d-flex align-items-center gap-3">
-                                                                                <div
-                                                                                    class="rounded-1 text-bg-light p-6">
+                                                                            <div class="d-flex align-items-center gap-3">
+                                                                                <div class="rounded-1 text-bg-light p-6">
                                                                                     <img src="../assets/images/chat/icon-zip-folder.svg"
-                                                                                        alt=""
-                                                                                        width="24"
+                                                                                        alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
                                                                                 <div>
@@ -3220,7 +3143,8 @@
                                                                                         class="d-flex align-items-center gap-3 fs-2 text-muted">
                                                                                         <span>2
                                                                                             MB</span><span>2 Dec
-                                                                                            2023</span></div>
+                                                                                            2023</span>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                         </a>
@@ -3244,8 +3168,7 @@
                                                                     <li>
                                                                         <a class="text-dark bg-hover-primary d-flex align-items-center gap-1"
                                                                             href="javascript:void(0)">
-                                                                            <i
-                                                                                class="ti ti-arrow-forward-up fs-5"></i>
+                                                                            <i class="ti ti-arrow-forward-up fs-5"></i>
                                                                             Forward
                                                                         </a>
                                                                     </li>
@@ -3278,8 +3201,7 @@
                                     </li>
                                     <li class="list-group-item border-0 p-0 mx-9">
                                         <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1"
-                                            href="javascript:void(0)"><i
-                                                class="ti ti-brand-telegram fs-5"></i>Sent</a>
+                                            href="javascript:void(0)"><i class="ti ti-brand-telegram fs-5"></i>Sent</a>
                                     </li>
                                     <li class="list-group-item border-0 p-0 mx-9">
                                         <a class="d-flex align-items-center gap-6 list-group-item-action text-dark px-3 py-8 mb-1 rounded-1"
@@ -3325,281 +3247,6 @@
                                 </ul>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <script>
-                function handleColorTheme(e) {
-                    $("html").attr("data-color-theme", e);
-                    $(e).prop("checked", !0);
-                }
-            </script>
-            <button
-                class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn"
-                type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample">
-                <i class="icon ti ti-settings fs-7"></i>
-            </button>
-
-            <div class="offcanvas customizer offcanvas-end" tabindex="-1" id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel">
-                <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-                    <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">
-                        Settings
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body h-n80" data-simplebar="">
-                    <h6 class="fw-semibold fs-4 mb-2">Theme</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check light-layout" name="theme-layout"
-                            id="light-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary rounded-2" for="light-layout"><i
-                                class="icon ti ti-brightness-up fs-7 me-2"></i>Light</label>
-
-                        <input type="radio" class="btn-check dark-layout" name="theme-layout" id="dark-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary rounded-2" for="dark-layout"><i
-                                class="icon ti ti-moon fs-7 me-2"></i>Dark</label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="direction-l" id="ltr-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="ltr-layout"><i
-                                class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR</label>
-
-                        <input type="radio" class="btn-check" name="direction-l" id="rtl-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="rtl-layout"><i
-                                class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL</label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Colors</h6>
-
-                    <div class="d-flex flex-row flex-wrap gap-3 customizer-box color-pallete" role="group">
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Blue_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Blue_Theme')" for="Blue_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="BLUE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-1">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="AQUA_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-2">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="PURPLE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-3">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout"
-                            id="green-theme-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Green_Theme')" for="green-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GREEN_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-4">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CYAN_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-5">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout"
-                            id="orange-theme-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ORANGE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-6">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Layout Type</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <div>
-                            <input type="radio" class="btn-check" name="page-layout" id="vertical-layout"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="vertical-layout"><i
-                                    class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Vertical</label>
-                        </div>
-                        <div>
-                            <input type="radio" class="btn-check" name="page-layout" id="horizontal-layout"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="horizontal-layout"><i
-                                    class="icon ti ti-layout-navbar fs-7 me-2"></i>Horizontal</label>
-                        </div>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Container Option</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="layout" id="boxed-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="boxed-layout"><i
-                                class="icon ti ti-layout-distribute-vertical fs-7 me-2"></i>Boxed</label>
-
-                        <input type="radio" class="btn-check" name="layout" id="full-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="full-layout"><i
-                                class="icon ti ti-layout-distribute-horizontal fs-7 me-2"></i>Full</label>
-                    </div>
-
-                    <h6 class="fw-semibold fs-4 mb-2 mt-5">Sidebar Type</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <a href="javascript:void(0)" class="fullsidebar">
-                            <input type="radio" class="btn-check" name="sidebar-type" id="full-sidebar"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="full-sidebar"><i
-                                    class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Full</label>
-                        </a>
-                        <div>
-                            <input type="radio" class="btn-check " name="sidebar-type" id="mini-sidebar"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="mini-sidebar"><i
-                                    class="icon ti ti-layout-sidebar fs-7 me-2"></i>Collapse</label>
-                        </div>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="card-layout" id="card-with-border"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="card-with-border"><i
-                                class="icon ti ti-border-outer fs-7 me-2"></i>Border</label>
-
-                        <input type="radio" class="btn-check" name="card-layout" id="card-without-border"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="card-without-border"><i
-                                class="icon ti ti-border-none fs-7 me-2"></i>Shadow</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--  Search Bar -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content rounded-1">
-                    <div class="modal-header border-bottom">
-                        <input type="search" class="form-control fs-3" placeholder="Search here"
-                            id="search">
-                        <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
-                            <i class="ti ti-x fs-5 ms-3"></i>
-                        </a>
-                    </div>
-                    <div class="modal-body message-body" data-simplebar="">
-                        <h5 class="mb-0 fs-5 p-1">Quick Page Links</h5>
-                        <ul class="list mb-0 py-2">
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                        </ul>
                     </div>
                 </div>
             </div>
@@ -3719,18 +3366,4 @@
 
     </div>
     <div class="dark-transparent sidebartoggler"></div>
-    <script src="../assets/js/vendor.min.js"></script>
-    <!-- Import Js Files -->
-    <script src="../assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/libs/simplebar/dist/simplebar.min.js"></script>
-    <script src="../assets/js/theme/app.init.js"></script>
-    <script src="../assets/js/theme/theme.js"></script>
-    <script src="../assets/js/theme/app.min.js"></script>
-    <script src="../assets/js/theme/sidebarmenu.js"></script>
-
-    <!-- solar icons -->
-    <script src="../../../npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
-    <script src="../assets/js/apps/chat.js"></script>
-</body>
-
-</html>
+@endsection

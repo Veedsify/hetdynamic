@@ -17,3 +17,8 @@ Route::prefix("admin/contact")->group(function () {
     Route::get("/chat/{chatId}", [ContactController::class, "chat"])->name("admin.chat.unique");
     Route::get("/call/{callId}", [ContactController::class, "call"])->name("admin.call.unique");
 });
+
+
+Route::prefix("admin/email")->group(function(){
+    
+})

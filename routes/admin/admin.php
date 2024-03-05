@@ -10,8 +10,10 @@ Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
 
 // contact
 
-Route::get("/admin/contact", [ContactController::class, "contact"])->name("admin.contact");
-Route::get("/admin/contact/chat", [ContactController::class, "chat"])->name("admin.chat");
-Route::get("/admin/contact/call", [ContactController::class, "contact"])->name("admin.call");
-Route::get("/admin/contact/chat/{chatId}", [ContactController::class, "chat"])->name("admin.chat.unique");
-Route::get("/admin/contact/call/{callId}", [ContactController::class, "call"])->name("admin.call.unique");
+Route::prefix("admin/contact")->group(function () {
+    Route::get("/", [ContactController::class, "contact"])->name("admin.contact");
+    Route::get("/chat", [ContactController::class, "chat"])->name("admin.chat");
+    Route::get("/call", [ContactController::class, "contact"])->name("admin.call");
+    Route::get("/chat/{chatId}", [ContactController::class, "chat"])->name("admin.chat.unique");
+    Route::get("/call/{callId}", [ContactController::class, "call"])->name("admin.call.unique");
+});

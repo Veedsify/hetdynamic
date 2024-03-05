@@ -8,8 +8,8 @@ use App\Http\Controllers\Admin\AdminPagesController;
 // Admin Route Web Endpoints
 Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
 
-// contact
 
+// Contact
 Route::prefix("admin/contact")->group(function () {
     Route::get("/", [ContactController::class, "contact"])->name("admin.contact");
     Route::get("/chat", [ContactController::class, "chat"])->name("admin.chat");

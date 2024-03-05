@@ -40,16 +40,15 @@
             <div><!-- ---------------------------------- -->
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->
-                <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="index.html" class="text-nowrap logo-img">
-                        <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark">
-                        <img src="../assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light">
-                    </a>
-                    <a href="javascript:void(0)"
-                        class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
-                        <i class="ti ti-x"></i>
-                    </a>
-                </div>
+           <div class="brand-logo d-flex align-items-center justify-content-between">
+    <a href="index.html" class="text-nowrap logo-img">
+      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150" class="dark-logo" alt="Logo-Dark">
+      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150"  class="light-logo" alt="Logo-light">
+    </a>
+    <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+      <i class="ti ti-x"></i>
+    </a>
+  </div>
 
 
 
@@ -4130,7 +4129,7 @@
               &lt;input type=&quot;checkbox&quot; class=&quot;btn-check&quot; id=&quot;btn-check&quot; autocomplete=&quot;off&quot;&gt;
               &lt;label class=&quot;btn btn-outline-primary  rounded-pill&quot; for=&quot;btn-check&quot;&gt;Single toggle&lt;/label&gt;
           &lt;/div&gt;
-        
+
           &lt;div&gt;
               &lt;input type=&quot;checkbox&quot; class=&quot;btn-check&quot; id=&quot;btn-check-2&quot; checked autocomplete=&quot;off&quot;&gt;
               &lt;label class=&quot;btn btn-outline-info  rounded-pill&quot; for=&quot;btn-check-2&quot;&gt;Checked&lt;/label&gt;
@@ -4209,13 +4208,13 @@
                                                                     <code>
         &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options&quot; id=&quot;option1&quot; autocomplete=&quot;off&quot; checked&gt;
         &lt;label class=&quot;btn btn-outline-primary rounded-pill &quot; for=&quot;option1&quot;&gt;Checked&lt;/label&gt;
-        
+
         &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options&quot; id=&quot;option2&quot; autocomplete=&quot;off&quot;&gt;
         &lt;label class=&quot;btn btn-outline-warning rounded-pill &quot; for=&quot;option2&quot;&gt;Radio&lt;/label&gt;
-        
+
         &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options&quot; id=&quot;option3&quot; autocomplete=&quot;off&quot; disabled&gt;
         &lt;label class=&quot;btn btn-outline-info rounded-pill &quot; for=&quot;option3&quot;&gt;Disabled&lt;/label&gt;
-        
+
         &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options&quot; id=&quot;option4&quot; autocomplete=&quot;off&quot;&gt;
         &lt;label class=&quot;btn btn-outline-danger rounded-pill &quot; for=&quot;option4&quot;&gt;Radio&lt;/label&gt;
                                                                     </code>
@@ -4287,13 +4286,13 @@
         &lt;div class=&quot;d-inline-block&quot;&gt;
             &lt;input type=&quot;checkbox&quot; class=&quot;btn-check&quot; id=&quot;btn-check-outlined&quot; autocomplete=&quot;off&quot;&gt;
             &lt;label class=&quot;btn btn-outline-primary mb-2 rounded-pill &quot; for=&quot;btn-check-outlined&quot;&gt;Single toggle&lt;/label&gt;&lt;br&gt;
-        
+
             &lt;input type=&quot;checkbox&quot; class=&quot;btn-check&quot; id=&quot;btn-check-2-outlined&quot; checked autocomplete=&quot;off&quot;&gt;
             &lt;label class=&quot;btn btn-outline-success mb-2  rounded-pill&quot; for=&quot;btn-check-2-outlined&quot;&gt;Checked&lt;/label&gt;&lt;br&gt;
-        
+
             &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options-outlined&quot; id=&quot;success-outlined&quot; autocomplete=&quot;off&quot; checked&gt;
             &lt;label class=&quot;btn btn-outline-info mb-2  rounded-pill&quot; for=&quot;success-outlined&quot;&gt;Checked success radio&lt;/label&gt;
-        
+
             &lt;input type=&quot;radio&quot; class=&quot;btn-check&quot; name=&quot;options-outlined&quot; id=&quot;danger-outlined&quot; autocomplete=&quot;off&quot;&gt;
             &lt;label class=&quot;btn btn-outline-danger mb-2  rounded-pill&quot; for=&quot;danger-outlined&quot;&gt;Danger radio&lt;/label&gt;
         &lt;/div&gt;

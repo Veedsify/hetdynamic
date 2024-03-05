@@ -135,7 +135,7 @@
         </li>
 
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-invoice.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.contact')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-phone"></i>
                 </span>
@@ -143,7 +143,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-invoice.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.chat')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-messages"></i>
                 </span>

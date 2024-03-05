@@ -1,23 +1,5 @@
-﻿<!DOCTYPE html>
-<html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
-
-<head>
-    <!-- Required meta tags -->
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Favicon icon-->
-<link rel="shortcut icon" type="image/png" href="{{asset("admin-assets/images/logos/favicon.png")}}">
-
-
-    <!-- Core Css -->
-    <link rel="stylesheet" href="{{asset("admin-assets/css/styles.css")}}">
-
-    <title>Modernize Bootstrap Admin</title>
-</head>
-
-<body>
+﻿@extends('../layouts/admin/adminlayout')
+@section('content')
     <div class="toast toast-onload align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
         aria-atomic="true">
         <div class="toast-body hstack align-items-start gap-6">
@@ -26,13 +8,13 @@
                 <h5 class="text-white fs-3 mb-1">Welcome to Modernize</h5>
                 <h6 class="text-white fs-2 mb-0">Easy to costomize the Template!!!</h6>
             </div>
-            <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none"
-                data-bs-dismiss="toast" aria-label="Close"></button>
+            <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none" data-bs-dismiss="toast"
+                aria-label="Close"></button>
         </div>
     </div>
     <!-- Preloader -->
     <div class="preloader">
-        <img src="{{asset("admin-assets/images/logos/favicon.png")}}" alt="loader" class="lds-ripple img-fluid">
+        <img src="{{ asset('admin-assets/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
         <!-- Sidebar Start -->
@@ -40,15 +22,17 @@
             <div><!-- ---------------------------------- -->
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->
-           <div class="brand-logo d-flex align-items-center justify-content-between">
-    <a href="index.html" class="text-nowrap logo-img">
-      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150" class="dark-logo" alt="Logo-Dark">
-      <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150"  class="light-logo" alt="Logo-light">
-    </a>
-    <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
-      <i class="ti ti-x"></i>
-    </a>
-  </div>
+                <div class="brand-logo d-flex align-items-center justify-content-between">
+                    <a href="index.html" class="text-nowrap logo-img">
+                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
+                            width="150" class="dark-logo" alt="Logo-Dark">
+                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
+                            width="150" class="light-logo" alt="Logo-light">
+                    </a>
+                    <a href="javascript:void(0)" class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
+                        <i class="ti ti-x"></i>
+                    </a>
+                </div>
 
 
 
@@ -58,8 +42,8 @@
                 <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
                     <div class="hstack gap-3">
                         <div class="john-img">
-                            <img src="../assets/images/profile/user-1.jpg" class="rounded-circle" width="40"
-                                height="40" alt="">
+                            <img src="{{ asset('admin-assets/images/profile/user-1.jpg') }}" class="rounded-circle"
+                                width="40" height="40" alt="">
                         </div>
                         <div class="john-title">
                             <h6 class="mb-0 fs-4 fw-semibold">Mathew</h6>
@@ -79,9 +63,9 @@
         </aside>
         <!--  Sidebar End -->
         <div class="page-wrapper">
-                    {{-- Header start --}}
-<x-admin.header/>
-{{-- Header ends --}}
+            {{-- Header start --}}
+            <x-admin.header />
+            {{-- Header ends --}}
 
             <aside class="left-sidebar with-horizontal">
                 <!-- Sidebar scroll-->
@@ -804,8 +788,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a class="text-muted text-decoration-none"
-                                                    href="index.html">Home</a>
+                                                <a class="text-muted text-decoration-none" href="index.html">Home</a>
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">Chat</li>
                                         </ol>
@@ -813,7 +796,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="text-center mb-n5">
-                                        <img src="../assets/images/breadcrumb/ChatBc.png" alt=""
+                                        <img src="{{ asset('admin-assets/images/breadcrumb/ChatBc.png') }}" alt=""
                                             class="img-fluid mb-n4">
                                     </div>
                                 </div>
@@ -840,8 +823,8 @@
                                     <div class="d-flex align-items-center justify-content-between mb-3">
                                         <div class="d-flex align-items-center">
                                             <div class="position-relative">
-                                                <img src="../assets/images/profile/user-1.jpg" alt="user1"
-                                                    width="54" height="54" class="rounded-circle">
+                                                <img src="{{ asset('admin-assets/images/profile/user-1.jpg') }}"
+                                                    alt="user1" width="54" height="54" class="rounded-circle">
                                                 <span
                                                     class="position-absolute bottom-0 end-0 p-1 badge rounded-pill bg-success">
                                                     <span class="visually-hidden">New alerts</span>
@@ -891,8 +874,8 @@
                                         </div>
                                     </div>
                                     <form class="position-relative mb-4">
-                                        <input type="text" class="form-control search-chat py-2 ps-5"
-                                            id="text-srh" placeholder="Search Contact">
+                                        <input type="text" class="form-control search-chat py-2 ps-5" id="text-srh"
+                                            placeholder="Search Contact">
                                         <i
                                             class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
                                     </form>
@@ -907,8 +890,8 @@
                                                 <a class="dropdown-item" href="javascript:void(0)">Sort by time</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item border-bottom"
-                                                    href="javascript:void(0)">Sort by Unread</a>
+                                                <a class="dropdown-item border-bottom" href="javascript:void(0)">Sort by
+                                                    Unread</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="javascript:void(0)">Hide
@@ -925,7 +908,7 @@
                                                 id="chat_user_1" data-user-id="1">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-2.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
                                                             alt="user1" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -951,7 +934,7 @@
                                                 id="chat_user_2" data-user-id="2">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-3.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-3.jpg') }}"
                                                             alt="user-2" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -964,8 +947,7 @@
                                                             data-username="James Anderson">
                                                             Bianca Anderson
                                                         </h6>
-                                                        <span
-                                                            class="fs-3 text-truncate text-dark fw-semibold d-block">Nice
+                                                        <span class="fs-3 text-truncate text-dark fw-semibold d-block">Nice
                                                             looking dress
                                                             you...</span>
                                                     </div>
@@ -979,7 +961,7 @@
                                                 id="chat_user_3" data-user-id="3">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-4.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-4.jpg') }}"
                                                             alt="user-8" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1005,7 +987,7 @@
                                                 id="chat_user_4" data-user-id="4">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-5.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-5.jpg') }}"
                                                             alt="user-4" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1031,7 +1013,7 @@
                                                 id="chat_user_5" data-user-id="5">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-6.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-6.jpg') }}"
                                                             alt="user1" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1058,7 +1040,7 @@
                                                 id="chat_user_2" data-user-id="2">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-7.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-7.jpg') }}"
                                                             alt="user-2" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1071,8 +1053,7 @@
                                                             data-username="James Anderson">
                                                             Bianca Anderson
                                                         </h6>
-                                                        <span
-                                                            class="fs-3 text-truncate text-dark fw-semibold d-block">Nice
+                                                        <span class="fs-3 text-truncate text-dark fw-semibold d-block">Nice
                                                             looking dress
                                                             you...</span>
                                                     </div>
@@ -1086,7 +1067,7 @@
                                                 id="chat_user_3" data-user-id="3">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-8.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                             alt="user-8" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1126,8 +1107,9 @@
                                             class="p-9 border-bottom chat-meta-user d-flex align-items-center justify-content-between">
                                             <div class="hstack gap-3 current-chat-user-name">
                                                 <div class="position-relative">
-                                                    <img src="../assets/images/profile/user-2.jpg" alt="user1"
-                                                        width="48" height="48" class="rounded-circle">
+                                                    <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
+                                                        alt="user1" width="48" height="48"
+                                                        class="rounded-circle">
                                                     <span
                                                         class="position-absolute bottom-0 end-0 p-1 badge rounded-pill bg-success">
                                                         <span class="visually-hidden">New alerts</span>
@@ -1161,7 +1143,7 @@
                                                     <div class="chat-list chat active-chat" data-user-id="1">
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1188,7 +1170,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1210,8 +1192,7 @@
                                                                     If I don’t like something, I’ll stay away
                                                                     from it.
                                                                 </div>
-                                                                <div
-                                                                    class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
+                                                                <div class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
                                                                     They got there early, and they got really
                                                                     good seats.
                                                                 </div>
@@ -1219,7 +1200,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1227,7 +1208,7 @@
                                                                     Andrew, 2 hours ago
                                                                 </h6>
                                                                 <div class="rounded-2 overflow-hidden">
-                                                                    <img src="../assets/images/products/product-1.jpg"
+                                                                    <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                         alt="" class="w-100">
                                                                 </div>
                                                             </div>
@@ -1237,7 +1218,7 @@
                                                     <div class="chat-list chat" data-user-id="2">
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1264,7 +1245,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1286,8 +1267,7 @@
                                                                     If I don’t like something, I’ll stay away
                                                                     from it.
                                                                 </div>
-                                                                <div
-                                                                    class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
+                                                                <div class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
                                                                     They got there early, and they got really
                                                                     good seats.
                                                                 </div>
@@ -1295,7 +1275,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1303,7 +1283,7 @@
                                                                     Andrew, 2 hours ago
                                                                 </h6>
                                                                 <div class="rounded-2 overflow-hidden">
-                                                                    <img src="../assets/images/products/product-1.jpg"
+                                                                    <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                         alt="" class="w-100">
                                                                 </div>
                                                             </div>
@@ -1313,7 +1293,7 @@
                                                     <div class="chat-list chat" data-user-id="3">
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1340,7 +1320,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1362,8 +1342,7 @@
                                                                     If I don’t like something, I’ll stay away
                                                                     from it.
                                                                 </div>
-                                                                <div
-                                                                    class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
+                                                                <div class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
                                                                     They got there early, and they got really
                                                                     good seats.
                                                                 </div>
@@ -1371,7 +1350,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1379,7 +1358,7 @@
                                                                     Andrew, 2 hours ago
                                                                 </h6>
                                                                 <div class="rounded-2 overflow-hidden">
-                                                                    <img src="../assets/images/products/product-1.jpg"
+                                                                    <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                         alt="" class="w-100">
                                                                 </div>
                                                             </div>
@@ -1389,7 +1368,7 @@
                                                     <div class="chat-list chat" data-user-id="4">
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1416,7 +1395,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1438,8 +1417,7 @@
                                                                     If I don’t like something, I’ll stay away
                                                                     from it.
                                                                 </div>
-                                                                <div
-                                                                    class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
+                                                                <div class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
                                                                     They got there early, and they got really
                                                                     good seats.
                                                                 </div>
@@ -1447,7 +1425,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1455,7 +1433,7 @@
                                                                     Andrew, 2 hours ago
                                                                 </h6>
                                                                 <div class="rounded-2 overflow-hidden">
-                                                                    <img src="../assets/images/products/product-1.jpg"
+                                                                    <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                         alt="" class="w-100">
                                                                 </div>
                                                             </div>
@@ -1465,7 +1443,7 @@
                                                     <div class="chat-list chat" data-user-id="5">
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1492,7 +1470,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1514,8 +1492,7 @@
                                                                     If I don’t like something, I’ll stay away
                                                                     from it.
                                                                 </div>
-                                                                <div
-                                                                    class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
+                                                                <div class="p-2 bg-info-subtle text-dark rounded-1 fs-3">
                                                                     They got there early, and they got really
                                                                     good seats.
                                                                 </div>
@@ -1523,7 +1500,7 @@
                                                         </div>
                                                         <div
                                                             class="hstack gap-3 align-items-start mb-7 justify-content-start">
-                                                            <img src="../assets/images/profile/user-8.jpg"
+                                                            <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                                 alt="user8" width="40" height="40"
                                                                 class="rounded-circle">
                                                             <div>
@@ -1531,7 +1508,7 @@
                                                                     Andrew, 2 hours ago
                                                                 </h6>
                                                                 <div class="rounded-2 overflow-hidden">
-                                                                    <img src="../assets/images/products/product-1.jpg"
+                                                                    <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                         alt="" class="w-100">
                                                                 </div>
                                                             </div>
@@ -1571,8 +1548,7 @@
                                             </div>
                                             <div class="app-chat-offcanvas border-start">
                                                 <div class="custom-app-scroll mh-n100" data-simplebar="">
-                                                    <div
-                                                        class="p-3 d-flex align-items-center justify-content-between">
+                                                    <div class="p-3 d-flex align-items-center justify-content-between">
                                                         <h6 class="fw-semibold mb-0 text-nowrap">
                                                             Media <span class="text-muted">(36)</span>
                                                         </h6>
@@ -1586,42 +1562,42 @@
                                                         <div class="row mb-7 text-nowrap">
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-1.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
                                                             </div>
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-2.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-2.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
                                                             </div>
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-3.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-3.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
                                                             </div>
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-4.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-4.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
                                                             </div>
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-1.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
                                                             </div>
                                                             <div class="col-4 px-1 mb-2">
 
-                                                                <img src="../assets/images/products/product-2.jpg"
+                                                                <img src="{{ asset('admin-assets/images/products/product-2.jpg') }}"
                                                                     width="88" height="65" alt=""
                                                                     class="rounded">
 
@@ -1636,7 +1612,7 @@
                                                                 class="hstack gap-3 file-chat-hover justify-content-between text-nowrap mb-9">
                                                                 <div class="d-flex align-items-center gap-3">
                                                                     <div class="rounded-1 text-bg-light p-6">
-                                                                        <img src="../assets/images/chat/icon-adobe.svg"
+                                                                        <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                             alt="" width="24"
                                                                             height="24">
                                                                     </div>
@@ -1660,7 +1636,7 @@
                                                                 class="hstack gap-3 file-chat-hover justify-content-between text-nowrap mb-9">
                                                                 <div class="d-flex align-items-center gap-3">
                                                                     <div class="rounded-1 text-bg-light p-6">
-                                                                        <img src="../assets/images/chat/icon-figma.svg"
+                                                                        <img src="{{ asset('admin-assets/images/chat/icon-figma.svg') }}"
                                                                             alt="" width="24"
                                                                             height="24">
                                                                     </div>
@@ -1684,7 +1660,7 @@
                                                                 class="hstack gap-3 file-chat-hover justify-content-between text-nowrap mb-9">
                                                                 <div class="d-flex align-items-center gap-3">
                                                                     <div class="rounded-1 text-bg-light p-6">
-                                                                        <img src="../assets/images/chat/icon-chrome.svg"
+                                                                        <img src="{{ asset('admin-assets/images/chat/icon-chrome.svg') }}"
                                                                             alt="" width="24"
                                                                             height="24">
                                                                     </div>
@@ -1706,7 +1682,7 @@
                                                                 class="hstack gap-3 file-chat-hover justify-content-between text-nowrap mb-9">
                                                                 <div class="d-flex align-items-center gap-3">
                                                                     <div class="rounded-1 text-bg-light p-6">
-                                                                        <img src="../assets/images/chat/icon-zip-folder.svg"
+                                                                        <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                             alt="" width="24"
                                                                             height="24">
                                                                     </div>
@@ -1730,7 +1706,7 @@
                                                                 class="hstack gap-3 file-chat-hover justify-content-between text-nowrap">
                                                                 <div class="d-flex align-items-center gap-3">
                                                                     <div class="rounded-1 text-bg-light p-6">
-                                                                        <img src="../assets/images/chat/icon-javascript.svg"
+                                                                        <img src="{{ asset('admin-assets/images/chat/icon-javascript.svg') }}"
                                                                             alt="" width="24"
                                                                             height="24">
                                                                     </div>
@@ -1770,8 +1746,9 @@
                                     <div class="d-flex align-items-center justify-content-between mb-3">
                                         <div class="d-flex align-items-center">
                                             <div class="position-relative">
-                                                <img src="../assets/images/profile/user-1.jpg" alt="user1"
-                                                    width="54" height="54" class="rounded-circle">
+                                                <img src="{{ asset('admin-assets/images/profile/user-1.jpg') }}"
+                                                    alt="user1" width="54" height="54"
+                                                    class="rounded-circle">
                                                 <span
                                                     class="position-absolute bottom-0 end-0 p-1 badge rounded-pill bg-success">
                                                     <span class="visually-hidden">New alerts</span>
@@ -1837,8 +1814,8 @@
                                                 <a class="dropdown-item" href="javascript:void(0)">Sort by time</a>
                                             </li>
                                             <li>
-                                                <a class="dropdown-item border-bottom"
-                                                    href="javascript:void(0)">Sort by Unread</a>
+                                                <a class="dropdown-item border-bottom" href="javascript:void(0)">Sort by
+                                                    Unread</a>
                                             </li>
                                             <li>
                                                 <a class="dropdown-item" href="javascript:void(0)">Hide
@@ -1855,7 +1832,7 @@
                                                 id="chat_user_1" data-user-id="1">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-2.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
                                                             alt="user1" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1881,7 +1858,7 @@
                                                 id="chat_user_2" data-user-id="2">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-3.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-3.jpg') }}"
                                                             alt="user-2" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1909,7 +1886,7 @@
                                                 id="chat_user_3" data-user-id="3">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-4.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-4.jpg') }}"
                                                             alt="user-8" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1935,7 +1912,7 @@
                                                 id="chat_user_4" data-user-id="4">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-5.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-5.jpg') }}"
                                                             alt="user-4" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1961,7 +1938,7 @@
                                                 id="chat_user_5" data-user-id="5">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-6.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-6.jpg') }}"
                                                             alt="user1" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -1988,7 +1965,7 @@
                                                 id="chat_user_2" data-user-id="2">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-7.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-7.jpg') }}"
                                                             alt="user-2" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -2016,7 +1993,7 @@
                                                 id="chat_user_3" data-user-id="3">
                                                 <div class="d-flex align-items-center">
                                                     <span class="position-relative">
-                                                        <img src="../assets/images/profile/user-8.jpg"
+                                                        <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
                                                             alt="user-8" width="48" height="48"
                                                             class="rounded-circle">
                                                         <span
@@ -2043,281 +2020,6 @@
                     </div>
                 </div>
             </div>
-            <script>
-                function handleColorTheme(e) {
-                    $("html").attr("data-color-theme", e);
-                    $(e).prop("checked", !0);
-                }
-            </script>
-            <button
-                class="btn btn-primary p-3 rounded-circle d-flex align-items-center justify-content-center customizer-btn"
-                type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample"
-                aria-controls="offcanvasExample">
-                <i class="icon ti ti-settings fs-7"></i>
-            </button>
-
-            <div class="offcanvas customizer offcanvas-end" tabindex="-1" id="offcanvasExample"
-                aria-labelledby="offcanvasExampleLabel">
-                <div class="d-flex align-items-center justify-content-between p-3 border-bottom">
-                    <h4 class="offcanvas-title fw-semibold" id="offcanvasExampleLabel">
-                        Settings
-                    </h4>
-                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                        aria-label="Close"></button>
-                </div>
-                <div class="offcanvas-body h-n80" data-simplebar="">
-                    <h6 class="fw-semibold fs-4 mb-2">Theme</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check light-layout" name="theme-layout"
-                            id="light-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary rounded-2" for="light-layout"><i
-                                class="icon ti ti-brightness-up fs-7 me-2"></i>Light</label>
-
-                        <input type="radio" class="btn-check dark-layout" name="theme-layout" id="dark-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary rounded-2" for="dark-layout"><i
-                                class="icon ti ti-moon fs-7 me-2"></i>Dark</label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Direction</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="direction-l" id="ltr-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="ltr-layout"><i
-                                class="icon ti ti-text-direction-ltr fs-7 me-2"></i>LTR</label>
-
-                        <input type="radio" class="btn-check" name="direction-l" id="rtl-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="rtl-layout"><i
-                                class="icon ti ti-text-direction-rtl fs-7 me-2"></i>RTL</label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Theme Colors</h6>
-
-                    <div class="d-flex flex-row flex-wrap gap-3 customizer-box color-pallete" role="group">
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Blue_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Blue_Theme')" for="Blue_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="BLUE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-1">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Aqua_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Aqua_Theme')" for="Aqua_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="AQUA_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-2">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="Purple_Theme"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Purple_Theme')" for="Purple_Theme" data-bs-toggle="tooltip"
-                            data-bs-placement="top" data-bs-title="PURPLE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-3">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout"
-                            id="green-theme-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Green_Theme')" for="green-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="GREEN_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-4">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout" id="cyan-theme-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Cyan_Theme')" for="cyan-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="CYAN_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-5">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-
-                        <input type="radio" class="btn-check" name="color-theme-layout"
-                            id="orange-theme-layout" autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary d-flex align-items-center justify-content-center"
-                            onclick="handleColorTheme('Orange_Theme')" for="orange-theme-layout"
-                            data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="ORANGE_THEME">
-                            <div
-                                class="color-box rounded-circle d-flex align-items-center justify-content-center skin-6">
-                                <i class="ti ti-check text-white d-flex icon fs-5"></i>
-                            </div>
-                        </label>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Layout Type</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <div>
-                            <input type="radio" class="btn-check" name="page-layout" id="vertical-layout"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="vertical-layout"><i
-                                    class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Vertical</label>
-                        </div>
-                        <div>
-                            <input type="radio" class="btn-check" name="page-layout" id="horizontal-layout"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="horizontal-layout"><i
-                                    class="icon ti ti-layout-navbar fs-7 me-2"></i>Horizontal</label>
-                        </div>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Container Option</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="layout" id="boxed-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="boxed-layout"><i
-                                class="icon ti ti-layout-distribute-vertical fs-7 me-2"></i>Boxed</label>
-
-                        <input type="radio" class="btn-check" name="layout" id="full-layout"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="full-layout"><i
-                                class="icon ti ti-layout-distribute-horizontal fs-7 me-2"></i>Full</label>
-                    </div>
-
-                    <h6 class="fw-semibold fs-4 mb-2 mt-5">Sidebar Type</h6>
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <a href="javascript:void(0)" class="fullsidebar">
-                            <input type="radio" class="btn-check" name="sidebar-type" id="full-sidebar"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="full-sidebar"><i
-                                    class="icon ti ti-layout-sidebar-right fs-7 me-2"></i>Full</label>
-                        </a>
-                        <div>
-                            <input type="radio" class="btn-check " name="sidebar-type" id="mini-sidebar"
-                                autocomplete="off">
-                            <label class="btn p-9 btn-outline-primary" for="mini-sidebar"><i
-                                    class="icon ti ti-layout-sidebar fs-7 me-2"></i>Collapse</label>
-                        </div>
-                    </div>
-
-                    <h6 class="mt-5 fw-semibold fs-4 mb-2">Card With</h6>
-
-                    <div class="d-flex flex-row gap-3 customizer-box" role="group">
-                        <input type="radio" class="btn-check" name="card-layout" id="card-with-border"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="card-with-border"><i
-                                class="icon ti ti-border-outer fs-7 me-2"></i>Border</label>
-
-                        <input type="radio" class="btn-check" name="card-layout" id="card-without-border"
-                            autocomplete="off">
-                        <label class="btn p-9 btn-outline-primary" for="card-without-border"><i
-                                class="icon ti ti-border-none fs-7 me-2"></i>Shadow</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!--  Search Bar -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content rounded-1">
-                    <div class="modal-header border-bottom">
-                        <input type="search" class="form-control fs-3" placeholder="Search here"
-                            id="search">
-                        <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
-                            <i class="ti ti-x fs-5 ms-3"></i>
-                        </a>
-                    </div>
-                    <div class="modal-body message-body" data-simplebar="">
-                        <h5 class="mb-0 fs-5 p-1">Quick Page Links</h5>
-                        <ul class="list mb-0 py-2">
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
         </div>
 
         <!--  Shopping Cart -->
@@ -2333,8 +2035,8 @@
                 <ul class="mb-0">
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/products/product-1.jpg" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>
@@ -2360,8 +2062,8 @@
                     </li>
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/products/product-2.jpg" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-2.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>
@@ -2387,8 +2089,8 @@
                     </li>
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="../assets/images/products/product-3.jpg" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-3.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>
@@ -2434,20 +2136,4 @@
 
     </div>
     <div class="dark-transparent sidebartoggler"></div>
-    <script src="{{asset("admin-assets/js/vendor.min.js")}}"></script>
-
-    <!-- Import Js Files -->
-    <script src="{{asset("admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
-    <script src="{{asset("admin-assets/libs/simplebar/dist/simplebar.min.js")}}"></script>
-    <script src="{{asset("admin-assets/js/theme/app.init.js")}}"></script>
-    <script src="{{asset("admin-assets/js/theme/theme.js")}}"></script>
-    <script src="{{asset("admin-assets/js/theme/app.min.js")}}"></script>
-    <script src="{{asset("admin-assets/js/theme/sidebarmenu.js")}}"></script>
-
-    <!-- solar icons -->
-    <script src="../../../npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
-    <script src="{{asset("admin-assets/libs/fullcalendar/index.global.min.js")}}"></script>
-    <script src="{{asset("admin-assets/js/apps/contact.js")}}"></script>
-</body>
-
-</html>
+@endsection

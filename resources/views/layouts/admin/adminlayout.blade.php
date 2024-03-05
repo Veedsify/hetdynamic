@@ -8,19 +8,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/png" href="{{asset('admin-assets/images/logos/favicon.png')}}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset('admin-assets/images/logos/favicon.png') }}">
 
     <!-- Core Css -->
-    <link rel="stylesheet" href="{{asset('admin-assets/css/styles.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/css/styles.css') }}">
 
     <title>Modernize Bootstrap Admin</title>
     <!-- Owl Carousel  -->
-    <link rel="stylesheet" href="{{asset('admin-assets/libs/owl.carousel/dist/assets/owl.carousel.min.css')}}">
+    <link rel="stylesheet" href="{{ asset('admin-assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
 </head>
 
 <body>
     @yield('content')
-     <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
+
+    {{-- OFF CANVAS CUSTOMIZER --}}
+    <x-admin.customizer />
+    {{-- CUSTOMIZER ENDS --}}
+
+    {{-- Searchbar --}}
+    <x-admin.searchbar />
+    {{-- Searchbar ENDS --}}
+
+    <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
     <!-- Import Js Files -->
     <script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>

@@ -218,31 +218,13 @@
                                         </div>
                                     </div>
                                 </div>
-
-<<<<<<< HEAD
-        </div>
-      </li>
-      <!-- ------------------------------- -->
-      <!-- end apps Dropdown -->
-      <!-- ------------------------------- -->
-      <li class="nav-item dropdown-hover d-none d-lg-block">
-        <a class="nav-link" href="{{route('admin.chat', 'chatId')}}">Chat</a>
-      </li>
-      <li class="nav-item dropdown-hover d-none d-lg-block">
-        <a class="nav-link" href="app-calendar.html">Calendar</a>
-      </li>
-      <li class="nav-item dropdown-hover d-none d-lg-block">
-        <a class="nav-link" href="app-email.html">Email</a>
-      </li>
-    </ul>
-=======
                             </div>
                         </li>
                         <!-- ------------------------------- -->
                         <!-- end apps Dropdown -->
                         <!-- ------------------------------- -->
                         <li class="nav-item dropdown-hover d-none d-lg-block">
-                            <a class="nav-link" href="{{ route('admin.chat') }}">Chat</a>
+                            <a class="nav-link" href="{{ route('admin.chat', 'chatId') }}">Chat</a>
                         </li>
                         <li class="nav-item dropdown-hover d-none d-lg-block">
                             <a class="nav-link" href="app-calendar.html">Calendar</a>
@@ -251,7 +233,7 @@
                             <a class="nav-link" href="app-email.html">Email</a>
                         </li>
                     </ul>
->>>>>>> 6f0034c92cd44c0f3604770a9bdd1c74d06853b9
+
 
                     <div class="d-block d-lg-none">
                         <a href="index.html" class="text-nowrap logo-img">
@@ -550,7 +532,8 @@
                                                     </div>
                                                 </div>
                                                 <a href="authentication-login.html"
-                                                    class="btn btn-outline-primary">Log Out</a>
+                                                    class="btn btn-outline-primary">Log
+                                                    Out</a>
                                             </div>
                                         </div>
 
@@ -739,7 +722,8 @@
                                             </li>
                                             <li class="sidebar-item py-2">
                                                 <a class="fw-semibold text-dark"
-                                                    href="page-account-settings.html">Account Settings</a>
+                                                    href="page-account-settings.html">Account
+                                                    Settings</a>
                                             </li>
                                         </ul>
                                     </ul>

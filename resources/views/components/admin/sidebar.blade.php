@@ -143,7 +143,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.chat', 'chatId')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.chat')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-messages"></i>
                 </span>
@@ -151,7 +151,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.call', 'callId')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.call')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-dialpad"></i>
                 </span>

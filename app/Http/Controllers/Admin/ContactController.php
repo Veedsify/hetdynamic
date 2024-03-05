@@ -12,7 +12,11 @@ class ContactController extends Controller
     public function contact() {
         return View::make("admin.contact");
     }
-    public function chat() {
+    public function chat($chatId) {
         return View::make("admin.chat");
     }
+    public function call($callId) {
+        return View::make("admin.call-application");
+    }
+
 }

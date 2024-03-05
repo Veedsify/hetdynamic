@@ -11,5 +11,6 @@ Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
 // contact
 
 Route::get("/admin/contact", [ContactController::class, "contact"])->name("admin.contact");
-Route::get("/admin/chat", [ContactController::class, "chat"])->name("admin.chat");
+Route::get("/admin/contact/{chatId}", [ContactController::class, "chat"])->name("admin.chat");
+Route::get("/admin/contact/{callId}", [ContactController::class, "call"])->name("admin.call");
 

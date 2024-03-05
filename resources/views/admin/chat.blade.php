@@ -2434,7 +2434,8 @@
 
     </div>
     <div class="dark-transparent sidebartoggler"></div>
-    <script src="../assets/js/vendor.min.js"></script>
+    <script src="{{asset("admin-assets/js/vendor.min.js")}}"></script>
+
     <!-- Import Js Files -->
     <script src="{{asset("admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("admin-assets/libs/simplebar/dist/simplebar.min.js")}}"></script>

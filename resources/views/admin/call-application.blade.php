@@ -11,7 +11,7 @@
     <link rel="shortcut icon" type="image/png" href="{{asset('admin-assets/images/logos/favicon.png')}}">
 
     <!-- Core Css -->
-    <link rel="stylesheet" href="{{asset("admin-assets/css/styles.css"}}">
+    <link rel="stylesheet" href="{{asset("admin-assets/css/styles.css")}}">
 
 
     <title>Modernize Bootstrap Admin</title>
@@ -2193,7 +2193,9 @@
 
     </div>
     <div class="dark-transparent sidebartoggler"></div>
-    <script src="../assets/js/vendor.min.js"></script>
+    <script src="{{asset("admin-assets/js/vendor.min.js")}}"></script>
+
+
     <!-- Import Js Files -->
     <script src="{{asset("admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js")}}"></script>
     <script src="{{asset("admin-assets/libs/simplebar/dist/simplebar.min.js")}}"></script>
@@ -2204,7 +2206,8 @@
 
     <!-- solar icons -->
     <script src="../../../npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
-    <script src="../assets/js/apps/chat.js"></script>
+    <script src="{{asset("admin-assets/js/apps/contact.js")}}"></script>
+
 </body>
 
 </html>

@@ -173,7 +173,7 @@
       <!-- end apps Dropdown -->
       <!-- ------------------------------- -->
       <li class="nav-item dropdown-hover d-none d-lg-block">
-        <a class="nav-link" href="{{route('admin.chat')}}">Chat</a>
+        <a class="nav-link" href="{{route('admin.chat', 'chatId')}}">Chat</a>
       </li>
       <li class="nav-item dropdown-hover d-none d-lg-block">
         <a class="nav-link" href="app-calendar.html">Calendar</a>

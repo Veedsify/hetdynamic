@@ -54,7 +54,7 @@
             <span class="hide-menu">Study</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-email.html" aria-expanded="false">
+            <a class="sidebar-link" href="" aria-expanded="false">
                 <span>
                     <i class="ti ti-vocabulary"></i>
                 </span>
@@ -163,7 +163,7 @@
             <span class="hide-menu">MAIL</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-invoice.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.email')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-mail"></i>
                 </span>
@@ -171,7 +171,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-invoice.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.support')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-mail"></i>
                 </span>

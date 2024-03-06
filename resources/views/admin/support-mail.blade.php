@@ -86,13 +86,17 @@
                         <div class="card-body px-4 py-3">
                             <div class="row align-items-center">
                                 <div class="col-9">
-                                    <h4 class="fw-semibold mb-8">Email</h4>
+                                    <h4 class="fw-semibold mb-8">Support Mail</h4>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a class="text-muted text-decoration-none" href="index.html">Home</a>
+                                                <a class="text-muted text-decoration-none" href="{{route('admin')}}">Home</a>
                                             </li>
-                                            <li class="breadcrumb-item" aria-current="page">Email</li>
+                                            <li class="breadcrumb-item" aria-current="page">
+                                                <a class="text-muted text-decoration-none" href="{{route('admin.email')}}">Email</a>
+
+                                            </li>
+                                            <li class="breadcrumb-item" aria-current="page">support Mail</li>
                                         </ol>
                                     </nav>
                                 </div>

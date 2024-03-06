@@ -224,13 +224,13 @@
                         <!-- end apps Dropdown -->
                         <!-- ------------------------------- -->
                         <li class="nav-item dropdown-hover d-none d-lg-block">
-                            <a class="nav-link" href="{{ route('admin.chat', 'chatId') }}">Chat</a>
+                            <a class="nav-link" href="{{route('admin.chat', 'chatId') }}">Chat</a>
                         </li>
                         <li class="nav-item dropdown-hover d-none d-lg-block">
                             <a class="nav-link" href="app-calendar.html">Calendar</a>
                         </li>
                         <li class="nav-item dropdown-hover d-none d-lg-block">
-                            <a class="nav-link" href="app-email.html">Email</a>
+                            <a class="nav-link" href="{{route('admin.email')}}">Email</a>
                         </li>
                     </ul>
 

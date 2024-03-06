@@ -614,6 +614,8 @@
             </div>
         </div>
 
+
+
         <!--  Shopping Cart -->
         <div class="offcanvas offcanvas-end shopping-cart" tabindex="-1" id="offcanvasRight"
             aria-labelledby="offcanvasRightLabel">

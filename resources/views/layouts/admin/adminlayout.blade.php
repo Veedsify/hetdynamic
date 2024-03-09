@@ -7,15 +7,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {{-- CSRF TOKEN --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    
+
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin-assets/images/logos/favicon.png') }}">
 
     <!-- Core Css -->
     <link rel="stylesheet" href="{{ asset('admin-assets/css/styles.css') }}">
 
-    <title>Modernize Bootstrap Admin</title>
+    <title>HetDynamic - Admin</title>
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('admin-assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+    {{-- VITE --}}
+    @viteReactRefresh
+    @vite('resources/js/app.jsx')
 </head>
 
 <body>

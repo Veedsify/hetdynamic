@@ -26,7 +26,7 @@
             <span class="hide-menu">Blogs</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-calendar.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.blog.create') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-book"></i>
                 </span>
@@ -135,7 +135,7 @@
         </li>
 
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.contact')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.contact') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-phone"></i>
                 </span>
@@ -143,7 +143,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.chat')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.chat') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-messages"></i>
                 </span>
@@ -151,7 +151,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.call')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.call') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-dialpad"></i>
                 </span>
@@ -163,7 +163,7 @@
             <span class="hide-menu">MAIL</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.email')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.email') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-mail"></i>
                 </span>
@@ -171,7 +171,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route('admin.support')}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.support') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-mail"></i>
                 </span>

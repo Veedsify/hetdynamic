@@ -44,9 +44,15 @@
                     </div>
                     <h2 class="section-title__title">Feel Free to Get in <br> Touch with us</h2>
                 </div>
-                <div class="contact-five__form-box">
-                    <form action="assets/inc/sendemail.php" class="contact-five__form contact-form-validated"
-                        novalidate="novalidate">
+                <div class="contact-five__form-box transition-this">
+                    @if (session('message'))
+                        <div class="alert alert-success transition-this" data-remove_alert="1">
+                            <p class="alert__text">{{ session('message') }}</p>
+                        </div>
+                    @endif
+                    <form action="{{ route('contact.submit') }}" class="contact-five__form contact-form-validated"
+                        novalidate="novalidate" method="POST">
+                        @csrf
                         <div class="row">
                             <div class="col-xl-6">
                                 <div class="contact-five__input-box">
@@ -60,12 +66,12 @@
                             </div>
                             <div class="col-xl-6">
                                 <div class="contact-five__input-box">
-                                    <input type="text" placeholder="Phone Number" name="Phone">
+                                    <input type="text" placeholder="Phone Number" name="phone">
                                 </div>
                             </div>
                             <div class="col-xl-6">
                                 <div class="contact-five__input-box">
-                                    <input type="text" placeholder="Subject" name="Subject">
+                                    <input type="text" placeholder="Subject" name="subject">
                                 </div>
                             </div>
                         </div>

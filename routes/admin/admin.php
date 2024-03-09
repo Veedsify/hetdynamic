@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\AdminPagesController;
-
+use App\Http\Controllers\BlogController;
 
 // Admin Route Web Endpoints
 Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
@@ -20,7 +20,7 @@ Route::prefix("admin/contact")->group(function () {
 });
 
 // email
-Route::prefix("admin/email")->group(function(){
+Route::prefix("admin/email")->group(function () {
     Route::get("/", [EmailController::class, "email"])->name("admin.email");
     Route::get("/support", [EmailController::class, "support"])->name("admin.support");
     // Route::get("/compose", [EmailController::class, "compose"])->name("admin.email.compose");
@@ -32,4 +32,12 @@ Route::prefix("admin/email")->group(function(){
     // Route::get("/draft/{emailId}", [EmailController::class, "draft"])->name("admin.email.draft.unique");
     // Route::get("/trash/{emailId}", [EmailController::class, "trash"])->name("admin.email.trash.unique");
     // Route::get("/inbox/{emailId}", [EmailController::class, "inbox"])->name("admin.email.inbox.unique");
+});
+
+Route::prefix("/admin/blog")->group(function () {
+    Route::get("/", [BlogController::class, "blog"])->name("admin.blog");
+    Route::get("/create", [BlogController::class, "createBlog"])->name("admin.blog.create");
+    Route::get("/edit/{blogId}", [BlogController::class, "editBlog"])->name("admin.blog.edit");
+    Route::get("/delete/{blogId}", [BlogController::class, "deleteBlog"])->name("admin.blog.delete");
+    Route::get("/view/{blogId}", [BlogController::class, "viewBlog"])->name("admin.blog.view");
 });

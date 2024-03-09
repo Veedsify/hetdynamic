@@ -17467,3 +17467,7 @@ body.boxed-wrapper {
 .boxed-wrapper .stricky-header .main-menu__list>li+li {
     margin-left: 42px
 }
+
+.transition-this{
+    transition: all 1s ease;
+}

@@ -16,4 +16,9 @@ class BlogController extends Controller
     {
         return view("pages.blog-details", ["postId" => $postId]);
     }
+    
+    public function createBlog()
+    {
+        return view("admin.new-article");
+    }
 }

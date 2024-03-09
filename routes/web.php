@@ -29,8 +29,12 @@ Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
 //Pages
 Route::get("/about", [AboutController::class, 'showAboutPage'])->name("about");
-Route::get("/contact", [ContactController::class, 'showContactPage'])->name("contact");
 Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
+
+Route::prefix('contact')->group(function () {
+    Route::get("/", [ContactController::class, 'showContactPage'])->name("contact");
+    Route::post("/new", [ContactController::class, 'submitContactForm'])->name("contact.submit");
+});
 
 //Residency
 Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPagesDetails'])->name("residency.details");

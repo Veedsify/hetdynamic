@@ -65,14 +65,6 @@
                                 </div>
                             </form>
                         </div>
-
-
-                        <div id="app">
-                            <!-- Your application content goes here -->
-                        </div>
-                        <div id="app2">
-                            <!-- Your application content goes here -->
-                        </div>
                     </div>
                     <div class="col-xl-6 col-lg-6">
                         <div class="login-page__single">

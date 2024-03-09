@@ -1,1 +1,0 @@
-import{R as s,j as e,a as r}from"./index-Db4yID4i.js";const a=()=>{const[t,n]=r.useState(0);return e.jsx(e.Fragment,{children:e.jsxs("h1",{onClick:()=>{n(t+1)},children:["App ",t]})})};s.render(e.jsx(e.Fragment,{children:e.jsx(a,{})}),document.getElementById("app"));

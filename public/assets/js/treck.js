@@ -340,6 +340,9 @@
           required: true,
           email: true
         },
+        phone: {
+          required: true,
+        },
         message: {
           required: true
         },
@@ -348,17 +351,8 @@
         }
       },
       submitHandler: function (form) {
-        // sending value with ajax request
-        $.post(
-          $(form).attr("action"),
-          $(form).serialize(),
-          function (response) {
-            $(form).parent().find(".result").append(response);
-            $(form).find('input[type="text"]').val("");
-            $(form).find('input[type="email"]').val("");
-            $(form).find("textarea").val("");
-          }
-        );
+        form.submit()
+        console.log("first")
         return false;
       }
     });
@@ -1078,6 +1072,21 @@
     });
   }
 
+  const removeAlert = () => {
+    const alert = document.querySelectorAll('[data-remove_alert="1"]');
+    if (alert) {
+      alert.forEach((el) => {
+        setTimeout(() => {
+          el.style.opacity = 0;
+          setTimeout(() => {
+            el.style.padding = "0px";
+            el.style.height = "0px";
+          }, 600);
+        }, 3000);
+      });
+    }
+  }
 
+  removeAlert();
 
 })(jQuery);

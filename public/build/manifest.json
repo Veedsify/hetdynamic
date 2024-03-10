@@ -1,6 +1,6 @@
 {
-  "_index-Wi1CXib8.js": {
-    "file": "assets/index-Wi1CXib8.js"
+  "_index-DYquJ9O_.js": {
+    "file": "assets/index-DYquJ9O_.js"
   },
   "node_modules/@blocknote/core/src/fonts/inter-v12-latin/inter-v12-latin-100.woff": {
     "file": "assets/inter-v12-latin-100-46Mq0mOp.woff",
@@ -75,14 +75,14 @@
     "src": "node_modules/@blocknote/core/src/fonts/inter-v12-latin/inter-v12-latin-regular.woff2"
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-CXOQcQuj.js",
+    "file": "assets/app-BNT6u5Ua.js",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "imports": [
-      "_index-Wi1CXib8.js"
+      "_index-DYquJ9O_.js"
     ],
     "css": [
-      "assets/app-X_NaVQTu.css"
+      "assets/app-DIBfR1eN.css"
     ],
     "assets": [
       "assets/inter-v12-latin-100-BQDzDElq.woff2",
@@ -106,11 +106,11 @@
     ]
   },
   "resources/js/app2.jsx": {
-    "file": "assets/app2-BooUSsKj.js",
+    "file": "assets/app2-DFCihUCx.js",
     "src": "resources/js/app2.jsx",
     "isEntry": true,
     "imports": [
-      "_index-Wi1CXib8.js"
+      "_index-DYquJ9O_.js"
     ]
   }
 }

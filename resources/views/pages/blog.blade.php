@@ -22,7 +22,7 @@
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Blog Posts</h2>
+                    <h2>Blogs Page {{ $query ? $query : '1' }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>-</span></li>
@@ -38,12 +38,19 @@
             <div class="container">
                 <div class="row">
                     <!--Blog One Single Start-->
-                    <x-blogcard />
-                    <x-blogcard />
-                    <x-blogcard />
-                    <x-blogcard />
+                    @foreach ($blogs as $blog)
+                        <x-blogcard :blog="$blog" />
+                    @endforeach
                     <!--Blog One Single End-->
+                </div>
+                <div class="pagination_links">
+                    @if ($blogs->previousPageUrl())
+                        <a class="btn thm-btn btn-sm btn-dark" href="{{ $blogs->previousPageUrl() }}">Previous</a>
+                    @endif
 
+                    @if ($blogs->nextPageUrl())
+                        <a class="btn thm-btn btn-sm btn-dark" href="{{ $blogs->nextPageUrl() }}">Next</a>
+                    @endif
                 </div>
             </div>
         </section>

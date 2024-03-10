@@ -88,7 +88,7 @@
                                                <i class="fas fa-map-marker"></i>
                                            </div>
                                            <div class="text">
-                                               <p>30 Broklyn Golden Street. USA</p>
+                                               <p>{{ $pagedata->site_address }}</p>
                                            </div>
                                        </li>
                                        <li>
@@ -96,7 +96,7 @@
                                                <i class="fas fa-envelope"></i>
                                            </div>
                                            <div class="text">
-                                               <p><a href="mailto:Info@company.com">Info@company.com</a>
+                                               <p><a href="mailto:Info@company.com">{{$pagedata->site_email}}</a>
                                                </p>
                                            </div>
                                        </li>

@@ -12,15 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create("countries", function (Blueprint $table) {
+        Schema::create("trusted_bies", function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("iso2");
-            $table->string("phone_code");
-            $table->string("capital");
-            $table->string("currency");
-            $table->string("timezones");
-            $table->string("flag");
+            $table->string("image");
+            $table->string("url")->nullable();
             $table->timestamps();
         });
     }

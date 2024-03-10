@@ -12,15 +12,17 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create("countries", function (Blueprint $table) {
+        Schema::create("office_addresses", function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("iso2");
-            $table->string("phone_code");
-            $table->string("capital");
-            $table->string("currency");
-            $table->string("timezones");
-            $table->string("flag");
+            $table->string("address");
+            $table->string("phone");
+            $table->string("email");
+            $table->string("facebook")->nullable();
+            $table->string("twitter")->nullable();
+            $table->string("instagram")->nullable();
+            $table->string("linkedin")->nullable();
+            $table->string("pinterest")->nullable();
             $table->timestamps();
         });
     }

@@ -31,7 +31,6 @@ class ContactMail extends Mailable implements ShouldQueue
     {
         return new Envelope(
             subject: 'New Contact Request From ' . config('app.name', ''),
-            from: GlobalSetting::first()->default_mail_address,
             to: GlobalSetting::first()->admin_email,
             cc: GlobalSetting::first()->support_mail_address,
         );

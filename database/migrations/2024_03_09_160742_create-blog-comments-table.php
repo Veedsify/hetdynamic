@@ -12,15 +12,12 @@ return new class extends Migration
     public function up(): void
     {
         //
-        Schema::create("countries", function (Blueprint $table) {
+        Schema::create("blog_comments", function (Blueprint $table) {
             $table->id();
+            $table->foreignId("blog_id")->constrained("blogs")->onDelete("cascade");
             $table->string("name");
-            $table->string("iso2");
-            $table->string("phone_code");
-            $table->string("capital");
-            $table->string("currency");
-            $table->string("timezones");
-            $table->string("flag");
+            $table->string("email");
+            $table->text("comment");
             $table->timestamps();
         });
     }

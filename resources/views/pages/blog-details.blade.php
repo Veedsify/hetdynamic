@@ -1,5 +1,5 @@
 @extends('layouts/index', [
-    'title' => 'Blog Details - HetDynamic',
+    'title' => $article->title . ' | HetDynamic',
 ])
 @section('content')
     <div class="preloader">
@@ -19,15 +19,15 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url({{ $article->image }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Blog Details</h2>
+                    <h2>{{ $article->title }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>-</span></li>
-                        <li class="active">Blog Details</li>
+                        <li class="active">{{ $article->title }}</li>
                     </ul>
                 </div>
             </div>
@@ -41,7 +41,8 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="blog-details__left">
                             <div class="blog-details__img-box">
-                                <img src="/assets/images/blog/blog-details-img-1.jpg" alt="">
+                                <img src="{{ $article->image }}" alt=""
+                                    style="aspect-ratio:16/9; object-fit:cover;">
                                 <div class="blog-details__date">
                                     <p>20 <span>Feb</span></p>
                                 </div>
@@ -50,40 +51,26 @@
                                 <ul class="blog-details__meta list-unstyled">
                                     <li>
                                         <a href="blog-details.html"><i class="fas fa-user-circle"></i>by
-                                            Admin</a>
+                                            {{ \App\Models\User::where('id', $article->user_id)->first()->fullname }}</a>
                                     </li>
                                     <li>
-                                        <a href="blog-details.html"><i class="fas fa-comments"></i>02
-                                            Comments</a>
+                                        <a href="blog-details.html"><i class="fas fa-comments"></i>
+                                            {{ \App\Models\BlogComment::where('blog_id', $article->id)->count() }}
+                                            {{ \App\Models\BlogComment::where('blog_id', $article->id)->count() > 1 ? 'Comments' : 'Comment' }}</a>
+                                    </li>
+                                    <li>
+                                        <a href="blog-details.html"><i class="fas fa-box"></i>
+                                            {{ \App\Models\Category::where('id', $article->category)->first()->name }}
+                                        </a>
                                     </li>
                                 </ul>
-                                <h3 class="blog-details__title">Vaccination Requirements for Immigrant Visa Applicants
-                                </h3>
-                                <p class="blog-details__text-1">There are many variations of passages of Lorem Ipsum
-                                    available, but majority have suffered alteration in some form, by injected humour,
-                                    or randomised words which don't look even slightly believable. If you are going to
-                                    use a passage of Lorem Ipsum. There are many variations of passages of Lorem Ipsum
-                                    available, but majority have suffered alteration in some form, by injected humour,
-                                    or randomised words which don't look even slightly believable. If you are going to
-                                    use a passage of Lorem Ipsum. Suspendisse ultricies vestibulum vehicula. Proin
-                                    laoreet porttitor lacus. Duis auctor vel ex eu elementum. Fusce eu volutpat felis.
-                                    Proin sed eros tincidunt, sagittis sapien eu, porta diam. Aenean finibus scelerisque
-                                    nulla non facilisis. Fusce vel orci sed quam gravida condimentum. Aliquam
-                                    condimentum, massa vel mollis volutpat, erat sem pharetra quam, ac mattis arcu elit
-                                    non massa. Nam mollis nunc velit, vel varius arcu fringilla tristique. Cras elit
-                                    nunc, sagittis eu bibendum eu, ultrices placerat sem. Praesent vitae metus dolor.
-                                    Nulla a erat et orci mattis auctor.</p>
-                                <p class="blog-details__text-2">Mauris non dignissim purus, ac commodo diam. Donec sit
-                                    amet lacinia nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
-                                    nulla, sollicitudin at euismod nec, feugiat at nisi. Quisque vitae odio nec lacus
-                                    interdum tempus. Phasellus a rhoncus erat. Vivamus vel eros vitae est aliquet
-                                    pellentesque vitae et nunc. Sed vitae leo vitae nisl pellentesque semper.</p>
+                                <h3 class="blog-details__title">{{ $article->title }}</h3>
+                                <div class="blog-details__text-1">{{ $article->content }}</div>
                             </div>
                             <div class="blog-details__bottom">
                                 <p class="blog-details__tags">
                                     <span>Tags</span>
-                                    <a href="#">Immigration</a>
-                                    <a href="#">Citizenship</a>
+                                    <a href="/tags/{{ $article->tags }}">{{ $article->tags }}</a>
                                 </p>
                                 <div class="blog-details__social-list">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -92,6 +79,7 @@
                                     <a href="#"><i class="fab fa-instagram"></i></a>
                                 </div>
                             </div>
+                            {{-- BLOG DETAILS NEXT --}}
                             <div class="blog-details__pagenation">
                                 <div class="blog-details__pagenation-left">
                                     <div class="blog-details__pagenation-left-img">
@@ -118,11 +106,27 @@
                                     </div>
                                 </div>
                             </div>
+                            {{-- BLOG DETAILS END --}}
                             <div class="comment-one">
-                                <h3 class="comment-one__title">2 Comments</h3>
-                                <div class="comment-one__single">
+                                <h3 class="comment-one__title">
+                                    <span>({{ \App\Models\BlogComment::where('blog_id', $article->id)->count() }})</span>
+                                    Comments
+                                </h3>
+                                @foreach ($comments as $comment)
+                                    <div class="comment-one__single">
+                                        <div class="comment-one__image">
+                                            <img src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                                                class="object-fit-square" alt="" width="100">
+                                        </div>
+                                        <div class="comment-one__content">
+                                            <h3>{{ $comment->name }}</h3>
+                                            <p>{{ $comment->comment }}</p>
+                                        </div>
+                                    </div>
+                                @endforeach
+                                {{-- <div class="comment-one__single">
                                     <div class="comment-one__image">
-                                        <img src="/assets/images/blog/comment-1-1.jpg" alt="">
+                                        <img src="/assets/images/blog/comment-1-1.jpg" alt="" width="100">
                                     </div>
                                     <div class="comment-one__content">
                                         <h3>Kevin Martin</h3>
@@ -131,24 +135,16 @@
                                             sollicitudin at euismod.</p>
                                         <a href="blog-details.html" class="thm-btn comment-one__btn">Reply</a>
                                     </div>
-                                </div>
-                                <div class="comment-one__single">
-                                    <div class="comment-one__image">
-                                        <img src="/assets/images/blog/comment-1-2.jpg" alt="">
-                                    </div>
-                                    <div class="comment-one__content">
-                                        <h3>Sarah Albert</h3>
-                                        <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                            Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                            sollicitudin at euismod.</p>
-                                        <a href="blog-details.html" class="thm-btn comment-one__btn">Reply</a>
-                                    </div>
+                                </div> --}}
+                                <div class="mb-4">
+                                    <a href="/comments/1/all" class="text-primary fw-bold">View All Comments</a>
                                 </div>
                             </div>
                             <div class="comment-form">
                                 <h3 class="comment-form__title">Leave a Comment</h3>
-                                <form action="assets/inc/sendemail.php" class="comment-one__form contact-form-validated"
-                                    novalidate="novalidate">
+                                <form action="{{ route('comment.new', $article->slug) }}" method="post"
+                                    class="comment-one__form contact-form-validated" novalidate="novalidate">
+                                    @csrf
                                     <div class="row">
                                         <div class="col-xl-6">
                                             <div class="comment-form__input-box">
@@ -187,69 +183,31 @@
                                     </form>
                                 </div>
                                 <div class="sidebar__post">
-                                    <h3 class="sidebar__title">Latest Posts</h3>
+                                    <h3 class="sidebar__title">Related Posts</h3>
                                     <ul class="sidebar__post-list list-unstyled">
-                                        <li>
-                                            <div class="sidebar__post-image">
-                                                <img src="/assets/images/blog/lp-1-1.jpg" alt="">
-                                            </div>
-                                            <div class="sidebar__post-content">
-                                                <h3>
-                                                    <a href="blog-details.html">Learn How to Apply for <br> a Canada
-                                                        Visa</a>
-                                                </h3>
-                                                <span class="sidebar__post-content-meta"><i class="fas fa-clock"></i>20
-                                                    Feb, 2023</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__post-image">
-                                                <img src="/assets/images/blog/lp-1-2.jpg" alt="">
-                                            </div>
-                                            <div class="sidebar__post-content">
-                                                <h3>
-                                                    <a href="blog-details.html">Bring to the table <br> win-win
-                                                        survival</a>
-                                                </h3>
-                                                <span class="sidebar__post-content-meta"><i class="fas fa-clock"></i>20
-                                                    Feb, 2023</span>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__post-image">
-                                                <img src="/assets/images/blog/lp-1-3.jpg" alt="">
-                                            </div>
-                                            <div class="sidebar__post-content">
+                                        @foreach ($relatedArticles as $relatedArticle)
+                                            <li>
+                                                <div class="sidebar__post-image">
+                                                    <img src="{{ $relatedArticle->image }}" alt="">
+                                                </div>
                                                 <div class="sidebar__post-content">
                                                     <h3>
-                                                        <a href="blog-details.html">There are many <br> variations
-                                                            of</a>
+                                                        <a
+                                                            href="{{ route('blog.details', $relatedArticle->slug) }}">{{ $relatedArticle->title }}</a>
                                                     </h3>
                                                     <span class="sidebar__post-content-meta"><i
-                                                            class="fas fa-clock"></i>20
-                                                        Feb, 2023</span>
+                                                            class="fas fa-clock"></i>{{ $relatedArticle->created_at->format('d, M, Y') }}</span>
                                                 </div>
-                                            </div>
-                                        </li>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="sidebar__category">
                                     <h3 class="sidebar__title">Categories</h3>
                                     <ul class="sidebar__category-list list-unstyled">
-                                        <li><a href="blog-details.html">Immigration<span
-                                                    class="fas fa-caret-right"></span></a>
-                                        </li>
-                                        <li><a href="blog-details.html">Visa Process<span
-                                                    class="fas fa-caret-right"></span></a>
-                                        </li>
-                                        <li><a href="blog-details.html">Permanent Residency<span
-                                                    class="fas fa-caret-right"></span></a>
-                                        </li>
-                                        <li><a href="blog-details.html">Citizenship<span
-                                                    class="fas fa-caret-right"></span></a>
-                                        </li>
-                                        <li><a href="blog-details.html">Government<span
-                                                    class="fas fa-caret-right"></span></a>
+                                        <li><a href="blog-details.html">
+                                                Categories
+                                                <span class="fas fa-caret-right"></span></a>
                                         </li>
                                     </ul>
                                 </div>
@@ -303,11 +261,9 @@
                                 <div class="sidebar__tags">
                                     <h3 class="sidebar__title">Tags</h3>
                                     <div class="sidebar__tags-list">
-                                        <a href="#">Immigration</a>
-                                        <a href="#">Citizenship</a>
-                                        <a href="#">Visa</a>
-                                        <a href="#">Traveling</a>
-                                        <a href="#">Consulting</a>
+                                        <a href="#">
+                                            {{ $article->tags }}
+                                        </a>
                                     </div>
                                 </div>
                                 <div class="sidebar__comments">

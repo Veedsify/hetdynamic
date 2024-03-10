@@ -11,16 +11,13 @@ return new class extends Migration
      */
     public function up(): void
     {
-        //
-        Schema::create("countries", function (Blueprint $table) {
+        Schema::create("call_requests", function (Blueprint $table) {
             $table->id();
             $table->string("name");
-            $table->string("iso2");
-            $table->string("phone_code");
-            $table->string("capital");
-            $table->string("currency");
-            $table->string("timezones");
-            $table->string("flag");
+            $table->string("email");
+            $table->string("phone");
+            $table->string("visa_type");
+            $table->string("message");
             $table->timestamps();
         });
     }

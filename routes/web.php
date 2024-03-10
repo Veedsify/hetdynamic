@@ -4,6 +4,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\CoachingController;
+use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
@@ -25,6 +26,12 @@ use Illuminate\Support\Facades\View;
 //Admin Routes
 require_once  __DIR__ . '/admin/admin.php';
 
+//  Pass settings to all views
+View::composer('*', function ($view) {
+    $settings = \App\Models\GlobalSetting::query()->first();
+    $view->with('pagedata', $settings);
+});
+
 Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
 //Pages
@@ -43,6 +50,7 @@ Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPag
 //Blog
 Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
+Route::post("/comment/{id}/comment", [CommentController::class, 'newComments'])->name("comment.new");
 
 //Faq
 Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");

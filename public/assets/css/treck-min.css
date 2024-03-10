@@ -17468,6 +17468,12 @@ body.boxed-wrapper {
     margin-left: 42px
 }
 
-.transition-this{
+.transition-this {
     transition: all 1s ease;
+}
+
+.object-fit-square {
+    object-fit: cover;
+    height: 100%;
+    aspect-ratio: 1/1;
 }

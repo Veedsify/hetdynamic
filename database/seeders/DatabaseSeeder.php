@@ -6,6 +6,7 @@ namespace Database\Seeders;
 
 use App\Models\Blog;
 use App\Models\Category;
+use App\Models\Country;
 use App\Models\GlobalSetting;
 use App\Models\User;
 use Illuminate\Database\Seeder;
@@ -18,6 +19,7 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         User::factory(1)->create();
+        Country::factory(10)->create();
         Category::factory(10)->create();
         Blog::factory(30)->create();
         GlobalSetting::factory(1)->create();

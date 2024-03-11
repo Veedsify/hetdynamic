@@ -29,7 +29,7 @@
                         <div class="main-slider__content">
                             <h2 class="main-slider__title">Dreams abroad? Expert guidance, worldwide </h2>
                             <div class="main-slider__btn-box">
-                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
+                                <a href="{{route("about")}}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
                         </div>
                     </div>
@@ -42,7 +42,7 @@
                         <div class="main-slider__content">
                             <h2 class="main-slider__title">Unlock your future. Expert immigration solutions</h2>
                             <div class="main-slider__btn-box">
-                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
+                                <a href="{{route("about")}}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
                         </div>
                     </div>
@@ -55,7 +55,7 @@
                         <div class="main-slider__content">
                             <h2 class="main-slider__title">Go further. Achieve more. Expert immigration.</h2>
                             <div class="main-slider__btn-box">
-                                <a href="about.html" class="main-slider__btn thm-btn">Discover More</a>
+                                <a href="{{route("about")}}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
                         </div>
                     </div>
@@ -212,7 +212,7 @@
                                 </li>
                             </ul>
                             <div class="about-one__btn-box">
-                                <a href="about.html" class="about-one__btn thm-btn">Discover More</a>
+                                <a href="{{route("about")}}" class="about-one__btn thm-btn">Discover More</a>
                             </div>
                         </div>
                     </div>

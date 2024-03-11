@@ -22,7 +22,7 @@ class BlogFactory extends Factory
             'description' => $this->faker->paragraph(),
             'image' => $this->faker->imageUrl(),
             'tags' => $this->faker->word(),
-            'content' => $this->faker->paragraph(300),
+            'content' => $this->faker->paragraph(20),
             'category' => 1,
             'user_id' => 1,
             'status' => 1,

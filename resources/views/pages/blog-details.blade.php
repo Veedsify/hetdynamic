@@ -10,7 +10,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav />
+        <x-nav/>
         {{-- NAVIGATION ENDS HERE --}}
 
         <div class="stricky-header stricked-menu main-menu">
@@ -42,7 +42,7 @@
                         <div class="blog-details__left">
                             <div class="blog-details__img-box">
                                 <img src="{{ $article->image }}" alt=""
-                                    style="aspect-ratio:16/9; object-fit:cover;">
+                                     style="aspect-ratio:16/9; object-fit:cover;">
                                 <div class="blog-details__date">
                                     <p>20 <span>Feb</span></p>
                                 </div>
@@ -51,12 +51,14 @@
                                 <ul class="blog-details__meta list-unstyled">
                                     <li>
                                         <a href="blog-details.html"><i class="fas fa-user-circle"></i>by
-                                            {{ \App\Models\User::where('id', $article->user_id)->first()->fullname }}</a>
+                                            {{ \App\Models\User::where('id', $article->user_id)->first()->fullname }}
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="blog-details.html"><i class="fas fa-comments"></i>
                                             {{ \App\Models\BlogComment::where('blog_id', $article->id)->count() }}
-                                            {{ \App\Models\BlogComment::where('blog_id', $article->id)->count() > 1 ? 'Comments' : 'Comment' }}</a>
+                                            {{ \App\Models\BlogComment::where('blog_id', $article->id)->count() > 1 ? 'Comments' : 'Comment' }}
+                                        </a>
                                     </li>
                                     <li>
                                         <a href="blog-details.html"><i class="fas fa-box"></i>
@@ -89,7 +91,7 @@
                                         <h4 class="blog-details__pagenation-left-title"><a href="#">How to Ensure
                                                 Direct
                                                 for the <br> Hassle-Free Visa Process</a></h4>
-                                        <p class="blog-details__pagenation-left-date"> <i class="fas fa-clock"></i> 20
+                                        <p class="blog-details__pagenation-left-date"><i class="fas fa-clock"></i> 20
                                             Feb, 2023</p>
                                     </div>
                                 </div>
@@ -98,7 +100,7 @@
                                         <h4 class="blog-details__pagenation-right-title"><a href="#">Citizenship
                                                 Concept
                                                 on How to <br> Become a UK Resident</a></h4>
-                                        <p class="blog-details__pagenation-right-date"> <i class="fas fa-clock"></i> 20
+                                        <p class="blog-details__pagenation-right-date"><i class="fas fa-clock"></i> 20
                                             Feb, 2023</p>
                                     </div>
                                     <div class="blog-details__pagenation-right-img">
@@ -115,7 +117,8 @@
                                 @foreach ($comments as $comment)
                                     <div class="comment-one__single">
                                         <div class="comment-one__image">
-                                            <img src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                                            <img
+                                                src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
                                                 class="object-fit-square" alt="" width="100">
                                         </div>
                                         <div class="comment-one__content">
@@ -124,26 +127,17 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                {{-- <div class="comment-one__single">
-                                    <div class="comment-one__image">
-                                        <img src="/assets/images/blog/comment-1-1.jpg" alt="" width="100">
+                                @if(\App\Models\BlogComment::where('blog_id', $article->id)->count() > 3)
+                                    <div class="mb-4">
+                                        <a href="/comments/{{$article->slug}}/all" class="text-primary fw-bold">View
+                                            All Comments</a>
                                     </div>
-                                    <div class="comment-one__content">
-                                        <h3>Kevin Martin</h3>
-                                        <p>Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia nulla.
-                                            Aliquam quis purus in justo pulvinar tempor. Aliquam tellus nulla,
-                                            sollicitudin at euismod.</p>
-                                        <a href="blog-details.html" class="thm-btn comment-one__btn">Reply</a>
-                                    </div>
-                                </div> --}}
-                                <div class="mb-4">
-                                    <a href="/comments/1/all" class="text-primary fw-bold">View All Comments</a>
-                                </div>
+                                @endif
                             </div>
                             <div class="comment-form">
                                 <h3 class="comment-form__title">Leave a Comment</h3>
                                 <form action="{{ route('comment.new', $article->slug) }}" method="post"
-                                    class="comment-one__form contact-form-validated" novalidate="novalidate">
+                                      class="comment-one__form contact-form-validated" novalidate="novalidate">
                                     @csrf
                                     <div class="row">
                                         <div class="col-xl-6">
@@ -164,7 +158,8 @@
                                             </div>
                                             <div class="comment-form__btn-box">
                                                 <button type="submit" class="thm-btn comment-form__btn">Submit
-                                                    Comment</button>
+                                                    Comment
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -205,17 +200,19 @@
                                 <div class="sidebar__category">
                                     <h3 class="sidebar__title">Categories</h3>
                                     <ul class="sidebar__category-list list-unstyled">
-                                        <li><a href="blog-details.html">
-                                                Categories
-                                                <span class="fas fa-caret-right"></span></a>
-                                        </li>
+                                        @foreach($categories as $category)
+                                            <li><a href="/categories/{{$category->slug}}">
+                                                    {{ $category->name }}
+                                                    <span class="fas fa-caret-right"></span></a>
+                                            </li>
+                                        @endforeach
                                     </ul>
                                 </div>
                                 <div class="sidebar__project">
                                     <h3 class="sidebar__title">Projects</h3>
                                     <div class="sidebar__project-box">
                                         <div class="sidebar__project-carousel owl-carousel owl-theme thm-owl__carousel"
-                                            data-owl-options='{
+                                             data-owl-options='{
                                             "loop": true,
                                             "autoplay": true,
                                             "margin": 30,
@@ -242,7 +239,7 @@
                                             <div class="item">
                                                 <div class="sidebar__project-single">
                                                     <div class="sidebar__project-bg"
-                                                        style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
+                                                         style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
                                                     </div>
                                                     <p>Traveling Visa</p>
                                                 </div>
@@ -250,7 +247,7 @@
                                             <div class="item">
                                                 <div class="sidebar__project-single">
                                                     <div class="sidebar__project-bg"
-                                                        style="background-image: url(assets/images/backgrounds/sidebar-project-bg-2.jpg);">
+                                                         style="background-image: url(assets/images/backgrounds/sidebar-project-bg-2.jpg);">
                                                     </div>
                                                     <p>Student Visa</p>
                                                 </div>
@@ -269,44 +266,20 @@
                                 <div class="sidebar__comments">
                                     <h3 class="sidebar__title">Comments</h3>
                                     <ul class="sidebar__comments-list list-unstyled">
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p>A Wordpress Commenter
-                                                    <br> on Launch New Mobile App
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p> <span>John Doe</span> on Template:
-                                                    Comments</p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p>A Wordpress Commenter on
-                                                    <br> Launch New Mobile App
-                                                </p>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div class="sidebar__comments-icon">
-                                                <i class="fas fa-comment"></i>
-                                            </div>
-                                            <div class="sidebar__comments-text-box">
-                                                <p> <span>John Doe</span> on Template:
-                                                    Comments</p>
-                                            </div>
-                                        </li>
+
+                                        @foreach($comments as $comment)
+                                            <li>
+                                                <div class="sidebar__comments-icon">
+                                                    <i class="fas fa-comment"></i>
+                                                </div>
+                                                <div class="sidebar__comments-text-box">
+                                                    <p>{{$comment->comment}}</p>
+                                                </div>
+                                            </li>
+                                            @if($loop->index > 3)
+                                                @break
+                                            @endif
+                                        @endforeach
                                     </ul>
                                 </div>
                             </div>
@@ -318,7 +291,7 @@
         <!--Blog Details End-->
 
         <!--Site Footer Start-->
-        <x-footer />
+        <x-footer/>
         <!--Site Footer End-->
 
 
@@ -333,7 +306,7 @@
 
             <div class="logo-box">
                 <a href="index.html" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
-                        width="135" alt="" /></a>
+                                                                  width="135" alt=""/></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

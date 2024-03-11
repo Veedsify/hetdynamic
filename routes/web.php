@@ -36,7 +36,12 @@ Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
 //Pages
 Route::get("/about", [AboutController::class, 'showAboutPage'])->name("about");
+
+
 Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
+Route::get("/register", [AuthController::class, 'showRegisterPage'])->name("register");
+Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
+Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
 
 Route::prefix('contact')->group(function () {
     Route::get("/", [ContactController::class, 'showContactPage'])->name("contact");

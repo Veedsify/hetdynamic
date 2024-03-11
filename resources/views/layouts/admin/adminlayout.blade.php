@@ -9,7 +9,7 @@
 
     {{-- CSRF TOKEN --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    
+
 
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="{{ asset('admin-assets/images/logos/favicon.png') }}">
@@ -46,7 +46,7 @@
     <script src="{{ asset('admin-assets/js/theme/sidebarmenu.js') }}"></script>
 
     <!-- solar icons -->
-    <script src="../../../npm/iconify-icon%401.0.8/dist/iconify-icon.min.js"></script>
+    <script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script>
     <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>

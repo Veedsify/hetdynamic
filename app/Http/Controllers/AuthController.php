@@ -29,6 +29,12 @@ class AuthController extends Controller
             'password' => 'required|min:8'
         ]);
 
+        $findUser = User::where("email", $request->input("email"));
+
+        if ($findUser) {
+            return redirect()->back()->with("error", "Sorry this user already exists");
+        }
+
         $user = User::create([
             'fullname' => $request->name,
             'email' => $request->email,

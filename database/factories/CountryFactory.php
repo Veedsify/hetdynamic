@@ -24,8 +24,8 @@ class CountryFactory extends Factory
             'capital' => $this->faker->city,
             'currency' => $this->faker->currencyCode,
             'native' => $this->faker->country,
-            'flag' => $this->faker->imageUrl(),
-            'slogin' => $this->faker->sentence
+            'flag' => $this->faker->imageUrl(640, 480, 'country', true),
+            'slogan' => $this->faker->word(3, true)
         ];
     }
 }

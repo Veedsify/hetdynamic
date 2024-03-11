@@ -26,10 +26,12 @@ class BlogController extends Controller
         $comments = $comments->sortByDesc("created_at");
         $paginateComments = $comments->forPage(1, 2);
         $relatedArticles = Blog::where("category", $article->category)->where("id", "!=", $article->id)->limit(3)->get();
+        $categories = Category::all();
         return view("pages.blog-details", [
             "article" => $article,
             "comments" => $paginateComments,
-            "relatedArticles" => $relatedArticles
+            "relatedArticles" => $relatedArticles,
+            "categories" => $categories
         ]);
     }
 

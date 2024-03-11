@@ -20,7 +20,7 @@ return new class extends Migration {
             $table->string('currency');
             $table->string('native');
             $table->string('flag');
-            $table->string('slogin');
+            $table->string('slogan');
             $table->timestamps();
         });
     }

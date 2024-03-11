@@ -9,7 +9,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav />
+        <x-nav/>
         {{-- NAVIGATION ENDS HERE --}}
 
 
@@ -20,10 +20,11 @@
         <!-- Main Sllider Start -->
         <section class="main-slider">
             <div class="main-slider__carousel owl-carousel owl-theme thm-owl__carousel"
-                data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"], "margin": 0, "dots": true, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
+                 data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"], "margin": 0, "dots": true, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
 
                 <div class="item main-slider__slide-1">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-1-1.jpg);">
+                    <div class="main-slider__bg"
+                         style="background-image: url(assets/images/backgrounds/slider-1-1.jpg);">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
@@ -36,7 +37,8 @@
                 </div>
 
                 <div class="item main-slider__slide-2">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-1-2.jpg);">
+                    <div class="main-slider__bg"
+                         style="background-image: url(assets/images/backgrounds/slider-1-2.jpg);">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
@@ -49,7 +51,8 @@
                 </div>
 
                 <div class="item main-slider__slide-3">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-1-3.jpg);">
+                    <div class="main-slider__bg"
+                         style="background-image: url(assets/images/backgrounds/slider-1-3.jpg);">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
@@ -134,7 +137,7 @@
                     <div class="col-xl-12">
                         <div class="feature-one__bottom">
                             <p class="feature-one__text">Providing a One-Stop Solution for all Your <a
-                                    href="visa.html">Visa</a>
+                                        href="visa.html">Visa</a>
                                 & <a href="visa-details.html">Immigration</a> Needs</p>
                         </div>
                     </div>
@@ -238,7 +241,7 @@
                             <div class="services-one__single-inner">
                                 <div class="services-one__hover-content">
                                     <div class="services-one__hover-bg"
-                                        style="background-image: url(assets/images/resources/services-one-img-1.jpg);">
+                                         style="background-image: url(assets/images/resources/services-one-img-1.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
                                         <h3 class="services-one__hover-title"><a href="visa-details.html">Tourist
@@ -266,7 +269,7 @@
                             <div class="services-one__single-inner">
                                 <div class="services-one__hover-content">
                                     <div class="services-one__hover-bg"
-                                        style="background-image: url(assets/images/resources/services-one-img-2.jpg);">
+                                         style="background-image: url(assets/images/resources/services-one-img-2.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
                                         <h3 class="services-one__hover-title"><a href="visa-details.html">Business
@@ -294,7 +297,7 @@
                             <div class="services-one__single-inner">
                                 <div class="services-one__hover-content">
                                     <div class="services-one__hover-bg"
-                                        style="background-image: url(assets/images/resources/services-one-img-3.jpg);">
+                                         style="background-image: url(assets/images/resources/services-one-img-3.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
                                         <h3 class="services-one__hover-title"><a href="visa-details.html">Student
@@ -322,7 +325,7 @@
                             <div class="services-one__single-inner">
                                 <div class="services-one__hover-content">
                                     <div class="services-one__hover-bg"
-                                        style="background-image: url(assets/images/resources/services-one-img-4.jpg);">
+                                         style="background-image: url(assets/images/resources/services-one-img-4.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
                                         <h3 class="services-one__hover-title"><a href="visa-details.html">Residence
@@ -352,7 +355,7 @@
         <!--Video One Start-->
         <section class="video-one">
             <div class="video-one__bg" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
+                 style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-6">
@@ -537,7 +540,7 @@
                                                 Test</a></h3>
                                         <div class="coaching-one__arrow-box">
                                             <a href="/coaching/1" class="coaching-one__arrow"><i
-                                                    class="icon-up-right"></i></a>
+                                                        class="icon-up-right"></i></a>
                                         </div>
                                     </div>
                                     <div class="coaching-one__hover-content">
@@ -551,7 +554,7 @@
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
                                             <a href="/coaching/1" class="coaching-one__hover-arrow"><i
-                                                    class="icon-down"></i></a>
+                                                        class="icon-down"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -573,7 +576,7 @@
                                                 Coaching</a></h3>
                                         <div class="coaching-one__arrow-box">
                                             <a href="/coaching/1" class="coaching-one__arrow"><i
-                                                    class="icon-up-right"></i></a>
+                                                        class="icon-up-right"></i></a>
                                         </div>
                                     </div>
                                     <div class="coaching-one__hover-content">
@@ -587,7 +590,7 @@
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
                                             <a href="/coaching/1" class="coaching-one__hover-arrow"><i
-                                                    class="icon-down"></i></a>
+                                                        class="icon-down"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -609,7 +612,7 @@
                                                 Coaching</a></h3>
                                         <div class="coaching-one__arrow-box">
                                             <a href="/coaching/1" class="coaching-one__arrow"><i
-                                                    class="icon-up-right"></i></a>
+                                                        class="icon-up-right"></i></a>
                                         </div>
                                     </div>
                                     <div class="coaching-one__hover-content">
@@ -623,7 +626,7 @@
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
                                             <a href="/coaching/1" class="coaching-one__hover-arrow"><i
-                                                    class="icon-down"></i></a>
+                                                        class="icon-down"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -645,7 +648,7 @@
                                         </h3>
                                         <div class="coaching-one__arrow-box">
                                             <a href="/coaching/1" class="coaching-one__arrow"><i
-                                                    class="icon-up-right"></i></a>
+                                                        class="icon-up-right"></i></a>
                                         </div>
                                     </div>
                                     <div class="coaching-one__hover-content">
@@ -659,7 +662,7 @@
                                             for study, migration or work</p>
                                         <div class="coaching-one__hover-arrow-box">
                                             <a href="/coaching/1" class="coaching-one__hover-arrow"><i
-                                                    class="icon-down"></i></a>
+                                                        class="icon-down"></i></a>
                                         </div>
                                     </div>
                                 </div>
@@ -677,9 +680,9 @@
             <div class="container">
                 <div class="testimonial-one__wrap">
                     <div class="testimonial-one__bg"
-                        style="background-image: url(assets/images/backgrounds/testimonial-one-bg.png);"></div>
+                         style="background-image: url(assets/images/backgrounds/testimonial-one-bg.png);"></div>
                     <div class="testimonial-one__carousel owl-carousel owl-theme thm-owl__carousel"
-                        data-owl-options='{
+                         data-owl-options='{
                         "loop": true,
                         "autoplay": true,
                         "margin": 30,
@@ -716,7 +719,7 @@
                                     <div class="testimonial-one__icon-and-ratting">
                                         <div class="testimonial-one__icon">
                                             <img src="/assets/images/icon/testimonial-one-chatting-icon.png"
-                                                alt="">
+                                                 alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <i class="fa fa-star"></i>
@@ -753,7 +756,7 @@
                                     <div class="testimonial-one__icon-and-ratting">
                                         <div class="testimonial-one__icon">
                                             <img src="/assets/images/icon/testimonial-one-chatting-icon.png"
-                                                alt="">
+                                                 alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <i class="fa fa-star"></i>
@@ -790,7 +793,7 @@
                                     <div class="testimonial-one__icon-and-ratting">
                                         <div class="testimonial-one__icon">
                                             <img src="/assets/images/icon/testimonial-one-chatting-icon.png"
-                                                alt="">
+                                                 alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <i class="fa fa-star"></i>
@@ -827,7 +830,7 @@
                                     <div class="testimonial-one__icon-and-ratting">
                                         <div class="testimonial-one__icon">
                                             <img src="/assets/images/icon/testimonial-one-chatting-icon.png"
-                                                alt="">
+                                                 alt="">
                                         </div>
                                         <div class="testimonial-one__ratting">
                                             <i class="fa fa-star"></i>
@@ -859,7 +862,8 @@
 
         <!--Countries One Start-->
         <section class="countries-one">
-            <div class="countries-one__bg" style="background-image: url(assets/images/backgrounds/countries-one-bg.png);">
+            <div class="countries-one__bg"
+                 style="background-image: url(assets/images/backgrounds/countries-one-bg.png);">
             </div>
             <div class="container">
                 <div class="section-title text-center">
@@ -872,114 +876,27 @@
                     </h2>
                 </div>
                 <div class="row">
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-1.jpg" alt="">
+                    @foreach($countries as $country)
+                        <!--Countries One Single Start-->
+                        <div class="col-xl-2 col-lg-4 col-md-6">
+                            <div class="countries-one__single">
+                                <div class="countries-one__img-box">
+                                    <div class="countries-one__img">
+                                        <img src="{{$country->flag}}" class="object-fit-square" alt="">
+                                    </div>
+                                </div>
+                                <h3 class="countries-one__title"><a href="countries-details.html">{{$country->name}}</a>
+                                </h3>
+                                <p class="countries-one__text">{{$country->slogan}}</p>
+                                <div class="countries-one__arrow-box">
+                                    <a href="countries-details.html" class="countries-one__arrow"><i
+                                                class="icon-right-arrow"></i></a>
                                 </div>
                             </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">Germany</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
                         </div>
-                    </div>
-                    <!--Countries One Single End-->
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-2.jpg" alt="">
-                                </div>
-                            </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">London</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Countries One Single End-->
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-3.jpg" alt="">
-                                </div>
-                            </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">Italy</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Countries One Single End-->
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-4.jpg" alt="">
-                                </div>
-                            </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">Australia</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Countries One Single End-->
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-5.jpg" alt="">
-                                </div>
-                            </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">Canada</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Countries One Single End-->
-                    <!--Countries One Single Start-->
-                    <div class="col-xl-2 col-lg-4 col-md-6">
-                        <div class="countries-one__single">
-                            <div class="countries-one__img-box">
-                                <div class="countries-one__img">
-                                    <img src="/assets/images/countries/countries-1-6.jpg" alt="">
-                                </div>
-                            </div>
-                            <h3 class="countries-one__title"><a href="countries-details.html">Turkey</a></h3>
-                            <p class="countries-one__text">Nulla ut elemen
-                                tum sapien</p>
-                            <div class="countries-one__arrow-box">
-                                <a href="countries-details.html" class="countries-one__arrow"><i
-                                        class="icon-right-arrow"></i></a>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Countries One Single End-->
+                        <!--Countries One Single End-->
+                    @endforeach
+
                 </div>
             </div>
         </section>
@@ -1020,7 +937,7 @@
                                 <h3 class="team-one__title"><a href="team-details.html">Mike Hardson</a></h3>
                                 <div class="team-one__arrow-box">
                                     <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
+                                                class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1048,7 +965,7 @@
                                 <h3 class="team-one__title"><a href="team-details.html">Jessica Brown</a></h3>
                                 <div class="team-one__arrow-box">
                                     <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
+                                                class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1076,7 +993,7 @@
                                 <h3 class="team-one__title"><a href="team-details.html">Kevin Martin</a></h3>
                                 <div class="team-one__arrow-box">
                                     <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
+                                                class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1104,7 +1021,7 @@
                                 <h3 class="team-one__title"><a href="team-details.html">Christine Eve</a></h3>
                                 <div class="team-one__arrow-box">
                                     <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
+                                                class="fa fa-angle-right"></i></a>
                                 </div>
                             </div>
                         </div>
@@ -1122,9 +1039,9 @@
                     <div class="col-xl-6 col-lg-6">
                         <div class="contact-one__left">
                             <div class="contact-one__bg"
-                                style="background-image: url(assets/images/backgrounds/contact-one-bg.jpg);"></div>
+                                 style="background-image: url(assets/images/backgrounds/contact-one-bg.jpg);"></div>
                             <div class="contact-one__shape-1"
-                                style="background-image: url(assets/images/shapes/contact-one-shape-1.png);"></div>
+                                 style="background-image: url(assets/images/shapes/contact-one-shape-1.png);"></div>
                             <div class="section-title text-left">
                                 <div class="section-title__tagline-box">
                                     <span class="section-title__tagline">Contact us</span>
@@ -1134,7 +1051,7 @@
                             </div>
                             <div class="contact-one__form-box">
                                 <form action="assets/inc/sendemail.php" class="contact-one__form contact-form-validated"
-                                    novalidate="novalidate">
+                                      novalidate="novalidate">
                                     <div class="row">
                                         <div class="col-xl-6 col-lg-6">
                                             <div class="contact-one__form-input-box">
@@ -1169,7 +1086,8 @@
                                             </div>
                                             <div class="contact-one__formbtn-box">
                                                 <button type="submit" class="thm-btn contact-one__form-btn">Send a
-                                                    Message</button>
+                                                    Message
+                                                </button>
                                             </div>
                                         </div>
                                     </div>
@@ -1182,8 +1100,8 @@
                         <div class="contact-one__right">
                             <div class="contact-one__google-map-box">
                                 <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
-                                    class="google-map__one" allowfullscreen></iframe>
+                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                                        class="google-map__one" allowfullscreen></iframe>
                             </div>
                             <div class="contact-one__address-box">
                                 <div class="contact-one__address-top">
@@ -1217,7 +1135,7 @@
                                                             </div>
                                                             <div class="text">
                                                                 <p><a
-                                                                        href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                                                            href="mailto:needhelp@company.com">needhelp@company.com</a>
                                                                 </p>
                                                             </div>
                                                         </li>
@@ -1254,7 +1172,7 @@
                                                             </div>
                                                             <div class="text">
                                                                 <p><a
-                                                                        href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                                                            href="mailto:needhelp@company.com">needhelp@company.com</a>
                                                                 </p>
                                                             </div>
                                                         </li>
@@ -1291,7 +1209,7 @@
                                                             </div>
                                                             <div class="text">
                                                                 <p><a
-                                                                        href="mailto:needhelp@company.com">needhelp@company.com</a>
+                                                                            href="mailto:needhelp@company.com">needhelp@company.com</a>
                                                                 </p>
                                                             </div>
                                                         </li>
@@ -1322,7 +1240,7 @@
             <div class="container">
                 <div class="brand-one__inner">
                     <div class="thm-swiper__slider swiper-container"
-                        data-swiper-options='{"spaceBetween": 100,
+                         data-swiper-options='{"spaceBetween": 100,
                     "slidesPerView": 5,
                     "loop": true,
                     "navigation": {
@@ -1415,7 +1333,7 @@
                 <div class="row">
                     <!--Blog One Single Start-->
                     @foreach ($blogs as $blog)
-                        <x-blogcard :blog="$blog" />
+                        <x-blogcard :blog="$blog"/>
                     @endforeach
                 </div>
             </div>
@@ -1423,7 +1341,7 @@
         <!--Blog One End-->
 
         <!--Site Footer Start-->
-        <x-footer />
+        <x-footer/>
         <!--Site Footer End-->
 
 
@@ -1438,7 +1356,7 @@
 
             <div class="logo-box">
                 <a href="index.html" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
-                        width="135" alt="" /></a>
+                                                                  width="135" alt=""/></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>
@@ -1462,7 +1380,6 @@
                     <a href="#" class="fab fa-instagram"></a>
                 </div><!-- /.mobile-nav__social -->
             </div><!-- /.mobile-nav__top -->
-
 
 
         </div>

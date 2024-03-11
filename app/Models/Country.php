@@ -18,6 +18,6 @@ class Country extends Model
         'currency',
         'native',
         'flag',
-        'slogin'
+        'slogan'
     ];
 }

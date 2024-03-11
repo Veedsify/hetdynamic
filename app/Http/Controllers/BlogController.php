@@ -47,6 +47,6 @@ class BlogController extends Controller
     public function articleComment()
     {
 
-        return view("admin.all-article");
+        return view("admin.comment");
     }
 }

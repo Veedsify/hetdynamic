@@ -13,7 +13,7 @@ class BlogController extends Controller
         $query = $request->get('page');
         $blogs = Blog::orderByDesc("created_at")->paginate(9);
         return view("pages.blog", [
-            "blogs" => $blogs, 
+            "blogs" => $blogs,
             'query' => $query
         ]);
     }
@@ -26,8 +26,8 @@ class BlogController extends Controller
         $paginateComments = $comments->forPage(1, 2);
         $relatedArticles = Blog::where("category", $article->category)->where("id", "!=", $article->id)->limit(3)->get();
         return view("pages.blog-details", [
-            "article" => $article, 
-            "comments" => $paginateComments, 
+            "article" => $article,
+            "comments" => $paginateComments,
             "relatedArticles" => $relatedArticles
         ]);
     }
@@ -35,5 +35,12 @@ class BlogController extends Controller
     public function createBlog()
     {
         return view("admin.new-article");
+    }
+    public function articleBlog()
+    {
+        $blogs = Blog::paginate(5);
+        return view("admin.all-article", [
+            "articles" => $blogs
+        ]);
     }
 }

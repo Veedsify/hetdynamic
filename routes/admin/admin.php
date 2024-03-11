@@ -8,7 +8,7 @@ use App\Http\Controllers\BlogController;
 
 // Admin Route Web Endpoints
 
-Route::middleware(['auth', 'admin'])->group(function () {
+// Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
     // Contact
@@ -41,5 +41,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get("/edit/{blogId}", [BlogController::class, "editBlog"])->name("admin.blog.edit");
         Route::get("/delete/{blogId}", [BlogController::class, "deleteBlog"])->name("admin.blog.delete");
         Route::get("/view/{blogId}", [BlogController::class, "viewBlog"])->name("admin.blog.view");
+        Route::get("/article", [BlogController::class, "articleBlog"])->name("admin.blog.article");
     });
-});
+// });

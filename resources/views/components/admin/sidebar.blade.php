@@ -34,7 +34,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-kanban.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.blog.article') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-books"></i>
                 </span>

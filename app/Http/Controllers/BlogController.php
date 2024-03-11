@@ -43,4 +43,9 @@ class BlogController extends Controller
             "articles" => $blogs
         ]);
     }
+    public function articleComment()
+    {
+       
+        return view("admin.all-article");
+    }
 }

@@ -42,5 +42,6 @@ use App\Http\Controllers\BlogController;
         Route::get("/delete/{blogId}", [BlogController::class, "deleteBlog"])->name("admin.blog.delete");
         Route::get("/view/{blogId}", [BlogController::class, "viewBlog"])->name("admin.blog.view");
         Route::get("/article", [BlogController::class, "articleBlog"])->name("admin.blog.article");
+        Route::get("/comment", [BlogController::class, "articleComment"])->name("admin.blog.comment");
     });
 // });

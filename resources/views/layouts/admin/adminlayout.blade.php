@@ -7,6 +7,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    {{--  FONTS  --}}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
     {{-- CSRF TOKEN --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
@@ -26,30 +33,31 @@
 </head>
 
 <body>
-    @yield('content')
+@yield('content')
 
-    {{-- OFF CANVAS CUSTOMIZER --}}
-    <x-admin.customizer />
-    {{-- CUSTOMIZER ENDS --}}
+{{-- OFF CANVAS CUSTOMIZER --}}
+<x-admin.customizer/>
+{{-- CUSTOMIZER ENDS --}}
 
-    {{-- Searchbar --}}
-    <x-admin.searchbar />
-    {{-- Searchbar ENDS --}}
+{{-- Searchbar --}}
+<x-admin.searchbar/>
+{{-- Searchbar ENDS --}}
 
-    <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
-    <!-- Import Js Files -->
-    <script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/theme/app.init.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/theme/theme.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/theme/app.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/theme/sidebarmenu.js') }}"></script>
+<script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
+<!-- Import Js Files -->
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+<script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+<script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
+<script src="{{ asset('admin-assets/js/theme/app.init.js') }}"></script>
+<script src="{{ asset('admin-assets/js/theme/theme.js') }}"></script>
+<script src="{{ asset('admin-assets/js/theme/app.min.js') }}"></script>
+<script src="{{ asset('admin-assets/js/theme/sidebarmenu.js') }}"></script>
 
-    <!-- solar icons -->
-    <script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script>
-    <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
+<!-- solar icons -->
+<script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script>
+<script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+<script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+<script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
 </body>
 
 </html>

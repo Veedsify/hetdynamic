@@ -35,9 +35,9 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
-       Mail::to(GlobalSetting::first()
+        Mail::to(GlobalSetting::first()
             ->admin_email)
-            ->cc(GlobalSetting::first()->support_mail_address)
+            ->bcc(GlobalSetting::first()->support_mail_address)
             ->send(new ContactMail($contact));
 
         return redirect()->back()->with('message', 'Your message has been sent successfully!');

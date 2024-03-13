@@ -23,7 +23,7 @@ class GlobalSettingFactory extends Factory
             'support_mail_address' => 'dikewisdom100@gmail.com',
             'admin_phone' => '08022334555',
             'admin_address' => 'No 1, Dynamic Street, Lagos',
-            'site_logo' => asset('images/logo.png'),
+            'site_logo' => asset('/assets/custom/resources/hetlogo.png'),
             'site_favicon' => asset('images/favicon.png'),
             'site_name' => config('app.name'),
             'site_description' => 'This is a dynamic website',

@@ -31,8 +31,8 @@ class AuthController extends Controller
 
         $findUser = User::where("email", $request->input("email"));
 
-        if ($findUser) {
-            return redirect()->back()->with("error", "Sorry this user already exists");
+        if ($findUser->exists()) {
+            return redirect(route('register'))->with('error', 'User already exists');
         }
 
         $user = User::create([
@@ -40,7 +40,9 @@ class AuthController extends Controller
             'email' => $request->email,
             'user_id' => 'user_' . Str::random(10),
             'password' => Hash::make($request->password),
-            'email_verification_token' => Str::random(64)
+            'email_verification_token' => Str::random(64),
+            'email_verified' => false,
+            'avatar' => asset('assets/images/profile.webp')
         ]);
 
         $token = $user->email_verification_token;

@@ -1,10 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailController;
+use App\Http\Controllers\StudyController;
+use App\Http\Controllers\CountryController;
+use App\Http\Controllers\ResidencyController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\AdminPagesController;
-use App\Http\Controllers\BlogController;
 
 // Admin Route Web Endpoints
 
@@ -44,5 +47,17 @@ use App\Http\Controllers\BlogController;
         Route::get("/article", [BlogController::class, "articleBlog"])->name("admin.blog.article");
         Route::get("/comment", [BlogController::class, "articleComment"])->name("admin.blog.comment");
         Route::delete("/comment/{commentId}", [BlogController::class, "deleteComment"])->name("admin.blog.comment.delete");
+    });
+
+    Route::prefix("/admin/study")->group(function () {
+        Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");
+    });
+
+
+    Route::prefix("/admin/country")->group(function () {
+        Route::get("/citizenship", [CountryController::class, "citizenship"])->name("admin.country.citizenship");
+    });
+    Route::prefix("/admin/residency")->group(function () {
+        Route::get("/all-residency", [ResidencyController::class, "allResidency"])->name("admin.residency.allResidency");
     });
 // });

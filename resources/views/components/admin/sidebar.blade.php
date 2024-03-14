@@ -54,7 +54,7 @@
             <span class="hide-menu">Study</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="" aria-expanded="false">
+            <a class="sidebar-link" href="{{route("admin.study.caseStudy")}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-vocabulary"></i>
                 </span>
@@ -74,7 +74,7 @@
             <span class="hide-menu">Citizenship</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-email.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route("admin.country.citizenship")}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-building-estate"></i>
                 </span>
@@ -94,7 +94,7 @@
             <span class="hide-menu">Residency</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-contact.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route("admin.residency.allResidency")}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-home-eco"></i>
                 </span>

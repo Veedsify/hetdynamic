@@ -7,4 +7,8 @@ use Illuminate\Http\Request;
 class StudyController extends Controller
 {
     //
+    public function caseStudy()
+    {
+        return view("admin.all-cases");
+    }
 }

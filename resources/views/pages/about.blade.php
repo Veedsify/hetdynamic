@@ -24,7 +24,7 @@
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>About</h2>
+                    <h2>About Us</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><span>-</span></li>
@@ -293,6 +293,43 @@
                 </div>
             </div>
         </section>
+
+        {{-- Mission And Vision  --}}
+
+        <section class="testimonial-two about-page-testimonial">
+            <div class="container">
+        <div class="container mt-5">
+            <h1 class="text-center mb-5 section-title__title">About Us</h1>
+            <div class="row mb-6">
+                <div class="col-md-6">
+                    <h3>Our Mission</h3>
+                    <p class="text-primary ">Why we do what we do</p>
+                    <p>
+                        At HetDynamic, our mission is to empower individuals and families worldwide to achieve their dreams
+                        of global mobility and opportunity through expert immigration solutions.
+
+                        With a focus on Grenada Citizenship by Investment and Canadian Permanent Residency by Investment, we
+                        strive to provide exceptional and personalized services, guiding our clients towards a brighter
+                        future while maintaining the highest standards of integrity, transparency, and professionalism.
+                    </p>
+                </div>
+                <div class="col-md-6">
+                    <h3>Our Vision</h3>
+                    <p class="text-primary">For the future</p>
+                    <p>
+                        Our vision is to become a globally recognized leader in immigration consulting, setting new
+                        benchmarks for excellence in client satisfaction and success.
+
+                        We aspire to be the go-to destination for individuals seeking seamless pathways to Grenada and
+                        Canada, fostering a diverse and inclusive community of globally mobile citizens who contribute to
+                        the development and prosperity of their chosen destinations.
+                    </p>
+                </div>
+            </div>
+        </div>
+            </div>
+        </section>
+
         <!--Testimonial Two End-->
 
         <!--FAQ One Start -->

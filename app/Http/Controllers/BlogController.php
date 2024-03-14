@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blog;
+use App\Models\BlogComment;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -39,6 +40,7 @@ class BlogController extends Controller
     {
         return view("admin.new-article");
     }
+
     public function articleBlog()
     {
         $blogs = Blog::paginate(5);
@@ -46,9 +48,23 @@ class BlogController extends Controller
             "articles" => $blogs
         ]);
     }
+
     public function articleComment()
     {
+        $comments = BlogComment::all()->sortByDesc("created_at");
+        return view("admin.comment", [
+            "comments" => $comments
+        ]);
+    }
 
-        return view("admin.comment");
+    public function deleteComment($commentId)
+    {
+        try {
+            $comment = BlogComment::find($commentId);
+            $comment->delete();
+            return redirect()->back()->with("success", "Comment Deleted Successfully");
+        } catch (\Exception $e) {
+            return redirect()->back()->with("error", "An Error Occurred");
+        }
     }
 }

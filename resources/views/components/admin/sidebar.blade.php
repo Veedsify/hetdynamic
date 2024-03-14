@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-chat.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route("admin.blog.comment")}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-message-dots"></i>
                 </span>

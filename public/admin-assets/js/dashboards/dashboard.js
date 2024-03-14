@@ -515,4 +515,27 @@ $(function () {
     if (document.querySelector("#stats")) {
         new ApexCharts(document.querySelector("#stats"), stats).render();
     }
+
+
+    // MY CUSTOM CODE
+    const allDeleteForms = document.querySelectorAll('[data-delete_action="delete"]');
+
+    allDeleteForms.forEach(form => {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault()
+            swal({
+                icon: "warning",
+                title: "Are you sure?",
+                text: "Once deleted, you will not be able to recover this data!",
+                buttons: {
+                    cancel: "Cancel",
+                    confirm: "Yes"
+                }
+            }).then((result) => {
+                if (result) {
+                    e.target.submit()
+                }
+            })
+        })
+    })
 });

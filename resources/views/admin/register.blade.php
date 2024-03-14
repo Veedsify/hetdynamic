@@ -20,7 +20,7 @@
                     </div>
                     <div class="col-xl-5 col-xxl-4">
                         <div
-                                class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
+                            class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div class="auth-max-width col-sm-8 col-md-6 col-xl-7 px-4">
                                 <h2 class="mb-1 fs-7 fw-bolder">Welcome to {{ $pagedata->site_name }}</h2>
                                 <p class="mb-7">Get Started By Creating an Account</p>
@@ -37,7 +37,7 @@
                                         Up
                                         with</p>
                                     <span
-                                            class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
+                                        class="border-top w-100 position-absolute top-50 start-50 translate-middle"></span>
                                 </div>
                                 <form action="{{ route('register.new') }}" method="post">
                                     @csrf
@@ -45,31 +45,31 @@
                                         <label for="exampleInputEmail1" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="exampleInputtext" name="name"
                                                aria-describedby="textHelp">
-                                        <small class="text-danger">
-                                            @if(session()->has('name'))
-                                                {{ session('name') }}
-                                            @endif
-                                        </small>
+                                        @if($errors->has('name'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('name') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1" name="email"
                                                aria-describedby="emailHelp">
-                                        <small class="text-danger">
-                                            @if(session()->has('email'))
-                                                {{ session('email') }}
-                                            @endif
-                                        </small>
+                                        @if($errors->has('email'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('email') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
                                         <input type="password" class="form-control" name="password"
                                                id="exampleInputPassword1">
-                                        <small class="text-danger">
-                                            @if(session()->has('password'))
-                                                {{ session('password') }}
-                                            @endif
-                                        </small>
+                                        @if($errors->has('password'))
+                                            <small class="text-danger">
+                                                {{ $errors->first('password') }}
+                                            </small>
+                                        @endif
                                     </div>
                                     <button type="submit"
                                             class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign Up

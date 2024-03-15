@@ -767,7 +767,7 @@
                             </a>
                         </li>
                         <li class="nav-item d-none d-xl-block">
-                            <a href="index.html" class="text-nowrap nav-link">
+                            <a href="/" class="text-nowrap nav-link">
                                 <img src="{{ asset('admin-assets/images/logos/dark-logo.svg') }}" class="dark-logo"
                                      width="180" alt="">
                                 <img src="{{ asset('admin-assets/images/logos/light-logo.svg') }}" class="light-logo"
@@ -998,7 +998,7 @@
                         </li>
                     </ul>
                     <div class="d-block d-xl-none">
-                        <a href="index.html" class="text-nowrap nav-link">
+                        <a href="/" class="text-nowrap nav-link">
                             <img src="{{ asset('admin-assets/images/logos/dark-logo.svg') }}" width="180"
                                  alt="">
                         </a>

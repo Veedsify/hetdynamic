@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
 
 <head>
@@ -42,7 +42,7 @@
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->
            <div class="brand-logo d-flex align-items-center justify-content-between">
-    <a href="index.html" class="text-nowrap logo-img">
+    <a href="/" class="text-nowrap logo-img">
       <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150" class="dark-logo" alt="Logo-Dark">
       <img src="{{asset("assets/custom/resources/hetlogo.png")}}" style="filter:invert(1);" width="150"  class="light-logo" alt="Logo-light">
     </a>
@@ -328,7 +328,7 @@
                         </ul>
 
                         <div class="d-block d-lg-none">
-                            <a href="index.html" class="text-nowrap logo-img">
+                            <a href="/" class="text-nowrap logo-img">
                                 <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark">
                                 <img src="../assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light">
                             </a>
@@ -858,7 +858,7 @@
                                 </a>
                             </li>
                             <li class="nav-item d-none d-xl-block">
-                                <a href="index.html" class="text-nowrap nav-link">
+                                <a href="/" class="text-nowrap nav-link">
                                     <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" width="180"
                                         alt="">
                                     <img src="../assets/images/logos/light-logo.svg" class="light-logo"
@@ -1098,7 +1098,7 @@
                             </li>
                         </ul>
                         <div class="d-block d-xl-none">
-                            <a href="index.html" class="text-nowrap nav-link">
+                            <a href="/" class="text-nowrap nav-link">
                                 <img src="../assets/images/logos/dark-logo.svg" width="180" alt="">
                             </a>
                         </div>
@@ -1436,7 +1436,7 @@
                                 </a>
                                 <ul aria-expanded="false" class="collapse first-level">
                                     <li class="sidebar-item">
-                                        <a href="index.html" class="sidebar-link">
+                                        <a href="/" class="sidebar-link">
                                             <i class="ti ti-aperture"></i>
                                             <span class="hide-menu">Modern</span>
                                         </a>
@@ -1635,7 +1635,7 @@
                                         </a>
                                     </li>
                                     <li class="sidebar-item">
-                                        <a href="../landingpage/index.html" class="sidebar-link">
+                                        <a href="../landingpage//" class="sidebar-link">
                                             <i class="ti ti-app-window"></i>
                                             <span class="hide-menu">Landing Page</span>
                                         </a>
@@ -2069,7 +2069,7 @@
                                 </a>
                                 <ul aria-expanded="false" class="collapse first-level">
                                     <li class="sidebar-item">
-                                        <a href="../docs/index.html" class="sidebar-link">
+                                        <a href="../docs//" class="sidebar-link">
                                             <i class="ti ti-circle"></i>
                                             <span class="hide-menu">Documentation</span>
                                         </a>
@@ -2133,7 +2133,7 @@
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
                                                 <a class="text-muted text-decoration-none"
-                                                    href="index.html">Home</a>
+                                                    href="/">Home</a>
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">Product Detail</li>
                                         </ol>

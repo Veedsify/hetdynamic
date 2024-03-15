@@ -2,7 +2,7 @@
          <div class="blog-one__single">
              <div class="blog-one__img-box">
                  <div class="blog-one__img">
-                     <img src="{{ asset($blog->image) }}" alt="">
+                     <img style="aspect-ratio: 16/12; object-fit: cover;" src="{{ asset($blog->image) }}" alt="">
                      <a href="{{ route('blog.details', $blog->slug) }}">
                          <span class="blog-one__plus"></span>
                      </a>
@@ -30,8 +30,8 @@
                  <h3 class="blog-one__title"><a href="{{ route('blog.details', $blog->slug) }}">{{$blog->title}}</a></h3>
                  <div class="blog-one__comment-and-arrow">
                      <div class="blog-one__comment">
-                         <p><span class="fas fa-comments"></span> 
-                            {{ \App\Models\BlogComment::where('blog_id', $blog->id)->count() }} 
+                         <p><span class="fas fa-comments"></span>
+                            {{ \App\Models\BlogComment::where('blog_id', $blog->id)->count() }}
                             {{ \App\Models\BlogComment::where('blog_id', $blog->id)->count() > 1 ? 'Comments' : 'Comment' }}
                         </p>
                      </div>

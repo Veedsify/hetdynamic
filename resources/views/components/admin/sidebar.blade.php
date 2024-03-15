@@ -190,20 +190,94 @@
                 <span class="hide-menu">Home Page</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
-                <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Posts</span>
-                    </a>
-                </li>
+                
+               
                 <li class="sidebar-item">
                     <a href="blog-detail.html" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Details</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Banner</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Immigration</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Consulting</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Visa Categories</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Our Support</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Coaching and Traning</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Testimonials</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Countries List</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Our Consultants</span>
+                    </a>
+                </li>
+                 <li class="sidebar-item">
+                    <a href="blog-posts.html" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Contact</span>
                     </a>
                 </li>
             </ul>

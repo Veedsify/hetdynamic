@@ -40,6 +40,7 @@ use App\Http\Controllers\Admin\AdminPagesController;
 
     Route::prefix("/admin/blog")->group(function () {
         Route::get("/", [BlogController::class, "blog"])->name("admin.blog");
+        Route::post("/create/new", [BlogController::class, "newarticle"])->name("blog.new.article");
         Route::get("/create", [BlogController::class, "createBlog"])->name("admin.blog.create");
         Route::get("/edit/{blogId}", [BlogController::class, "editBlog"])->name("admin.blog.edit");
         Route::get("/delete/{blogId}", [BlogController::class, "deleteBlog"])->name("admin.blog.delete");

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
 
 <head>
@@ -46,7 +46,7 @@
       <div class="position-relative z-index-5">
         <div class="row">
           <div class="col-xl-7 col-xxl-8">
-            <a href="index.html" class="text-nowrap logo-img d-block px-4 py-9 w-100">
+            <a href="/" class="text-nowrap logo-img d-block px-4 py-9 w-100">
               <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark">
               <img src="../assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light">
             </a>
@@ -97,7 +97,7 @@
                     </div>
                     <a class="text-primary fw-medium fs-3" href="authentication-forgot-password.html">Forgot Password ?</a>
                   </div>
-                  <a href="index.html" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
+                  <a href="/" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-medium">New to Modernize?</p>
                     <a class="text-primary fw-medium ms-2" href="authentication-register.html">Create an

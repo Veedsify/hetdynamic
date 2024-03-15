@@ -33,31 +33,31 @@
 </head>
 
 <body>
-@yield('content')
+    @yield('content')
 
-{{-- OFF CANVAS CUSTOMIZER --}}
-<x-admin.customizer/>
-{{-- CUSTOMIZER ENDS --}}
+    {{-- OFF CANVAS CUSTOMIZER --}}
+    <x-admin.customizer />
+    {{-- CUSTOMIZER ENDS --}}
 
-{{-- Searchbar --}}
-<x-admin.searchbar/>
-{{-- Searchbar ENDS --}}
+    {{-- Searchbar --}}
+    <x-admin.searchbar />
+    {{-- Searchbar ENDS --}}
 
-<script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
-<!-- Import Js Files -->
-<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-<script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
-<script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
-<script src="{{ asset('admin-assets/js/theme/app.init.js') }}"></script>
-<script src="{{ asset('admin-assets/js/theme/theme.js') }}"></script>
-<script src="{{ asset('admin-assets/js/theme/app.min.js') }}"></script>
-<script src="{{ asset('admin-assets/js/theme/sidebarmenu.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
+    <!-- Import Js Files -->
+    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    <script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/theme/app.init.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/theme/theme.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/theme/app.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/theme/sidebarmenu.js') }}"></script>
 
-<!-- solar icons -->
-<script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script>
-<script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
-<script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-<script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
+    <!-- solar icons -->
+    {{-- <script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script> --}}
+    <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
 </body>
 
 </html>

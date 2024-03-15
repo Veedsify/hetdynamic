@@ -45,7 +45,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="index.html"><img src="{{ asset('assets/custom/resources/hetlogo.png') }}"
+                            <a href="/"><img src="{{ asset('assets/custom/resources/hetlogo.png') }}"
                                     width="100" alt=""></a>
                         </div>
                         <p class="footer-widget__about-text">Aliqua id fugiat nostrud irure ex duis ea quis id

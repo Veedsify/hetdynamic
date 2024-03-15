@@ -1,4 +1,4 @@
-﻿@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout')
 @section('content')
     <div class="toast toast-onload align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
          aria-atomic="true">
@@ -23,7 +23,7 @@
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->
                 <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="index.html" class="text-nowrap logo-img">
+                    <a href="/" class="text-nowrap logo-img">
                         <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
                              width="150" class="dark-logo" alt="Logo-Dark">
                         <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
@@ -77,7 +77,7 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a class="text-muted text-decoration-none" href="index.html">Home</a>
+                                                <a class="text-muted text-decoration-none" href="/">Home</a>
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">Contact</li>
                                         </ol>

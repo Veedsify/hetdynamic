@@ -10,7 +10,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav/>
+        <x-nav />
         {{-- NAVIGATION ENDS HERE --}}
 
         <div class="stricky-header stricked-menu main-menu">
@@ -23,9 +23,9 @@
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>{{ $article->title }}</h2>
+                    <h2>{{ ucfirst($article->title) }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
                         <li class="active">{{ $article->title }}</li>
                     </ul>
@@ -42,13 +42,13 @@
                         <div class="blog-details__left">
                             <div class="blog-details__img-box">
                                 <img src="{{ $article->image }}" alt=""
-                                     style="aspect-ratio:16/9; object-fit:cover;">
+                                    style="aspect-ratio:16/9; object-fit:cover;">
                                 <div class="blog-details__date">
                                     <p>20 <span>Feb</span></p>
                                 </div>
                             </div>
                             <div class="blog-details__content">
-                                <ul class="blog-details__meta list-unstyled">
+                                <ul class="blog-details__meta list-unstyled mb-5">
                                     <li>
                                         <a href="blog-details.html"><i class="fas fa-user-circle"></i>by
                                             {{ \App\Models\User::where('id', $article->user_id)->first()->fullname }}
@@ -66,13 +66,23 @@
                                         </a>
                                     </li>
                                 </ul>
-                                <h3 class="blog-details__title">{{ $article->title }}</h3>
-                                <div class="blog-details__text-1">{{ $article->content }}</div>
+                                {{--                                <h3 class="blog-details__title">{{ $article->title }}</h3> --}}
+                                {{-- <div class="blog-details__text-1">{!! $article->content_html !!}</div> --}}
+                                <div class="blog-details__text-1">
+                                    <div id="app2"></div>
+                                </div>
+
                             </div>
                             <div class="blog-details__bottom">
-                                <p class="blog-details__tags">
+                                <p class="blog-details__tags mb-4 gap-2">
                                     <span>Tags</span>
-                                    <a href="/tags/{{ $article->tags }}">{{ $article->tags }}</a>
+                                    @php
+                                        $tags = explode(',', $article->tags);
+                                    @endphp
+
+                                    @foreach ($tags as $tag)
+                                        <a class="d-inline-block m-1" href="/tags/">{{ trim($tag) }}</a>
+                                    @endforeach
                                 </p>
                                 <div class="blog-details__social-list">
                                     <a href="#"><i class="fab fa-twitter"></i></a>
@@ -117,8 +127,7 @@
                                 @foreach ($comments as $comment)
                                     <div class="comment-one__single">
                                         <div class="comment-one__image">
-                                            <img
-                                                src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
+                                            <img src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
                                                 class="object-fit-square" alt="" width="100">
                                         </div>
                                         <div class="comment-one__content">
@@ -127,9 +136,9 @@
                                         </div>
                                     </div>
                                 @endforeach
-                                @if(\App\Models\BlogComment::where('blog_id', $article->id)->count() > 3)
+                                @if (\App\Models\BlogComment::where('blog_id', $article->id)->count() > 3)
                                     <div class="mb-4">
-                                        <a href="/comments/{{$article->slug}}/all" class="text-primary fw-bold">View
+                                        <a href="/comments/{{ $article->slug }}/all" class="text-primary fw-bold">View
                                             All Comments</a>
                                     </div>
                                 @endif
@@ -137,7 +146,7 @@
                             <div class="comment-form">
                                 <h3 class="comment-form__title">Leave a Comment</h3>
                                 <form action="{{ route('comment.new', $article->slug) }}" method="post"
-                                      class="comment-one__form contact-form-validated" novalidate="novalidate">
+                                    class="comment-one__form contact-form-validated" novalidate="novalidate">
                                     @csrf
                                     <div class="row">
                                         <div class="col-xl-6">
@@ -200,8 +209,8 @@
                                 <div class="sidebar__category">
                                     <h3 class="sidebar__title">Categories</h3>
                                     <ul class="sidebar__category-list list-unstyled">
-                                        @foreach($categories as $category)
-                                            <li><a href="/categories/{{$category->slug}}">
+                                        @foreach ($categories as $category)
+                                            <li><a href="/categories/{{ $category->slug }}">
                                                     {{ $category->name }}
                                                     <span class="fas fa-caret-right"></span></a>
                                             </li>
@@ -212,7 +221,7 @@
                                     <h3 class="sidebar__title">Projects</h3>
                                     <div class="sidebar__project-box">
                                         <div class="sidebar__project-carousel owl-carousel owl-theme thm-owl__carousel"
-                                             data-owl-options='{
+                                            data-owl-options='{
                                             "loop": true,
                                             "autoplay": true,
                                             "margin": 30,
@@ -239,7 +248,7 @@
                                             <div class="item">
                                                 <div class="sidebar__project-single">
                                                     <div class="sidebar__project-bg"
-                                                         style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
+                                                        style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
                                                     </div>
                                                     <p>Traveling Visa</p>
                                                 </div>
@@ -247,7 +256,7 @@
                                             <div class="item">
                                                 <div class="sidebar__project-single">
                                                     <div class="sidebar__project-bg"
-                                                         style="background-image: url(assets/images/backgrounds/sidebar-project-bg-2.jpg);">
+                                                        style="background-image: url(assets/images/backgrounds/sidebar-project-bg-2.jpg);">
                                                     </div>
                                                     <p>Student Visa</p>
                                                 </div>
@@ -267,76 +276,76 @@
                                     <h3 class="sidebar__title">Comments</h3>
                                     <ul class="sidebar__comments-list list-unstyled">
 
-                                        @foreach($comments as $comment)
+                                        @foreach ($comments as $comment)
                                             <li>
                                                 <div class="sidebar__comments-icon">
                                                     <i class="fas fa-comment"></i>
                                                 </div>
                                                 <div class="sidebar__comments-text-box">
-                                                    <p>{{$comment->comment}}</p>
+                                                    <p>{{ $comment->comment }}</p>
                                                 </div>
                                             </li>
-                                            @if($loop->index > 3)
-                                                @break
-                                            @endif
-                                        @endforeach
-                                    </ul>
-                                </div>
+                                            @if ($loop->index > 3)
+                                            @break
+                                        @endif
+                                    @endforeach
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-        <!--Blog Details End-->
-
-        <!--Site Footer Start-->
-        <x-footer/>
-        <!--Site Footer End-->
-
-
-    </div><!-- /.page-wrapper -->
-
-
-    <div class="mobile-nav__wrapper">
-        <div class="mobile-nav__overlay mobile-nav__toggler"></div>
-        <!-- /.mobile-nav__overlay -->
-        <div class="mobile-nav__content">
-            <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
-
-            <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
-                                                                  width="135" alt=""/></a>
-            </div>
-            <!-- /.logo-box -->
-            <div class="mobile-nav__container"></div>
-            <!-- /.mobile-nav__container -->
-
-            <ul class="mobile-nav__contact list-unstyled">
-                <li>
-                    <i class="fa fa-envelope"></i>
-                    <a href="mailto:needhelp@packageName__.com">needhelp@HetDynamic.com</a>
-                </li>
-                <li>
-                    <i class="fa fa-phone-alt"></i>
-                    <a href="tel:666-888-0000">666 888 0000</a>
-                </li>
-            </ul><!-- /.mobile-nav__contact -->
-            <div class="mobile-nav__top">
-                <div class="mobile-nav__social">
-                    <a href="#" class="fab fa-twitter"></a>
-                    <a href="#" class="fab fa-facebook-square"></a>
-                    <a href="#" class="fab fa-pinterest-p"></a>
-                    <a href="#" class="fab fa-instagram"></a>
-                </div><!-- /.mobile-nav__social -->
-            </div><!-- /.mobile-nav__top -->
         </div>
-        <!-- /.mobile-nav__content -->
+    </section>
+    <!--Blog Details End-->
+
+    <!--Site Footer Start-->
+    <x-footer />
+    <!--Site Footer End-->
+
+
+</div><!-- /.page-wrapper -->
+
+
+<div class="mobile-nav__wrapper">
+    <div class="mobile-nav__overlay mobile-nav__toggler"></div>
+    <!-- /.mobile-nav__overlay -->
+    <div class="mobile-nav__content">
+        <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
+
+        <div class="logo-box">
+            <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                    alt="" /></a>
+        </div>
+        <!-- /.logo-box -->
+        <div class="mobile-nav__container"></div>
+        <!-- /.mobile-nav__container -->
+
+        <ul class="mobile-nav__contact list-unstyled">
+            <li>
+                <i class="fa fa-envelope"></i>
+                <a href="mailto:needhelp@packageName__.com">needhelp@HetDynamic.com</a>
+            </li>
+            <li>
+                <i class="fa fa-phone-alt"></i>
+                <a href="tel:666-888-0000">666 888 0000</a>
+            </li>
+        </ul><!-- /.mobile-nav__contact -->
+        <div class="mobile-nav__top">
+            <div class="mobile-nav__social">
+                <a href="#" class="fab fa-twitter"></a>
+                <a href="#" class="fab fa-facebook-square"></a>
+                <a href="#" class="fab fa-pinterest-p"></a>
+                <a href="#" class="fab fa-instagram"></a>
+            </div><!-- /.mobile-nav__social -->
+        </div><!-- /.mobile-nav__top -->
     </div>
-    <!-- /.mobile-nav__wrapper -->
+    <!-- /.mobile-nav__content -->
+</div>
+<!-- /.mobile-nav__wrapper -->
 
 
-    <!-- /.search-popup -->
+<!-- /.search-popup -->
 
-    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
+<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="icon-right-arrow"></i></a>
 @endsection

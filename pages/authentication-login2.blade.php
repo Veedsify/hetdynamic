@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
 
 <head>
@@ -48,7 +48,7 @@
           <div class="col-md-8 col-lg-6 col-xxl-3 auth-card">
             <div class="card mb-0">
               <div class="card-body">
-                <a href="index.html" class="text-nowrap logo-img text-center d-block mb-5 w-100">
+                <a href="/" class="text-nowrap logo-img text-center d-block mb-5 w-100">
                   <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark">
                   <img src="../assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light">
                 </a>
@@ -88,7 +88,7 @@
                     </div>
                     <a class="text-primary fw-medium" href="authentication-forgot-password.html">Forgot Password ?</a>
                   </div>
-                  <a href="index.html" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
+                  <a href="/" class="btn btn-primary w-100 py-8 mb-4 rounded-2">Sign In</a>
                   <div class="d-flex align-items-center justify-content-center">
                     <p class="fs-4 mb-0 fw-medium">New to Modernize?</p>
                     <a class="text-primary fw-medium ms-2" href="authentication-register.html">Create an account</a>

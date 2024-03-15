@@ -2,7 +2,7 @@ import "@blocknote/core/fonts/inter.css";
 import { BlockNoteView, useCreateBlockNote } from "@blocknote/react";
 import "@blocknote/react/style.css";
 
-const Editor = () => {
+const Editor = ({ set }) => {
     const editor = useCreateBlockNote({
         uploadFile: async (file) => {
             const formData = new FormData();
@@ -20,7 +20,17 @@ const Editor = () => {
             return data.url;
         },
     });
-    return <BlockNoteView editor={editor} className="editor_content"/>;
+    const editorChange = async () => {
+        set(editor.document);
+    };
+
+    return (
+        <BlockNoteView
+            onChange={editorChange}
+            editor={editor}
+            className="editor_content"
+        />
+    );
 };
 
 export default Editor;

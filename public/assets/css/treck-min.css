@@ -17477,3 +17477,18 @@ body.boxed-wrapper {
     height: 100%;
     aspect-ratio: 1/1;
 }
+
+.blog-details__text-1 img{
+    max-width: 100%;
+}
+.blog-details__text-1 p.bn-inline-content{
+    line-height: 2;
+}
+
+.blog-details__text-1 h1.bn-inline-content,
+.blog-details__text-1 h2.bn-inline-content,
+.blog-details__text-1 h3.bn-inline-content,
+.blog-details__text-1 h4.bn-inline-content,
+.blog-details__text-1 h5.bn-inline-content{
+    margin-bottom: 1rem;
+}

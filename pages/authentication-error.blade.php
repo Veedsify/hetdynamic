@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
 
 <head>
@@ -50,7 +50,7 @@
               <img src="../assets/images/backgrounds/errorimg.svg" alt="" class="img-fluid" width="500">
               <h1 class="fw-semibold mb-7 fs-9">Opps!!!</h1>
               <h4 class="fw-semibold mb-7">This page you are looking for could not be found.</h4>
-              <a class="btn btn-primary" href="index.html" role="button">Go Back to Home</a>
+              <a class="btn btn-primary" href="/" role="button">Go Back to Home</a>
             </div>
           </div>
         </div>

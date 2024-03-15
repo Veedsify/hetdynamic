@@ -49,6 +49,9 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/treck-min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/treck-responsive.css') }}" />
+    <link rel="stylesheet" href="{{ asset('custom/block.css') }}" />
+    @viteReactRefresh
+    @vite('resources/js/app2.jsx')
 </head>
 
 <body>

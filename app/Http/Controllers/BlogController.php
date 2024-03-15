@@ -6,6 +6,8 @@ use App\Models\Blog;
 use App\Models\BlogComment;
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Str;
 
 class BlogController extends Controller
 {
@@ -23,6 +25,9 @@ class BlogController extends Controller
     public function showBlogPagesDetails($postId)
     {
         $article = Blog::where("slug", $postId)->first();
+        if(!$article){
+            return abort(404, "Article Not Found");
+        }
         $comments = $article->comments;
         $comments = $comments->sortByDesc("created_at");
         $paginateComments = $comments->forPage(1, 2);
@@ -43,7 +48,7 @@ class BlogController extends Controller
 
     public function articleBlog()
     {
-        $blogs = Blog::paginate(5);
+        $blogs = Blog::paginate(5)->sortByDesc("created_at");
         return view("admin.all-article", [
             "articles" => $blogs
         ]);
@@ -65,6 +70,47 @@ class BlogController extends Controller
             return redirect()->back()->with("success", "Comment Deleted Successfully");
         } catch (\Exception $e) {
             return redirect()->back()->with("error", "An Error Occurred");
+        }
+    }
+
+    public function newarticle(Request $request)
+    {
+        $request->validate([
+            "title" => "required",
+            "category" => "required",
+            "html" => "required",
+            "description" => "required",
+            "file" => "required|image|mimes:jpeg,png,jpg,gif,svg",
+        ]);
+
+        $file = $request->file("file");
+        $fileName = time() . "." . $file->getClientOriginalExtension();
+        $file->move(public_path("custom/blog"), $fileName);
+        $filepath = asset("custom/blog/" . $fileName);
+
+        $article = new Blog();
+        $article->title = $request->get("title");
+        $article->category = Category::where("name", $request->get("category"))->first()->id;
+        $article->description = $request->get("description");
+        $article->slug = Str::slug($request->get("title"));
+        $article->content = $request->html;
+        $article->content_html = $request->html;
+        $article->tags = $request->get("tags");
+        $article->user_id = 1;
+        $article->status = true;
+        $article->image = $filepath;
+        $article->meta_title = $request->get("title");
+        $article->meta_description = $request->get("description");
+        $article->meta_keywords = $request->get("tags");
+
+        if ($article->save()) {
+            Log::info("Article Created Successfully");
+            return response()->json([
+                "status" => "success",
+                "message" => "Article Created Successfully"
+            ]);
+        } else {
+            Log::error("An Error Occurred");
         }
     }
 }

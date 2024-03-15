@@ -24,7 +24,7 @@
                 <div class="page-header__inner">
                     <h2>Team Details</h2>
                     <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="index.html">Home</a></li>
+                        <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
                         <li class="active">Team Details</li>
                     </ul>
@@ -232,7 +232,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="index.html" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
+                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
                         width="135" alt="" /></a>
             </div>
             <!-- /.logo-box -->

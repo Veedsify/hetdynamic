@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr" data-bs-theme="light" data-color-theme="Blue_Theme" data-layout="vertical">
 
 <head>
@@ -48,7 +48,7 @@
           <div class="col-md-8 col-lg-6 col-xxl-3 auth-card">
             <div class="card mb-0">
               <div class="card-body pt-5">
-                <a href="index.html" class="text-nowrap logo-img text-center d-block mb-4 w-100">
+                <a href="/" class="text-nowrap logo-img text-center d-block mb-4 w-100">
                   <img src="../assets/images/logos/dark-logo.svg" class="dark-logo" alt="Logo-Dark">
                   <img src="../assets/images/logos/light-logo.svg" class="light-logo" alt="Logo-light">
                 </a>

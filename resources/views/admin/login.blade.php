@@ -1,4 +1,4 @@
-﻿@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout')
 @section('content')
     <div class="preloader">
         <img src="{{ $pagedata->site_logo }}" style="filter:invert(1);" width="150" alt="loader"
@@ -45,7 +45,7 @@
                                         <a class="text-success fw-medium fs-3"
                                             href="authentication-forgot-password.html">Forgot Password ?</a>
                                     </div>
-                                    <a href="index.html" class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign In</a>
+                                    <a href="/" class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign In</a>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-medium">New to {{ $pagedata->site_name }}?</p>
                                         <a class="text-success fw-medium ms-2" href="{{ route('register') }}">Create an

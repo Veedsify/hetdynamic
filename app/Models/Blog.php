@@ -17,6 +17,7 @@ class Blog extends Model
         'image',
         'category',
         'content',
+        'content_html',
         'tags',
         'user_id',
         'status',

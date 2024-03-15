@@ -1,9 +1,9 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import "@blocknote/core/fonts/inter.css";
 import { BlockNoteView, useCreateBlockNote } from "@blocknote/react";
 import "@blocknote/react/style.css";
 import { BrowserRouter } from "react-router-dom";
+import { createRoot } from "react-dom/client";
 
 const App2 = () => {
     const editor = useCreateBlockNote({

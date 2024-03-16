@@ -42,7 +42,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route("admin.blog.comment")}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.blog.comment') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-message-dots"></i>
                 </span>
@@ -54,7 +54,7 @@
             <span class="hide-menu">Study</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route("admin.study.caseStudy")}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.study.caseStudy') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-vocabulary"></i>
                 </span>
@@ -74,7 +74,7 @@
             <span class="hide-menu">Citizenship</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route("admin.country.citizenship")}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.country.citizenship') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-building-estate"></i>
                 </span>
@@ -94,7 +94,7 @@
             <span class="hide-menu">Residency</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{route("admin.residency.allResidency")}}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.residency.allResidency') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-home-eco"></i>
                 </span>
@@ -190,65 +190,51 @@
                 <span class="hide-menu">Home Page</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
-                
-               
+
+
                 <li class="sidebar-item">
-                    <a href="blog-detail.html" class="sidebar-link">
+                    <a href="{{ route('config.details') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
-                        <span class="hide-menu">Details</span>
+                        <span class="hide-menu">Global Details</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+                <li class="sidebar-item">
+                    <a href="{{ route('config.banner') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Banner</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Immigration</span>
-                    </a>
-                </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+        
+                <li class="sidebar-item">
+                    <a href="{{ route('config.consulting') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Consulting</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Visa Categories</span>
-                    </a>
-                </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+               
+                <li class="sidebar-item">
+                    <a href="{{ route('config.our.support') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Our Support</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+                <li class="sidebar-item">
+                    <a href="{{ route('config.coaching.training') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Coaching and Traning</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="blog-posts.html" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
@@ -256,7 +242,7 @@
                         <span class="hide-menu">Testimonials</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="blog-posts.html" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
@@ -264,15 +250,15 @@
                         <span class="hide-menu">Countries List</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+                <li class="sidebar-item">
+                    <a href="{{ route('config.our.consultants') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
                         <span class="hide-menu">Our Consultants</span>
                     </a>
                 </li>
-                 <li class="sidebar-item">
+                <li class="sidebar-item">
                     <a href="blog-posts.html" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>

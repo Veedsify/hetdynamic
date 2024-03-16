@@ -3,8 +3,8 @@
            <div class="main-menu__wrapper">
                <div class="main-menu__wrapper-inner">
                    <div class="main-menu__logo">
-                       <a href="/"><img width="137" style="filter: invert(1);"
-                               src="/assets/custom/resources/hetlogo.png" alt="logo"></a>
+                       <a href="/"><img width="137" 
+                               src="{{asset($pagedata->site_logo)}}" alt="logo"></a>
                    </div>
                    <div class="main-menu__search-box">
                        <a href="#"
@@ -96,7 +96,7 @@
                                                <i class="fas fa-envelope"></i>
                                            </div>
                                            <div class="text">
-                                               <p><a href="mailto:Info@company.com">{{$pagedata->site_email}}</a>
+                                               <p><a href="mailto:Info@company.com">{{ $pagedata->site_email }}</a>
                                                </p>
                                            </div>
                                        </li>
@@ -112,7 +112,15 @@
                                </div>
                                <div class="main-menu__top-right">
                                    <ul class="list-unstyled main-menu__top-menu">
-                                       <li><a href="{{ route('login') }}">Login</a></li>
+
+                                       @auth
+                                           <li><a href="{{ route('admin') }}">Dashboard</a></li>
+                                           <li><a href="{{ route('logout') }}">Logout</a></li>
+                                       @endauth
+                                       @guest
+                                           <li><a href="{{ route('login') }}">Login</a></li>
+                                       @endguest
+
                                        <li><a href="{{ route('faq') }}">Faq’s</a></li>
                                        <li><a href="{{ route('contact') }}">Contact</a></li>
                                    </ul>

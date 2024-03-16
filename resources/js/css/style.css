@@ -70,13 +70,13 @@ label {
     font-size: 1rem;
 }
 
-.editor_container{
+.editor_container {
     min-height: 80vh;
     padding-top: 1rem;
     margin-bottom: 1rem;
 }
 
-.title-article-form{
+.title-article-form {
     font-size: 2.5rem;
     font-weight: bold;
     margin-bottom: 2rem;
@@ -86,6 +86,11 @@ label {
     border: none;
     outline: none;
 }
-.title-article-form::placeholder{
+
+.title-article-form::placeholder {
     color: #f6f6f6;
+}
+
+.bn-editor {
+    padding-inline: 0 !important;
 }

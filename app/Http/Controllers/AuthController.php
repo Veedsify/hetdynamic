@@ -13,6 +13,9 @@ class AuthController extends Controller
     //
     public function showLoginPage()
     {
+        if (auth()->check()) {
+            return redirect(route('admin'));
+        }
         return view('admin.login');
     }
 
@@ -42,7 +45,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'email_verification_token' => Str::random(64),
             'email_verified' => false,
-            'avatar' => asset('assets/images/profile.webp')
+            'avatar' => "/custom/placeholder.jpg"
         ]);
 
         $token = $user->email_verification_token;
@@ -60,5 +63,57 @@ class AuthController extends Controller
         return View::make("admin.validateemail", [
             'email' => $user->email
         ]);
+    }
+
+    public function verifyEmail(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'token' => 'required'
+        ]);
+
+        $user = User::where("email", $request->email)->where("email_verification_token", $request->token)->first();
+
+        if (!$user) {
+            return redirect(route('home'));
+        }
+
+        $user->email_verified = true;
+        $user->email_verification_token = null;
+        $user->save();
+
+        return redirect(route('login'))->with('success', 'Email Verified');
+    }
+
+    public function login(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'password' => 'required'
+        ]);
+
+        $user = User::where("email", $request->email)->first();
+
+        if (!$user) {
+            return redirect(route('login'))->with('error', 'User not found');
+        }
+
+        if (!Hash::check($request->password, $user->password)) {
+            return redirect(route('login'))->with('error', 'Invalid Password');
+        }
+
+        if (!$user->email_verified_at) {
+            return redirect(route('login'))->with('error', 'Email not verified');
+        }
+
+        auth()->login($user, true);
+
+        return redirect(route('admin'));
+    }
+
+    public function logout()
+    {
+        auth()->logout();
+        return redirect(route('login'));
     }
 }

@@ -42,6 +42,8 @@ Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
 Route::get("/register", [AuthController::class, 'showRegisterPage'])->name("register");
 Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
 Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
+Route::post("/login/submit", [AuthController::class, 'login'])->name("login.submit");
+Route::get("/logout", [AuthController::class, 'logout'])->name("logout");
 
 Route::prefix('contact')->group(function () {
     Route::get("/", [ContactController::class, 'showContactPage'])->name("contact");
@@ -55,6 +57,7 @@ Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPag
 //Blog
 Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
+Route::post('/blog/block/', [BlogController::class, 'getBlogDetailsBlock'])->name("blog.block");
 Route::post("/comment/{id}/comment", [CommentController::class, 'newComments'])->name("comment.new");
 
 //Faq
@@ -63,3 +66,4 @@ Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
 //Coaching
 Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");
 Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesDetails'])->name("coaching.details");
+

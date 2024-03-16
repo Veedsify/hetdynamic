@@ -25,7 +25,7 @@ class BlogController extends Controller
     public function showBlogPagesDetails($postId)
     {
         $article = Blog::where("slug", $postId)->first();
-        if(!$article){
+        if (!$article) {
             return abort(404, "Article Not Found");
         }
         $comments = $article->comments;
@@ -88,11 +88,18 @@ class BlogController extends Controller
         $file->move(public_path("custom/blog"), $fileName);
         $filepath = asset("custom/blog/" . $fileName);
 
+        $checkSlug = Blog::where("slug", Str::slug($request->get("title")))->first();
+
+        if ($checkSlug) {
+            $newSlug = Str::slug($request->get("title")) . "-" . rand(1, 100);
+        }
+
+        //New Blog
         $article = new Blog();
         $article->title = $request->get("title");
         $article->category = Category::where("name", $request->get("category"))->first()->id;
         $article->description = $request->get("description");
-        $article->slug = Str::slug($request->get("title"));
+        $article->slug = $newSlug;
         $article->content = $request->html;
         $article->content_html = $request->html;
         $article->tags = $request->get("tags");
@@ -112,5 +119,14 @@ class BlogController extends Controller
         } else {
             Log::error("An Error Occurred");
         }
+    }
+
+    public function getBlogDetailsBlock(Request $request)
+    {
+        $slug = $request->slug;
+        $blog = Blog::where("slug", $slug)->first();
+        return response()->json([
+            "blocks" => $blog->content
+        ]);
     }
 }

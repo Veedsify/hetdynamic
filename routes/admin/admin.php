@@ -8,10 +8,12 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ResidencyController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\AdminPagesController;
+use App\Http\Controllers\Admin\ConfigurationController;
+use App\Http\Controllers\Admin\ConfigurationUpdateController;
 
 // Admin Route Web Endpoints
 
-// Route::middleware(['auth', 'admin'])->group(function () {
+Route::middleware(['auth', 'admin'])->group(function () {
 
     Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
     // Contact
@@ -61,4 +63,19 @@ use App\Http\Controllers\Admin\AdminPagesController;
     Route::prefix("/admin/residency")->group(function () {
         Route::get("/all-residency", [ResidencyController::class, "allResidency"])->name("admin.residency.allResidency");
     });
-// });
+    Route::prefix("/admin/setting")->name("config.")->group(function () {
+        //Configuration
+        Route::get("/details", [ConfigurationController::class, 'showDetailsPage'])->name("details");
+        Route::get("/banner", [ConfigurationController::class, 'showBannerPage'])->name("banner");
+        Route::get("/consulting", [ConfigurationController::class, 'showConsultingPage'])->name("consulting");
+        Route::get("/our-support", [ConfigurationController::class, 'showOurSupportPage'])->name("our.support");
+        Route::get("/coaching-and-training", [ConfigurationController::class, 'showCoachingAndTrainingPage'])->name("coaching.training");
+        Route::get("/testimonials", [ConfigurationController::class, 'showTestimonialsPage'])->name("testimonials");
+        Route::get("/countries-list", [ConfigurationController::class, 'showCountriesListPage'])->name("countries.list");
+        Route::get("/our-consultants", [ConfigurationController::class, 'showOurConsultantsPage'])->name("our.consultants");
+        Route::get("/contact", [ConfigurationController::class, 'showContactPage'])->name("contact");
+
+        // Configuration Post Updates
+        Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");
+    });
+});

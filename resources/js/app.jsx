@@ -1,22 +1,24 @@
-import React, {useRef} from "react";
-import {createRoot} from "react-dom/client";
-import {useState} from "react";
+import React, { useRef } from "react";
+import { createRoot } from "react-dom/client";
+import { useState } from "react";
 import "./css/style.css";
 import Editor from "./components/editor";
 import axios from "axios";
-import {BrowserRouter, useLocation} from "react-router-dom";
-import {toast, Toaster} from "sonner";
+import { BrowserRouter, useLocation } from "react-router-dom";
+import { toast, Toaster } from "sonner";
 
 const App = () => {
-    const router = useLocation()
-    const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+    const router = useLocation();
+    const csrfToken = document
+        .querySelector('meta[name="csrf-token"]')
+        .getAttribute("content");
     const [image, setImage] = useState("/custom/placeholder.png");
     const [imageFile, setImageFile] = useState("/custom/placeholder.png");
     const [categories, setCategories] = useState([]);
     const [editorContext, setEditorContext] = useState();
     const [inputs, setInputs] = useState({});
 
-    const ref = useRef()
+    const ref = useRef();
 
     const handleInputChange = (e) => {
         setInputs((prev) => ({
@@ -28,13 +30,18 @@ const App = () => {
     const handleImageChange = (e) => {
         const file = e.target.files[0];
         const reader = new FileReader();
-        const acceptedImageTypes = ["image/gif", "image/jpeg", "image/jpg", "image/png"];
+        const acceptedImageTypes = [
+            "image/gif",
+            "image/jpeg",
+            "image/jpg",
+            "image/png",
+        ];
         if (!acceptedImageTypes.includes(file["type"])) {
             toast.error("Sorry, only images are allowed");
             return;
         }
         reader.onloadend = () => {
-            setImage(reader.result)
+            setImage(reader.result);
             setImageFile(file);
         };
         reader.readAsDataURL(file);
@@ -49,44 +56,44 @@ const App = () => {
     }, [setCategories]);
 
     const addNewBlog = async (e) => {
-        e.preventDefault()
+        e.preventDefault();
         if (!inputs.title || inputs.title.length < 5) {
-            toast.error("Sorry article needs a title")
-            return
+            toast.error("Sorry article needs a title");
+            return;
         }
         if (!inputs.tags || inputs.tags.length < 5) {
-            toast.error("Sorry article needs meta tags")
-            return
+            toast.error("Sorry article needs meta tags");
+            return;
         }
         if (!inputs.category || inputs.category.length < 1) {
-            toast.error("please select a category from the list")
-            return
+            toast.error("please select a category from the list");
+            return;
         }
         if (!inputs.description || inputs.description.length < 5) {
-            toast.error("Sorry article needs a description")
-            return
+            toast.error("Sorry article needs a description");
+            return;
         }
         if (!imageFile) {
-            toast.error("Please select a featured image")
+            toast.error("Please select a featured image");
         }
 
-        let formData = new FormData
+        let formData = new FormData();
         for (let key in inputs) {
             formData.append(key, inputs[key]);
         }
-        formData.append("file", imageFile)
-        formData.append("html", editorContext)
-        formData.append("_token", csrfToken)
+        formData.append("file", imageFile);
+        formData.append("html", JSON.stringify(editorContext));
+        formData.append("_token", csrfToken);
         const response = await fetch("/admin/blog/create/new", {
             method: "POST",
             body: formData,
         });
 
-        const createBlog = response.ok ? await response.json() : null
+        const createBlog = response.ok ? await response.json() : null;
         if (createBlog) {
-            toast.success("Post Added Successfully")
-            router.reload()
-            ref.current.reset()
+            toast.success("Post Added Successfully");
+            document.location.reload();
+            ref.current.reset();
         }
     };
     return (
@@ -103,7 +110,7 @@ const App = () => {
                         className="title-article-form"
                     />
                     <div className="editor_container">
-                        <Editor set={setEditorContext}/>
+                        <Editor set={setEditorContext} />
                     </div>
 
                     <div>
@@ -164,7 +171,7 @@ const App = () => {
                         id="featured_image"
                     />
                     <div className="image-center">
-                        <img src={image} alt="" width="500"/>
+                        <img src={image} alt="" width="500" />
                     </div>
                 </label>
                 <div>
@@ -182,7 +189,7 @@ const App = () => {
 
 createRoot(document.getElementById("app")).render(
     <BrowserRouter>
-        <Toaster richColors position="top-center"/>
-        <App/>
+        <Toaster richColors position="top-center" />
+        <App />
     </BrowserRouter>
 );

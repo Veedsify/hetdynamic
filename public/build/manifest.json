@@ -1,12 +1,12 @@
 {
-  "_style-!~{003}~.js": {
-    "file": "assets/style-B5OwZzgT.css",
-    "src": "_style-!~{003}~.js"
+  "_index-!~{003}~.js": {
+    "file": "assets/index-DviaOrx3.css",
+    "src": "_index-!~{003}~.js"
   },
-  "_style-ChK7d0ne.js": {
-    "file": "assets/style-ChK7d0ne.js",
+  "_index-DRN0gJk9.js": {
+    "file": "assets/index-DRN0gJk9.js",
     "css": [
-      "assets/style-B5OwZzgT.css"
+      "assets/index-DviaOrx3.css"
     ],
     "assets": [
       "assets/inter-v12-latin-100-BQDzDElq.woff2",
@@ -102,22 +102,19 @@
     "src": "node_modules/@blocknote/core/src/fonts/inter-v12-latin/inter-v12-latin-regular.woff2"
   },
   "resources/js/app.jsx": {
-    "file": "assets/app-6Uc2KUig.js",
+    "file": "assets/app-DBAh5S0p.js",
     "src": "resources/js/app.jsx",
     "isEntry": true,
     "imports": [
-      "_style-ChK7d0ne.js"
-    ],
-    "css": [
-      "assets/app-pNMP13Gz.css"
+      "_index-DRN0gJk9.js"
     ]
   },
   "resources/js/app2.jsx": {
-    "file": "assets/app2-AoN53PLV.js",
+    "file": "assets/app2-F522u2PL.js",
     "src": "resources/js/app2.jsx",
     "isEntry": true,
     "imports": [
-      "_style-ChK7d0ne.js"
+      "_index-DRN0gJk9.js"
     ]
   }
 }

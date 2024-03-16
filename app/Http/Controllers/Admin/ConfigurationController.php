@@ -11,7 +11,7 @@ class ConfigurationController extends Controller
     {
         return view("admin.homepage.details");
     }
-    
+
     public function showBannerPage()
     {
         return view("admin.homepage.banner");
@@ -32,5 +32,29 @@ class ConfigurationController extends Controller
     {
         return view("admin.homepage.our-consultants");
     }
+    // about
+    public function showAboutPage()
+    {
+        return view("admin.aboutpage.about");
+    }
+    public function showExperiencePage()
+    {
+        return view("admin.aboutpage.years-of-experience");
+    }
+    public function showAboutUsPage()
+    {
+        return view("admin.aboutpage.about-us");
+    }
+
+    // Contact
+    public function showContactPage()
+    {
+        return view("admin.contactpage.contact");
+    }
+    public function showLocationPage()
+    {
+        return view("admin.contactpage.checkout-location");
+    }
+
 
 }

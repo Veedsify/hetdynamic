@@ -208,7 +208,7 @@
                         <span class="hide-menu">Banner</span>
                     </a>
                 </li>
-        
+
                 <li class="sidebar-item">
                     <a href="{{ route('config.consulting') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
@@ -217,7 +217,7 @@
                         <span class="hide-menu">Consulting</span>
                     </a>
                 </li>
-               
+
                 <li class="sidebar-item">
                     <a href="{{ route('config.our.support') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
@@ -276,22 +276,59 @@
                 <span class="hide-menu">About Page</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
+
                 <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
+                    <a href="{{route('config.about')}}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
-                        <span class="hide-menu">Posts</span>
+                        <span class="hide-menu">About Banner</span>
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="blog-detail.html" class="sidebar-link">
+                    <a href="{{route('config.experience')}}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
-                        <span class="hide-menu">Details</span>
+                        <span class="hide-menu">Years of Experience</span>
                     </a>
                 </li>
+                <li class="sidebar-item">
+                    <a href="{{ route('config.about.us') }}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">About Us</span>
+                    </a>
+                </li>
+            </ul>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <span class="d-flex">
+                    <i class="ti ti-info-circle"></i>
+                </span>
+                <span class="hide-menu">Contact Page</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+
+                <li class="sidebar-item">
+                    <a href="{{route('config.contact')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Contact Banner</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('config.checkout.location')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Checkout Location</span>
+                    </a>
+                </li>
+
             </ul>
         </li>
     </ul>

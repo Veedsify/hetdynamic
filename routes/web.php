@@ -1,16 +1,18 @@
 <?php
 
-use App\Http\Controllers\AboutController;
+use App\Models\GlobalSetting;
+use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CoachingController;
-use App\Http\Controllers\CommentController;
-use App\Http\Controllers\ContactController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
+use App\Http\Controllers\TermsController;
+use App\Http\Controllers\CommentController;
+use App\Http\Controllers\ContactController;
+use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ResidencyController;
-use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\View;
 
 /*
 |--------------------------------------------------------------------------
@@ -67,3 +69,5 @@ Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
 Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");
 Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesDetails'])->name("coaching.details");
 
+// terms and condition
+Route::get("/terms-conditions", [TermsController::class, 'showTermsPage'])->name("terms.condition");

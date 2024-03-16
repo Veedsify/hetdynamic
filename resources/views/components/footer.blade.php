@@ -25,7 +25,7 @@
                     </ul>
                     <div class="site-footer__visa-content">
                         <p class="site-footer__visa-text">Approved Traveler Visa Applications. <a
-                                href="visa-details.html">Get
+                                href="{{ route('login') }}">Get
                                 Your Visa</a></p>
                     </div>
                 </div>
@@ -63,12 +63,12 @@
                         <div class="footer-widget__title-box">
                             <h3 class="footer-widget__title">Explore</h3>
                         </div>
-                        <ul class="footer-widget__link-list list-unstyled">
-                            <li><a href="about.html">About</a></li>
-                            <li><a href="team.html">Meet Experts</a></li>
-                            <li><a href="{{ route('blog') }}">News & Blogs</a></li>
-                            <li><a href="visa-details.html">Projects</a></li>
-                            <li><a href="contact.html">Contact</a></li>
+                        <ul class="footer-widget__link-list list-unstyled ">
+                            <li><a href="{{ route('about') }}">About</a></li>
+                            <li><a href="/">Meet Experts</a></li>
+                            <li><a href="{{ route('blog') }}">Blogs</a></li>
+                            <li><a href="{{ route('contact') }}">Contact</a></li>
+                            <li><a href="{{ route('terms.condition') }}">Terms/Condition</a></li>
                         </ul>
                     </div>
                 </div>
@@ -78,11 +78,11 @@
                             <h3 class="footer-widget__title">Visa</h3>
                         </div>
                         <ul class="footer-widget__visa-list list-unstyled">
-                            <li><a href="visa-details.html">Work Visa</a></li>
-                            <li><a href="visa-details.html">Students Visa</a></li>
-                            <li><a href="visa-details.html">Business Visa</a></li>
-                            <li><a href="visa-details.html">Family Visa</a></li>
-                            <li><a href="visa-details.html">Travel Visa</a></li>
+                            <li><a href="{{ route('login') }}">Work Visa</a></li>
+                            <li><a href="{{ route('login') }}">Students Visa</a></li>
+                            <li><a href="{{ route('login') }}">Business Visa</a></li>
+                            <li><a href="{{ route('login') }}">Family Visa</a></li>
+                            <li><a href="{{ route('login') }}">Travel Visa</a></li>
                         </ul>
                     </div>
                 </div>

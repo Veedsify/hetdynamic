@@ -74,6 +74,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get("/countries-list", [ConfigurationController::class, 'showCountriesListPage'])->name("countries.list");
         Route::get("/our-consultants", [ConfigurationController::class, 'showOurConsultantsPage'])->name("our.consultants");
         Route::get("/contact", [ConfigurationController::class, 'showContactPage'])->name("contact");
+        // About Configuration
+        Route::get("/about", [ConfigurationController::class, 'showAboutPage'])->name("about");
+        Route::get("/experience", [ConfigurationController::class, 'showExperiencePage'])->name("experience");
+        Route::get("/about-us", [ConfigurationController::class, 'showAboutUsPage'])->name("about.us");
+        // Contact Configuration
+        Route::get("/contact", [ConfigurationController::class, 'showContactPage'])->name("contact");
+        Route::get("/checkout-location", [ConfigurationController::class, 'showLocationPage'])->name("checkout.location");
+
+
 
         // Configuration Post Updates
         Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");

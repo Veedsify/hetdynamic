@@ -1,7 +1,7 @@
 @extends('../layouts/admin/adminlayout')
 @section('content')
     <div class="preloader">
-        <img src="{{ $pagedata->site_logo }}" style="filter:invert(1);" width="150" alt="loader"
+        <img src="{{ $pagedata->site_logo }}"  width="150" alt="loader"
             class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">

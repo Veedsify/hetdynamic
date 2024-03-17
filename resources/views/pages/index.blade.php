@@ -52,7 +52,7 @@
 
                 <div class="item main-slider__slide-3">
                     <div class="main-slider__bg"
-                         style="background-image: url(assets/images/backgrounds/slider-1-3.jpg);">
+                         style="background-image: url(assets/images/backgrounds/slider-3-1.jpg);">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
@@ -173,7 +173,7 @@
                                     <p>Years of Experience</p>
                                 </div>
                                 <div class="about-one__badge">
-                                    <img src="/assets/images/resources/about-one-badge.png" alt="">
+                                    <img src="{{$pagedata->site_logo}}" alt="">
                                 </div>
                             </div>
                         </div>

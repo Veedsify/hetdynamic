@@ -336,7 +336,7 @@
                 <span class="d-flex">
                     <i class="ti ti-info-circle"></i>
                 </span>
-                <span class="hide-menu">Terms-conditions Page</span>
+                <span class="hide-menu">Terms Conditions Page</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
 

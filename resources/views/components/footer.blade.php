@@ -36,7 +36,8 @@
                 </div>
                 <div class="site-footer__call-content">
                     <p class="site-footer__call-sub-title">Have Question?</p>
-                    <h5 class="site-footer__call-number"><a href="tel:9288009850"><span>Free</span> {{ $pagedata->site_phone }}</a></h5>
+                    <h5 class="site-footer__call-number"><a href="tel:9288009850"><span>Free</span>
+                            {{ $pagedata->site_phone }}</a></h5>
                 </div>
             </div>
         </div>
@@ -45,8 +46,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="/"><img src="{{ asset('assets/custom/resources/hetlogo.png') }}"
-                                    width="100" alt=""></a>
+                            <a href="/"><img src="{{ $pagedata->site_logo }}" width="100" alt=""></a>
                         </div>
                         <p class="footer-widget__about-text">Aliqua id fugiat nostrud irure ex duis ea quis id
                             quis ad et. Sunt qui esse pariatur duis deserunt.</p>
@@ -143,7 +143,7 @@
                                     <span class="fas fa-envelope"></span>
                                 </div>
                                 <div class="text">
-                                    <p><a href="mailto:needhelp@company.com">{{$pagedata->site_email}}</a></p>
+                                    <p><a href="mailto:needhelp@company.com">{{ $pagedata->site_email }}</a></p>
                                 </div>
                             </li>
                             <li>
@@ -151,7 +151,7 @@
                                     <span class="fas fa-map-marker-alt"></span>
                                 </div>
                                 <div class="text">
-                                    <p>{{$pagedata->site_address}}</p>
+                                    <p>{{ $pagedata->site_address }}</p>
                                 </div>
                             </li>
                             <li>

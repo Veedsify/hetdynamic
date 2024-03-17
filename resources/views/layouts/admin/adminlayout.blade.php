@@ -10,9 +10,7 @@
     {{--  FONTS  --}}
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
 
     {{-- CSRF TOKEN --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
@@ -27,9 +25,13 @@
     <title>HetDynamic - Admin</title>
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('admin-assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
+    {{-- JODIT --}}
+    <x-admin.joditcss />
+
+
     {{-- VITE --}}
-    @viteReactRefresh
-    @vite('resources/js/app.jsx')
+    {{-- @viteReactRefresh
+    @vite('resources/js/app.jsx') --}}
 </head>
 
 <body>
@@ -42,6 +44,7 @@
     {{-- Searchbar --}}
     <x-admin.searchbar />
     {{-- Searchbar ENDS --}}
+
 
     <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
     <!-- Import Js Files -->
@@ -57,7 +60,12 @@
     {{-- <script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script> --}}
     <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
     <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
+
+    {{-- JODIT SCRIPTS --}}
+    <x-admin.joditjs />
+    <script src="{{ asset('custom/js/initjodit.js') }}"></script>
 </body>
 
 </html>

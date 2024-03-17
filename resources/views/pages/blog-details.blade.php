@@ -70,7 +70,9 @@
                                 {{-- <div class="blog-details__text-1">{!! $article->content_html !!}</div> --}}
                                 <div class="blog-details__text-1">
                                     <div id="app2"></div>
-                                </div>
+                                    @viteReactRefresh
+                                    @vite('resources/js/app2.jsx')
+                            </div>
 
                             </div>
                             <div class="blog-details__bottom">
@@ -127,8 +129,8 @@
                                 @foreach ($comments as $comment)
                                     <div class="comment-one__single">
                                         <div class="comment-one__image">
-                                            <img src="https://images.pexels.com/photos/20440051/pexels-photo-20440051/free-photo-of-a-woman-leaning-against-a-railing-with-her-hand-on-her-chin.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load"
-                                                class="object-fit-square" alt="" width="100">
+                                            <img src="{{asset("custom/placeholder.jpg")}}"
+                                                class="object-fit-square" alt="" width="80">
                                         </div>
                                         <div class="comment-one__content">
                                             <h3>{{ $comment->name }}</h3>

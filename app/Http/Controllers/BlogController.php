@@ -90,7 +90,7 @@ class BlogController extends Controller
 
         $checkSlug = Blog::where("slug", Str::slug($request->get("title")))->first();
 
-        if ($checkSlug) {
+        if ($checkSlug && $checkSlug->count() > 0) {
             $newSlug = Str::slug($request->get("title")) . "-" . rand(1, 100);
         }
 
@@ -99,11 +99,11 @@ class BlogController extends Controller
         $article->title = $request->get("title");
         $article->category = Category::where("name", $request->get("category"))->first()->id;
         $article->description = $request->get("description");
-        $article->slug = $newSlug;
+        $article->slug = isset($newSlug) ? $newSlug : Str::slug($request->get("title"));
         $article->content = $request->html;
         $article->content_html = $request->html;
         $article->tags = $request->get("tags");
-        $article->user_id = 1;
+        $article->user_id = auth()->user()->id;
         $article->status = true;
         $article->image = $filepath;
         $article->meta_title = $request->get("title");

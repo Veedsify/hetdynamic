@@ -51,8 +51,6 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/treck-min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/treck-responsive.css') }}" />
-    @viteReactRefresh
-    @vite('resources/js/app2.jsx')
 </head>
 
 <body>

@@ -3,7 +3,7 @@
            <div class="main-menu__wrapper">
                <div class="main-menu__wrapper-inner">
                    <div class="main-menu__logo">
-                       <a href="/"><img width="137" 
+                       <a href="/"><img width="80" 
                                src="{{asset($pagedata->site_logo)}}" alt="logo"></a>
                    </div>
                    <div class="main-menu__search-box">

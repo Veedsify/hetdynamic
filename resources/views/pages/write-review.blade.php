@@ -87,13 +87,12 @@
                                 </div>
                             </div>
                             <div class="row">
-                                <div class="col-xl-12">
+                                <div class="col-xl-12 ">
                                     <div class="contact-five__input-box text-message-box">
                                         <textarea name="message" placeholder="Write a Message"></textarea>
                                     </div>
-                                    <div class="contact-five__btn-box">
-                                        <button type="submit" class="thm-btn contact-five__btn ">Send a
-                                            Message</button>
+                                    <div class="contact-five__btn-box ">
+                                        <button type="submit" class="thm-btn contact-five__btn ">Submit Review</button>
                                     </div>
                                 </div>
                             </div>

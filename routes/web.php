@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ResidencyController;
+use App\Http\Controllers\WorkPermitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -58,6 +59,8 @@ Route::prefix('contact')->group(function () {
 Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPagesDetails'])->name("residency.details");
 
 
+// WorkPermit
+Route::get("/work-permit/{pageId}", [WorkPermitController::class, 'showWorkPermitPagesDetails'])->name("workpermit.details");
 //Blog
 Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");

@@ -88,6 +88,11 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get("/privacy-policy-banner", [ConfigurationController::class, 'showPolicyBannerPage'])->name("policy.banner");
         Route::get("/privacy-policy-content", [ConfigurationController::class, 'showPolicyContentPage'])->name("privacy.policy");
 
+        // Write a review
+        Route::get("/review-banner", [ConfigurationController::class, 'showReviewBannerPage'])->name("review.banner");
+        Route::get("/review-content", [ConfigurationController::class, 'showReviewContentPage'])->name("write.review");
+
+
 
         // Configuration Post Updates
         Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");

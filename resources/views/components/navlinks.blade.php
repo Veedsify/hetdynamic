@@ -33,8 +33,8 @@
             <li class="dropdown">
                 <a href="#">Work Permit</a>
                 <ul class="sub-menu">
-                    <li><a href="about.html">United Kingdom</a></li>
-                    <li><a href="team.html">Canada</a></li>
+                    <li><a href="{{ route('workpermit.details', 'united-kingdom') }}">United Kingdom</a></li>
+                    <li><a href="{{ route('workpermit.details', 'canada') }}">Canada</a></li>
                 </ul>
             </li>
             <li {{ request()->is('blog') ? ` class="current"` : '' }}>

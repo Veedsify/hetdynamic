@@ -75,5 +75,16 @@ class ConfigurationController extends Controller
         return view("admin.privacypage.privacy-policy-content");
     }
 
+    // Write a  Review
+    public function showReviewBannerPage()
+    {
+        return view("admin.reviewpage.review-banner");
+    }
+    public function showReviewContentPage()
+    {
+        return view("admin.reviewpage.review-content");
+    }
+
+
 
 }

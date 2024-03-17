@@ -10,8 +10,7 @@
                 <div class="row">
                     <div class="col-xl-7 col-xxl-8">
                         <a href="{{ route('home') }}" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                            <img src="{{ $pagedata->site_logo }}" class="dark-logo" style="filter:invert(1);" width="150"
-                                alt="Logo-Dark">
+                            <img src="{{ $pagedata->site_logo }}" class="dark-logo" width="80" alt="Logo-Dark">
                         </a>
                         <div class="d-none d-xl-flex align-items-center justify-content-center h-n80">
                             <img src="/admin-assets/images/backgrounds/login-security.svg" alt="" class="img-fluid"

@@ -65,10 +65,11 @@
                         </div>
                         <ul class="footer-widget__link-list list-unstyled ">
                             <li><a href="{{ route('about') }}">About</a></li>
-                            <li><a href="/">Meet Experts</a></li>
                             <li><a href="{{ route('blog') }}">Blogs</a></li>
                             <li><a href="{{ route('contact') }}">Contact</a></li>
                             <li><a href="{{ route('terms.condition') }}">Terms/Condition</a></li>
+                            <li><a href="{{ route('privacy.policy') }}">Privacy Policy</a></li>
+                            <li><a href="{{ route('write.review') }}">Write Review</a></li>
                         </ul>
                     </div>
                 </div>
@@ -164,6 +165,7 @@
                         </ul>
                     </div>
                 </div>
+
             </div>
         </div>
     </div>

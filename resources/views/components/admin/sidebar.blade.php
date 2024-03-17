@@ -331,5 +331,61 @@
 
             </ul>
         </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <span class="d-flex">
+                    <i class="ti ti-info-circle"></i>
+                </span>
+                <span class="hide-menu">Terms-conditions Page</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+
+                <li class="sidebar-item">
+                    <a href="{{route('config.terms.banner')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Terms-Conditions Banner</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('config.terms.content')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Terms Content</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link has-arrow" href="javascript:void(0)" aria-expanded="false">
+                <span class="d-flex">
+                    <i class="ti ti-info-circle"></i>
+                </span>
+                <span class="hide-menu">Privacy  Policy Page</span>
+            </a>
+            <ul aria-expanded="false" class="collapse first-level">
+
+                <li class="sidebar-item">
+                    <a href="{{route('config.policy.banner')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Privacy Policy Banner</span>
+                    </a>
+                </li>
+                <li class="sidebar-item">
+                    <a href="{{route('config.privacy.policy')}}" class="sidebar-link">
+                        <div class="round-16 d-flex align-items-center justify-content-center">
+                            <i class="ti ti-circle"></i>
+                        </div>
+                        <span class="hide-menu">Privacy Policy Content</span>
+                    </a>
+                </li>
+
+            </ul>
+        </li>
     </ul>
 </nav>

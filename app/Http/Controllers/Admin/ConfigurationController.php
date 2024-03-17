@@ -56,5 +56,24 @@ class ConfigurationController extends Controller
         return view("admin.contactpage.checkout-location");
     }
 
+    // Terms and Condition
+    public function showTermsBannerPage()
+    {
+        return view("admin.termspage.terms-banner");
+    }
+    public function showTermsContentPage()
+    {
+        return view("admin.termspage.terms-condition-content");
+    }
+    // Privacy Policy
+    public function showPolicyBannerPage()
+    {
+        return view("admin.privacypage.privacy-banner");
+    }
+    public function showPolicyContentPage()
+    {
+        return view("admin.privacypage.privacy-policy-content");
+    }
+
 
 }

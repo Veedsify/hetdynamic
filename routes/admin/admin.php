@@ -81,7 +81,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Contact Configuration
         Route::get("/contact", [ConfigurationController::class, 'showContactPage'])->name("contact");
         Route::get("/checkout-location", [ConfigurationController::class, 'showLocationPage'])->name("checkout.location");
-
+        // Terms  and Conditions configuration
+        Route::get("/terms-condition", [ConfigurationController::class, 'showTermsBannerPage'])->name("terms.banner");
+        Route::get("/terms-condition-content", [ConfigurationController::class, 'showTermsContentPage'])->name("terms.content");
+        // Privacy Policy  configuration
+        Route::get("/privacy-policy-banner", [ConfigurationController::class, 'showPolicyBannerPage'])->name("policy.banner");
+        Route::get("/privacy-policy-content", [ConfigurationController::class, 'showPolicyContentPage'])->name("privacy.policy");
 
 
         // Configuration Post Updates

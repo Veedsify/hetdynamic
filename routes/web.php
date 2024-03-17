@@ -9,8 +9,10 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
 use App\Http\Controllers\TermsController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\CommentController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ResidencyController;
 
@@ -71,3 +73,12 @@ Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesD
 
 // terms and condition
 Route::get("/terms-conditions", [TermsController::class, 'showTermsPage'])->name("terms.condition");
+
+//privacy-policy
+Route::get("/privacy-policy", [PrivacyController::class, 'showPrivacyPage'])->name("privacy.policy");
+
+// Write a Review
+
+Route::get("/write-review", [ReviewController::class, 'showReviewPage'])->name("write.review");
+
+

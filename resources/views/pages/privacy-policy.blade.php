@@ -1,5 +1,5 @@
 @extends('layouts/index', [
-    'title' => 'Terms and Condition - HetDynamic | Learn more about us ',
+    'title' => 'Privacy Policy - HetDynamic | Learn more about us ',
 ])
 
 @section('content')
@@ -24,11 +24,11 @@
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Terms and Condition</h2>
+                    <h2>Privacy Policy</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
-                        <li class="active">Terms and Condition</li>
+                        <li class="active">Privacy Policy</li>
                     </ul>
                 </div>
             </div>
@@ -44,7 +44,7 @@
               <div class="row">
                 <div class="section-title text-left">
                     <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Terms and conditions</span>
+                        <span class="section-title__tagline">Privacy Policy</span>
                         <div class="section-title__border-box"></div>
                     </div>
                 </div>

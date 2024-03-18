@@ -91,6 +91,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Write a review
         Route::get("/review-banner", [ConfigurationController::class, 'showReviewBannerPage'])->name("review.banner");
         Route::get("/review-content", [ConfigurationController::class, 'showReviewContentPage'])->name("write.review");
+        
+        // Profile
+        Route::get("/profile", [ConfigurationController::class, 'showProfilePage'])->name("profile");
 
 
 

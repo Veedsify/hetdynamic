@@ -1,67 +1,12 @@
 @extends('../layouts/admin/adminlayout')
 @section('content')
-    <div class="toast toast-onload align-items-center text-bg-primary border-0" role="alert" aria-live="assertive"
-         aria-atomic="true">
-        <div class="toast-body hstack align-items-start gap-6">
-            <i class="ti ti-alert-circle fs-6"></i>
-            <div>
-                <h5 class="text-white fs-3 mb-1">Welcome to Modernize</h5>
-                <h6 class="text-white fs-2 mb-0">Easy to costomize the Template!!!</h6>
-            </div>
-            <button type="button" class="btn-close btn-close-white fs-2 m-0 ms-auto shadow-none" data-bs-dismiss="toast"
-                    aria-label="Close"></button>
-        </div>
-    </div>
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset('admin-assets/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
         <!-- Sidebar Start -->
-        <aside class="left-sidebar with-vertical">
-            <div><!-- ---------------------------------- -->
-                <!-- Start Vertical Layout Sidebar -->
-                <!-- ---------------------------------- -->
-                <div class="brand-logo d-flex align-items-center justify-content-between">
-                    <a href="/" class="text-nowrap logo-img">
-                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
-                             width="150" class="dark-logo" alt="Logo-Dark">
-                        <img src="{{ asset('assets/custom/resources/hetlogo.png') }}" style="filter:invert(1);"
-                             width="150" class="light-logo" alt="Logo-light">
-                    </a>
-                    <a href="javascript:void(0)"
-                       class="sidebartoggler ms-auto text-decoration-none fs-5 d-block d-xl-none">
-                        <i class="ti ti-x"></i>
-                    </a>
-                </div>
-
-
-                {{-- SIDEBAR --}}
-                <x-admin.sidebar/>
-
-                <div class="fixed-profile p-3 mx-4 mb-2 bg-secondary-subtle rounded mt-3">
-                    <div class="hstack gap-3">
-                        <div class="john-img">
-                            <img src="{{ asset('admin-assets/images/profile/user-1.jpg') }}" class="rounded-circle"
-                                 width="40" height="40" alt="">
-                        </div>
-                        <div class="john-title">
-                            <h6 class="mb-0 fs-4 fw-semibold">Mathew</h6>
-                            <span class="fs-2">Designer</span>
-                        </div>
-                        <button class="border-0 bg-transparent text-primary ms-auto" tabindex="0" type="button"
-                                aria-label="logout" data-bs-toggle="tooltip" data-bs-placement="top"
-                                data-bs-title="logout">
-                            <i class="ti ti-power fs-6"></i>
-                        </button>
-                    </div>
-                </div>
-
-                <!-- ---------------------------------- -->
-                <!-- Start Vertical Layout Sidebar -->
-                <!-- ---------------------------------- -->
-            </div>
-        </aside>
+         <x-admin.aside />
         <!--  Sidebar End -->
         <div class="page-wrapper">
             {{-- Header start --}}

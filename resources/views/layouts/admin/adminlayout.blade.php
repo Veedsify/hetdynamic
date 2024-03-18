@@ -17,7 +17,7 @@
 
 
     <!-- Favicon icon-->
-    <link rel="shortcut icon" type="image/png" href="{{ asset('admin-assets/images/logos/favicon.png') }}">
+    <link rel="shortcut icon" type="image/png" href="{{ asset($pagedata->site_logo) }}">
 
     <!-- Core Css -->
     <link rel="stylesheet" href="{{ asset('admin-assets/css/styles.css') }}">

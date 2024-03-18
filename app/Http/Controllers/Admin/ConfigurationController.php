@@ -84,7 +84,12 @@ class ConfigurationController extends Controller
     {
         return view("admin.reviewpage.review-content");
     }
-
-
+    
+    // profile
+    public function showProfilePage()
+    {
+        return view("admin.profile");
+    }
+    
 
 }

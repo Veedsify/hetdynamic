@@ -24,7 +24,7 @@ class BlogFactory extends Factory
             'tags' => $this->faker->word(),
             'content' => $this->faker->paragraph(20),
             'content_html' => $this->faker->randomHtml(),
-            'category' => 1,
+            'category' => 2,
             'user_id' => 1,
             'status' => 1,
         ];

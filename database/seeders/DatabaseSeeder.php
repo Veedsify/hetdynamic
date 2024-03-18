@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
         Country::factory(10)->create();
         Category::factory(10)->create();
-        Blog::factory(30)->create();
+        Blog::factory(5)->create();
         GlobalSetting::factory(1)->create();
     }
 }

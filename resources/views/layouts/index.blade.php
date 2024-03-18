@@ -7,11 +7,9 @@
     <title> {{ $title }} | {{ config('app.name') }}</title>
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- favicons Icons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('assets/images/favicons/apple-touch-icon.png') }}" />
-    <link rel="icon" type="image/png" sizes="32x32"
-        href="{{ asset('assets/images/favicons/favicon-32x32.png') }}" />
-    <link rel="icon" type="image/png" sizes="16x16"
-        href="{{ asset('assets/images/favicons/favicon-16x16.png') }}" />
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset($pagedata->site_logo) }}" />
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset($pagedata->site_logo) }}" />
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset($pagedata->site_logo) }}" />
     <link rel="manifest" href="{{ asset('assets/images/favicons/site.webmanifest') }}" />
     <meta name="description" content="treck HTML 5 Template " />
 
@@ -26,6 +24,30 @@
     {{-- <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap"
         rel="stylesheet"> --}}
 
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="{{ $title }} | {{ config('app.name') }}" />
+    <meta property="og:description" content="treck HTML 5 Template " />
+    <meta property="og:image" content="{{ asset($pagedata->site_logo) }}" />
+    <meta property="og:url" content="{{ url()->current() }}" />
+    <meta property="og:site_name" content="{{ config('app.name') }}" />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:locale:alternate" content="en_US" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ $title }} | {{ config('app.name') }}">
+    <meta name="twitter:description" content="treck HTML 5 Template ">
+    <meta name="twitter:image" content="{{ asset($pagedata->site_logo) }}">
+
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset($pagedata->site_logo) }}" />
+
+    <!-- Google -->
+    <meta itemprop="name" content="{{ $title }} | {{ config('app.name') }}">
+    <meta itemprop="description" content="treck HTML 5 Template ">
+    <meta itemprop="image" content="{{ asset($pagedata->site_logo) }}">
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />

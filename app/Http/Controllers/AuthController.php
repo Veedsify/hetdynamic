@@ -95,11 +95,11 @@ class AuthController extends Controller
         $user = User::where("email", $request->email)->first();
 
         if (!$user) {
-            return redirect(route('login'))->with('error', 'User not found');
+            return redirect(route('login'))->with('error', 'Invalid Email Address or Password!');
         }
 
         if (!Hash::check($request->password, $user->password)) {
-            return redirect(route('login'))->with('error', 'Invalid Password');
+            return redirect(route('login'))->with('error', 'Invalid Email Address or Password!');
         }
 
         if (!$user->email_verified_at) {

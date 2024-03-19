@@ -15,6 +15,7 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ResidencyController;
+use App\Http\Controllers\TagsController;
 use App\Http\Controllers\WorkPermitController;
 
 /*
@@ -66,6 +67,7 @@ Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
 Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
 Route::post('/blog/block/', [BlogController::class, 'getBlogDetailsBlock'])->name("blog.block");
 Route::post("/comment/{id}/comment", [CommentController::class, 'newComments'])->name("comment.new");
+Route::get("/tags/{tag}", [TagsController::class, 'showTagsPage'])->name("tags");
 
 //Faq
 Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");

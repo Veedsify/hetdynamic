@@ -22,8 +22,8 @@ return new class extends Migration
             $table->string("tags");
             $table->boolean("status");
             $table->string("image");
-            $table->text("content");
-            $table->text("content_html");
+            $table->longText("content");
+            $table->longText("content_html");
             $table->string("meta_title")->nullable();
             $table->text("meta_description")->nullable();
             $table->string("meta_keywords")->nullable();

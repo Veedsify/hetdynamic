@@ -69,10 +69,8 @@
                                 {{--                                <h3 class="blog-details__title">{{ $article->title }}</h3> --}}
                                 {{-- <div class="blog-details__text-1">{!! $article->content_html !!}</div> --}}
                                 <div class="blog-details__text-1">
-                                    <div id="app2"></div>
-                                    @viteReactRefresh
-                                    @vite('resources/js/app2.jsx')
-                            </div>
+                                    {!! $article->content_html !!}
+                                </div>
 
                             </div>
                             <div class="blog-details__bottom">
@@ -83,7 +81,8 @@
                                     @endphp
 
                                     @foreach ($tags as $tag)
-                                        <a class="d-inline-block m-1" href="/tags/">{{ trim($tag) }}</a>
+                                        <a class="d-inline-block m-1"
+                                            href="/tags/{{ $tag }}">{{ trim($tag) }}</a>
                                     @endforeach
                                 </p>
                                 <div class="blog-details__social-list">
@@ -129,8 +128,8 @@
                                 @foreach ($comments as $comment)
                                     <div class="comment-one__single">
                                         <div class="comment-one__image">
-                                            <img src="{{asset("custom/placeholder.jpg")}}"
-                                                class="object-fit-square" alt="" width="80">
+                                            <img src="{{ asset('custom/placeholder.jpg') }}" class="object-fit-square"
+                                                alt="" width="80">
                                         </div>
                                         <div class="comment-one__content">
                                             <h3>{{ $comment->name }}</h3>
@@ -218,53 +217,6 @@
                                             </li>
                                         @endforeach
                                     </ul>
-                                </div>
-                                <div class="sidebar__project">
-                                    <h3 class="sidebar__title">Projects</h3>
-                                    <div class="sidebar__project-box">
-                                        <div class="sidebar__project-carousel owl-carousel owl-theme thm-owl__carousel"
-                                            data-owl-options='{
-                                            "loop": true,
-                                            "autoplay": true,
-                                            "margin": 30,
-                                            "nav": false,
-                                            "dots": true,
-                                            "smartSpeed": 500,
-                                            "autoplayTimeout": 10000,
-                                            "navText": ["<span class=\"icon-right-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"],
-                                            "responsive": {
-                                                "0": {
-                                                    "items": 1
-                                                },
-                                                "768": {
-                                                    "items": 1
-                                                },
-                                                "992": {
-                                                    "items": 1
-                                                },
-                                                "1200": {
-                                                    "items": 1
-                                                }
-                                            }
-                                        }'>
-                                            <div class="item">
-                                                <div class="sidebar__project-single">
-                                                    <div class="sidebar__project-bg"
-                                                        style="background-image: url(/assets/images/backgrounds/sidebar-project-bg.jpg);">
-                                                    </div>
-                                                    <p>Traveling Visa</p>
-                                                </div>
-                                            </div>
-                                            <div class="item">
-                                                <div class="sidebar__project-single">
-                                                    <div class="sidebar__project-bg"
-                                                        style="background-image: url(assets/images/backgrounds/sidebar-project-bg-2.jpg);">
-                                                    </div>
-                                                    <p>Student Visa</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                                 <div class="sidebar__tags">
                                     <h3 class="sidebar__title">Tags</h3>

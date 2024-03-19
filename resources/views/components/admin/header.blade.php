@@ -36,8 +36,8 @@
 
                     <div class="d-block d-lg-none">
                         <a href="{{ route('admin') }}" class="text-nowrap logo-img">
-                            <img src="{{ asset($pagedata->site_logo) }}" class="dark-logo" style="filter: invert(1);"
-                                width="100" alt="Logo-Dark">
+                            <img src="{{ asset($pagedata->site_logo) }}" class="dark-logo" width="50"
+                                alt="Logo-Dark">
                         </a>
                     </div>
                     <a class="navbar-toggler nav-icon-hover p-0 border-0" href="javascript:void(0)"
@@ -199,7 +199,7 @@
                                                 </div>
                                             </div>
                                             <div class="message-body">
-                                                <a href="{{route('config.profile')}}"
+                                                <a href="{{ route('config.profile') }}"
                                                     class="py-8 px-7 mt-8 d-flex align-items-center">
                                                     <span
                                                         class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
@@ -212,10 +212,11 @@
                                                             Settings</span>
                                                     </div>
                                                 </a>
-                                                <a href="{{route('admin.email')}}" class="py-8 px-7 d-flex align-items-center">
+                                                <a href="{{ route('admin.email') }}"
+                                                    class="py-8 px-7 d-flex align-items-center">
                                                     <span
                                                         class="d-flex align-items-center justify-content-center text-bg-light rounded-1 p-6">
-                                                        <img src="{{ asset('admin-assets/images/svgs/icon-inbox.svg') }}" 
+                                                        <img src="{{ asset('admin-assets/images/svgs/icon-inbox.svg') }}"
                                                             alt="" width="24" height="24">
                                                     </span>
                                                     <div class="w-75 d-inline-block v-middle ps-3">
@@ -224,10 +225,10 @@
                                                             Emails</span>
                                                     </div>
                                                 </a>
-                                               
+
                                             </div>
                                             <div class="d-grid py-4 px-7 pt-8">
-                                                
+
                                                 <a href="{{ route('logout') }}" class="btn btn-outline-primary">Log
                                                     Out</a>
                                             </div>

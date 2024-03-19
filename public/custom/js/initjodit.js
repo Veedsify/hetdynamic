@@ -1,5 +1,5 @@
 // Initialize Jodit Editor
-const editor = Jodit.make("#new-article", {
+const JoditEditor = Jodit.make("#new-article", {
     "uploader": {
         "insertImageAsBase64URI": true
     },

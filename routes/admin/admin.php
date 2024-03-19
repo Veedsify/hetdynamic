@@ -40,17 +40,22 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Route::get("/inbox/{emailId}", [EmailController::class, "inbox"])->name("admin.email.inbox.unique");
     });
 
+
     Route::prefix("/admin/blog")->group(function () {
         Route::get("/", [BlogController::class, "blog"])->name("admin.blog");
-        Route::post("/create/new", [BlogController::class, "newarticle"])->name("blog.new.article");
         Route::get("/create", [BlogController::class, "createBlog"])->name("admin.blog.create");
         Route::get("/edit/{blogId}", [BlogController::class, "editBlog"])->name("admin.blog.edit");
         Route::get("/delete/{blogId}", [BlogController::class, "deleteBlog"])->name("admin.blog.delete");
         Route::get("/view/{blogId}", [BlogController::class, "viewBlog"])->name("admin.blog.view");
         Route::get("/article", [BlogController::class, "articleBlog"])->name("admin.blog.article");
         Route::get("/comment", [BlogController::class, "articleComment"])->name("admin.blog.comment");
+        Route::get("/edit/{blogId}", [BlogController::class, "editBlog"])->name("admin.blog.edit");
+        Route::put("/update/{slug}", [BlogController::class, "editarticle"])->name("admin.blog.update");
+        Route::post("/create/new", [BlogController::class, "newarticle"])->name("blog.new.article");
+        Route::delete("/delete/{blogSlug}", [BlogController::class, "deleteBlog"])->name("blog.delete");
         Route::delete("/comment/{commentId}", [BlogController::class, "deleteComment"])->name("admin.blog.comment.delete");
     });
+
 
     Route::prefix("/admin/study")->group(function () {
         Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");
@@ -91,7 +96,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Write a review
         Route::get("/review-banner", [ConfigurationController::class, 'showReviewBannerPage'])->name("review.banner");
         Route::get("/review-content", [ConfigurationController::class, 'showReviewContentPage'])->name("write.review");
-        
+
         // Profile
         Route::get("/profile", [ConfigurationController::class, 'showProfilePage'])->name("profile");
 

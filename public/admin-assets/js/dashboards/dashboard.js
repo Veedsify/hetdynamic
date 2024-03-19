@@ -516,27 +516,62 @@ $(function () {
         new ApexCharts(document.querySelector("#stats"), stats).render();
     }
 
-
     // MY CUSTOM CODE
-    const allDeleteForms = document.querySelectorAll('[data-delete_action="delete"]');
+    const allDeleteForms = document.querySelectorAll(
+        '[data-delete_action="delete"]'
+    );
 
-    allDeleteForms.forEach(form => {
+    allDeleteForms.forEach((form) => {
         form.addEventListener("submit", function (e) {
-            e.preventDefault()
+            e.preventDefault();
             swal({
                 icon: "warning",
                 title: "Are you sure?",
                 text: "Once deleted, you will not be able to recover this data!",
                 buttons: {
                     cancel: "Cancel",
-                    confirm: "Yes"
-                }
+                    confirm: "Yes",
+                },
             }).then((result) => {
                 if (result) {
-                    e.target.submit()
+                    e.target.submit();
                 }
-            })
-        })
-    })
+            });
+        });
+    });
 
+    //IMage Preview When Selected
+    const fileInput = document.querySelectorAll("#featured_article_image");
+    if (fileInput) {
+        fileInput.forEach((el) => {
+            el.addEventListener("change", (e) => {
+                const file = e.target.files[0];
+                const reader = new FileReader();
+                reader.onloadend = () => {
+                    const preview = el.parentElement.querySelector("img");
+                    preview.src = reader.result;
+                };
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            });
+        });
+    }
+
+    //HandleFormSubmit
+    const newArticleForm = document.querySelector("#newarticleform");
+    newArticleForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const htmlArea = document.querySelector("#htmlarea");
+        htmlArea.value = JoditEditor.value;
+        if (htmlArea.value.length < 10) {
+            swal({
+                icon: "error",
+                title: "Error",
+                text: "Article Content is required",
+            });
+            return;
+        }
+        e.target.submit();
+    });
 });

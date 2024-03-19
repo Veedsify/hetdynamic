@@ -6,7 +6,7 @@
     </div>
     <div id="main-wrapper">
         <!-- Sidebar Start -->
-         <x-admin.aside />
+        <x-admin.aside />
         <!--  Sidebar End -->
         <div class="page-wrapper">
             {{-- Header start --}}
@@ -61,77 +61,17 @@
                                 </div>
                             </div>
                         </div>
-                        <!-- Modal -->
-                        <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog"
-                            aria-labelledby="addContactModalTitle" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header d-flex align-items-center">
-                                        <h5 class="modal-title">Contact</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal"
-                                            aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="add-contact-box">
-                                            <div class="add-contact-content">
-                                                <form id="addContactModalTitle">
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3 contact-name">
-                                                                <input type="text" id="c-name" class="form-control"
-                                                                    placeholder="Name">
-                                                                <span class="validation-text text-danger"></span>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3 contact-email">
-                                                                <input type="text" id="c-email" class="form-control"
-                                                                    placeholder="Email">
-                                                                <span class="validation-text text-danger"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3 contact-occupation">
-                                                                <input type="text" id="c-occupation"
-                                                                    class="form-control" placeholder="Occupation">
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-6">
-                                                            <div class="mb-3 contact-phone">
-                                                                <input type="text" id="c-phone" class="form-control"
-                                                                    placeholder="Phone">
-                                                                <span class="validation-text text-danger"></span>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="row">
-                                                        <div class="col-md-12">
-                                                            <div class="mb-3 contact-location">
-                                                                <input type="text" id="c-location"
-                                                                    class="form-control" placeholder="Location">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </form>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <div class="d-flex gap-6 m-0">
-                                            <button id="btn-add" class="btn btn-success rounded-pill">Add</button>
-                                            <button id="btn-edit" class="btn btn-success rounded-pill">Save</button>
-                                            <button class="btn bg-danger-subtle text-danger rounded-pill"
-                                                data-bs-dismiss="modal"> Discard
-                                            </button>
-                                        </div>
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
                         <div class="card card-body">
+                            @if (session()->has('success'))
+                                <div class="alert alert-success">
+                                    {{ session()->get('success') }}
+                                </div>
+                            @endif
+                            @if (session()->has('error'))
+                                <div class="alert alert-danger">
+                                    {{ session()->get('error') }}
+                                </div>
+                            @endif
                             <div class="table-responsive">
                                 <table class="table search-table align-middle text-nowrap">
                                     <thead class="header-item">
@@ -149,14 +89,14 @@
                                         <th>Title</th>
                                         <th>Category</th>
                                         <th>Description</th>
-                                        <th>Meta Description</th>
+                                        <th>Status</th>
                                         <th>Action</th>
 
                                     </thead>
                                     <tbody>
                                         <!-- start row -->
                                         @foreach ($articles as $article)
-                                            <tr class="search-items">
+                                            <tr class="search-items" style="vertical-align: middle;">
                                                 <td>
                                                     <div class="n-chk align-self-center text-center">
                                                         <div class="form-check">
@@ -168,17 +108,17 @@
                                                     </div>
                                                 </td>
                                                 <td>
-                                                    <img src="{{ asset($article->image) }}" alt="avatar"
-                                                        width="54">
+                                                    <img src="{{ asset($article->image) }}" alt="avatar" width="54"
+                                                        height="34" style="object-fit: cover;">
                                                 </td>
                                                 <td>
                                                     <div class="d-flex align-items-center">
-
                                                         <div>
-
                                                             <div class="user-meta-info">
-                                                                <h6 class="user-name mb-0">{{ $article->title }}</h6>
-
+                                                                <a href="{{ route('blog.details', $article->slug) }}"
+                                                                    target="_blank">
+                                                                    <h6 class="user-name mb-0">{{ $article->title }}</h6>
+                                                                </a>
                                                             </div>
                                                         </div>
                                                     </div>
@@ -187,21 +127,30 @@
                                                     <span>{{ \App\Models\Category::where('id', $article->category)->first()->name }}</span>
                                                 </td>
                                                 <td>
-                                                    <span class=" d-block "
-                                                        style="width: 400px; white-space: pre-wrap">{{ $article->description }}
+                                                    <span class="d-inline-block text-truncate"
+                                                        style="width: 400px;">{{ $article->description }}
                                                         </>
                                                 </td>
                                                 <td>
-                                                    <span class="w-30 d-inline ">{{ $article->meta_description }}</>
+                                                    <span
+                                                        class="w-30 fw-bold {{ $article->status == 1 ? 'text-success' : 'text-warning' }}">{{ $article->status == 1 ? 'Published' : 'Draft' }}
+                                                        </>
                                                 </td>
                                                 <td>
-                                                    <div class="action-btn">
-                                                        <a href="javascript:void(0)" class="text-primary edit">
-                                                            <i class="ti ti-eye fs-5"></i>
+                                                    <div class="action-btn d-flex align-items-center">
+                                                        <a href="{{ route('admin.blog.edit', $article->slug) }}"
+                                                            class="text-primary edit">
+                                                            <i class="ti ti-pencil fs-5"></i>
                                                         </a>
-                                                        <a href="javascript:void(0)" class="text-dark delete ms-2">
-                                                            <i class="ti ti-trash fs-5"></i>
-                                                        </a>
+                                                        <form action="{{ route('blog.delete', $article->slug) }}"
+                                                            method="post" data-delete_action="delete">
+                                                            @csrf
+                                                            @method('delete')
+                                                            <button href="javascript:void(0)"
+                                                                class="text-dark delete ms-2 border-0 bg-transparent">
+                                                                <i class="ti ti-trash fs-5 text-danger"></i>
+                                                            </button>
+                                                        </form>
                                                     </div>
                                                 </td>
                                             </tr>

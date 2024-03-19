@@ -48,7 +48,7 @@
 
     <script src="{{ asset('admin-assets/js/vendor.min.js') }}"></script>
     <!-- Import Js Files -->
-    {{-- <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script> --}}
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script src="{{ asset('admin-assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js') }}"></script>
     <script src="{{ asset('admin-assets/libs/simplebar/dist/simplebar.min.js') }}"></script>
     <script src="{{ asset('admin-assets/js/theme/app.init.js') }}"></script>
@@ -58,14 +58,13 @@
 
     <!-- solar icons -->
     {{-- <script src="{{asset("https://cdn.jsdelivr.net/npm/iconify-icon@2.0.0/dist/iconify-icon.min.js")}}"></script> --}}
-    <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/libs/apexcharts/dist/apexcharts.min.js') }}"></script>
-    <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
-
     {{-- JODIT SCRIPTS --}}
     <x-admin.joditjs />
     <script src="{{ asset('custom/js/initjodit.js') }}"></script>
+    <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.47.0/dist/apexcharts.min.js"></script>
+    <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
+
 </body>
 
 </html>

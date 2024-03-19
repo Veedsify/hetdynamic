@@ -482,8 +482,8 @@
 [data-bs-theme=dark][data-color-theme=Blue_Theme]:root .btn-primary {
   --bs-btn-bg: #00563f;
   --bs-btn-border-color: #00563f;
-  --bs-btn-hover-bg: #4f73d9;
-  --bs-btn-hover-border-color: #4f73d9;
+  --bs-btn-hover-bg: #1f9d6b;
+  --bs-btn-hover-border-color: #1f9d6b;
 }
 
 [data-bs-theme=light][data-color-theme=Blue_Theme]:root .btn-secondary,

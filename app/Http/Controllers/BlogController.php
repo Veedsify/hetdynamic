@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogComment;
 use App\Models\Category;
+use App\Models\ImageUploader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\Str;
 
 class BlogController extends Controller
@@ -15,7 +17,7 @@ class BlogController extends Controller
     public function showBlogPage(Request $request)
     {
         $query = $request->get('page');
-        $blogs = Blog::orderByDesc("created_at")->paginate(9);
+        $blogs = Blog::where("status", true)->orderByDesc("created_at")->paginate(9);
         return view("pages.blog", [
             "blogs" => $blogs,
             'query' => $query
@@ -24,7 +26,10 @@ class BlogController extends Controller
 
     public function showBlogPagesDetails($postId)
     {
-        $article = Blog::where("slug", $postId)->first();
+        $article = Blog::where([
+            "slug" => $postId,
+            "status" => true
+        ])->first();
         if (!$article) {
             return abort(404, "Article Not Found");
         }
@@ -43,7 +48,10 @@ class BlogController extends Controller
 
     public function createBlog()
     {
-        return view("admin.new-article");
+        $categories = Category::all();
+        return View::make("admin.new-article", [
+            "categories" => $categories
+        ]);
     }
 
     public function articleBlog()
@@ -72,52 +80,124 @@ class BlogController extends Controller
             return redirect()->back()->with("error", "An Error Occurred");
         }
     }
+    public function deleteBlog($blogSlug)
+    {
+        try {
+            $blogs = Blog::where("slug", $blogSlug)->delete();
+            return redirect()->back()->with("success", "Article Deleted Successfully");
+        } catch (\Exception $e) {
+            return redirect()->back()->with("error", "An Error Occurred");
+        }
+    }
 
     public function newarticle(Request $request)
     {
-        $request->validate([
-            "title" => "required",
-            "category" => "required",
-            "html" => "required",
-            "description" => "required",
-            "file" => "required|image|mimes:jpeg,png,jpg,gif,svg",
-        ]);
-
-        $file = $request->file("file");
-        $fileName = time() . "." . $file->getClientOriginalExtension();
-        $file->move(public_path("custom/blog"), $fileName);
-        $filepath = asset("custom/blog/" . $fileName);
-
-        $checkSlug = Blog::where("slug", Str::slug($request->get("title")))->first();
-
-        if ($checkSlug && $checkSlug->count() > 0) {
-            $newSlug = Str::slug($request->get("title")) . "-" . rand(1, 100);
-        }
-
-        //New Blog
-        $article = new Blog();
-        $article->title = $request->get("title");
-        $article->category = Category::where("name", $request->get("category"))->first()->id;
-        $article->description = $request->get("description");
-        $article->slug = isset($newSlug) ? $newSlug : Str::slug($request->get("title"));
-        $article->content = $request->html;
-        $article->content_html = $request->html;
-        $article->tags = $request->get("tags");
-        $article->user_id = auth()->user()->id;
-        $article->status = true;
-        $article->image = $filepath;
-        $article->meta_title = $request->get("title");
-        $article->meta_description = $request->get("description");
-        $article->meta_keywords = $request->get("tags");
-
-        if ($article->save()) {
-            Log::info("Article Created Successfully");
-            return response()->json([
-                "status" => "success",
-                "message" => "Article Created Successfully"
+        try {
+            $request->validate([
+                "title" => "required",
+                "category" => "required",
+                "html" => "required",
+                "description" => "required",
+                "status" => "required",
+                "tags" => "required",
+                "file" => "required|image|mimes:jpeg,png,jpg,gif,svg",
             ]);
-        } else {
-            Log::error("An Error Occurred");
+
+            $file = $request->file("file");
+            $fileName = time() . "." . $file->getClientOriginalExtension();
+            $file->move(public_path("custom/blog"), $fileName);
+            $filepath = asset("custom/blog/" . $fileName);
+            $imageUploadHandler = new ImageUploader();
+            $imageUploadHandler->image_name = $fileName;
+            $imageUploadHandler->image_path = $filepath;
+            $imageUploadHandler->save();
+
+            $checkSlug = Blog::where("slug", Str::slug($request->get("title")))->first();
+
+            if ($checkSlug && $checkSlug->count() > 0) {
+                $newSlug = Str::slug($request->get("title")) . "-" . rand(1, 100);
+            }
+
+            //New Blog
+            $article = new Blog();
+            $article->title = $request->get("title");
+            $article->category = $request->get("category");
+            $article->description = $request->get("description");
+            $article->slug = isset($newSlug) ? $newSlug : Str::slug($request->get("title"));
+            $article->content = $request->html;
+            $article->content_html = $request->html;
+            $article->tags = $request->get("tags");
+            $article->user_id = auth()->user()->id;
+            $article->status = $request->get("status") == "active" ? true : false;
+            $article->image = $filepath;
+            $article->meta_title = $request->get("title");
+            $article->meta_description = $request->get("description");
+            $article->meta_keywords = $request->get("tags");
+
+            if ($article->save()) {
+                return redirect()->back()->with("success", "Article Created Successfully");
+            } else {
+                Log::error("An Error Occurred");
+            }
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->back()->with("error", "An Error Occurred");
+        }
+    }
+
+    public function editarticle(Request $request, $slug)
+    {
+        try {
+            $request->validate([
+                "title" => "required",
+                "category" => "required",
+                "html" => "required",
+                "description" => "required",
+                "status" => "required",
+                "tags" => "required",
+                "file" => "image|mimes:jpeg,png,jpg,gif,svg",
+            ]);
+
+            if ($request->hasFile("file")) {
+                $file = $request->file("file");
+                $fileName = time() . "." . $file->getClientOriginalExtension();
+                $file->move(public_path("custom/blog"), $fileName);
+                $filepath = asset("custom/blog/" . $fileName);
+                $imageUploadHandler = new ImageUploader();
+                $imageUploadHandler->image_name = $fileName;
+                $imageUploadHandler->image_path = $filepath;
+                $imageUploadHandler->save();
+            }
+
+            $checkSlug = Blog::where("slug", $slug)->first();
+            if ($checkSlug->slug === $slug && $checkSlug->title === $request->get("title")) {
+                $newSlug = $slug;
+            } else {
+                $newSlug = Str::slug($request->get("title")) . "-" . rand(1, 100);
+            }
+            $article = Blog::where("slug", $slug)->first();
+            $article->title = $request->get("title");
+            $article->category = $request->get("category");
+            $article->description = $request->get("description");
+            $article->image = isset($filepath) ? $filepath : $article->image;
+            $article->slug = $newSlug;
+            $article->content = $request->html;
+            $article->content_html = $request->html;
+            $article->tags = $request->get("tags");
+            $article->user_id = auth()->user()->id;
+            $article->status = $request->get("status") == "active" ? true : false;
+            $article->meta_title = $request->get("title");
+            $article->meta_description = $request->get("description");
+            $article->meta_keywords = $request->get("tags");
+
+            if ($article->save()) {
+                return redirect(route("admin.blog.edit", $newSlug))->with("success", "Article Updated Successfully");
+            } else {
+                Log::error("An Error Occurred");
+            }
+        } catch (\Exception $e) {
+            Log::error($e->getMessage());
+            return redirect()->back()->with("error", "An Error Occurred");
         }
     }
 
@@ -127,6 +207,16 @@ class BlogController extends Controller
         $blog = Blog::where("slug", $slug)->first();
         return response()->json([
             "blocks" => $blog->content
+        ]);
+    }
+
+    public function editBlog($blogId)
+    {
+        $blog = Blog::where("slug", $blogId)->first();
+        $categories = Category::all();
+        return View::make("admin.edit-article", [
+            "blog" => $blog,
+            "categories" => $categories
         ]);
     }
 }

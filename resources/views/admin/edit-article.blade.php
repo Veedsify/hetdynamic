@@ -51,11 +51,36 @@
             {{-- Header ends --}}
             <div class="body-wrapper">
                 <div class="container-fluid">
+                    <div class="card bg-info-subtle shadow-none position-relative overflow-hidden mb-4">
+                        <div class="card-body px-4 py-3">
+                            <div class="row align-items-center">
+                                <div class="col-9">
+                                    <h4 class="fw-semibold mb-8">New Article</h4>
+                                    <nav aria-label="breadcrumb">
+                                        <ol class="breadcrumb">
+                                            <li class="breadcrumb-item">
+                                                <a class="text-muted text-decoration-none" href="/">Home</a>
+                                            </li>
+                                            <li class="breadcrumb-item" aria-current="page">New Article</li>
+                                        </ol>
+                                    </nav>
+                                </div>
+                                <div class="col-3">
+                                    <div class="text-center mb-n5">
+                                        <img src="/admin-assets/images/breadcrumb/ChatBc.png" alt=""
+                                            class="img-fluid mb-n4">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                     {{-- EDITOR HERE --}}
                     <div class="card rounded-2 overflow-hidden p-md-4 p-2">
-                        <form action="{{ route('blog.new.article') }}" method="post" enctype="multipart/form-data"
-                            id="newarticleform">
+                        <form action="{{ route('admin.blog.update', $blog->slug) }}" method="post"
+                            enctype="multipart/form-data" id="newarticleform">
                             @csrf
+                            @method('PUT')
                             @if (session()->has('success'))
                                 <div class="alert alert-success">
                                     {{ session()->get('success') }}
@@ -72,13 +97,14 @@
                             @endif
                             <div class="form-group ">
                                 <input type="text" class="blog-title" id="title" name="title"
-                                    value="{{ old('title') }}" placeholder="Add a title ...">
+                                    value="{{ old('title') !== null ? old('title') : $blog->title }}"
+                                    placeholder="Add a title ...">
                             </div>
                             @if ($errors->has('html'))
                                 <p class="text-danger">{{ $errors->first('html') }}</p>
                             @endif
                             <div>
-                                <div id="new-article"></div>
+                                <textarea id="new-article">{{ $blog->content ? $blog->content : '' }}</textarea>
                                 <textarea class="d-none"name="html" id="htmlarea">{{ old('html') }}</textarea>
                             </div>
                             <div class="form-group ">
@@ -86,13 +112,15 @@
                                     <p class="text-danger">{{ $errors->first('tags') }}</p>
                                 @endif
                                 <input type="text" class="blog-title slim-title" id="tags" name="tags"
-                                    value="{{ old('tags') }}" placeholder="Tags here comma seperated">
+                                    value="{{ old('tags') !== null ? old('tags') : $blog->tags }}"
+                                    placeholder="Tags here comma seperated">
                             </div>
                             <div class="form-group ">
                                 <select type="text" class="blog-title slim-title" id="category" name="category">
                                     <option value="" selected disabled>{--- Select Category ---}</option>
                                     @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                        <option {{ $blog->category == $category->id ? 'selected' : '' }}
+                                            value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                                 </select>
                             </div>
@@ -100,7 +128,7 @@
                                 <p class="text-danger">{{ $errors->first('description') }}</p>
                             @endif
                             <textarea name="description" placeholder="Write a description" id="" cols="30" rows="10"
-                                class="form-control mb-3 border-1"></textarea>
+                                class="form-control mb-3 border-1">{{ $blog->description ? $blog->description : '' }}</textarea>
 
                             @if ($errors->has('file'))
                                 <p class="text-danger">{{ $errors->first('file') }}</p>
@@ -109,15 +137,18 @@
                                 <p>Featured Image</p>
                                 <input type="file" className="hidden d-none" id="featured_article_image"
                                     name="file" />
-                                <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500" />
+                                <img src="{{ $blog->image ? $blog->image : asset('custom/placeholder.png') }}"
+                                    alt="" width="500" />
                             </label>
                             <div class="form-group ">
                                 <label class="fw-bold fs-4">
                                     Active Status
                                 </label>
                                 <select type="text" class="blog-title slim-title" id="status" name="status">
-                                    <option value="active" selected>Published</option>
-                                    <option value="draft">Draft</option>
+                                    <option value="active" {{ $blog->status === 1 ? 'selected' : '' }}>Published
+                                    </option>
+                                    <option value="draft" {{ $blog->status === 0 ? 'selected' : '' }}>Draft
+                                    </option>
                                 </select>
                             </div>
                             <div class="d-flex justify-content-end">

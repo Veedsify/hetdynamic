@@ -45,6 +45,7 @@ class AuthController extends Controller
             'password' => Hash::make($request->password),
             'email_verification_token' => Str::random(64),
             'email_verified' => false,
+            "remember_token" => Str::random(10),
             'avatar' => "/custom/placeholder.jpg"
         ]);
 

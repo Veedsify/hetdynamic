@@ -49,6 +49,26 @@
                 <span class="hide-menu">Comments</span>
             </a>
         </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.blog.comment') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-box"></i>
+                </span>
+                <span class="hide-menu">Categories</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Countries</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.blog.comment') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-flag"></i>
+                </span>
+                <span class="hide-menu">Countries</span>
+            </a>
+        </li>
         <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Study</span>
@@ -278,7 +298,7 @@
             <ul aria-expanded="false" class="collapse first-level">
 
                 <li class="sidebar-item">
-                    <a href="{{route('config.about')}}" class="sidebar-link">
+                    <a href="{{ route('config.about') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -286,7 +306,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('config.experience')}}" class="sidebar-link">
+                    <a href="{{ route('config.experience') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -313,7 +333,7 @@
             <ul aria-expanded="false" class="collapse first-level">
 
                 <li class="sidebar-item">
-                    <a href="{{route('config.contact')}}" class="sidebar-link">
+                    <a href="{{ route('config.contact') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -321,7 +341,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('config.checkout.location')}}" class="sidebar-link">
+                    <a href="{{ route('config.checkout.location') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -341,7 +361,7 @@
             <ul aria-expanded="false" class="collapse first-level">
 
                 <li class="sidebar-item">
-                    <a href="{{route('config.terms.banner')}}" class="sidebar-link">
+                    <a href="{{ route('config.terms.banner') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -349,7 +369,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('config.terms.content')}}" class="sidebar-link">
+                    <a href="{{ route('config.terms.content') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -364,12 +384,12 @@
                 <span class="d-flex">
                     <i class="ti ti-info-circle"></i>
                 </span>
-                <span class="hide-menu">Privacy  Policy Page</span>
+                <span class="hide-menu">Privacy Policy Page</span>
             </a>
             <ul aria-expanded="false" class="collapse first-level">
 
                 <li class="sidebar-item">
-                    <a href="{{route('config.policy.banner')}}" class="sidebar-link">
+                    <a href="{{ route('config.policy.banner') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -377,7 +397,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('config.privacy.policy')}}" class="sidebar-link">
+                    <a href="{{ route('config.privacy.policy') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -397,7 +417,7 @@
             <ul aria-expanded="false" class="collapse first-level">
 
                 <li class="sidebar-item">
-                    <a href="{{route('config.review.banner')}}" class="sidebar-link">
+                    <a href="{{ route('config.review.banner') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>
@@ -405,7 +425,7 @@
                     </a>
                 </li>
                 <li class="sidebar-item">
-                    <a href="{{route('config.write.review')}}" class="sidebar-link">
+                    <a href="{{ route('config.write.review') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
                             <i class="ti ti-circle"></i>
                         </div>

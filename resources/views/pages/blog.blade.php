@@ -1,5 +1,7 @@
 @extends('layouts/index', [
     'title' => 'Blog - HetDynamic',
+    'description' => "Hello World",
+    'image' => $pagedata->site_logo,
 ])
 @section('content')
     <div class="preloader">

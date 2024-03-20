@@ -24,10 +24,10 @@
 
     <!-- OG Tags -->
     <meta property="og:title" content="{{ $title }} | {{ config('app.name') }}" />
-    <meta property="og:description" content="{{ $pagedata->site_description }}" />
-    <meta property="og:image" content="{{ asset($pagedata->site_logo) }}" />
+    <meta property="og:description" content="{{ $description }}" />
+    <meta property="og:image" content="{{ $image }}" />
     <meta property="og:url" content="{{ url()->current() }}" />
-    <meta property="og:site_name" content="{{ config('app.name') }}" />
+    <meta property="og:site_name" content="{{ $pagedata->site_name }}" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="en_US" />
     <meta property="og:locale:alternate" content="en_US" />
@@ -35,16 +35,16 @@
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="{{ $title }} | {{ config('app.name') }}">
-    <meta name="twitter:description" content="{{ $pagedata->site_description }}">
-    <meta name="twitter:image" content="{{ asset($pagedata->site_logo) }}">
+    <meta name="twitter:description" content="{{ $description }}">
+    <meta name="twitter:image" content="{{ $image }}">
 
     <!-- Apple Touch Icons -->
     <link rel="apple-touch-icon" sizes="180x180" href="{{ asset($pagedata->site_logo) }}" />
 
     <!-- Google -->
     <meta itemprop="name" content="{{ $title }} | {{ config('app.name') }}">
-    <meta itemprop="description" content="{{ $pagedata->site_description }}">
-    <meta itemprop="image" content="{{ asset($pagedata->site_logo) }}">
+    <meta itemprop="description" content="{{ $description }}">
+    <meta itemprop="image" content="{{ $image }}">
 
     <link rel="stylesheet" href="{{ asset('assets/vendors/bootstrap/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/vendors/animate/animate.min.css') }}" />

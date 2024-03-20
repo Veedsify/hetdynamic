@@ -1,5 +1,8 @@
 @extends('layouts/index', [
-    'title' => $article->title . ' | HetDynamic',
+    'title' => $article->title,
+    'description' => $article->description,
+    'image' => $article->image,
+    "meta_tags" => ""
 ])
 @section('content')
     <div class="preloader">

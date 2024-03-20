@@ -1,5 +1,8 @@
 @extends('layouts/index', [
-    'title' => 'About - HetDynamic | Learn more about us ',
+    'title' => 'About - Learn more about us ',
+    'description' => $pagedata->site_description,
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 
 @section('content')
@@ -11,7 +14,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav/>
+        <x-nav />
         {{-- NAVIGATION ENDS HERE --}}
 
         <div class="stricky-header stricked-menu main-menu">
@@ -118,9 +121,9 @@
         <!--Testimonial Two Start-->
         <section class="testimonial-two about-page-testimonial">
             <div class="about-page-testimonial__bg-1"
-                 style="background-image: url(assets/images/backgrounds/about-page-testimonial-bg-1.jpg);"></div>
+                style="background-image: url(assets/images/backgrounds/about-page-testimonial-bg-1.jpg);"></div>
             <div class="about-page-testimonial__bg-2"
-                 style="background-image: url(assets/images/backgrounds/about-page-testimonial-bg-2.png);"></div>
+                style="background-image: url(assets/images/backgrounds/about-page-testimonial-bg-2.png);"></div>
             <div class="container">
                 <div class="section-title text-center">
                     <div class="section-title__tagline-box">
@@ -133,7 +136,7 @@
                 </div>
                 <div class="testimonial-two__bottom">
                     <div class="testimonial-two__carousel owl-carousel owl-theme thm-owl__carousel"
-                         data-owl-options='{
+                        data-owl-options='{
                         "loop": true,
                         "autoplay": true,
                         "margin": 30,
@@ -347,7 +350,7 @@
                     <div class="col-xl-6">
                         <div class="faq-one__left">
                             <div class="faq-one__bg"
-                                 style="background-image: url(assets/images/backgrounds/faq-one-bg.jpg);"></div>
+                                style="background-image: url(assets/images/backgrounds/faq-one-bg.jpg);"></div>
                             <div class="faq-one__inner">
                                 <div class="faq-one__icon">
                                     <span class="icon-deal"></span>
@@ -569,7 +572,7 @@
             <div class="container">
                 <h4 class="brand-two__title">Our partners & suppoters</h4>
                 <div class="thm-swiper__slider swiper-container"
-                     data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
+                    data-swiper-options='{"spaceBetween": 100, "slidesPerView": 5, "autoplay": { "delay": 5000 }, "breakpoints": {
                     "0": {
                         "spaceBetween": 30,
                         "slidesPerView": 1
@@ -714,7 +717,7 @@
         <!--Counter One End-->
 
         <!--Site Footer Start-->
-        <x-footer/>
+        <x-footer />
         <!--Site Footer End-->
 
 
@@ -728,8 +731,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
-                                                                  width="135" alt=""/></a>
+                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                        alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

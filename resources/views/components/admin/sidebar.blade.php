@@ -50,7 +50,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.blog.comment') }}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.category') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-box"></i>
                 </span>
@@ -62,11 +62,35 @@
             <span class="hide-menu">Countries</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.blog.comment') }}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-flag"></i>
                 </span>
                 <span class="hide-menu">Countries</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Certificates</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-trophy"></i>
+                </span>
+                <span class="hide-menu">Certifications</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Team</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Team</span>
             </a>
         </li>
         <li class="nav-small-cap">

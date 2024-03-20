@@ -560,7 +560,7 @@ $(function () {
 
     //HandleFormSubmit
     const newArticleForm = document.querySelector("#newarticleform");
-    newArticleForm.addEventListener("submit", (e) => {
+    newArticleForm?.addEventListener("submit", (e) => {
         e.preventDefault();
         const htmlArea = document.querySelector("#htmlarea");
         htmlArea.value = JoditEditor.value;
@@ -574,4 +574,14 @@ $(function () {
         }
         e.target.submit();
     });
+
+
+    $("#toggleAddCategory").on("click", function () {
+        $(".add_category_modal").toggleClass("active");
+    })
+    $(".add_category_modal").click(function (e) {
+        if (e.target.classList.contains('add_category_modal')) {
+            $(".add_category_modal").toggleClass("active");
+        }
+    })
 });

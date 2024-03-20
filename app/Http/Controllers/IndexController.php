@@ -10,7 +10,7 @@ use Illuminate\Support\Facades\View;
 
 class IndexController extends Controller
 {
-    //
+    //P
     public function showIndexPage()
     {
         $blogs = Blog::query()->where("status", true)->orderBy("created_at", "desc")->limit(3)->get();

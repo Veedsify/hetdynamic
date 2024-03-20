@@ -18,13 +18,13 @@
                         <div class="card-body px-4 py-3">
                             <div class="row align-items-center">
                                 <div class="col-9">
-                                    <h4 class="fw-semibold mb-8">All Article</h4>
+                                    <h4 class="fw-semibold mb-8">All Countries</h4>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
                                                 <a class="text-muted text-decoration-none" href="/admin">Home</a>
                                             </li>
-                                            <li class="breadcrumb-item" aria-current="page">Article</li>
+                                            <li class="breadcrumb-item" aria-current="page">Countries</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -38,117 +38,139 @@
                         </div>
                     </div>
 
-                    <div class="widget-content searchable-container list">
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-md-6 col-xl-3">
-                                    <form class="position-relative">
-                                        <input type="text" class="form-control product-search ps-5" id="input-search"
-                                            placeholder="Search Article...">
-                                        <i
-                                            class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                                    </form>
-                                </div>
-                                <div
-                                    class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                                    <div class="action-btn show-btn">
-                                        <a href="javascript:void(0)"
-                                            class="delete-multiple bg-danger-subtle btn me-2 text-danger d-flex align-items-center ">
-                                            <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
+                    @endif
+
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <div class="d-flex align-items-center justify-content-end p-3">
+                        <button id="toggleAddCategory" class="btn btn-primary">New Country</button>
+                        <div class="add_category_modal">
+                            <form action="{{ route('admin.countries.add') }}" method="post" enctype="multipart/form-data">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <label for="name" class="fs-4 fw-bold mb-3 d-inline-block">Name</label>
+                                    <input type="text" name="name" class="form-control border-1" id="name"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="iso2" class="fs-4 fw-bold mb-3 d-inline-block">ISO2</label>
+                                    <input type="text" name="iso2" class="form-control border-1" id="iso2"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="iso3" class="fs-4 fw-bold mb-3 d-inline-block">ISO3</label>
+                                    <input type="text" name="iso3" class="form-control border-1" id="iso3"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="phonecode" class="fs-4 fw-bold mb-3 d-inline-block">Phone Code</label>
+                                    <input type="text" name="phonecode" class="form-control border-1" id="phonecode"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="capital" class="fs-4 fw-bold mb-3 d-inline-block">Capital</label>
+                                    <input type="text" name="capital" class="form-control border-1" id="capital"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="currency" class="fs-4 fw-bold mb-3 d-inline-block">Currency</label>
+                                    <input type="text" name="currency" class="form-control border-1" id="currency"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="native" class="fs-4 fw-bold mb-3 d-inline-block">Native</label>
+                                    <input type="text" name="native" class="form-control border-1" id="native"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="flag" class="fs-4 fw-bold mb-3 d-inline-block">Flag</label>
+                                    <input accept="image/png, image/jpeg, image/jpg, image/webp" size="1000000"
+                                        type="file" name="flag" class="form-control border-1" id="flag"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="slogan" class="fs-4 fw-bold mb-3 d-inline-block">Slogan</label>
+                                    <input type="text" name="slogan" class="form-control border-1" id="slogan"
+                                        required>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="widget-content searchable-container list">
+                        <!-- Modal -->
                         <div class="card card-body">
-                            @if (session()->has('success'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                </div>
-                            @endif
-                            @if (session()->has('error'))
-                                <div class="alert alert-danger">
-                                    {{ session()->get('error') }}
-                                </div>
-                            @endif
                             <div class="table-responsive">
                                 <table class="table search-table align-middle text-nowrap">
                                     <thead class="header-item">
-                                        <th>
-                                            <div class="n-chk align-self-center text-center">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input primary"
-                                                        id="contact-check-all">
-                                                    <label class="form-check-label" for="contact-check-all"></label>
-                                                    <span class="new-control-indicator"></span>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th>Featured Image</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Description</th>
-                                        <th>Status</th>
-                                        <th>Action</th>
-
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Name</th>
+                                            <th>ISO2</th>
+                                            <th>ISO3</th>
+                                            <th>Phone Code</th>
+                                            <th>Capital</th>
+                                            <th>Currency</th>
+                                            <th>Native</th>
+                                            <th>Flag</th>
+                                            <th>Slogan</th>
+                                        </tr>
                                     </thead>
                                     <tbody>
                                         <!-- start row -->
-                                        @foreach ($articles as $article)
-                                            <tr class="search-items" style="vertical-align: middle;">
+                                        @foreach ($countries as $country)
+                                            <tr class="search-items">
                                                 <td>
-                                                    <div class="n-chk align-self-center text-center">
-                                                        <div class="form-check">
-                                                            <input type="checkbox"
-                                                                class="form-check-input contact-chkbox primary"
-                                                                id="checkbox1">
-                                                            <label class="form-check-label" for="checkbox1"></label>
-                                                        </div>
-                                                    </div>
+                                                    {{ $loop->index + 1 }}
                                                 </td>
                                                 <td>
-                                                    <img src="{{ asset($article->image) }}" alt="avatar" width="54"
-                                                        height="34" style="object-fit: cover;">
+                                                    {{ $country->name }}
                                                 </td>
                                                 <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <div class="user-meta-info">
-                                                                <a href="{{ route('blog.details', $article->slug) }}"
-                                                                    target="_blank">
-                                                                    <h6 class="user-name mb-0">{{ $article->title }}</h6>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    {{ $country->iso2 }}
                                                 </td>
                                                 <td>
-                                                    <span>{{ isset(\App\Models\Category::where('id', $article->category)->first()->name) ? \App\Models\Category::where('id', $article->category)->first()->name : '' }}</span>
+                                                    {{ $country->iso3 }}
                                                 </td>
                                                 <td>
-                                                    <span class="d-inline-block text-truncate"
-                                                        style="width: 400px;">{{ $article->description }}
-                                                        </>
+                                                    {{ $country->phonecode }}
                                                 </td>
                                                 <td>
-                                                    <span
-                                                        class="w-30 fw-bold {{ $article->status == 1 ? 'text-success' : 'text-warning' }}">{{ $article->status == 1 ? 'Published' : 'Draft' }}
-                                                        </>
+                                                    {{ $country->capital }}
                                                 </td>
                                                 <td>
-                                                    <div class="action-btn d-flex align-items-center">
-                                                        <a href="{{ route('admin.blog.edit', $article->slug) }}"
-                                                            class="text-primary edit">
-                                                            <i class="ti ti-pencil fs-5"></i>
-                                                        </a>
-                                                        <form action="{{ route('blog.delete', $article->slug) }}"
+                                                    {{ $country->currency }}
+                                                </td>
+                                                <td>
+                                                    {{ $country->native }}
+                                                </td>
+                                                <td>
+                                                    <img width="50" src="{{ asset($country->flag) }}"
+                                                        alt="">
+                                                </td>
+                                                <td>
+                                                    {{ $country->slogan }}
+                                                </td>
+                                                <td>
+                                                    <div class="action-btn">
+                                                        <form action="{{ route('admin.countries.delete', $country->id) }}"
                                                             method="post" data-delete_action="delete">
                                                             @csrf
-                                                            @method('delete')
-                                                            <button href="javascript:void(0)"
-                                                                class="text-dark delete ms-2 border-0 bg-transparent">
-                                                                <i class="ti ti-trash fs-5 text-danger"></i>
+                                                            @method('DELETE')
+                                                            <button
+                                                                class="text-danger delete ms-2 bg-transparent border-0">
+                                                                <i class="ti ti-trash fs-5"></i>
                                                             </button>
                                                         </form>
                                                     </div>
@@ -163,7 +185,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <!--  Shopping Cart -->

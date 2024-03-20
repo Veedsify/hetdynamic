@@ -18,13 +18,13 @@
                         <div class="card-body px-4 py-3">
                             <div class="row align-items-center">
                                 <div class="col-9">
-                                    <h4 class="fw-semibold mb-8">All Article</h4>
+                                    <h4 class="fw-semibold mb-8">All Categories</h4>
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
                                                 <a class="text-muted text-decoration-none" href="/admin">Home</a>
                                             </li>
-                                            <li class="breadcrumb-item" aria-current="page">Article</li>
+                                            <li class="breadcrumb-item" aria-current="page">Categories</li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -38,117 +38,73 @@
                         </div>
                     </div>
 
-                    <div class="widget-content searchable-container list">
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-md-6 col-xl-3">
-                                    <form class="position-relative">
-                                        <input type="text" class="form-control product-search ps-5" id="input-search"
-                                            placeholder="Search Article...">
-                                        <i
-                                            class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                                    </form>
-                                </div>
-                                <div
-                                    class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                                    <div class="action-btn show-btn">
-                                        <a href="javascript:void(0)"
-                                            class="delete-multiple bg-danger-subtle btn me-2 text-danger d-flex align-items-center ">
-                                            <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
-                                        </a>
-                                    </div>
-
-                                </div>
-                            </div>
+                    @if (session()->has('success'))
+                        <div class="alert alert-success alert-dismissible fade show" role="alert">
+                            {{ session('success') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                         </div>
+                    @endif
+
+                    @if (session()->has('error'))
+                        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                            {{ session('error') }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                        </div>
+                    @endif
+                    <div class="d-flex align-items-center justify-content-end p-3">
+                        <button id="toggleAddCategory" class="btn btn-primary">Add Category</button>
+                        <div class="add_category_modal">
+                            <form action="{{ route('admin.category.add') }}" method="post">
+                                @csrf
+                                <div class="form-group mb-3">
+                                    <label for="category" class="fs-4 fw-bold mb-3 d-inline-block">Category Name</label>
+                                    <input type="text" name="category" class="form-control border-1 " id="category"
+                                        required>
+                                </div>
+                                <div class="form-group mb-3">
+                                    <label for="category" class="fs-4 fw-bold mb-3 d-inline-block">Category
+                                        Description</label>
+                                    <textarea type="text" name="description" class="form-control border-1 " id="description" rows="3" required></textarea>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary w-100">Add</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="widget-content searchable-container list">
+                        <!-- Modal -->
                         <div class="card card-body">
-                            @if (session()->has('success'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                </div>
-                            @endif
-                            @if (session()->has('error'))
-                                <div class="alert alert-danger">
-                                    {{ session()->get('error') }}
-                                </div>
-                            @endif
                             <div class="table-responsive">
                                 <table class="table search-table align-middle text-nowrap">
                                     <thead class="header-item">
-                                        <th>
-                                            <div class="n-chk align-self-center text-center">
-                                                <div class="form-check">
-                                                    <input type="checkbox" class="form-check-input primary"
-                                                        id="contact-check-all">
-                                                    <label class="form-check-label" for="contact-check-all"></label>
-                                                    <span class="new-control-indicator"></span>
-                                                </div>
-                                            </div>
-                                        </th>
-                                        <th>Featured Image</th>
-                                        <th>Title</th>
-                                        <th>Category</th>
-                                        <th>Description</th>
-                                        <th>Status</th>
+                                        <th>#</th>
+                                        <th>Name</th>
+                                        <th>Slug</th>
                                         <th>Action</th>
-
                                     </thead>
                                     <tbody>
                                         <!-- start row -->
-                                        @foreach ($articles as $article)
-                                            <tr class="search-items" style="vertical-align: middle;">
+                                        @foreach ($categories as $category)
+                                            <tr class="search-items">
                                                 <td>
-                                                    <div class="n-chk align-self-center text-center">
-                                                        <div class="form-check">
-                                                            <input type="checkbox"
-                                                                class="form-check-input contact-chkbox primary"
-                                                                id="checkbox1">
-                                                            <label class="form-check-label" for="checkbox1"></label>
-                                                        </div>
-                                                    </div>
+                                                    {{ $loop->index + 1 }}
                                                 </td>
                                                 <td>
-                                                    <img src="{{ asset($article->image) }}" alt="avatar" width="54"
-                                                        height="34" style="object-fit: cover;">
+                                                    {{ $category->name }}
                                                 </td>
                                                 <td>
-                                                    <div class="d-flex align-items-center">
-                                                        <div>
-                                                            <div class="user-meta-info">
-                                                                <a href="{{ route('blog.details', $article->slug) }}"
-                                                                    target="_blank">
-                                                                    <h6 class="user-name mb-0">{{ $article->title }}</h6>
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
+                                                    {{ Str::slug($category->name) }}
                                                 </td>
                                                 <td>
-                                                    <span>{{ isset(\App\Models\Category::where('id', $article->category)->first()->name) ? \App\Models\Category::where('id', $article->category)->first()->name : '' }}</span>
-                                                </td>
-                                                <td>
-                                                    <span class="d-inline-block text-truncate"
-                                                        style="width: 400px;">{{ $article->description }}
-                                                        </>
-                                                </td>
-                                                <td>
-                                                    <span
-                                                        class="w-30 fw-bold {{ $article->status == 1 ? 'text-success' : 'text-warning' }}">{{ $article->status == 1 ? 'Published' : 'Draft' }}
-                                                        </>
-                                                </td>
-                                                <td>
-                                                    <div class="action-btn d-flex align-items-center">
-                                                        <a href="{{ route('admin.blog.edit', $article->slug) }}"
-                                                            class="text-primary edit">
-                                                            <i class="ti ti-pencil fs-5"></i>
-                                                        </a>
-                                                        <form action="{{ route('blog.delete', $article->slug) }}"
+
+                                                    <div class="action-btn">
+                                                        <form action="{{ route('admin.category.delete', $category->id) }}"
                                                             method="post" data-delete_action="delete">
                                                             @csrf
-                                                            @method('delete')
-                                                            <button href="javascript:void(0)"
-                                                                class="text-dark delete ms-2 border-0 bg-transparent">
-                                                                <i class="ti ti-trash fs-5 text-danger"></i>
+                                                            @method('DELETE')
+                                                            <button class="text-danger delete ms-2 bg-transparent border-0">
+                                                                <i class="ti ti-trash fs-5"></i>
                                                             </button>
                                                         </form>
                                                     </div>
@@ -163,7 +119,6 @@
                 </div>
             </div>
         </div>
-
 
 
         <!--  Shopping Cart -->

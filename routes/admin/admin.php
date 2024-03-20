@@ -8,6 +8,7 @@ use App\Http\Controllers\CountryController;
 use App\Http\Controllers\ResidencyController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\AdminPagesController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
 
@@ -56,6 +57,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::delete("/comment/{commentId}", [BlogController::class, "deleteComment"])->name("admin.blog.comment.delete");
     });
 
+    Route::get("/admin/category", [CategoryController::class, "viewcategory"])->name("admin.category");
+    Route::delete("/admin/category/delete{id}", [CategoryController::class, "deletecategory"])->name("admin.category.delete");
+    Route::post("/admin/category/add", [CategoryController::class, "createcategory"])->name("admin.category.add");
+
+    //Countries 
+    Route::get("/admin/countries", [CountryController::class, "countries"])->name("admin.countries");
+    Route::post("/admin/countries/add", [CountryController::class, "createCountry"])->name("admin.countries.add");
+    Route::delete("/admin/countries/delete/{id}", [CountryController::class, "deleteCountry"])->name("admin.countries.delete");
 
     Route::prefix("/admin/study")->group(function () {
         Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");

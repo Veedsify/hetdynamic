@@ -1,15 +1,13 @@
-﻿@extends('../layouts/admin/adminlayout',[
-    
-])
+﻿@extends('../layouts/admin/adminlayout', [])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-    
+
         <div class="page-wrapper">
-{{-- aside --}}
+            {{-- aside --}}
             <x-admin.aside />
             {{-- Header start --}}
             <x-admin.header />
@@ -39,8 +37,10 @@
                                     <div class="text-center">
                                         <img src="{{ asset('admin-assets/images/svgs/icon-briefcase.svg') }}" width="50"
                                             height="50" class="mb-3" alt="">
-                                        <p class="fw-semibold fs-3 text-warning mb-1">Clients</p>
-                                        <h5 class="fw-semibold text-warning mb-0">3,650</h5>
+                                        <p class="fw-semibold fs-3 text-warning mb-1">Requests</p>
+                                        <h5 class="fw-semibold text-warning mb-0">
+                                            {{ number_format(\App\Models\Contact::count()) }}
+                                        </h5>
                                     </div>
                                 </div>
                             </div>
@@ -51,8 +51,10 @@
                                     <div class="text-center">
                                         <img src="{{ asset('admin-assets/images/svgs/icon-mailbox.svg') }}" width="50"
                                             height="50" class="mb-3" alt="">
-                                        <p class="fw-semibold fs-3 text-info mb-1">Projects</p>
-                                        <h5 class="fw-semibold text-info mb-0">356</h5>
+                                        <p class="fw-semibold fs-3 text-info mb-1">Categories</p>
+                                        <h5 class="fw-semibold text-info mb-0">
+                                            {{ number_format(\App\Models\Category::count()) }}
+                                        </h5>
                                     </div>
                                 </div>
                             </div>

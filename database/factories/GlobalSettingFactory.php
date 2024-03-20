@@ -17,7 +17,6 @@ class GlobalSettingFactory extends Factory
     public function definition(): array
     {
         return [
-            //
             'admin_email' => 'dikewisdom787@gmail.com',
             'default_mail_address' => 'dikewisdom778@gmail.com',
             'support_mail_address' => 'dikewisdom100@gmail.com',

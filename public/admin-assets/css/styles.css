@@ -31331,3 +31331,33 @@ body .dp-nav.dp-nav-right::before {
   margin-bottom: 1rem;
   margin-inline: auto;
 }
+
+.add_category_modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease-in-out;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.add_category_modal.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.add_category_modal form {
+  width: 100%;
+  max-width: 500px;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}

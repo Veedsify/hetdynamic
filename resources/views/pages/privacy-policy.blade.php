@@ -1,5 +1,8 @@
 @extends('layouts/index', [
     'title' => 'Privacy Policy - HetDynamic | Learn more about us ',
+    'description' => 'This is hetdynamic Privacy Policy page',
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 
 @section('content')

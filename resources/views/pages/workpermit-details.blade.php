@@ -1,5 +1,8 @@
 @extends('layouts/index', [
-    'title' => 'Residency Details - HetDynamic',
+    'title' => 'Work Permit Details - HetDynamic',
+    'description' => 'This is hetdynamic Work Permit page',
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">

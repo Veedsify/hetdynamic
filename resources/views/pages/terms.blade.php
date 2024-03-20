@@ -1,5 +1,8 @@
 @extends('layouts/index', [
     'title' => 'Terms and Condition - HetDynamic | Learn more about us ',
+    'description' => 'This is hetdynamic Terms and Condition page',
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 
 @section('content')

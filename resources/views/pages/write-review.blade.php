@@ -1,5 +1,8 @@
 @extends('layouts/index', [
     'title' => 'Write a Review - HetDynamic | Reach us on our hotlines',
+    'description' => 'This is hetdynamic Write Review page',
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">
@@ -32,7 +35,7 @@
         </section>
         <!--Page Header End-->
 
-        <div class="container my-md-5">
+        <div class="container my-lg-5">
             <div class="row">
                 <div class="col-xl-6">
                     <div class="about-one__right">

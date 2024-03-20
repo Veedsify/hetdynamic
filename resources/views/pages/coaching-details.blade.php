@@ -1,5 +1,8 @@
 @extends('layouts/index', [
     'title' => 'Home - HetDynamic',
+    'description' => $pagedata->site_description,
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">

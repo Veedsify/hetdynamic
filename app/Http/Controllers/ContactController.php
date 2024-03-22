@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Mail\ContactMail;
 use App\Models\Contact;
-use App\Models\GlobalSetting;
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use App\Models\GlobalSetting;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Config;
 
 class ContactController extends Controller
 {
@@ -35,8 +36,7 @@ class ContactController extends Controller
         $contact->message = $request->message;
         $contact->save();
 
-        Mail::to(GlobalSetting::first()
-            ->admin_email)
+        Mail::to(GlobalSetting::first()->admin_email)
             ->bcc(GlobalSetting::first()->support_mail_address)
             ->send(new ContactMail($contact));
 

@@ -1,8 +1,8 @@
 @extends('layouts/index', [
     'title' => $article->title,
     'description' => $article->description,
-    'image' => $article->image,
-    "meta_tags" => ""
+    'image' => asset($article->image),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">
@@ -22,7 +22,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{ $article->image }})">
+            <div class="page-header-bg" style="background-image: url({{ asset($article->image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -44,7 +44,7 @@
                     <div class="col-xl-8 col-lg-7">
                         <div class="blog-details__left">
                             <div class="blog-details__img-box">
-                                <img src="{{ $article->image }}" alt=""
+                                <img src="{{ asset($article->image) }}" alt=""
                                     style="aspect-ratio:16/9; object-fit:cover;">
                                 <div class="blog-details__date">
                                     <p>20 <span>Feb</span></p>

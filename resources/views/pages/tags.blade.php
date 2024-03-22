@@ -1,5 +1,7 @@
 @extends('layouts/index', [
-    'title' => 'Blog - HetDynamic',
+    'title' => 'Tags - ' . $query,
+    'description' => 'Tags - ' . $query,
+    'image' => asset($pagedata->site_logo),
 ])
 @section('content')
     <div class="preloader">

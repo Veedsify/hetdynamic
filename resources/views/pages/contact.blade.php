@@ -1,5 +1,7 @@
 @extends('layouts/index', [
     'title' => 'Contact - HetDynamic | Reach us on our hotlines',
+    'description' => 'Contact us for any inquiries, we are always available to help you out. Reach us on our hotlines or send us an email.',
+    'image' => $pagedata->site_logo,
 ])
 @section('content')
     <div class="preloader">
@@ -435,8 +437,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
-                        width="135" alt="" /></a>
+                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                        alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

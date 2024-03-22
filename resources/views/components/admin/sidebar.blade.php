@@ -74,7 +74,7 @@
             <span class="hide-menu">Certificates</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.certificates') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-trophy"></i>
                 </span>

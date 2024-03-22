@@ -1,5 +1,7 @@
 @extends('layouts/index', [
-    'title' => 'Error 404 - Sorry we cant find this page | Hetdynamic',
+    'title' => '404 Error - Sorry we cant find this page | Hetdynamic',
+    'description' => 'Error 404 - Sorry we cant find this page | Hetdynamic',
+    'image' => asset('assets/images/resources/notfound.png'),
 ])
 @section('content')
     <div class="preloader">
@@ -18,7 +20,8 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg"
+                style="background-image: url({{ asset('assets/images/backgrounds/page-header-bg.jpg') }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">

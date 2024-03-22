@@ -11,6 +11,7 @@ use App\Http\Controllers\Admin\AdminPagesController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
+use App\Http\Controllers\CertificateController;
 
 // Admin Route Web Endpoints
 
@@ -66,6 +67,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post("/admin/countries/add", [CountryController::class, "createCountry"])->name("admin.countries.add");
     Route::delete("/admin/countries/delete/{id}", [CountryController::class, "deleteCountry"])->name("admin.countries.delete");
 
+    Route::prefix("/admin/certificates")->group(function () {
+        Route::get("/", [CertificateController::class, "certificates"])->name("admin.certificates");
+        Route::post("/new", [CertificateController::class, "newCertificate"])->name("admin.certificate.add");
+        Route::delete("/delete/{id}", [CertificateController::class, "deleteCertificate"])->name("admin.certificate.delete");
+    });
+    
     Route::prefix("/admin/study")->group(function () {
         Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");
     });

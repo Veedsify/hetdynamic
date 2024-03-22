@@ -5,11 +5,13 @@ namespace App\Mail;
 use App\Models\Contact;
 use App\Models\GlobalSetting;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use Symfony\Component\Finder\Glob;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ContactMail extends Mailable implements ShouldQueue
 {
@@ -30,9 +32,10 @@ class ContactMail extends Mailable implements ShouldQueue
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'New Contact Request From ' . config('app.name', ''),
+            subject: 'New Contact Request From ' . GlobalSetting::first()->site_name,
+            from: new Address(config("mail.from.address"), GlobalSetting::first()->site_name),
             to: GlobalSetting::first()->admin_email,
-            cc: GlobalSetting::first()->support_mail_address,
+            bcc: GlobalSetting::first()->support_mail_address,
         );
     }
 

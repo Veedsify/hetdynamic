@@ -30,8 +30,9 @@ class BlogController extends Controller
             "slug" => $postId,
             "status" => true
         ])->first();
-        if (!$article) {
-            return abort(404, "Article Not Found");
+
+        if ($article === null) {
+            return abort(404);
         }
         $comments = $article->comments;
         $comments = $comments->sortByDesc("created_at");
@@ -83,7 +84,12 @@ class BlogController extends Controller
     public function deleteBlog($blogSlug)
     {
         try {
-            $blogs = Blog::where("slug", $blogSlug)->delete();
+            $blogs = Blog::where("slug", $blogSlug)->first();
+            $image = public_path($blogs->image);
+            if (file_exists($image)) {
+                unlink($image);
+            }
+            $blogs->delete();
             return redirect()->back()->with("success", "Article Deleted Successfully");
         } catch (\Exception $e) {
             return redirect()->back()->with("error", "An Error Occurred");
@@ -106,7 +112,7 @@ class BlogController extends Controller
             $file = $request->file("file");
             $fileName = time() . "." . $file->getClientOriginalExtension();
             $file->move(public_path("custom/blog"), $fileName);
-            $filepath = asset("custom/blog/" . $fileName);
+            $filepath = "custom/blog/" . $fileName;
             $imageUploadHandler = new ImageUploader();
             $imageUploadHandler->image_name = $fileName;
             $imageUploadHandler->image_path = $filepath;
@@ -162,7 +168,7 @@ class BlogController extends Controller
                 $file = $request->file("file");
                 $fileName = time() . "." . $file->getClientOriginalExtension();
                 $file->move(public_path("custom/blog"), $fileName);
-                $filepath = asset("custom/blog/" . $fileName);
+                $filepath = "custom/blog/" . $fileName;
                 $imageUploadHandler = new ImageUploader();
                 $imageUploadHandler->image_name = $fileName;
                 $imageUploadHandler->image_path = $filepath;

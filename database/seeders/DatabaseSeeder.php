@@ -4,12 +4,15 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
+use App\Models\AboutpageBanner;
 use App\Models\Blog;
 use App\Models\Category;
 use App\Models\Country;
 use App\Models\GlobalSetting;
 use App\Models\HomepageBanner;
+use App\Models\HomepageCoaching;
 use App\Models\HomepageConsulting;
+use App\Models\HomepageSupport;
 use App\Models\User;
 use Illuminate\Database\Seeder;
 
@@ -41,6 +44,19 @@ class DatabaseSeeder extends Seeder
             'consulting_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
             'consulting_image_2' => 'https://images.pexels.com/photos/2070485/pexels-photo-2070485.jpeg?auto=compress&cs=tinysrgb&w=400'
         ]);
+        HomepageSupport::create([
+            'support_title' => 'Support Services',
+            'support_feature_1' => 'Feature 1',
+            'support_feature_2' => 'Feature 2',
+            'support_feature_3' => 'Feature 3',
+            'support_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600'
+        ]);
+        HomepageCoaching::create([
+            'coaching_title' => 'Coaching Services',
+            'coaching_description' => 'We provide the best coaching services',
+        ]);
+ 
+
         Category::factory(10)->create();
 
         GlobalSetting::factory(1)->create();

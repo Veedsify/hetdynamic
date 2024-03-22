@@ -84,7 +84,7 @@
                                     <img src="/assets/images/resources/feature-1-1.png" alt="">
                                 </div>
                                 <p class="feature-one__sub-title">Online form</p>
-                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New
+                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New 
                                         Visa</a></h3>
                                 <div class="feature-one__btn-box">
                                     <a href="visa-details.html" class="feature-one__btn">Learn More</a>
@@ -351,7 +351,7 @@
         <!--Video One Start-->
         <section class="video-one">
             <div class="video-one__bg" data-jarallax data-speed="0.2" data-imgPosition="50% 0%"
-                style="background-image: url(assets/images/backgrounds/video-one-bg.jpg);"></div>
+                style="background-image:url({{ asset($supportData->support_image) }});"></div>
             <div class="container">
                 <div class="row">
                     <div class="col-xl-5 col-lg-6">
@@ -361,8 +361,7 @@
                                     <span class="section-title__tagline">get our support</span>
                                     <div class="section-title__border-box"></div>
                                 </div>
-                                <h2 class="section-title__title">Most Trusted Visa &
-                                    Immigration</h2>
+                                <h2 class="section-title__title">{{ $supportData->support_title }}</h2>
                             </div>
                             <ul class="video-one__points list-unstyled">
                                 <li>
@@ -370,7 +369,7 @@
                                         <span class="icon-check"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Fast Visa Process</p>
+                                        <p>{{ $supportData->support_feature_1 }}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -378,7 +377,7 @@
                                         <span class="icon-check"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Get Country Citizenship</p>
+                                        <p>{{ $supportData->support_feature_2}}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -386,7 +385,7 @@
                                         <span class="icon-check"></span>
                                     </div>
                                     <div class="text">
-                                        <p>Help in Documentation</p>
+                                        <p>{{ $supportData->support_feature_3 }}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -502,17 +501,13 @@
                                         <span class="section-title__tagline">Coaching we offer</span>
                                         <div class="section-title__border-box"></div>
                                     </div>
-                                    <h2 class="section-title__title">Get the Best Trainings you
-                                        Deserve</h2>
+                                    <h2 class="section-title__title">{{ $coachingData->coaching_title  }}</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-6">
                             <div class="coaching-one__right">
-                                <p class="coaching-one__text">There are many variations of passages of available but the
-                                    majority have suffered alteration in some form, by injected hum randomised words
-                                    which
-                                    don't slightly.</p>
+                                <p class="coaching-one__text">{{ $coachingData->coaching_description}}</p>
                             </div>
                         </div>
                     </div>

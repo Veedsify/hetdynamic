@@ -278,22 +278,8 @@
                         <span class="hide-menu">Coaching and Traning</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Testimonials</span>
-                    </a>
-                </li>
-                <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Countries List</span>
-                    </a>
-                </li>
+           
+            
                 <li class="sidebar-item">
                     <a href="{{ route('config.our.consultants') }}" class="sidebar-link">
                         <div class="round-16 d-flex align-items-center justify-content-center">
@@ -302,14 +288,7 @@
                         <span class="hide-menu">Our Consultants</span>
                     </a>
                 </li>
-                <li class="sidebar-item">
-                    <a href="blog-posts.html" class="sidebar-link">
-                        <div class="round-16 d-flex align-items-center justify-content-center">
-                            <i class="ti ti-circle"></i>
-                        </div>
-                        <span class="hide-menu">Contact</span>
-                    </a>
-                </li>
+            
             </ul>
         </li>
         <li class="sidebar-item">

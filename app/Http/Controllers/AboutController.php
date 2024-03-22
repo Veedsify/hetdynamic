@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\AboutpageBanner;
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\View;
 
 class AboutController extends Controller
@@ -10,6 +12,10 @@ class AboutController extends Controller
     //
     public function showAboutPage()
     {
-        return View::make('pages.about');
+        $aboutBanners  = AboutpageBanner::first();
+        return View::make('pages.about',[
+            "aboutBanners" => $aboutBanners 
+
+        ]);
     }
 }

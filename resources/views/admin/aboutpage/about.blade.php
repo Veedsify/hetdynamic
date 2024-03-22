@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.about.banner') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -68,16 +68,16 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">About Title</label>
-                                            <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="">
+                                            <input type="text" class="form-control" id="about_banner_title"
+                                                name="about_banner_title" value="{{ old('about_banner_title') === NULL ? $data->about_banner_title : old('about_banner_title') }}">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Banner Image </label>
-                                            <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                            <input type="file" class="form-control" id="about_banner_image"
+                                                name="about_banner_image" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

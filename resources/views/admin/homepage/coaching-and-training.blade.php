@@ -53,13 +53,13 @@
                                     aria-label="Close"></button>
                             </div>
                         @endif
-                        <div class="border p-4 py-5 rounded-4">
+                        <div class="border p-4  py-5 rounded-4">
                             @if ($errors->any())
                                 @foreach ($errors->all() as $error)
-                                    <p>{{ $error }}</p>
+                                    <p class="alert alert-danger">{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route("admin.settings.update.coaching.training") }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -68,8 +68,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Coaching and Training Tittle</label>
-                                            <input type="text" class="form-control" id="coaching_and_training"
-                                                name="coaching_and_training" value="">
+                                            <input type="text" class="form-control" id="coaching_title"
+                                                name="coaching_title" value="{{ old('coaching_title') === NULL ? $data->coaching_title : old('coaching_title') }}">
                                         </div>
                                     </div>
                                       <div class="col-md-12">
@@ -77,8 +77,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 ">Coaching and Training                                     Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="coaching_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('coaching_description') === NULL ? $data->coaching_description : old('coaching_description') }}</textarea>
                                         </div>
                                     </div>
 

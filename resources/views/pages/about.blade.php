@@ -23,11 +23,11 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url({{asset( $aboutBanners->about_banner_image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>About Us</h2>
+                    <h2>{{ $aboutBanners->about_banner_title }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>

@@ -4,9 +4,12 @@ namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
 use App\Models\HomepageBanner;
+use App\Models\AboutpageBanner;
+use App\Models\HomepageSupport;
+use App\Models\HomepageCoaching;
+use App\Models\HomepageConsulting;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\HomepageConsulting;
 
 class ConfigurationController extends Controller
 {
@@ -31,11 +34,17 @@ public function showBannerPage()
     }
     public function showOurSupportPage()
     {
-        return view("admin.homepage.our-support");
+        $supportData  = HomepageSupport::find(1)->first();
+               return view("admin.homepage.our-support", [
+            'data' => $supportData
+        ]);
+
     }
     public function showCoachingAndTrainingPage()
     {
-        return view("admin.homepage.coaching-and-training");
+         $coachingData  = HomepageCoaching::find(1)->first();
+                   return view("admin.homepage.coaching-and-training",[
+            'data' => $coachingData]);
     }
     public function showOurConsultantsPage()
     {
@@ -44,7 +53,10 @@ public function showBannerPage()
     // about
     public function showAboutPage()
     {
-        return view("admin.aboutpage.about");
+        $aboutBannerData  = AboutpageBanner::find(1)->first();
+        return view("admin.aboutpage.about", [
+            'data' => $aboutBannerData
+        ]);
     }
     public function showExperiencePage()
     {

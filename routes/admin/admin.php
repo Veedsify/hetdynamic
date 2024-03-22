@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\AboutController;
+use App\Http\Controllers\AboutpageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailController;
@@ -152,7 +154,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post("/our-consultants", [HomepageController::class, 'updateOurConsultants'])->name("our.consultants");
         Route::post("/contact", [HomepageController::class, 'updateContact'])->name("contact");
         // About Configuration
-        Route::post("/about", [ConfigurationUpdateController::class, 'updateAbout'])->name("about");
+        Route::post("/about-banner", [AboutpageController::class, 'updateAboutBanneer'])->name("about.banner");
         Route::post("/experience", [ConfigurationUpdateController::class, 'updateExperience'])->name("experience");
         Route::post("/about-us", [ConfigurationUpdateController::class, 'updateAboutUs'])->name("about.us");
         // Contact Configuration

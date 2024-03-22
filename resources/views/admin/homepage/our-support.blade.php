@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.our.support') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -69,7 +69,7 @@
                                                 class="form-label
                                                 fw-semibold">Our-Support Tittle</label>
                                             <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="">
+                                                name="support_title" value="{{ old('support_title') === NULL ? $data->support_title : old('support_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -77,8 +77,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Our-Support Feature 1</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="support_feature_1"
+                                                name="support_feature_1" value="{{ old('support_feature_1') === NULL ? $data->support_feature_1 : old('support_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -86,8 +86,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Our-Support Feature 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="support_feature_2"
+                                                name="support_feature_2" value="{{ old('support_feature_2') === NULL ? $data->support_feature_2 : old('support_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -95,8 +95,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Our-Support Feature 3</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="support_feature_3"
+                                                name="support_feature_3" value="{{ old('support_feature_3') === NULL ? $data->support_feature_3 : old('support_feature_3') }}">
                                         </div>
                                     </div>
 
@@ -104,7 +104,7 @@
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Our-support Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_logo" aria-describedby="emailHelp">
+                                                name="support_image" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

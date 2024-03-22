@@ -4,8 +4,11 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\HomepageBanner;
+use App\Models\HomepageSupport;
+use App\Models\HomepageCoaching;
 use App\Models\HomepageConsulting;
 use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
 
 class HomepageController extends Controller
 {
@@ -102,4 +105,48 @@ class HomepageController extends Controller
 
         return redirect()->back()->with('success', 'Homepage consulting updated successfully');
     }
+
+    public function updateOurSupport(Request $request)
+    {
+        $request->validate([
+            'support_title' => 'required',
+            'support_feature_1' => 'required',
+            'support_feature_2' => 'required',
+            'support_feature_3' => 'required',
+        ]);
+
+        if ($request->hasFile('support_image')) {
+            $support_image = $request->file('support_image');
+            $support_image_name = $support_image->getClientOriginalName();
+            $support_image->move(public_path('custom/settings'), $support_image_name);
+            $filePath = 'custom/settings/' . $support_image_name;
+        }
+
+        $homepageSupport = HomepageSupport::first();
+        $homepageSupport->support_title = $request->support_title;
+        $homepageSupport->support_feature_1 = $request->support_feature_1;
+        $homepageSupport->support_feature_2 = $request->support_feature_2;
+        $homepageSupport->support_feature_3 = $request->support_feature_3;
+        if ($request->hasFile('support_image')) {
+            $homepageSupport->support_image = $filePath;
+        }
+        $homepageSupport->save();
+
+        return redirect()->back()->with('success', 'Homepage support updated successfully');
+    }
+    public function updateCoachingAndTraining(Request $request){
+        $request->validate([
+            'coaching_title' => 'required',
+            'coaching_description' => 'required',
+        ]);
+
+
+        $homepageCoaching = HomepageCoaching::first();
+        $homepageCoaching->coaching_title = $request->coaching_title;
+        $homepageCoaching->coaching_description = $request->coaching_description;
+        $homepageCoaching->save();
+
+        return redirect()->back()->with('success', 'Homepage coaching updated successfully');
+    }
+
 }

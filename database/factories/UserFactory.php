@@ -30,6 +30,7 @@ class UserFactory extends Factory
             'user_id' => fake()->userName(),
             'password' => static::$password ??= Hash::make('1234567890'),
             'role' => 'admin',
+            'avatar' => 'https://images.pexels.com/photos/16563297/pexels-photo-16563297/free-photo-of-hermitage-of-saint-john-in-montserrat.jpeg?auto=compress&cs=tinysrgb&w=600&lazy=load',
             'email_verification_token' => Str::random(60),
             'remember_token' => Str::random(10),
         ];

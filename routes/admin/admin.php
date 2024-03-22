@@ -15,6 +15,7 @@ use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
 use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\HomepageController;
 
 // Admin Route Web Endpoints
 
@@ -137,9 +138,35 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Profile
         Route::get("/profile", [ConfigurationController::class, 'showProfilePage'])->name("profile");
 
-
-
         // Configuration Post Updates
         Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");
+    });
+
+    Route::prefix("/admin/settings/update")->name("admin.settings.update.")->group(function(){
+        Route::post("/banner", [HomepageController::class, 'updateBanner'])->name("banner");
+        Route::post("/consulting", [HomepageController::class, 'updateConsulting'])->name("consulting");
+        Route::post("/our-support", [HomepageController::class, 'updateOurSupport'])->name("our.support");
+        Route::post("/coaching-and-training", [HomepageController::class, 'updateCoachingAndTraining'])->name("coaching.training");
+        Route::post("/testimonials", [HomepageController::class, 'updateTestimonials'])->name("testimonials");
+        Route::post("/countries-list", [HomepageController::class, 'updateCountriesList'])->name("countries.list");
+        Route::post("/our-consultants", [HomepageController::class, 'updateOurConsultants'])->name("our.consultants");
+        Route::post("/contact", [HomepageController::class, 'updateContact'])->name("contact");
+        // About Configuration
+        Route::post("/about", [ConfigurationUpdateController::class, 'updateAbout'])->name("about");
+        Route::post("/experience", [ConfigurationUpdateController::class, 'updateExperience'])->name("experience");
+        Route::post("/about-us", [ConfigurationUpdateController::class, 'updateAboutUs'])->name("about.us");
+        // Contact Configuration
+        Route::post("/contact", [ConfigurationUpdateController::class, 'updateContact'])->name("contact");
+        Route::post("/checkout-location", [ConfigurationUpdateController::class, 'updateLocation'])->name("checkout.location");
+        // Terms  and Conditions configuration
+        Route::post("/terms-condition", [ConfigurationUpdateController::class, 'updateTermsBanner'])->name("terms.banner");
+        Route::post("/terms-condition-content", [ConfigurationUpdateController::class, 'updateTermsContent'])->name("terms.content");
+        // Privacy Policy  configuration
+        Route::post("/privacy-policy-banner", [ConfigurationUpdateController::class, 'updatePolicyBanner'])->name("policy.banner");
+        Route::post("/privacy-policy-content", [ConfigurationUpdateController::class, 'updatePolicyContent'])->name("privacy.policy");
+
+        // Write a review
+        Route::post("/review-banner", [ConfigurationUpdateController::class, 'updateReviewBanner'])->name("review.banner");
+        Route::post("/review-content", [ConfigurationUpdateController::class, 'updateReviewContent'])->name("write.review");
     });
 });

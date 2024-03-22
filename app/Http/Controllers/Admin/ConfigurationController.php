@@ -2,8 +2,11 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\HomepageBanner;
+use Illuminate\Support\Facades\Log;
+use App\Http\Controllers\Controller;
+use App\Models\HomepageConsulting;
 
 class ConfigurationController extends Controller
 {
@@ -12,13 +15,19 @@ class ConfigurationController extends Controller
         return view("admin.homepage.details");
     }
 
-    public function showBannerPage()
+public function showBannerPage()
     {
-        return view("admin.homepage.banner");
+        $bannerDetails  = HomepageBanner::find(1)->first();
+        return view("admin.homepage.banner", [
+            'data' => $bannerDetails
+        ]);
     }
     public function showConsultingPage()
     {
-        return view("admin.homepage.consulting");
+        $consultingData  = HomepageConsulting::find(1)->first();
+        return view("admin.homepage.consulting",[
+            'data' => $consultingData
+        ]);
     }
     public function showOurSupportPage()
     {
@@ -84,12 +93,10 @@ class ConfigurationController extends Controller
     {
         return view("admin.reviewpage.review-content");
     }
-    
+
     // profile
     public function showProfilePage()
     {
         return view("admin.profile");
     }
-    
-
 }

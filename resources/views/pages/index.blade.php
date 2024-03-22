@@ -25,11 +25,11 @@
                 data-owl-options='{"loop": true, "items": 1, "navText": ["<span class=\"icon-left-arrow\"></span>","<span class=\"icon-right-arrow\"></span>"], "margin": 0, "dots": true, "nav": true, "animateOut": "slideOutDown", "animateIn": "fadeIn", "active": true, "smartSpeed": 1000, "autoplay": true, "autoplayTimeout": 7000, "autoplayHoverPause": false}'>
 
                 <div class="item main-slider__slide-1">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-1-1.jpg);">
+                    <div class="main-slider__bg" style="background-image: url({{ asset($bannerDetails->banner_image_1) }});">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
-                            <h2 class="main-slider__title">Dreams abroad? Expert guidance, worldwide </h2>
+                            <h2 class="main-slider__title">{{ $bannerDetails->banner_text_1 }}</h2>
                             <div class="main-slider__btn-box">
                                 <a href="{{ route('about') }}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
@@ -38,11 +38,12 @@
                 </div>
 
                 <div class="item main-slider__slide-2">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-1-2.jpg);">
+                    <div class="main-slider__bg"
+                        style="background-image: url({{ asset($bannerDetails->banner_image_2) }});">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
-                            <h2 class="main-slider__title">Unlock your future. Expert immigration solutions</h2>
+                            <h2 class="main-slider__title">{{ $bannerDetails->banner_text_2 }}</h2>
                             <div class="main-slider__btn-box">
                                 <a href="{{ route('about') }}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
@@ -51,11 +52,12 @@
                 </div>
 
                 <div class="item main-slider__slide-3">
-                    <div class="main-slider__bg" style="background-image: url(assets/images/backgrounds/slider-3-1.jpg);">
+                    <div class="main-slider__bg"
+                        style="background-image: url({{ asset($bannerDetails->banner_image_3) }});">
                     </div><!-- /.slider-one__bg -->
                     <div class="container">
                         <div class="main-slider__content">
-                            <h2 class="main-slider__title">Go further. Achieve more. Expert immigration.</h2>
+                            <h2 class="main-slider__title">{{ $bannerDetails->banner_text_3 }}</h2>
                             <div class="main-slider__btn-box">
                                 <a href="{{ route('about') }}" class="main-slider__btn thm-btn">Discover More</a>
                             </div>
@@ -159,13 +161,13 @@
                             </div>
                             <div class="about-one__img-box">
                                 <div class="about-one__img">
-                                    <img src="/assets/images/resources/about-one-img-1.jpg" alt="">
-                                    <div class="about-one__shape-1 float-bob-y">
-                                        <img src="/assets/images/shapes/about-one-shape-1.png" alt="">
-                                    </div>
+                                    <img src="{{ asset($consultingData->consulting_image) }}" alt="">
+                                    {{-- <div class="about-one__shape-1 float-bob-y">
+                                        <img src="{{ asset($consultingData->consulting_image) }}" alt="">
+                                    </div> --}}
                                 </div>
                                 <div class="about-one__img-2">
-                                    <img src="/assets/images/resources/about-one-img-2.jpg" alt="">
+                                    <img src="{{ asset($consultingData->consulting_image_2) }}" alt="">
                                 </div>
                                 <div class="about-one__experience count-box">
                                     <h3 class="count-text" data-stop="28" data-speed="1500">00</h3>
@@ -184,22 +186,18 @@
                                     <span class="section-title__tagline">Get to know about us</span>
                                     <div class="section-title__border-box"></div>
                                 </div>
-                                <h2 class="section-title__title">Visa & Immigration
-                                    <br> Consulting Firm in USA
+                                <h2 class="section-title__title">{{ $consultingData->consulting_title }}
                                 </h2>
                             </div>
-                            <p class="about-one__text">There are many variations of passages of available but the
-                                majority have suffered alteration in some form, by injected hum randomised words which
-                                don't slightly.</p>
+                            <p class="about-one__text">{{ $consultingData->consulting_description }}</p>
                             <ul class="about-one__points list-unstyled">
                                 <li>
                                     <div class="icon">
                                         <span class="icon-consulting"></span>
                                     </div>
                                     <div class="content">
-                                        <h3>Best Consultatncy</h3>
-                                        <p>The wise man therefore always holds in these matters this principle
-                                            Information</p>
+                                        <h3>{{ $consultingData->consulting_feature_1 }}</h3>
+                                        <p>{{ $consultingData->consulting_desc_1 }}</p>
                                     </div>
                                 </li>
                                 <li>
@@ -207,9 +205,8 @@
                                         <span class="icon-passport-3"></span>
                                     </div>
                                     <div class="content">
-                                        <h3>Guarantee Approval</h3>
-                                        <p>The wise man therefore always holds in these matters this principle
-                                            Information</p>
+                                        <h3>{{ $consultingData->consulting_feature_2 }}</h3>
+                                        <p>{{ $consultingData->consulting_desc_2 }}</p>
                                     </div>
                                 </li>
                             </ul>
@@ -883,7 +880,8 @@
                                         <img src="{{ $country->flag }}" class="object-fit-square" alt="">
                                     </div>
                                 </div>
-                                <h3 class="countries-one__title"><a href="countries-details.html">{{ $country->name }}</a>
+                                <h3 class="countries-one__title"><a
+                                        href="countries-details.html">{{ $country->name }}</a>
                                 </h3>
                                 <p class="countries-one__text">{{ $country->slogan }}</p>
                                 <div class="countries-one__arrow-box">

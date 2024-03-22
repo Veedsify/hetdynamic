@@ -5,7 +5,7 @@
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-         <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.consulting') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">Consulting
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="consulting_title"
+                                                name="consulting_title" value="{{ old('consulting_title') === NULL ? $data->consulting_title : old('consulting_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -80,8 +80,8 @@
                                                 class="form-label
                                                 ">Consulting
                                                 Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="consulting_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('consulting_description') === NULL ? $data->consulting_description : old('consulting_description') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -91,7 +91,7 @@
                                                 fw-semibold">Consulting
                                                 Feature 1</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                                name="consulting_feature_1" value="{{ old('consulting_feature_1') === NULL ? $data->consulting_feature_1 : old('consulting_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -101,7 +101,7 @@
                                                 fw-semibold">Consulting
                                                 Feature 2</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                                name="consulting_feature_2" value="{{ old('consulting_feature_2') === NULL ? $data->consulting_feature_2 : old('consulting_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -111,7 +111,7 @@
                                                 fw-semibold">Consulting
                                                 Feature Desc. 1</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                                name="consulting_desc_1" value="{{ old('consulting_desc_1') === NULL ? $data->consulting_desc_1 : old('consulting_desc_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -120,8 +120,28 @@
                                                 class="form-label
                                                 fw-semibold">Consulting
                                                 Feature Desc. 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="banner_text_2" name="consulting_desc_2"
+                                                value="{{ old('consulting_desc_2') === NULL ? $data->consulting_desc_2 : old('consulting_desc_2') }}">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1"
+                                                class="form-label
+                                                fw-semibold">Consulting
+                                                image 1</label>
+                                            <input type="file" class="form-control" id="banner_text_2"
+                                                name="consulting_image">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1"
+                                                class="form-label
+                                                fw-semibold">Consulting
+                                                image 2</label>
+                                            <input type="file" class="form-control" id="banner_text_2"
+                                                name="consulting_image_2" value="">
                                         </div>
                                     </div>
 

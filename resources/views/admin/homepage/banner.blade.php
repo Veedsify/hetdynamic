@@ -5,7 +5,7 @@
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-       <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -53,13 +53,13 @@
                                     aria-label="Close"></button>
                             </div>
                         @endif
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                                <p>{{ $error }}</p>
+                            @endforeach
+                        @endif
                         <div class="border p-4 py-5 rounded-4">
-                            @if ($errors->any())
-                                @foreach ($errors->all() as $error)
-                                    <p>{{ $error }}</p>
-                                @endforeach
-                            @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.banner') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,7 +70,8 @@
                                                 fw-semibold">Banner
                                                 Text 1</label>
                                             <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="">
+                                                name="banner_text_1"
+                                                value="{{ old('banner_text_1') === NULL ? $data->banner_text_1 : old('banner_text_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -80,7 +81,8 @@
                                                 fw-semibold">Banner
                                                 Text 2</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                                name="banner_text_2"
+                                                value="{{ old('banner_text_2') === NULL ? $data->banner_text_2 : old('banner_text_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -90,28 +92,29 @@
                                                 fw-semibold">Banner
                                                 Text 3</label>
                                             <input type="text" class="form-control" id="banner_text_3"
-                                                name="banner_text_3" value="">
+                                                name="banner_text_3"
+                                                value="{{ old('banner_text_3') === NULL ? $data->banner_text_3 : old('banner_text_3') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Banner Image 1</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_logo" aria-describedby="emailHelp">
+                                                name="banner_image_1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Banner Image 2</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="banner_image_2" aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Banner Image 3</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="banner_image_3" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

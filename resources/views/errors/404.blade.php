@@ -1,5 +1,8 @@
 @extends('layouts/index', [
     'title' => 'Error 404 - Sorry we cant find this page | Hetdynamic',
+    'description' => 'error page 404',
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">

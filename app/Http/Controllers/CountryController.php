@@ -20,6 +20,11 @@ class CountryController extends Controller
 
     public function deleteCountry($id)
     {
+        $image = Country::find($id)->first()->flag;
+        $file = public_path($image);
+        if (file_exists($file)) {
+            unlink($file);
+        }
         Country::find($id)->delete();
         return redirect()->back()->with("success", "Country has been deleted successfully");
     }
@@ -46,7 +51,7 @@ class CountryController extends Controller
             $file = $request->file('flag');
             $imageName = time() . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('custom/country'), $imageName);
-            $filepath = asset("custom/country/" . $imageName);
+            $filepath = "custom/country/" . $imageName;
 
             function compressAndResize($source, $destination, $quality, $width = null, $height = null)
             {

@@ -172,7 +172,7 @@
                                     <p>Years of Experience</p>
                                 </div>
                                 <div class="about-one__badge">
-                                    <img src="{{ $pagedata->site_logo }}" alt="">
+                                    <img src="{{ asset($pagedata->site_logo) }}" alt="">
                                 </div>
                             </div>
                         </div>

@@ -11,4 +11,8 @@ class StudyController extends Controller
     {
         return view("admin.all-cases");
     }
+    public function newStudy()
+    {
+        return view("admin.new-study");
+    }
 }

@@ -5,10 +5,13 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\StudyController;
 use App\Http\Controllers\CountryController;
-use App\Http\Controllers\ResidencyController;
 use App\Http\Controllers\Admin\ContactController;
-use App\Http\Controllers\Admin\AdminPagesController;
 use App\Http\Controllers\Admin\CategoryController;
+use App\Http\Controllers\Admin\ResidencyController;
+use App\Http\Controllers\Admin\AdminPagesController;
+use App\Http\Controllers\Admin\WorkPermitController;
+use App\Http\Controllers\Admin\CitizenshipController;
+use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
 
@@ -61,22 +64,40 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::delete("/admin/category/delete{id}", [CategoryController::class, "deletecategory"])->name("admin.category.delete");
     Route::post("/admin/category/add", [CategoryController::class, "createcategory"])->name("admin.category.add");
 
-    //Countries 
+    //Countries
     Route::get("/admin/countries", [CountryController::class, "countries"])->name("admin.countries");
     Route::post("/admin/countries/add", [CountryController::class, "createCountry"])->name("admin.countries.add");
     Route::delete("/admin/countries/delete/{id}", [CountryController::class, "deleteCountry"])->name("admin.countries.delete");
 
+    // Case Studies
     Route::prefix("/admin/study")->group(function () {
         Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");
+        Route::get("/new", [StudyController::class, "newStudy"])->name("admin.new.study");
+
     });
 
-
-    Route::prefix("/admin/country")->group(function () {
-        Route::get("/citizenship", [CountryController::class, "citizenship"])->name("admin.country.citizenship");
+    // citizenship
+    Route::prefix("/admin/citizenship")->group(function () {
+        Route::get("/all", [CitizenshipController::class, "citizenship"])->name("admin.country.citizenship");
+        Route::get("/new", [CitizenshipController::class, "newCitizen"])->name("admin.new.citizenship");
     });
+
+    // Residency
     Route::prefix("/admin/residency")->group(function () {
         Route::get("/all-residency", [ResidencyController::class, "allResidency"])->name("admin.residency.allResidency");
+        Route::get("/new", [ResidencyController::class, "newResidency"])->name("admin.new.Residency");
     });
+
+    // work permit
+    Route::prefix("/admin/work-permit")->group(function () {
+        Route::get("/previous", [WorkPermitController::class, "previousPermit"])->name("admin.permit.previous");
+        Route::get("/new", [WorkPermitController::class, "newWorkPermit"])->name("admin.permit.new");
+    });
+    // notification
+    Route::prefix("/admin")->group(function () {
+        Route::get("/notification", [NotificationController::class, "notification"])->name("admin.notification");
+    });
+
     Route::prefix("/admin/setting")->name("config.")->group(function () {
         //Configuration
         Route::get("/details", [ConfigurationController::class, 'showDetailsPage'])->name("details");

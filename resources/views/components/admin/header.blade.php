@@ -157,9 +157,9 @@
                                             </a>
                                         </div>
                                         <div class="py-6 px-7 mb-1">
-                                            <button class="btn btn-outline-primary w-100">See All
-                                                Notifications
-                                            </button>
+                                            <a href="{{route('admin.notification')}}" class="btn btn-outline-primary w-100">See All
+                                                Notification
+                                            </a>
                                         </div>
 
                                     </div>
@@ -413,7 +413,7 @@
                                         </div>
                                         <div class="py-6 px-7 mb-1">
                                             <button class="btn btn-outline-primary w-100">See All
-                                                Notifications
+                                                Notification
                                             </button>
                                         </div>
 

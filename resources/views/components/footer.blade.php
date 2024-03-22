@@ -46,7 +46,7 @@
                 <div class="col-xl-3 col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
                     <div class="footer-widget__column footer-widget__about">
                         <div class="footer-widget__logo">
-                            <a href="/"><img src="{{ $pagedata->site_logo }}" width="100" alt=""></a>
+                            <a href="/"><img src="{{ asset($pagedata->site_logo) }}" width="100" alt=""></a>
                         </div>
                         <p class="footer-widget__about-text">Aliqua id fugiat nostrud irure ex duis ea quis id
                             quis ad et. Sunt qui esse pariatur duis deserunt.</p>

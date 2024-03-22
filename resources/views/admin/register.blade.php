@@ -1,7 +1,7 @@
 ﻿@extends('../layouts/admin/adminlayout')
 @section('content')
     <div class="preloader">
-        <img src="{{ $pagedata->site_logo }}" alt="loader" style="filter:invert(1);" class="lds-ripple img-fluid">
+        <img src="{{ asset($pagedata->site_logo) }}" alt="loader" style="filter:invert(1);" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
@@ -9,7 +9,7 @@
                 <div class="row">
                     <div class="col-xl-7 col-xxl-8">
                         <a href="{{ route('home') }}" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                            <img src="{{ $pagedata->site_logo }}" class="dark-logo" 
+                            <img src="{{ asset($pagedata->site_logo) }}" class="dark-logo"
                                  width="80"
                                  alt="Logo-Dark">
                         </a>

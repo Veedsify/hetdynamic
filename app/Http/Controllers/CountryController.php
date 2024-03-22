@@ -9,10 +9,7 @@ use Illuminate\Support\Facades\Log; // Import the Log class
 class CountryController extends Controller
 {
     //
-    public function citizenship()
-    {
-        return view("admin.all-citizenship");
-    }
+   
 
     public function countries()
     {

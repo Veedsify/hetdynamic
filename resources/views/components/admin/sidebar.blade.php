@@ -106,7 +106,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-notes.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.new.study')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-book-2"></i>
                 </span>
@@ -126,7 +126,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-notes.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route("admin.new.citizenship")}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-location"></i>
                 </span>
@@ -146,7 +146,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-contact2.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.new.Residency')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-home-move"></i>
                 </span>
@@ -158,7 +158,7 @@
             <span class="hide-menu">Work Permit</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="page-user-profile.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.permit.previous')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-network"></i>
                 </span>
@@ -166,7 +166,7 @@
             </a>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="app-invoice.html" aria-expanded="false">
+            <a class="sidebar-link" href="{{route('admin.permit.new')}}" aria-expanded="false">
                 <span>
                     <i class="ti ti-forklift"></i>
                 </span>

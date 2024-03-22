@@ -12,8 +12,5 @@ class ResidencyController extends Controller
         return view('pages.residency-details', ['pageId' => $pageId]);
     }
 
-    public function allResidency()
-    {
-        return view("admin.all-residency");
-    }
+   
 }

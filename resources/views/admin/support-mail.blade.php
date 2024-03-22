@@ -4,7 +4,7 @@
     <!-- Preloader -->
        <!-- Preloader -->
     <div class="preloader">
-        <img src="{{ asset('admin-assets/images/logos/favicon.png') }}" alt="loader" class="lds-ripple img-fluid">
+        <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="ma
     <div id="main-wrapper">

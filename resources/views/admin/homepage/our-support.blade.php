@@ -2,7 +2,7 @@
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
-        <img src="/admin-assets/images/logos/favicon.png" alt="loader" class="lds-ripple img-fluid">
+        <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
         <x-admin.aside />
@@ -99,7 +99,7 @@
                                                 name="banner_text_2" value="">
                                         </div>
                                     </div>
-                               
+
                                     <div class="col-md-6">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Our-support Image</label>
@@ -107,7 +107,7 @@
                                                 name="site_logo" aria-describedby="emailHelp">
                                         </div>
                                     </div>
-                                   
+
 
                                     <div class="col-md-12">
                                         <div class="mb-4 mt-3">

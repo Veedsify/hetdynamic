@@ -23,7 +23,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{asset( $aboutBanners->about_banner_image) }})">
+            <div class="page-header-bg" style="background-image: url({{ asset($aboutBanners->about_banner_image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">

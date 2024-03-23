@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\PrivacypageBanner;
+use App\Models\PrivacypageContent;
 
 class PrivacypageController extends Controller
 {
@@ -32,5 +33,25 @@ class PrivacypageController extends Controller
         $privacy_banner->save();
 
         return redirect()->back()->with('success', 'Contact Us Banner updated successfully');
+    }
+    public function updatePolicyContent(Request $request)
+    {
+        $request->validate([
+            'privacy_title' => 'required',
+            'privacy_description' => 'required',
+
+        ]);
+
+
+        $privacy_content = PrivacypageContent::first();
+
+        $privacy_content->privacy_title = $request->privacy_title;
+        $privacy_content->privacy_description = $request->privacy_description;
+
+
+
+        $privacy_content->save();
+
+        return redirect()->back()->with('success', 'Privacy Content updated successfully');
     }
 }

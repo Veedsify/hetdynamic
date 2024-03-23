@@ -23,11 +23,11 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url({{asset($termsBanner->terms_banner_image)}})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Terms and Condition</h2>
+                    <h2>{{ $termsBanner->terms_banner_title}}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
@@ -47,13 +47,14 @@
               <div class="row">
                 <div class="section-title text-left">
                     <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Terms and conditions</span>
+                        <span class="section-title__tagline">{{ $termsContent->terms_title}}</span>
                         <div class="section-title__border-box"></div>
                     </div>
                 </div>
-                <p class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
-                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eaque atque expedita ea asperiores fuga quia ipsam omnis eius dolore! Quo tempora iste esse necessitatibus dolorem quod nostrum animi non id reprehenderit ad delectus, eligendi similique, odit debitis exercitationem veritatis autem dolore tempore soluta voluptates. Quos, sunt voluptatibus. Doloremque voluptas doloribus nostrum libero, minus, necessitatibus reiciendis ea delectus, optio asperiores assumenda est harum illum voluptatibus magnam aliquid iste laudantium atque. Doloribus ex eveniet perferendis distinctio error dignissimos. Quis praesentium beatae debitis accusamus. Officia debitis autem voluptates, numquam aspernatur quaerat maxime, provident quam neque odit repellat nisi itaque ab fuga minima, earum fugiat perferendis ex ea quos iste excepturi. Corporis dicta asperiores sed impedit facilis voluptatum reiciendis quibusdam aliquid, ipsa itaque nobis eum id iusto rem molestiae veniam earum ad porro. Illo totam suscipit magni iste doloremque aperiam minus et magnam repellat, incidunt qui animi perspiciatis accusantium voluptatem! Eius quam, ullam ad autem voluptate id vel accusamus hic natus porro nam quidem, sequi adipisci eveniet, ipsum provident rem? Nulla, molestiae perferendis. Vero quidem nulla mollitia facere a eos placeat harum maiores assumenda recusandae delectus, nam beatae quibusdam hic ratione illo consequuntur porro tempore. Ratione molestias consequatur magni veritatis enim accusamus nam magnam.
-                </p>
+                <div class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
+                    {! $termsContent->terms_description !}
+
+                </div>
 
               </div>
             </div>
@@ -77,7 +78,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}"
                                                                   width="135" alt=""/></a>
             </div>
             <!-- /.logo-box -->

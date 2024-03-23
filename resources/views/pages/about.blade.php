@@ -86,7 +86,7 @@
                                 </ul>
                             </div>
                             <div class="about-four__btn-box">
-                                <a href="about.html" class="thm-btn about-four__btn">Discover More</a>
+                                <a href="{{ route('contact') }}" class="thm-btn about-four__btn">Discover More</a>
                             </div>
                         </div>
                     </div>
@@ -713,7 +713,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->

@@ -84,7 +84,7 @@
                                     <img src="/assets/images/resources/feature-1-1.png" alt="">
                                 </div>
                                 <p class="feature-one__sub-title">Online form</p>
-                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New 
+                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New
                                         Visa</a></h3>
                                 <div class="feature-one__btn-box">
                                     <a href="visa-details.html" class="feature-one__btn">Learn More</a>
@@ -170,7 +170,7 @@
                                     <img src="{{ asset($consultingData->consulting_image_2) }}" alt="">
                                 </div>
                                 <div class="about-one__experience count-box">
-                                    <h3 class="count-text" data-stop="28" data-speed="1500">00</h3>
+                                    <h3 class="count-text" data-stop="{{ $aboutExperience->experience_years }}" data-speed="1500">00</h3>
                                     <p>Years of Experience</p>
                                 </div>
                                 <div class="about-one__badge">
@@ -394,7 +394,7 @@
                     <div class="col-xl-7 col-lg-6">
                         <div class="video-one__right">
                             <div class="video-one__video-link">
-                                <a href="https://www.youtube.com/watch?v=Get7rqXYrbQ" class="video-popup">
+                                <a href="{{ $supportData->support_video }}" class="video-popup">
                                     <div class="video-one__video-icon">
                                         <span class="fa fa-play"></span>
                                         <i class="ripple"></i>
@@ -1346,7 +1346,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->

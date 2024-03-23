@@ -7,10 +7,15 @@ use App\Models\AboutpageAbout;
 use App\Models\HomepageBanner;
 use App\Models\AboutpageBanner;
 use App\Models\HomepageSupport;
+use App\Models\TermspageBanner;
 use App\Models\HomepageCoaching;
+use App\Models\ReviewpageBanner;
+use App\Models\TermspageContent;
 use App\Models\ContactpageBanner;
 use App\Models\PrivacypageBanner;
+use App\Models\ReviewpageContent;
 use App\Models\HomepageConsulting;
+use App\Models\PrivacypageContent;
 use App\Models\AboutpageExperience;
 use App\Models\ContactpageLocation;
 use Illuminate\Support\Facades\Log;
@@ -99,11 +104,17 @@ public function showBannerPage()
     // Terms and Condition
     public function showTermsBannerPage()
     {
-        return view("admin.termspage.terms-banner");
+        $termsData = TermspageBanner::find(1)->first();
+        return view("admin.termspage.terms-banner",[
+            "data" => $termsData
+        ]);
     }
     public function showTermsContentPage()
     {
-        return view("admin.termspage.terms-condition-content");
+        $contentData = TermspageContent::find(1)->first();
+        return view("admin.termspage.terms-condition-content",[
+            "data" => $contentData
+        ]);
     }
     // Privacy Policy
     public function showPolicyBannerPage()
@@ -116,17 +127,26 @@ public function showBannerPage()
     }
     public function showPolicyContentPage()
     {
-        return view("admin.privacypage.privacy-policy-content");
+        $policyData = PrivacypageContent::find(1)->first();
+        return view("admin.privacypage.privacy-policy-content",[
+            'data'=>$policyData
+        ]);
     }
 
     // Write a  Review
     public function showReviewBannerPage()
     {
-        return view("admin.reviewpage.review-banner");
+        $reviewData= ReviewpageBanner::find(1)->first();
+        return view("admin.reviewpage.review-banner",[
+            'data'=>$reviewData
+        ]);
     }
     public function showReviewContentPage()
     {
-        return view("admin.reviewpage.review-content");
+        $reviewContentData =  ReviewpageContent::find(1)->first();
+        return view("admin.reviewpage.review-content",[
+            'data'=>$reviewContentData
+        ]);
     }
 
     // profile

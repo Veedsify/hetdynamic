@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.terms.content') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -71,8 +71,8 @@
                                                 fw-semibold">Terms
                                                 and Condition
                                                 Title</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="terms_title"
+                                                name="terms_title" value="{{ old('terms_title') === NULL ? $data->terms_title : old('terms_title') }}">
                                         </div>
                                     </div>
 
@@ -83,7 +83,9 @@
                                                 ">Terms
                                                 and Condition
                                                 Description</label>
-                                            <textarea class="form-control" id="terms_editor" rows="10" name="site_description" aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="terms_editor" rows="10" name="terms_description" aria-describedby="emailHelp">
+                                                {{ old('terms_description') === NULL ? $data->terms_description : old('terms_description') }}
+                                            </textarea>
                                         </div>
                                     </div>
 

@@ -11,15 +11,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('homepage_supports', function (Blueprint $table) {
+        Schema::create('termspage_banners', function (Blueprint $table) {
             $table->id();
-            $table->string('support_title');
-            $table->text('support_feature_1');
-            $table->text('support_feature_2');
-            $table->text('support_feature_3');
-            $table->string('support_image');
-            $table->string('support_video');
-
+             $table->string('terms_banner_title');
+            $table->string('terms_banner_image');
             $table->timestamps();
         });
     }
@@ -29,6 +24,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('homepage_support');
+        Schema::dropIfExists('termspage_banners');
     }
 };

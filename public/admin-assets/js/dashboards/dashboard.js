@@ -586,24 +586,29 @@ $(function () {
     })
 
 
-    ClassicEditor
-        .create(document.querySelector('#terms_editor'))
-        .then(editor => {
-            editor.editing.view.change(writer => {
-                writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+    if (document.querySelector('#terms_editor')) {
+        ClassicEditor
+            .create(document.querySelector('#terms_editor'))
+            .then(editor => {
+                editor.editing.view.change(writer => {
+                    writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+                })
             })
-        })
-        .catch(error => {
-            console.error(error);
-        });
-    ClassicEditor
-        .create(document.querySelector('#privacy_editor'))
-        .then(editor => {
-            editor.editing.view.change(writer => {
-                writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+            .catch(error => {
+                console.error(error);
+            });
+    }
+
+    if (document.querySelector('#privacy_editor')) {
+        ClassicEditor
+            .create(document.querySelector('#privacy_editor'))
+            .then(editor => {
+                editor.editing.view.change(writer => {
+                    writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+                })
             })
-        })
-        .catch(error => {
-            console.error(error);
-        });
+            .catch(error => {
+                console.error(error);
+            });
+    }
 });

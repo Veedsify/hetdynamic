@@ -4,17 +4,21 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
-use App\Models\AboutpageBanner;
 use App\Models\Blog;
-use App\Models\Category;
-use App\Models\Country;
-use App\Models\GlobalSetting;
-use App\Models\HomepageBanner;
-use App\Models\HomepageCoaching;
-use App\Models\HomepageConsulting;
-use App\Models\HomepageSupport;
 use App\Models\User;
+use App\Models\Country;
+use App\Models\Category;
+use App\Models\GlobalSetting;
+use App\Models\AboutpageAbout;
+use App\Models\HomepageBanner;
+use App\Models\AboutpageBanner;
+use App\Models\HomepageSupport;
 use Illuminate\Database\Seeder;
+use App\Models\HomepageCoaching;
+use App\Models\ContactpageBanner;
+use App\Models\HomepageConsulting;
+use App\Models\AboutpageExperience;
+use App\Models\ContactpageLocation;
 
 class DatabaseSeeder extends Seeder
 {
@@ -27,7 +31,7 @@ class DatabaseSeeder extends Seeder
         User::factory(1)->create();
         HomepageBanner::create([
             'banner_text_1' => 'Welcome to our website',
-            'banner_text_2' => 'We are here to help you',
+            'banner_text_2' => 'We are heure to help you',
             'banner_text_3' => 'We are here to help you',
             'banner_image_1' => 'https://images.pexels.com/photos/1371360/pexels-photo-1371360.jpeg?auto=compress&w=900',
             'banner_image_2' => 'https://images.pexels.com/photos/2265876/pexels-photo-2265876.jpeg?auto=compress&w=900',
@@ -55,7 +59,41 @@ class DatabaseSeeder extends Seeder
             'coaching_title' => 'Coaching Services',
             'coaching_description' => 'We provide the best coaching services',
         ]);
- 
+        AboutpageBanner::create([
+            'about_banner_title' => 'About Us',
+            'about_banner_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+        ]);
+
+        AboutpageExperience::create([
+            'experience_title' => 'Experience Title',
+            'experience_sub_title' => 'Experience Sub-Title',
+            'experience_description' => 'This is a description of our experience.',
+            'experience_feature_1' => 'Feature 1',
+            'experience_feature_2' => 'Feature 2',
+            'experience_years' => 5,
+            'experience_image_1' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+            'experience_image_2' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+        ]);
+        AboutpageAbout::create([
+            'about_us_title' => 'Your Title Here',
+            'about_us_sub_title_1' => 'Your Sub-Title 1 Here',
+            'about_us_sub_title_2' => 'Your Sub-Title 2 Here',
+            'about_us_description_1' => 'Your Description 1 Here',
+            'about_us_description_2' => 'Your Description 2 Here',
+            'about_us_feature_1' => 'Your Feature 1 Here',
+            'about_us_feature_2' => 'Your Feature 2 Here',
+        ]);
+        ContactpageBanner::create([
+            'contact_banner_title' => 'Your Title Here',
+            'contact_banner_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+
+        ]);
+        ContactpageLocation::create([
+            'location_title' => 'Your Title Here',
+            'location_description' => 'location_description',
+
+        ]);
+
 
         Category::factory(10)->create();
 

@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.experience') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">Experience
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="experience_title"
+                                                name="experience_title" value="{{ old('experience_title') === NULL ? $data->experience_title : old('experience_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -80,8 +80,8 @@
                                                 class="form-label
                                                 fw-semibold">Experience
                                                 Sub-Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="experience_sub_title"
+                                                name="experience_sub_title" value="{{ old('experience_sub_title') === NULL ? $data->experience_sub_title : old('experience_sub_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -90,8 +90,9 @@
                                                 class="form-label
                                                 ">Experience
                                                 Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="experience_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('experience_description') === NULL ? $data->experience_description : old('experience_description') }}
+                                            </textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -100,8 +101,8 @@
                                                 class="form-label
                                                 fw-semibold">Experience
                                                 Feature 1</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="experience_feature_1"
+                                                name="experience_feature_1" value="{{ old('experience_feature_1') === NULL ? $data->experience_feature_1 : old('experience_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -110,8 +111,8 @@
                                                 class="form-label
                                                 fw-semibold">Experience
                                                 Feature 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="experience_feature_2"
+                                                name="experience_feature_2" value="{{ old('experience_feature_2') === NULL ? $data->experience_feature_2 : old('experience_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -119,22 +120,22 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Years of Experience</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="experience_years"
+                                                name="experience_years" value="{{ old('experience_years') === NULL ? $data->experience_years : old('experience_years') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Experience Image 1</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="experience_image_1" aria-describedby="emailHelp">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Experience Image 2</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="experience_image_2" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

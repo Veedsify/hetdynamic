@@ -1,12 +1,16 @@
 <?php
 
-use App\Http\Controllers\AboutController;
-use App\Http\Controllers\AboutpageController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\StudyController;
 use App\Http\Controllers\CountryController;
+use App\Http\Controllers\HomepageController;
+use App\Http\Controllers\AboutpageController;
+use App\Http\Controllers\CertificateController;
+use App\Http\Controllers\ContactpageController;
+use App\Http\Controllers\PrivacypageController;
 use App\Http\Controllers\Admin\ContactController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ResidencyController;
@@ -16,8 +20,6 @@ use App\Http\Controllers\Admin\CitizenshipController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
-use App\Http\Controllers\CertificateController;
-use App\Http\Controllers\HomepageController;
 
 // Admin Route Web Endpoints
 
@@ -155,17 +157,17 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post("/contact", [HomepageController::class, 'updateContact'])->name("contact");
         // About Configuration
         Route::post("/about-banner", [AboutpageController::class, 'updateAboutBanneer'])->name("about.banner");
-        Route::post("/experience", [ConfigurationUpdateController::class, 'updateExperience'])->name("experience");
-        Route::post("/about-us", [ConfigurationUpdateController::class, 'updateAboutUs'])->name("about.us");
+        Route::post("/experience", [AboutpageController::class, 'updateExperience'])->name("experience");
+        Route::post("/about-us", [AboutpageController::class, 'updateAboutUs'])->name("about.us");
         // Contact Configuration
-        Route::post("/contact", [ConfigurationUpdateController::class, 'updateContact'])->name("contact");
-        Route::post("/checkout-location", [ConfigurationUpdateController::class, 'updateLocation'])->name("checkout.location");
+        Route::post("/contact", [ContactpageController::class, 'updateContact'])->name("contact");
+        Route::post("/checkout-location", [ContactpageController::class, 'updateLocation'])->name("checkout.location");
         // Terms  and Conditions configuration
         Route::post("/terms-condition", [ConfigurationUpdateController::class, 'updateTermsBanner'])->name("terms.banner");
         Route::post("/terms-condition-content", [ConfigurationUpdateController::class, 'updateTermsContent'])->name("terms.content");
         // Privacy Policy  configuration
-        Route::post("/privacy-policy-banner", [ConfigurationUpdateController::class, 'updatePolicyBanner'])->name("policy.banner");
-        Route::post("/privacy-policy-content", [ConfigurationUpdateController::class, 'updatePolicyContent'])->name("privacy.policy");
+        Route::post("/privacy-policy-banner", [PrivacypageController::class, 'updatePolicyBanner'])->name("policy.banner");
+        Route::post("/privacy-policy-content", [PrivacypageController::class, 'updatePolicyContent'])->name("privacy.policy");
 
         // Write a review
         Route::post("/review-banner", [ConfigurationUpdateController::class, 'updateReviewBanner'])->name("review.banner");

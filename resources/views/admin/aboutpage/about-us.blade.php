@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.about.us') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">About Us
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="about_us_title"
+                                                name="about_us_title" value="{{ old('about_us_title') === NULL ? $data->about_us_title : old('about_us_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -80,8 +80,8 @@
                                                 class="form-label
                                                 fw-semibold">About Us
                                                 Sub-Tiltle 1</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="about_us_sub_title_1"
+                                                name="about_us_sub_title_1" value="{{ old('about_us_sub_title_1') === NULL ? $data->about_us_sub_title_1 : old('about_us_sub_title_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -90,8 +90,8 @@
                                                 class="form-label
                                                 fw-semibold">About Us
                                                 Sub-Tiltle 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="about_us_sub_title_2"
+                                                name="about_us_sub_title_2" value="{{ old('about_us_sub_title_2') === NULL ? $data->about_us_sub_title_2 : old('about_us_sub_title_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -100,8 +100,8 @@
                                                 class="form-label
                                                 ">About Us
                                                 Description 1</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="about_us_description_1" rows="10"
+                                                aria-describedby="emailHelp">{{ old('about_us_description_1') === NULL ? $data->about_us_description_1 : old('about_us_description_1') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -110,8 +110,8 @@
                                                 class="form-label
                                                 ">About Us
                                                 Description 2</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="about_us_description_2" rows="10"
+                                                aria-describedby="emailHelp">{{ old('about_us_description_2') === NULL ? $data->about_us_description_2 : old('about_us_description_2') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -120,8 +120,8 @@
                                                 class="form-label
                                                 fw-semibold">About Us
                                                 Feature 1</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="about_us_feature_1"
+                                                name="about_us_feature_1" value="{{ old('about_us_feature_1') === NULL ? $data->about_us_feature_1 : old('about_us_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -130,8 +130,8 @@
                                                 class="form-label
                                                 fw-semibold">About Us
                                                 Feature 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="about_us_feature_2"
+                                                name="about_us_feature_2" value="{{ old('about_us_feature_2') === NULL ? $data->about_us_feature_2 : old('about_us_feature_2') }}">
                                         </div>
                                     </div>
 

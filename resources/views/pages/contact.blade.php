@@ -22,11 +22,11 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url({{ asset($contactBanners->contact_banner_image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Contact</h2>
+                    <h2>{{ $contactBanners->contact_banner_title }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
@@ -110,16 +110,13 @@
                                         <span class="section-title__tagline">checkout our locations</span>
                                         <div class="section-title__border-box"></div>
                                     </div>
-                                    <h2 class="section-title__title">Our Visa Consultancy <br>
-                                        Offices in World</h2>
+                                    <h2 class="section-title__title">{{ $contactLocation->location_title }}</h2>
                                 </div>
                             </div>
                         </div>
                         <div class="col-xl-5 col-lg-6">
                             <div class="location-one__top-right">
-                                <p class="ocation-one__top-text">There are many variations of passages of available but
-                                    the majority have suffered alteration in some form, by injected hum randomised words
-                                    which don't slightly.</p>
+                                <p class="ocation-one__top-text">{{ $contactLocation->location_description }}</p>
                             </div>
                         </div>
                     </div>

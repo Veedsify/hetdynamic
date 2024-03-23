@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.policy.banner') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -69,7 +69,7 @@
                                                 class="form-label
                                                 fw-semibold">Privacy Policy Title</label>
                                             <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="">
+                                                name="banner_text_1" value="{{ old('location_title') === NULL ? $data->location_title : old('location_title') }}">
                                         </div>
                                     </div>
 

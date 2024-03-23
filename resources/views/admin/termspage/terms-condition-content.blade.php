@@ -5,7 +5,7 @@
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-         <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -66,9 +66,10 @@
 
                                     <div class="col-md-12">
                                         <div class="mb-3">
-                                            <label for="exampleInputEmail1"
+                                            <label for="banner_text_2"
                                                 class="form-label
-                                                fw-semibold">Terms and Condition
+                                                fw-semibold">Terms
+                                                and Condition
                                                 Title</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2" value="">
@@ -77,16 +78,14 @@
 
                                     <div class="col-md-12">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1"
+                                            <label for="terms_editor"
                                                 class="form-label
-                                                ">Terms and Condition
+                                                ">Terms
+                                                and Condition
                                                 Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="terms_editor" rows="10" name="site_description" aria-describedby="emailHelp"></textarea>
                                         </div>
                                     </div>
-
-
 
                                     <div class="col-md-12">
                                         <div class="mb-4 mt-3">

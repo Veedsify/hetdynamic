@@ -584,4 +584,26 @@ $(function () {
             $(".add_category_modal").toggleClass("active");
         }
     })
+
+
+    ClassicEditor
+        .create(document.querySelector('#terms_editor'))
+        .then(editor => {
+            editor.editing.view.change(writer => {
+                writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+            })
+        })
+        .catch(error => {
+            console.error(error);
+        });
+    ClassicEditor
+        .create(document.querySelector('#privacy_editor'))
+        .then(editor => {
+            editor.editing.view.change(writer => {
+                writer.setStyle('min-height', '400px', editor.editing.view.document.getRoot());
+            })
+        })
+        .catch(error => {
+            console.error(error);
+        });
 });

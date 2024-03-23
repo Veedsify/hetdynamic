@@ -28,7 +28,7 @@
     {{-- JODIT --}}
     <x-admin.joditcss />
 
-
+    <script src="https://cdn.ckeditor.com/ckeditor5/34.1.0/classic/ckeditor.js"></script>
     {{-- VITE --}}
     {{-- @viteReactRefresh
     @vite('resources/js/app.jsx') --}}

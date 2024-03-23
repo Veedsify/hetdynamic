@@ -77,11 +77,11 @@
 
                                     <div class="col-md-12">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1"
+                                            <label for="privacy_editor"
                                                 class="form-label
                                                 ">Privacy Policy
-                                                Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
+                                                Content</label>
+                                            <textarea class="form-control" id="privacy_editor" name="site_description" rows="10"
                                                 aria-describedby="emailHelp"></textarea>
                                         </div>
                                     </div>

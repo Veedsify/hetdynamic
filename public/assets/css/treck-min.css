@@ -17493,3 +17493,7 @@ body.boxed-wrapper {
 .blog-details__text-1 h5.bn-inline-content {
     margin-bottom: 1rem;
 }
+
+.bg-base {
+    background: var(--treck-base);
+}

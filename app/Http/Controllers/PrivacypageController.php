@@ -13,7 +13,6 @@ class PrivacypageController extends Controller
     {
         $request->validate([
             'privacy_banner_title' => 'required',
-
         ]);
 
         if ($request->hasFile('privacy_banner_image')) {

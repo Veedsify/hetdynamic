@@ -14,7 +14,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav/>
+        <x-nav />
         {{-- NAVIGATION ENDS HERE --}}
 
         <div class="stricky-header stricked-menu main-menu">
@@ -23,11 +23,11 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{asset($termsBanner->terms_banner_image)}})">
+            <div class="page-header-bg" style="background-image: url({{ asset($termsBanner->terms_banner_image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>{{ $termsBanner->terms_banner_title}}</h2>
+                    <h2>{{ $termsBanner->terms_banner_title }}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
@@ -44,19 +44,19 @@
                 <img src="/assets/images/shapes/about-four-shape-2.png" alt="">
             </div>
             <div class="container">
-              <div class="row">
-                <div class="section-title text-left">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">{{ $termsContent->terms_title}}</span>
-                        <div class="section-title__border-box"></div>
+                <div class="row">
+                    <div class="section-title text-left">
+                        <div class="section-title__tagline-box">
+                            <span class="section-title__tagline">{{ $termsContent->terms_title }}</span>
+                            <div class="section-title__border-box"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
-                    {! $termsContent->terms_description !}
+                    <div class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
+                        {!! $termsContent->terms_description !!}
+
+                    </div>
 
                 </div>
-
-              </div>
             </div>
         </section>
         <!--About Four End-->
@@ -64,7 +64,7 @@
 
 
         <!--Site Footer Start-->
-        <x-footer/>
+        <x-footer />
         <!--Site Footer End-->
 
 
@@ -78,8 +78,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}"
-                                                                  width="135" alt=""/></a>
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
+                        alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

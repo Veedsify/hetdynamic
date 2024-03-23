@@ -19,31 +19,24 @@
             <div class="sticky-header__content"></div><!-- /.sticky-header__content -->
         </div><!-- /.stricky-header -->
 
-        <!--Page Header Start-->
-        <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(/assets/images/backgrounds/study-bg.jpg)">
-            </div>
-            <div class="container">
-                <div class="page-header__inner">
-                    <h2>Study Details</h2>
-                    <ul class="thm-breadcrumb list-unstyled">
-                        <li><a href="/">Home</a></li>
-                        <li><span>-</span></li>
-                        <li class="active">Study Details</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-        <!--Page Header End-->
-
         <!--Coaching Details Start-->
         <section class="coaching-details">
             <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <div class="coaching-details__right">
-                            <div class="coaching-details__img">
+                            <div class="coaching-details__img position-relative">
                                 <img src="/assets/images/coaching/coaching-details-img-1.jpg" alt="">
+                                <div class="position-absolute bottom-0 end-0 p-5 bg-base">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <h1 class="fw-bold text-white">Study in Canada</h1>
+                                        </div>
+                                        <div class="col-12">
+                                            <p class="fw-bold text-white">(SWI)</p>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <h3 class="coaching-details__title-1">IELTS Coaching</h3>
                             <p class="coaching-details__text-1">There are many variations of passages of lorem ipsum is
@@ -52,12 +45,6 @@
                                 adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut labore et dolore magna aliqua.</p>
-                            <h3 class="coaching-details__title-2">Score 8+ Bands with Certified & Experienced HetDynamic
-                                Coach</h3>
-                            <p class="coaching-details__text-2">Ut enim ad minima veniam, quis nostrum exercitationem
-                                ullam corporis suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur? Quis
-                                autem vel eum iure reprehenderit qui in ea voluptate velit esse quam nihil molestiae
-                                consequatur.</p>
                             <h3 class="coaching-details__title-3">Why Choose HetDynamic?</h3>
                             <div class="coaching-details__why">
                                 <div class="row">
@@ -275,8 +262,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}"
-                        width="135" alt="" /></a>
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
+                        alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

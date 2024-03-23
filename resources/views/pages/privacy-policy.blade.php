@@ -14,7 +14,7 @@
 
     <div class="page-wrapper">
         {{-- NAVGATION BAR HERE --}}
-        <x-nav/>
+        <x-nav />
         {{-- NAVIGATION ENDS HERE --}}
 
         <div class="stricky-header stricked-menu main-menu">
@@ -44,18 +44,18 @@
                 <img src="/assets/images/shapes/about-four-shape-2.png" alt="">
             </div>
             <div class="container">
-              <div class="row">
-                <div class="section-title text-left">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">{{ $privacyContent->privacy_title }}</span>
-                        <div class="section-title__border-box"></div>
+                <div class="row">
+                    <div class="section-title text-left">
+                        <div class="section-title__tagline-box">
+                            <span class="section-title__tagline">{{ $privacyContent->privacy_title }}</span>
+                            <div class="section-title__border-box"></div>
+                        </div>
                     </div>
-                </div>
-                <p class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
-                    {{ $privacyContent->privacy_description }}
-                </p>
+                    <div class="fw-semibold text-dark fs-6 " style="letter-spacing: .7px">
+                        {!! $privacyContent->privacy_description !!}
+                    </div>
 
-              </div>
+                </div>
             </div>
         </section>
         <!--About Four End-->
@@ -63,7 +63,7 @@
 
 
         <!--Site Footer Start-->
-        <x-footer/>
+        <x-footer />
         <!--Site Footer End-->
 
 
@@ -77,8 +77,8 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}"
-                                                                  width="135" alt=""/></a>
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
+                        alt="" /></a>
             </div>
             <!-- /.logo-box -->
             <div class="mobile-nav__container"></div>

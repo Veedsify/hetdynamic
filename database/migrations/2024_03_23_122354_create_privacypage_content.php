@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('privacypage_contents', function (Blueprint $table) {
             $table->id();
             $table->string('privacy_title');
-            $table->string('privacy_description');
+            $table->longText('privacy_description');
             $table->timestamps();
         });
     }

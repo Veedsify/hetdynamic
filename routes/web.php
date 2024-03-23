@@ -38,52 +38,53 @@ View::composer('*', function ($view) {
     $view->with('pagedata', $settings);
 });
 
-Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
-
-//Pages
-Route::get("/about", [AboutController::class, 'showAboutPage'])->name("about");
 
 
-Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
-Route::get("/register", [AuthController::class, 'showRegisterPage'])->name("register");
-Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
-Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
-Route::post("/login/submit", [AuthController::class, 'login'])->name("login.submit");
-Route::get("/logout", [AuthController::class, 'logout'])->name("logout");
+    Route::get('/', [IndexController::class, 'showIndexPage'])->name("home");
 
-Route::prefix('contact')->group(function () {
-    Route::get("/", [ContactController::class, 'showContactPage'])->name("contact");
-    Route::post("/new", [ContactController::class, 'submitContactForm'])->name("contact.submit");
-});
-
-//Residency
-Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPagesDetails'])->name("residency.details");
+    //Pages
+    Route::get("/about", [AboutController::class, 'showAboutPage'])->name("about");
 
 
-// WorkPermit
-Route::get("/work-permit/{pageId}", [WorkPermitController::class, 'showWorkPermitPagesDetails'])->name("workpermit.details");
-//Blog
-Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
-Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
-Route::post('/blog/block/', [BlogController::class, 'getBlogDetailsBlock'])->name("blog.block");
-Route::post("/comment/{id}/comment", [CommentController::class, 'newComments'])->name("comment.new");
-Route::get("/tags/{tag}", [TagsController::class, 'showTagsPage'])->name("tags");
+    Route::get("/login", [AuthController::class, 'showLoginPage'])->name("login");
+    Route::get("/register", [AuthController::class, 'showRegisterPage'])->name("register");
+    Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
+    Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
+    Route::post("/login/submit", [AuthController::class, 'login'])->name("login.submit");
+    Route::get("/logout", [AuthController::class, 'logout'])->name("logout");
 
-//Faq
-Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
+    Route::prefix('contact')->group(function () {
+        Route::get("/", [ContactController::class, 'showContactPage'])->name("contact");
+        Route::post("/new", [ContactController::class, 'submitContactForm'])->name("contact.submit");
+    });
 
-//Coaching
-Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");
-Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesDetails'])->name("coaching.details");
+    //Residency
+    Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPagesDetails'])->name("residency.details");
 
-// terms and condition
-Route::get("/terms-conditions", [TermsController::class, 'showTermsPage'])->name("terms.condition");
 
-//privacy-policy
-Route::get("/privacy-policy", [PrivacyController::class, 'showPrivacyPage'])->name("privacy.policy");
+    // WorkPermit
+    Route::get("/work-permit/{pageId}", [WorkPermitController::class, 'showWorkPermitPagesDetails'])->name("workpermit.details");
+    //Blog
+    Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
+    Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");
+    Route::post('/blog/block/', [BlogController::class, 'getBlogDetailsBlock'])->name("blog.block");
+    Route::post("/comment/{id}/comment", [CommentController::class, 'newComments'])->name("comment.new");
+    Route::get("/tags/{tag}", [TagsController::class, 'showTagsPage'])->name("tags");
 
-// Write a Review
+    //Faq
+    Route::get("/faq", [PagesController::class, 'showFaqPage'])->name("faq");
 
-Route::get("/write-review", [ReviewController::class, 'showReviewPage'])->name("write.review");
+    //Coaching
+    Route::get("/coaching", [CoachingController::class, 'showCoachingPage'])->name("coaching");
+    Route::get("/coaching/{pageId}", [CoachingController::class, 'showCoachingPagesDetails'])->name("coaching.details");
 
+    // terms and condition
+    Route::get("/terms-conditions", [TermsController::class, 'showTermsPage'])->name("terms.condition");
+
+    //privacy-policy
+    Route::get("/privacy-policy", [PrivacyController::class, 'showPrivacyPage'])->name("privacy.policy");
+
+    // Write a Review
+
+    Route::get("/write-review", [ReviewController::class, 'showReviewPage'])->name("write.review");
 

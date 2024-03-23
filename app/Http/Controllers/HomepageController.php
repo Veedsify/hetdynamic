@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Spatie\Image\Image;
 use Illuminate\Http\Request;
 use App\Models\HomepageBanner;
 use App\Models\HomepageSupport;
@@ -9,6 +10,8 @@ use App\Models\HomepageCoaching;
 use App\Models\HomepageConsulting;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use Spatie\Image\Drivers\ImageDriver;
+
 
 class HomepageController extends Controller
 {
@@ -28,6 +31,10 @@ class HomepageController extends Controller
                 $banner_image_1_name = $banner_image_1->getClientOriginalName();
                 $banner_image_1->move(public_path('custom/settings'), $banner_image_1_name);
                 $filePath1 = 'custom/settings/' . $banner_image_1_name;
+                Log::info('Image path: ' . asset($filePath1));
+                Image::load(public_path($filePath1))
+                ->optimize()
+                    ->save();
             }
             if ($request->hasFile('banner_image_2')) {
                 $banner_image_2 = $request->file('banner_image_2');
@@ -66,7 +73,7 @@ class HomepageController extends Controller
 
     public function updateConsulting(Request $request)
     {
-       $request->validate([
+        $request->validate([
             'consulting_title' => 'required',
             'consulting_description' => 'required',
             'consulting_feature_1' => 'required',
@@ -134,7 +141,8 @@ class HomepageController extends Controller
 
         return redirect()->back()->with('success', 'Homepage support updated successfully');
     }
-    public function updateCoachingAndTraining(Request $request){
+    public function updateCoachingAndTraining(Request $request)
+    {
         $request->validate([
             'coaching_title' => 'required',
             'coaching_description' => 'required',
@@ -148,5 +156,4 @@ class HomepageController extends Controller
 
         return redirect()->back()->with('success', 'Homepage coaching updated successfully');
     }
-
 }

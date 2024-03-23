@@ -59,6 +59,7 @@ class DatabaseSeeder extends Seeder
             'support_feature_1' => 'Feature 1',
             'support_feature_2' => 'Feature 2',
             'support_feature_3' => 'Feature 3',
+            'support_video' => 'https://www.youtube.com/watch?v=vhfTKjZ5a3k',
             'support_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600'
         ]);
         HomepageCoaching::create([

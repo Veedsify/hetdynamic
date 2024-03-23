@@ -99,8 +99,17 @@
                                                 name="support_feature_3" value="{{ old('support_feature_3') === NULL ? $data->support_feature_3 : old('support_feature_3') }}">
                                         </div>
                                     </div>
-
                                     <div class="col-md-6">
+                                        <div class="mb-3">
+                                            <label for="exampleInputEmail1"
+                                                class="form-label
+                                                fw-semibold">Our-Support video url</label>
+                                            <input type="text" class="form-control" id="support_video"
+                                                name="support_video" value="{{ old('support_video') === NULL ? $data->support_video : old('support_video') }}">
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-12">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Our-support Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"

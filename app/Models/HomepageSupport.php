@@ -13,6 +13,7 @@ class HomepageSupport extends Model
         'support_feature_1',
         'support_feature_2',
         'support_feature_3',
-        'support_image'
+        'support_image',
+        'support_video'
     ];
 }

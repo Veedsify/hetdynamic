@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('support_feature_2');
             $table->text('support_feature_3');
             $table->string('support_image');
+            $table->string('support_video');
 
             $table->timestamps();
         });

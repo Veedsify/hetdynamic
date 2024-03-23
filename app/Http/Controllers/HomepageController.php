@@ -113,6 +113,7 @@ class HomepageController extends Controller
             'support_feature_1' => 'required',
             'support_feature_2' => 'required',
             'support_feature_3' => 'required',
+            'support_video' => 'required',
         ]);
 
         if ($request->hasFile('support_image')) {
@@ -127,6 +128,7 @@ class HomepageController extends Controller
         $homepageSupport->support_feature_1 = $request->support_feature_1;
         $homepageSupport->support_feature_2 = $request->support_feature_2;
         $homepageSupport->support_feature_3 = $request->support_feature_3;
+        $homepageSupport->support_video = $request->support_video;
         if ($request->hasFile('support_image')) {
             $homepageSupport->support_image = $filePath;
         }

@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.write.review') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">Write-Review
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="review_title"
+                                                name="review_title" value="{{ old('review_title') === NULL ? $data->review_title : old('review_title') }}">
                                         </div>
                                     </div>
 
@@ -81,8 +81,8 @@
                                                 class="form-label
                                                 ">Write-Review
                                                 Description </label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="review_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('review_description') === NULL ? $data->review_description : old('review_description') }}</textarea>
                                         </div>
                                     </div>
 
@@ -92,8 +92,8 @@
                                                 class="form-label
                                                 fw-semibold">Write-Review
                                                 list 1</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="review_list_1"
+                                                name="review_list_1" value="{{ old('review_list_1') === NULL ? $data->review_list_1 : old('review_list_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -102,8 +102,8 @@
                                                 class="form-label
                                                 fw-semibold">Write-Review
                                                 list 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="review_list_2"
+                                                name="review_list_2" value="{{ old('review_list_2') === NULL ? $data->review_list_2 : old('review_list_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -112,8 +112,8 @@
                                                 class="form-label
                                                 fw-semibold">Write-Review
                                                 list 3</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="review_list_3"
+                                                name="review_list_3" value="{{ old('review_list_3') === NULL ? $data->review_list_3 : old('review_list_3') }}">
                                         </div>
                                     </div>
 

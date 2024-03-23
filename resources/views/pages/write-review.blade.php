@@ -20,11 +20,11 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url(assets/images/backgrounds/page-header-bg.jpg)">
+            <div class="page-header-bg" style="background-image: url({{asset($reviewBanner->review_banner_image)}})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
-                    <h2>Write Review</h2>
+                    <h2>{{ $reviewBanner->review_banner_title}}</h2>
                     <ul class="thm-breadcrumb list-unstyled">
                         <li><a href="/">Home</a></li>
                         <li><span>-</span></li>
@@ -44,14 +44,14 @@
                                 <span class="section-title__tagline">Visa Services Review Page</span>
                                 <div class="section-title__border-box"></div>
                             </div>
-                            <h3 class="mt-4">Welcome to Our Write Review Page
+                            <h3 class="mt-4">{{ $reviewContent->review_title}}
                             </h3>
                         </div>
-                        <p class="about-one__text">Your feedback is invaluable to us. Please take a moment to share your experience with our visa services. Instructions for Writing a Review:</p>
+                        <p class="about-one__text">{{ $reviewContent->review_description}}</p>
                         <ul >
-                            <li>Be Honest: We value honesty above all else. Your genuine feedback helps us improve.</li>
-            <li>Be Detailed: The more details you provide, the better we can understand your experience.</li>
-            <li>Be Constructive: Whether positive or negative, constructive criticism helps us grow.</li>
+                            <li>{{ $reviewContent->review_list_1}}.</li>
+                            <li>{{ $reviewContent->review_list_2}}.</li>
+                            <li>{{ $reviewContent->review_list_3}}.</li>
 
                         </ul>
 
@@ -126,7 +126,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png"
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}"
                         width="135" alt="" /></a>
             </div>
             <!-- /.logo-box -->

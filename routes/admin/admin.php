@@ -8,6 +8,8 @@ use App\Http\Controllers\StudyController;
 use App\Http\Controllers\CountryController;
 use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\AboutpageController;
+use App\Http\Controllers\TermspageController;
+use App\Http\Controllers\ReviewpageController;
 use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ContactpageController;
 use App\Http\Controllers\PrivacypageController;
@@ -138,14 +140,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Write a review
         Route::get("/review-banner", [ConfigurationController::class, 'showReviewBannerPage'])->name("review.banner");
         Route::get("/review-content", [ConfigurationController::class, 'showReviewContentPage'])->name("write.review");
-
         // Profile
         Route::get("/profile", [ConfigurationController::class, 'showProfilePage'])->name("profile");
 
         // Configuration Post Updates
         Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");
     });
-
+    
     Route::prefix("/admin/settings/update")->name("admin.settings.update.")->group(function(){
         Route::post("/banner", [HomepageController::class, 'updateBanner'])->name("banner");
         Route::post("/consulting", [HomepageController::class, 'updateConsulting'])->name("consulting");
@@ -163,14 +164,13 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::post("/contact", [ContactpageController::class, 'updateContact'])->name("contact");
         Route::post("/checkout-location", [ContactpageController::class, 'updateLocation'])->name("checkout.location");
         // Terms  and Conditions configuration
-        Route::post("/terms-condition", [ConfigurationUpdateController::class, 'updateTermsBanner'])->name("terms.banner");
-        Route::post("/terms-condition-content", [ConfigurationUpdateController::class, 'updateTermsContent'])->name("terms.content");
+        Route::post("/terms-condition", [TermspageController::class, 'updateTermsBanner'])->name("terms.banner");
+        Route::post("/terms-condition-content", [TermspageController::class, 'updateTermsContent'])->name("terms.content");
         // Privacy Policy  configuration
         Route::post("/privacy-policy-banner", [PrivacypageController::class, 'updatePolicyBanner'])->name("policy.banner");
         Route::post("/privacy-policy-content", [PrivacypageController::class, 'updatePolicyContent'])->name("privacy.policy");
-
         // Write a review
-        Route::post("/review-banner", [ConfigurationUpdateController::class, 'updateReviewBanner'])->name("review.banner");
-        Route::post("/review-content", [ConfigurationUpdateController::class, 'updateReviewContent'])->name("write.review");
+        Route::post("/review-banner", [ReviewpageController::class, 'updateReviewBanner'])->name("review.banner");
+        Route::post("/review-content", [ReviewpageController::class, 'updateReviewContent'])->name("write.review");
     });
 });

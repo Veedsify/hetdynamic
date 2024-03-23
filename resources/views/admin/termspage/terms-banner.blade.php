@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.terms.banner') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -68,8 +68,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Terms and Condition Title</label>
-                                            <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="">
+                                            <input type="text" class="form-control" id="terms_banner_title"
+                                                name="terms_banner_title" value="{{ old('terms_banner_title') === NULL ? $data->terms_banner_title : old('terms_banner_title') }}">
                                         </div>
                                     </div>
 
@@ -77,7 +77,7 @@
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Terms and Condition Image </label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="terms_banner_image" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

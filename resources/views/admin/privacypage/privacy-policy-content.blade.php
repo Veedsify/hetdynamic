@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.privacy.policy') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">Privacy Policy
                                                 Title</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="privacy_title"
+                                                name="privacy_title" value=" {{ old('privacy_title') === NULL ? $data->privacy_title : old('privacy_title') }}">
                                         </div>
                                     </div>
 
@@ -81,8 +81,9 @@
                                                 class="form-label
                                                 ">Privacy Policy
                                                 Content</label>
-                                            <textarea class="form-control" id="privacy_editor" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                            <textarea class="form-control" id="privacy_editor" name="privacy_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('privacy_description`') === NULL ? $data->privacy_description : old('privacy_description`') }}
+                                            </textarea>
                                         </div>
                                     </div>
 

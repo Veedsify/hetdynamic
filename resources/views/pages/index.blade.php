@@ -84,7 +84,7 @@
                                     <img src="/assets/images/resources/feature-1-1.png" alt="">
                                 </div>
                                 <p class="feature-one__sub-title">Online form</p>
-                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New 
+                                <h3 class="feature-one__title"><a href="visa-details.html">Apply Online for <br> New
                                         Visa</a></h3>
                                 <div class="feature-one__btn-box">
                                     <a href="visa-details.html" class="feature-one__btn">Learn More</a>
@@ -1346,7 +1346,7 @@
             <span class="mobile-nav__close mobile-nav__toggler"><i class="fa fa-times"></i></span>
 
             <div class="logo-box">
-                <a href="/" aria-label="logo image"><img src="/assets/images/resources/logo-2.png" width="135"
+                <a href="/" aria-label="logo image"><img src="{{ asset($pagedata->site_logo) }}" width="135"
                         alt="" /></a>
             </div>
             <!-- /.logo-box -->

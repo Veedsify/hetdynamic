@@ -13,10 +13,16 @@ use App\Models\AboutpageAbout;
 use App\Models\HomepageBanner;
 use App\Models\AboutpageBanner;
 use App\Models\HomepageSupport;
+use App\Models\TermspageBanner;
 use Illuminate\Database\Seeder;
 use App\Models\HomepageCoaching;
+use App\Models\ReviewpageBanner;
+use App\Models\TermspageContent;
 use App\Models\ContactpageBanner;
+use App\Models\PrivacypageBanner;
+use App\Models\ReviewpageContent;
 use App\Models\HomepageConsulting;
+use App\Models\PrivacypageContent;
 use App\Models\AboutpageExperience;
 use App\Models\ContactpageLocation;
 
@@ -93,8 +99,49 @@ class DatabaseSeeder extends Seeder
             'location_description' => 'location_description',
 
         ]);
+        PrivacypageBanner::create([
+            'privacy_banner_title' => 'Your Title Here',
+            'privacy_banner_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+
+        ]);
+
+        PrivacypageContent::create([
+            'privacy_title' => 'Your Title Here',
+            'privacy_description' => 'privacy_description',
+
+        ]);
 
 
+
+
+        TermspageBanner::create([
+            'terms_banner_title' => 'Your Title Here',
+            'terms_banner_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+
+        ]);
+
+        TermspageContent::create([
+            'terms_title' => 'Your Title Here',
+            'terms_description' => 'terms_description',
+
+        ]);
+
+
+
+        ReviewpageBanner::create([
+            'review_banner_title' => 'Your Title Here',
+            'review_banner_image' => 'https://images.pexels.com/photos/2108845/pexels-photo-2108845.jpeg?auto=compress&cs=tinysrgb&w=600',
+
+        ]);
+
+        ReviewpageContent::create([
+            'review_title' => 'Your Title Here',
+            'review_description' => 'Your Title Here',
+            'review_list_1' => 'Your Title Here',
+            'review_list_2' => 'Your Title Here',
+            'review_list_3' => 'Your Title Here',
+
+        ]);
         Category::factory(10)->create();
 
         GlobalSetting::factory(1)->create();

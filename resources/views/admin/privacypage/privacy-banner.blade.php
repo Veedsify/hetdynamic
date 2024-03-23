@@ -68,8 +68,8 @@
                                             <label for="exampleInputEmail1"
                                                 class="form-label
                                                 fw-semibold">Privacy Policy Title</label>
-                                            <input type="text" class="form-control" id="banner_text_1"
-                                                name="banner_text_1" value="{{ old('location_title') === NULL ? $data->location_title : old('location_title') }}">
+                                            <input type="text" class="form-control" id="privacy_banner_title"
+                                                name="privacy_banner_title" value="{{ old('privacy_banner_title') === NULL ? $data->privacy_banner_title : old('privacy_banner_title') }}">
                                         </div>
                                     </div>
 
@@ -77,7 +77,7 @@
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1" class="form-label">Privacy Policy Image </label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
-                                                name="site_favicon" aria-describedby="emailHelp">
+                                                name="privacy_banner_image" aria-describedby="emailHelp">
                                         </div>
                                     </div>
 

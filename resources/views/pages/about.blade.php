@@ -52,19 +52,17 @@
                                     <span class="section-title__tagline">get to know us</span>
                                     <div class="section-title__border-box"></div>
                                 </div>
-                                <h2 class="section-title__title">Leading Visa & <br> Immigration Agency</h2>
+                                <h2 class="section-title__title">{{ $aboutExperience->experience_title }}</h2>
                             </div>
                             <div class="about-four__top">
                                 <div class="about-four__icon">
                                     <span class="icon-group"></span>
                                 </div>
                                 <div class="about-four__content">
-                                    <h4>The Best in Visa & Immigration Since <br> 2013</h4>
+                                    <h4>{{ $aboutExperience->experience_sub_title }}</h4>
                                 </div>
                             </div>
-                            <p class="about-four__text-1">There are many variations of passag of lorem ipsum available
-                                but the jority have suffered alteration in some form by randomised words which don't
-                                look even slightly believable.</p>
+                            <p class="about-four__text-1">{{ $aboutExperience->experience_description }}</p>
                             <div class="about-four__points-box">
                                 <ul class="list-unstyled about-four__points">
                                     <li>
@@ -72,7 +70,7 @@
                                             <span class="icon-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Fast Processing</p>
+                                            <p>{{ $aboutExperience->experience_feature_1 }}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -82,7 +80,7 @@
                                             <span class="icon-check"></span>
                                         </div>
                                         <div class="text">
-                                            <p>Guarantee Approval</p>
+                                            <p>{{ $aboutExperience->experience_feature_2 }}</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -96,20 +94,20 @@
                         <div class="about-four__right">
                             <div class="about-four__img-box">
                                 <div class="about-four__img-one">
-                                    <img src="/assets/images/resources/about-four-img-1.jpg" alt="">
+                                    <img src="{{asset( $aboutExperience->experience_image_1 )}}" alt="">
                                 </div>
                                 <div class="about-four__img-two">
-                                    <img src="/assets/images/resources/about-four-img-2.jpg" alt="">
+                                    <img src="{{asset( $aboutExperience->experience_image_2 )}}" alt="">
                                 </div>
                                 <div class="about-four__experience">
                                     <div class="about-four__experience-inner count-box">
-                                        <h3 class="count-text" data-stop="28" data-speed="1500">00</h3>
+                                        <h3 class="count-text" data-stop="{{ $aboutExperience->experience_years }}" data-speed="1500">00</h3>
                                         <p>Years of Experience</p>
                                         <div class="about-four__shape-1">
                                             <img src="/assets/images/shapes/about-two-shape-1.png" alt="">
                                         </div>
                                     </div>
-                                </div>
+                                </div>1
                             </div>
                         </div>
                     </div>
@@ -301,37 +299,21 @@
 
         <section class="testimonial-two ">
             <div class="container">
-                <h1 class="text-center mb-5 section-title__title">About Us</h1>
+                <h1 class="text-center mb-5 section-title__title">{{ $aboutUs->about_us_title }}</h1>
                 <div class="row ">
                     <div class="col-md-6 mb-5">
-                        <h3 class="h3 mb-1">Our Mission</h3>
-                        <p class="text-primary fw-bold mb-2">Why we do what we do</p>
+                        <h3 class="h3 mb-1">{{ $aboutUs->about_us_sub_title_1 }}</h3>
+                        <p class="text-primary fw-bold mb-2">{{ $aboutUs->about_us_feature_1 }}</p>
                         <p>
-                            At HetDynamic, our mission is to empower individuals and families worldwide to achieve
-                            their dreams
-                            of global mobility and opportunity through expert immigration solutions.
+                            {{ $aboutUs->about_us_description_1 }}
 
-                            With a focus on Grenada Citizenship by Investment and Canadian Permanent Residency by
-                            Investment, we
-                            strive to provide exceptional and personalized services, guiding our clients towards a
-                            brighter
-                            future while maintaining the highest standards of integrity, transparency, and
-                            professionalism.
                         </p>
                     </div>
                     <div class="col-md-6 mb-5">
-                        <h3 class="h3 mb-1">Our Vision</h3>
-                        <p class="text-primary fw-bold mb-2">For the future</p>
+                        <h3 class="h3 mb-1">{{ $aboutUs->about_us_sub_title_2 }}</h3>
+                        <p class="text-primary fw-bold mb-2">{{ $aboutUs->about_us_feature_2 }}e</p>
                         <p>
-                            Our vision is to become a globally recognized leader in immigration consulting, setting
-                            new
-                            benchmarks for excellence in client satisfaction and success.
-
-                            We aspire to be the go-to destination for individuals seeking seamless pathways to
-                            Grenada and
-                            Canada, fostering a diverse and inclusive community of globally mobile citizens who
-                            contribute to
-                            the development and prosperity of their chosen destinations.
+                            {{ $aboutUs->about_us_description_2 }}
                         </p>
                     </div>
                 </div>

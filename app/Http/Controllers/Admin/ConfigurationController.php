@@ -3,11 +3,16 @@
 namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Models\AboutpageAbout;
 use App\Models\HomepageBanner;
 use App\Models\AboutpageBanner;
 use App\Models\HomepageSupport;
 use App\Models\HomepageCoaching;
+use App\Models\ContactpageBanner;
+use App\Models\PrivacypageBanner;
 use App\Models\HomepageConsulting;
+use App\Models\AboutpageExperience;
+use App\Models\ContactpageLocation;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
 
@@ -60,21 +65,35 @@ public function showBannerPage()
     }
     public function showExperiencePage()
     {
-        return view("admin.aboutpage.years-of-experience");
+        $aboutExperienceData = AboutpageExperience::find(1)->first();
+        return view("admin.aboutpage.years-of-experience",[
+            'data'=>$aboutExperienceData
+        ]);
     }
     public function showAboutUsPage()
     {
-        return view("admin.aboutpage.about-us");
+        $aboutusData = AboutpageAbout::find(1)->first();
+
+        return view("admin.aboutpage.about-us",[
+            "data"=>$aboutusData
+        ]);
     }
 
     // Contact
     public function showContactPage()
     {
-        return view("admin.contactpage.contact");
+        $contactData= ContactpageBanner::find(1)->first();
+        return view("admin.contactpage.contact",[
+            "data" => $contactData
+        ]);
     }
     public function showLocationPage()
     {
-        return view("admin.contactpage.checkout-location");
+        $locationData = ContactpageLocation::find(1)->first();
+        return view("admin.contactpage.checkout-location",[
+            "data" => $locationData
+
+        ]);
     }
 
     // Terms and Condition
@@ -89,7 +108,11 @@ public function showBannerPage()
     // Privacy Policy
     public function showPolicyBannerPage()
     {
-        return view("admin.privacypage.privacy-banner");
+        $privacyData = PrivacypageBanner::find(1)->first();
+        return view("admin.privacypage.privacy-banner",[
+            'data' => $privacyData
+        ]);
+
     }
     public function showPolicyContentPage()
     {

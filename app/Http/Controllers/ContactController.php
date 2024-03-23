@@ -6,6 +6,8 @@ use App\Models\Contact;
 use App\Mail\ContactMail;
 use Illuminate\Http\Request;
 use App\Models\GlobalSetting;
+use App\Models\ContactpageBanner;
+use App\Models\ContactpageLocation;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Config;
@@ -15,7 +17,15 @@ class ContactController extends Controller
     //
     public function showContactPage()
     {
-        return View::make('pages.contact');
+        $contactBanners  = ContactpageBanner::first();
+        $contactLocation = ContactpageLocation::first();
+
+        return View::make('pages.contact',[
+
+            "contactBanners" => $contactBanners,
+            "contactLocation" => $contactLocation,
+            ]);
+
     }
 
     public function submitContactForm(Request $request)
@@ -42,4 +52,5 @@ class ContactController extends Controller
 
         return redirect()->back()->with('message', 'Your message has been sent successfully!');
     }
+
 }

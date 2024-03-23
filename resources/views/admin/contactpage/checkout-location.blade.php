@@ -59,7 +59,7 @@
                                     <p>{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route('config.details.update') }}" method="post"
+                            <form action="{{ route('admin.settings.update.checkout.location') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -70,8 +70,8 @@
                                                 class="form-label
                                                 fw-semibold">Location
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="banner_text_2"
-                                                name="banner_text_2" value="">
+                                            <input type="text" class="form-control" id="location_title"
+                                                name="location_title" value="{{ old('location_title') === NULL ? $data->location_title : old('location_title') }}">
                                         </div>
                                     </div>
 
@@ -79,10 +79,9 @@
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                ">Location
-                                                Description</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_description" rows="10"
-                                                aria-describedby="emailHelp"></textarea>
+                                                ">Location Description</label>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="location_description" rows="10"
+                                                aria-describedby="emailHelp">{{ old('location_description') === NULL ? $data->location_description : old('location_description') }}</textarea>
                                         </div>
                                     </div>
 

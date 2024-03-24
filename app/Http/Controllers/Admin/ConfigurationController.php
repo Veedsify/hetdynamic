@@ -20,6 +20,8 @@ use App\Models\AboutpageExperience;
 use App\Models\ContactpageLocation;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
+use App\Models\Blog;
+use App\Models\Office;
 
 class ConfigurationController extends Controller
 {
@@ -28,7 +30,7 @@ class ConfigurationController extends Controller
         return view("admin.homepage.details");
     }
 
-public function showBannerPage()
+    public function showBannerPage()
     {
         $bannerDetails  = HomepageBanner::find(1)->first();
         return view("admin.homepage.banner", [
@@ -38,23 +40,23 @@ public function showBannerPage()
     public function showConsultingPage()
     {
         $consultingData  = HomepageConsulting::find(1)->first();
-        return view("admin.homepage.consulting",[
+        return view("admin.homepage.consulting", [
             'data' => $consultingData
         ]);
     }
     public function showOurSupportPage()
     {
         $supportData  = HomepageSupport::find(1)->first();
-               return view("admin.homepage.our-support", [
+        return view("admin.homepage.our-support", [
             'data' => $supportData
         ]);
-
     }
     public function showCoachingAndTrainingPage()
     {
-         $coachingData  = HomepageCoaching::find(1)->first();
-                   return view("admin.homepage.coaching-and-training",[
-            'data' => $coachingData]);
+        $coachingData  = HomepageCoaching::find(1)->first();
+        return view("admin.homepage.coaching-and-training", [
+            'data' => $coachingData
+        ]);
     }
     public function showOurConsultantsPage()
     {
@@ -71,31 +73,31 @@ public function showBannerPage()
     public function showExperiencePage()
     {
         $aboutExperienceData = AboutpageExperience::find(1)->first();
-        return view("admin.aboutpage.years-of-experience",[
-            'data'=>$aboutExperienceData
+        return view("admin.aboutpage.years-of-experience", [
+            'data' => $aboutExperienceData
         ]);
     }
     public function showAboutUsPage()
     {
         $aboutusData = AboutpageAbout::find(1)->first();
 
-        return view("admin.aboutpage.about-us",[
-            "data"=>$aboutusData
+        return view("admin.aboutpage.about-us", [
+            "data" => $aboutusData
         ]);
     }
 
     // Contact
     public function showContactPage()
     {
-        $contactData= ContactpageBanner::find(1)->first();
-        return view("admin.contactpage.contact",[
+        $contactData = ContactpageBanner::find(1)->first();
+        return view("admin.contactpage.contact", [
             "data" => $contactData
         ]);
     }
     public function showLocationPage()
     {
         $locationData = ContactpageLocation::find(1)->first();
-        return view("admin.contactpage.checkout-location",[
+        return view("admin.contactpage.checkout-location", [
             "data" => $locationData
 
         ]);
@@ -105,14 +107,14 @@ public function showBannerPage()
     public function showTermsBannerPage()
     {
         $termsData = TermspageBanner::find(1)->first();
-        return view("admin.termspage.terms-banner",[
+        return view("admin.termspage.terms-banner", [
             "data" => $termsData
         ]);
     }
     public function showTermsContentPage()
     {
         $contentData = TermspageContent::find(1)->first();
-        return view("admin.termspage.terms-condition-content",[
+        return view("admin.termspage.terms-condition-content", [
             "data" => $contentData
         ]);
     }
@@ -120,38 +122,41 @@ public function showBannerPage()
     public function showPolicyBannerPage()
     {
         $privacyData = PrivacypageBanner::find(1)->first();
-        return view("admin.privacypage.privacy-banner",[
+        return view("admin.privacypage.privacy-banner", [
             'data' => $privacyData
         ]);
-
     }
     public function showPolicyContentPage()
     {
         $policyData = PrivacypageContent::find(1)->first();
-        return view("admin.privacypage.privacy-policy-content",[
-            'data'=>$policyData
+        return view("admin.privacypage.privacy-policy-content", [
+            'data' => $policyData
         ]);
     }
 
     // Write a  Review
     public function showReviewBannerPage()
     {
-        $reviewData= ReviewpageBanner::find(1)->first();
-        return view("admin.reviewpage.review-banner",[
-            'data'=>$reviewData
+        $reviewData = ReviewpageBanner::find(1)->first();
+        return view("admin.reviewpage.review-banner", [
+            'data' => $reviewData
         ]);
     }
     public function showReviewContentPage()
     {
         $reviewContentData =  ReviewpageContent::find(1)->first();
-        return view("admin.reviewpage.review-content",[
-            'data'=>$reviewContentData
+        return view("admin.reviewpage.review-content", [
+            'data' => $reviewContentData
         ]);
     }
 
     // profile
     public function showProfilePage()
     {
-        return view("admin.profile");
+        $blogs = Blog::with('user')->with('comments')->get();
+        return view("admin.profile", [
+            "blogs" => $blogs,
+            'addresses' => Office::all()->count()
+        ]);
     }
 }

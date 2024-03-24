@@ -137,7 +137,7 @@
                                 <p>Featured Image</p>
                                 <input type="file" className="hidden d-none" id="featured_article_image"
                                     name="file" />
-                                <img src="{{ $blog->image ? $blog->image : asset('custom/placeholder.png') }}"
+                                <img src="{{ $blog->image ? asset($blog->image) : asset('custom/placeholder.png') }}"
                                     alt="" width="500" />
                             </label>
                             <div class="form-group ">

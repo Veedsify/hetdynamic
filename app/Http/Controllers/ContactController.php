@@ -59,7 +59,7 @@ class ContactController extends Controller
             'description' => 'New contact request from ' . $contact->name,
             'seen' => 'unread',
             'image' => "custom/notifications/contact.svg",
-            'url' => '',
+            'url' => route('admin.contact'),
         ]);
 
         return redirect()->back()->with('message', 'Your message has been sent successfully!');

@@ -126,7 +126,7 @@
                             <div class="comment-one">
                                 <h3 class="comment-one__title">
                                     <span>({{ \App\Models\BlogComment::where('blog_id', $article->id)->count() }})</span>
-                                    Comments
+                                    Comment{{ \App\Models\BlogComment::where('blog_id', $article->id)->count() > 1 ? 's' : '' }}
                                 </h3>
                                 @foreach ($comments as $comment)
                                     <div class="comment-one__single">
@@ -224,9 +224,14 @@
                                 <div class="sidebar__tags">
                                     <h3 class="sidebar__title">Tags</h3>
                                     <div class="sidebar__tags-list">
-                                        <a href="#">
-                                            {{ $article->tags }}
-                                        </a>
+                                        @php
+                                            $tags = explode(',', $article->tags);
+                                        @endphp
+                                        @foreach ($tags as $tag)
+                                            <a href="/tags/{{ $tag }}">
+                                                <span>{{ $tag }}</span>
+                                            </a>
+                                        @endforeach
                                     </div>
                                 </div>
                                 <div class="sidebar__comments">

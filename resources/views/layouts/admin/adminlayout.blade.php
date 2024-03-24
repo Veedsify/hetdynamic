@@ -14,7 +14,7 @@
 
     {{-- CSRF TOKEN --}}
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
+    <meta name="description" content="{{ $description }}">
 
     <!-- Favicon icon-->
     <link rel="shortcut icon" type="image/png" href="{{ asset($pagedata->site_logo) }}">
@@ -22,7 +22,10 @@
     <!-- Core Css -->
     <link rel="stylesheet" href="{{ asset('admin-assets/css/styles.css') }}">
 
-    <title>HetDynamic - Admin</title>
+    <title>
+        {{ $title }}
+    </title>
+
     <!-- Owl Carousel  -->
     <link rel="stylesheet" href="{{ asset('admin-assets/libs/owl.carousel/dist/assets/owl.carousel.min.css') }}">
     {{-- JODIT --}}

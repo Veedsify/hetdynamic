@@ -52,13 +52,15 @@
                                 </div>
                             @endif
 
-                            <div style="overflow-y: auto; height: 550px; padding: 2rem">
+                            <div
+                                style="overflow-y: auto; height: {{ $allNotifications->count() > 5 ? '500px' : 'auto' }}; padding: 2rem">
                                 @foreach ($allNotifications as $notification)
-                                    <div>
+                                    <a href="{{ $notification->url }}" target="_blank">
                                         <div
                                             class="d-md-flex items-center border rounded-2 mb-3 {{ $notification->seen === 'unread' ? 'border-info' : '' }}">
 
-                                            <a href="javascript:void(0)" class="py-6 px-7 d-flex    w-100">
+                                            <a href="{{ $notification->url }}" target="_blank"
+                                                class="py-6 px-7 d-flex    w-100">
                                                 <span class="me-3">
                                                     <img src="{{ asset($notification->image) }}" alt="user"
                                                         class="rounded-circle" width="48" height="48">
@@ -75,16 +77,22 @@
                                             </a>
 
                                         </div>
-                                    </div>
+                                    </a>
                                 @endforeach
                             </div>
 
-                            <div class="py-6 px-7 mb-1  ">
-                                <form action="{{ route('admin.notification.mark.all.read') }}">
-                                    <button class="btn btn-outline-primary md-w ms-auto d-block">Mark all as read
-                                    </button>
-                                </form>
-                            </div>
+                            @if ($allNotifications->count() == 0)
+                                <div class="py-6 px-7 mb-1  ">
+                                    <h6 class="text-center">No notification found</h6>
+                                </div>
+                            @else
+                                <div class="py-6 px-7 mb-1  ">
+                                    <form action="{{ route('admin.notification.mark.all.read') }}">
+                                        <button class="btn btn-outline-primary md-w ms-auto d-block">Mark all as read
+                                        </button>
+                                    </form>
+                                </div>
+                            @endif
 
                         </div>
                         <!-- ------------------------------- -->

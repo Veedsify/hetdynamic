@@ -39,31 +39,6 @@
                     </div>
 
                     <div class="widget-content searchable-container list">
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-md-4 col-xl-3">
-                                    <form class="position-relative">
-                                        <input type="text" class="form-control product-search ps-5" id="input-search"
-                                            placeholder="Search Contacts...">
-                                        <i
-                                            class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                                    </form>
-                                </div>
-                                <div
-                                    class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                                    <div class="action-btn show-btn">
-                                        <a href="javascript:void(0)"
-                                            class="delete-multiple bg-danger-subtle btn me-2 text-danger d-flex align-items-center ">
-                                            <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
-                                        </a>
-                                    </div>
-                                    <a href="javascript:void(0)" id="btn-add-contact"
-                                        class="btn btn-primary d-flex align-items-center">
-                                        <i class="ti ti-users text-white me-1 fs-5"></i> Add Contact
-                                    </a>
-                                </div>
-                            </div>
-                        </div>
                         <!-- Modal -->
                         <div class="modal fade" id="addContactModal" tabindex="-1" role="dialog"
                             aria-labelledby="addContactModalTitle" aria-hidden="true">

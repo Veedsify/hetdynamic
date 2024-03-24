@@ -11,6 +11,7 @@ use App\Models\HomepageCoaching;
 use App\Models\HomepageConsulting;
 use App\Models\AboutpageExperience;
 use App\Http\Controllers\Controller;
+use App\Models\Team;
 use Illuminate\Support\Facades\View;
 
 class IndexController extends Controller
@@ -25,6 +26,7 @@ class IndexController extends Controller
         $supportData  = HomepageSupport::find(1)->first();
         $coachingData  = HomepageCoaching::find(1)->first();
         $aboutExperience  = AboutpageExperience::first();
+        $teams = Team::all();
         return View::make("pages.index", [
             "blogs" => $blogs,
             "countries" => $countries,
@@ -33,9 +35,7 @@ class IndexController extends Controller
             "supportData" => $supportData,
             "coachingData" => $coachingData,
             "aboutExperience" => $aboutExperience,
-
-
-
+            "teams" => $teams
         ]);
     }
 }

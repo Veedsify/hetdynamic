@@ -8,8 +8,6 @@ use Illuminate\Support\Facades\Log; // Import the Log class
 
 class CountryController extends Controller
 {
-    //
-   
 
     public function countries()
     {

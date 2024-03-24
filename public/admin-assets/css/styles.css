@@ -31359,5 +31359,7 @@ body .dp-nav.dp-nav-right::before {
   padding: 2rem;
   background: #fff;
   border-radius: 5px;
+  overflow-y: auto;
+  height: 600px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }

@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\CitizenshipController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
+use App\Http\Controllers\TeamController;
 
 // Admin Route Web Endpoints
 
@@ -76,6 +77,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get("/admin/countries", [CountryController::class, "countries"])->name("admin.countries");
     Route::post("/admin/countries/add", [CountryController::class, "createCountry"])->name("admin.countries.add");
     Route::delete("/admin/countries/delete/{id}", [CountryController::class, "deleteCountry"])->name("admin.countries.delete");
+
+    //Teams 
+    Route::get("/admin/teams", [TeamController::class, "teams"])->name("admin.teams");
+    Route::post("/admin/teams/add", [TeamController::class, "createTeam"])->name("admin.teams.add");
+    Route::delete("/admin/teams/delete/{id}", [TeamController::class, "deleteTeam"])->name("admin.teams.delete");
+    
 
     // Case Studies
     Route::prefix("/admin/certificates")->group(function () {

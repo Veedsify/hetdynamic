@@ -241,8 +241,7 @@
                                         style="background-image: url(assets/images/resources/services-one-img-1.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Tourist
-                                                Visa</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Study</a></h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>
@@ -254,7 +253,7 @@
                                 <div class="services-one__icon">
                                     <span class="icon-tourist"></span>
                                 </div>
-                                <h3 class="services-one__title"><a href="visa-details.html">Tourist Visa</a></h3>
+                                <h3 class="services-one__title"><a href="visa-details.html">Study</a></h3>
                                 <p class="services-one__text">Desire that they can forese trouble bound ensue.</p>
                             </div>
                         </div>
@@ -269,8 +268,7 @@
                                         style="background-image: url(assets/images/resources/services-one-img-2.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Business
-                                                Visa</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Citezinship</a></h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>
@@ -282,7 +280,7 @@
                                 <div class="services-one__icon">
                                     <span class="icon-consulting"></span>
                                 </div>
-                                <h3 class="services-one__title"><a href="visa-details.html">Business Visa</a></h3>
+                                <h3 class="services-one__title"><a href="visa-details.html">Citezinship</a></h3>
                                 <p class="services-one__text">Desire that they can forese trouble bound ensue.</p>
                             </div>
                         </div>
@@ -297,8 +295,7 @@
                                         style="background-image: url(assets/images/resources/services-one-img-3.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Student
-                                                Visa</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Work Permit</a></h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>
@@ -310,7 +307,7 @@
                                 <div class="services-one__icon">
                                     <span class="icon-graduating-student"></span>
                                 </div>
-                                <h3 class="services-one__title"><a href="visa-details.html">Student Visa</a></h3>
+                                <h3 class="services-one__title"><a href="visa-details.html">Work Permit</a></h3>
                                 <p class="services-one__text">Desire that they can forese trouble bound ensue.</p>
                             </div>
                         </div>
@@ -325,8 +322,7 @@
                                         style="background-image: url(assets/images/resources/services-one-img-4.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Residence
-                                                Visa</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Residency</a></h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>

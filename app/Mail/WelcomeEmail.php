@@ -2,23 +2,29 @@
 
 namespace App\Mail;
 
+use App\Models\GlobalSetting;
+use App\Models\User;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
+use PhpParser\Node\Stmt\Global_;
+use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class WelcomeEmail extends Mailable
 {
     use Queueable, SerializesModels;
-
+    public User $user;
+    public $url;
     /**
      * Create a new message instance.
      */
-    public function __construct()
+    public function __construct(User $user, $url)
     {
-        //
+        $this->user = $user;
+        $this->url = $url;
     }
 
     /**
@@ -27,7 +33,12 @@ class WelcomeEmail extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: 'Welcome Email',
+            subject: 'Hi ' . $this->user->fullname . ', Welcome to ' . GlobalSetting::first()->site_name,
+            from: new Address(
+                GlobalSetting::first()->mail_address,
+                GlobalSetting::first()->site_name
+            ),
+            to: $this->user->email,
         );
     }
 
@@ -37,7 +48,12 @@ class WelcomeEmail extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.welcome',
+            with: [
+                'user' => $this->user,
+                'url' => $this->url,
+                'site_data' => GlobalSetting::first()
+            ]
         );
     }
 

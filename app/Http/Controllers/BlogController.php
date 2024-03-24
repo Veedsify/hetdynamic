@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Blog;
 use App\Models\BlogComment;
 use App\Models\Category;
+use App\Models\HomepageBanner;
 use App\Models\ImageUploader;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
@@ -18,9 +19,11 @@ class BlogController extends Controller
     {
         $query = $request->get('page');
         $blogs = Blog::where("status", true)->orderByDesc("created_at")->paginate(9);
+        $blogBanner = HomepageBanner::first()->banner_image_1;
         return view("pages.blog", [
             "blogs" => $blogs,
-            'query' => $query
+            'query' => $query,
+            "blogBanner" => $blogBanner
         ]);
     }
 

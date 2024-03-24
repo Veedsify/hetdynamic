@@ -64,10 +64,12 @@ View::composer('*', function ($view) {
 
     //Residency
     Route::get("/residency/{pageId}", [ResidencyController::class, 'showResidencyPagesDetails'])->name("residency.details");
+    Route::get("/residency", [ResidencyController::class, 'showResidencyPage'])->name("residency");
 
 
     // WorkPermit
     Route::get("/work-permit/{pageId}", [WorkPermitController::class, 'showWorkPermitPagesDetails'])->name("workpermit.details");
+    Route::get("/work-permit", [WorkPermitController::class, 'showWorkPermitPage'])->name("workpermit");
     //Blog
     Route::get("/blog", [BlogController::class, 'showBlogPage'])->name("blog");
     Route::get("/blog/{postId}", [BlogController::class, 'showBlogPagesDetails'])->name("blog.details");

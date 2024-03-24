@@ -1,6 +1,6 @@
 ﻿@extends('../layouts/admin/adminlayout', [
     'pagedata' => $pagedata,
-    'title' => '',
+    'title' => 'Register  - ' . $pagedata->site_name,
     'description' => '',
     'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])

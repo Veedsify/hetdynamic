@@ -37,80 +37,383 @@
         <!--Page Header End-->
 
         <!--Countries Details Start-->
-        <section class="countries-details">
+        <section class="coaching-details">
             <div class="container">
                 <div class="row">
-                    <div class="col-xl-12 col-lg-12">
-                        <div class="countries-details__right">
-                            <h3 class="countries-details__title">United Kingdom</h3>
-                            <p class="countries-details__text">There are many variations of passages of lorem ipsum is
-                                simply free text available in the market, but the majority time you put aside to be in
-                                our office. Lorem ipsum dolor sit amet, consectet lorem ipsum dolor sit amet,
-                                consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
-                                aliqua. Lorem ipsum dolor sit amet.</p>
-                            <div class="countries-details__img-box">
-                                <div class="row">
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="countries-details__img">
-                                            <img src="/assets/images/countries/countries-details-img-1.jpg" alt="">
+                    <div class="col-12">
+                        <div class="coaching-details__right">
+                            <div class=" position-relative">
+                                <img src="/assets/images/coaching/coaching-details-img-1.jpg" alt="" class="w-100">
+                                <div class="position-absolute   w-auto bottom-0 end-0 p-lg-5 p-2 bg-base">
+                                    <div class="row  gap-lg-0 gap-3">
+                                        <div class="col-lg-4 col-md-6  ">
+
+                                                <h1 class="fw-bold text-white">2023</h1>
+                                                <p class="fw-bold text-white ">Innovator Founder Visa Launched
+                                                </p>
                                         </div>
-                                    </div>
-                                    <div class="col-xl-6 col-lg-6 col-md-6">
-                                        <div class="countries-details__img">
-                                            <img src="/assets/images/countries/countries-details-img-2.jpg" alt="">
+                                        <div class="col-lg-4  col-md-6">
+
+                                                <h1 class="fw-bold text-white">£50,000</h1>
+                                                <p class="fw-bold text-white">Minimum Requirement
+                                                </p>
+                                        </div>
+                                        <div class="col-lg-4 col-md-6">
+
+                                                <h1 class="fw-bold text-white">2-3</h1>
+                                                <p class="fw-bold text-white">Months Processing Time
+                                                </p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <p class="countries-details__text-two">Neque porro est qui dolorem ipsum quia quaed
-                                inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo. Aelltes port
-                                lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is
-                                simply dummy text of the printing and typesetting industry.</p>
-                            <p class="countries-details__text-three">Biophilia is the idea that humans possess an innate
-                                tendency to seek connections with nature. The term translates</p>
-                            <p class="countries-details__text-four">When an unknown printer took a galley of type and
-                                scrambled it to make a type specimen book. It has survived not only five centuries, but
-                                also the leap into electronic typesetting, remaining essentially unchanged. Aelltes port
-                                lacus quis enim var sed efficitur turpis gilla sed sit amet finibus eros. Lorem Ipsum is
-                                simply dummy text of the printing and typesetting industry.</p>
-                            <h3 class="countries-details__title-two">Reasons of Choosing USA</h3>
-                            <p class="countries-details__text-five">There are many variations of passages of lorem ipsum
-                                is simply free text available in the market, but the majority time you put aside to be
-                                in our office.</p>
-                            <ul class="countries-details__points list-unstyled">
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-theater"></span>
+                            <div class="section-title mb-3  m-0 text-left mt-5">
+                                <div class="section-title__tagline-box ">
+                                    <span class="section-title__tagline ">Our services</span>
+                                    <div class="section-title__border-box"></div>
+                                </div>
+                                <h3 class="coaching-details__title-1 m-0 ">Innovator Founder Visa</h3>
+                            </div>
+                            <div class="row p-lg-0 p-2 gap-md-0 gap-3">
+
+                                <p class="coaching-details__text-1  col-md-6">There are many variations of passages of lorem ipsum is
+                                    simply free text available in the market, but the majority time you put aside to be in
+                                    our office. Lorem ipsum dolor sit amet, consectetLorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.</p>
+                                <p class="coaching-details__text-1  col-md-6 ">There are many variations of passages of lorem ipsum is
+                                    simply free text available in the market, but the majority time you put aside to be in
+                                    our office. Lorem ipsum dolor sit amet, consectetLorem ipsum dolor sit amet, consectetur
+                                    adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
+                                    incididunt ut labore et dolore magna aliqua.</p>
+                                </div>
+
+
+
+                                <div class="mt-5 p-lg-0 p-2">
+                                    <div class="coaching-details__benefit-content">
+                                        <h3 class="coaching-details__benefit-title mb-4">Benefits of the UK Innovator Founder Program</h3>
+                                        <ul class="coaching-details__benefit-points list-unstyled gap-2 d-flex flex-column ">
+                                            <li class="d-flex align-items-center border p-2
+                                            ">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>
+                                                        Residence permits acquired within few weeks</p>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-center border p-2">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Permanent residence possible after three years</p>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-center border p-2">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Path to Citizenship: provided you meet the specific criteria throughout your residency application and have upheld the requirements, you may be eligible for citizenship after five years.</p>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-center border p-2">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>Include Family Members : As an innovator founder, It is possible to apply for dependent visas for your children below the age of 18 and your spouse</p>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-center border p-2">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>International business environment</p>
+                                                </div>
+                                            </li>
+                                            <li class="d-flex align-items-center border p-2">
+                                                <div class="icon">
+                                                    <span class="icon-check"></span>
+                                                </div>
+                                                <div class="text">
+                                                    <p>
+                                                        World-renowned schools and universities</p>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </div>
-                                    <div class="text">
-                                        <p><a href="#">Experience the
-                                                <br> Culture</a></p>
+                                </div>
+
+                                <div class="coaching-details__benefit my-5">
+                                    <div class="row">
+                                        <div class="col-lg-6">
+                                            <div class="">
+                                                <img src="https://www.hetdynamic.com/wp-content/uploads/2023/10/pexels-pixabay-163037-800x600.jpg"
+                                                    alt="" width="100%">
+                                            </div>
+                                        </div>
+                                        <div class="col-xl-6">
+                                            <div class="coaching-details__benefit-content">
+                                                <h3 class="coaching-details__benefit-title">Requirements of the UK Innovator Founder Program</h3>
+                                                <p class="coaching-details__benefit-text">Applicants must:</p>
+                                                <ul class="coaching-details__benefit-points list-unstyled">
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p >Be at least 18 years of age </p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>Have a new and viable business idea with a potential for growth, supported by an endorsement letter from an approved endorsing body</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>Demonstrate sufficient investment funds to set up and grow their business</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p>Be the sole or an instrumental member of the business’s founding team</p>
+                                                        </div>
+                                                    </li>
+                                                        <li class="d-flex align-items-start  ">
+                                                            <div class="icon p-1">
+                                                                <span class="icon-check"></span>
+                                                            </div>
+                                                            <div class="text">
+                                                                <p>Have the ability to speak English according to CEFR intermediate Level B2    </p>
+                                                            </div>
+                                                        </li>
+
+                                                </ul>
+                                            </div>
+                                        </div>
                                     </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-goals"></span>
+                                </div>
+                                <div class="coaching-details__benefit my-5">
+                                    <div class="row">
+
+                                        <div class="col-lg-6">
+                                            <div class="coaching-details__benefit-content">
+                                                <h3 class="coaching-details__benefit-title mb-3">The proposed business must meet the following requirements:</h3>
+                                                <ul class="coaching-details__benefit-points list-unstyled">
+                                                    <li class="d-flex align-items-start   ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p ><b> Innovation: </b> An original, genuine business plan that meets new or existing market needs and/or creates a competitive advantage</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p> <b>Viability: </b> A realistic and achievable business plan, based on the available resources. Applicants must have, or be actively developing, the necessary skills, knowledge, experience, and market awareness to successfully run their business</p>
+                                                        </div>
+                                                    </li>
+                                                    <li class="d-flex align-items-start  ">
+                                                        <div class="icon p-1">
+                                                            <span class="icon-check"></span>
+                                                        </div>
+                                                        <div class="text">
+                                                            <p><b> Scalability:</b> Evidence of structured planning and potential for job creation and growth into national and international markets</p>
+                                                        </div>
+                                                    </li>
+
+
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="col-lg-6  ">
+                                                <img src="https://www.hetdynamic.com/wp-content/uploads/2023/10/pexels-pixabay-163037-800x600.jpg"
+                                                    alt="" width="100%" >
+                                        </div>
                                     </div>
-                                    <div class="text">
-                                        <p><a href="#">Opportunities
-                                                <br> for Growth</a></p>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="icon">
-                                        <span class="icon-education"></span>
-                                    </div>
-                                    <div class="text">
-                                        <p><a href="#">Quality Higher
-                                                <br> Educations</a></p>
-                                    </div>
-                                </li>
-                            </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
+            </div>
+         <hr>
+         <div class="container">
+            <div class="section-title mb-3  m-0 text-left mt-5">
+                <div class="section-title__tagline-box ">
+                    <span class="section-title__tagline  m-0 ">All requirements are mandatory</span>
+                    <div class="section-title__border-box mt-1"></div>
+                </div>
+                <h3 class="coaching-details__title-3 m-0 py-2">Procedures of the UK Innovator Founder Program</h3>
+            </div>
+            <hr>
+            <div class="coaching-details__why">
+                <div class="row">
+                    <!--Coaching Details Why Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="coaching-details__why-single">
+                            <div class="coaching-details__why-icon">
+                                <span class="icon-individual"></span>
+                                <div class="coaching-details__why-shape-1"></div>
+                            </div>
+                            <div class="coaching-details__why-title">
+                                <h3>Individual
+                                    Attention</h3>
+                            </div>
+                            <div class="coaching-details__hover-single">
+                                <div class="coaching-details__hover-icon">
+                                    <span class="icon-individual"></span>
+                                </div>
+                                <div class="coaching-details__hover-title">
+                                    <h3>Individual
+                                        Attention</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Coaching Details Why Single End-->
+                    <!--Coaching Details Why Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="coaching-details__why-single">
+                            <div class="coaching-details__why-icon">
+                                <span class="icon-report-card"></span>
+                                <div class="coaching-details__why-shape-1"></div>
+                            </div>
+                            <div class="coaching-details__why-title">
+                                <h3>Result Driven
+                                    Coaching</h3>
+                            </div>
+                            <div class="coaching-details__hover-single">
+                                <div class="coaching-details__hover-icon">
+                                    <span class="icon-report-card"></span>
+                                </div>
+                                <div class="coaching-details__hover-title">
+                                    <h3>Result Driven
+                                        Coaching</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Coaching Details Why Single End-->
+                    <!--Coaching Details Why Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="coaching-details__why-single">
+                            <div class="coaching-details__why-icon">
+                                <span class="icon-time-check"></span>
+                                <div class="coaching-details__why-shape-1"></div>
+                            </div>
+                            <div class="coaching-details__why-title">
+                                <h3>Flexbile
+                                    Timing</h3>
+                            </div>
+                            <div class="coaching-details__hover-single">
+                                <div class="coaching-details__hover-icon">
+                                    <span class="icon-time-check"></span>
+                                </div>
+                                <div class="coaching-details__hover-title">
+                                    <h3>Flexbile
+                                        Timing</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Coaching Details Why Single End-->
+                    <!--Coaching Details Why Single Start-->
+                    <div class="col-xl-3 col-lg-6 col-md-6">
+                        <div class="coaching-details__why-single">
+                            <div class="coaching-details__why-icon">
+                                <span class="icon-books"></span>
+                                <div class="coaching-details__why-shape-1"></div>
+                            </div>
+                            <div class="coaching-details__why-title">
+                                <h3>Free Study
+                                    Material</h3>
+                            </div>
+                            <div class="coaching-details__hover-single">
+                                <div class="coaching-details__hover-icon">
+                                    <span class="icon-books"></span>
+                                </div>
+                                <div class="coaching-details__hover-title">
+                                    <h3>Free Study
+                                        Material</h3>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!--Coaching Details Why Single End-->
                 </div>
             </div>
+
+            <div class="coaching-details__importance">
+                <div class="coaching-details__importance-bg"
+                    style="background-image: url(assets/images/backgrounds/coaching-details-importance-bg.png);">
+                </div>
+                <div class="coaching-details__importance-title-box">
+                    <h3 class="coaching-details__importance-title">Professional Training for
+                        <br> Cracking IETLS
+                    </h3>
+                    <div class="coaching-details__importance-btn-box">
+                        <a href="#" class="coaching-details__importance-btn">Apply Now</a>
+                    </div>
+                </div>
+                <ul class="coaching-details__importance-points-list list-unstyled">
+                    <li>
+                        <div class="icon">
+                            <span class="icon-check"></span>
+                        </div>
+                        <div class="text">
+                            <p>Listening</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <span class="icon-check"></span>
+                        </div>
+                        <div class="text">
+                            <p>Reading</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <span class="icon-check"></span>
+                        </div>
+                        <div class="text">
+                            <p>Writing</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="icon">
+                            <span class="icon-check"></span>
+                        </div>
+                        <div class="text">
+                            <p>Speaking</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
         </section>
+
         <!--Countries Details End-->
 
         <!--Site Footer Start-->

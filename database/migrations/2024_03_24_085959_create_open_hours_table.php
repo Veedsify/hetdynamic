@@ -11,14 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('notifications', function (Blueprint $table) {
+        Schema::create('open_hours', function (Blueprint $table) {
             $table->id();
-            $table->string('title');
-            $table->text('description');
-            $table->string('image');
-            $table->string('type');
-            $table->string('url');
-            $table->string('seen');   
+            $table->string('day');
+            $table->dateTime('open');
+            $table->dateTime('close');
+            $table->foreignId('office_id')->constrained('offices')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('notification');
+        Schema::dropIfExists('open_hours');
     }
 };

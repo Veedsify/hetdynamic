@@ -39,105 +39,56 @@
                     </div>
 
                     <div class="widget-content searchable-container list">
-                        <div class="card card-body">
-                            <div class="row">
-                                <div class="col-md-6 col-xl-3">
-                                    <form class="position-relative">
-                                        <input type="text" class="form-control product-search ps-5" id="input-search"
-                                            placeholder="Search Article...">
-                                        <i
-                                            class="ti ti-search position-absolute top-50 start-0 translate-middle-y fs-6 text-dark ms-3"></i>
-                                    </form>
-                                </div>
-                                <div
-                                    class="col-md-8 col-xl-9 text-end d-flex justify-content-md-end justify-content-center mt-3 mt-md-0">
-                                    <div class="action-btn show-btn">
-                                        <a href="javascript:void(0)"
-                                            class="delete-multiple bg-danger-subtle btn me-2 text-danger d-flex align-items-center ">
-                                            <i class="ti ti-trash text-danger me-1 fs-5"></i> Delete All Row
-                                        </a>
-                                    </div>
+                        <div>
 
+                            @if (session('error'))
+                                <div class="alert alert-danger transition-this" data-remove_alert="1">
+                                    <div class="text-danger">{{ session('error') }}</div>
                                 </div>
-                            </div>
-                        </div>
-                           <!-- start notification  -->
-                                <!-- ------------------------------- -->
+                            @endif
+                            @if (session('success'))
+                                <div class="alert alert-success transition-this" data-remove_alert="1">
+                                    <div class="text-success">{{ session('success') }}</div>
+                                </div>
+                            @endif
 
+                            <div style="overflow-y: auto; height: 550px; padding: 2rem">
+                                @foreach ($allNotifications as $notification)
                                     <div>
+                                        <div
+                                            class="d-md-flex items-center border rounded-2 mb-3 {{ $notification->seen === 'unread' ? 'border-info' : '' }}">
 
-                                        <div class="mb-3">
-                                            <div class="d-md-flex items-center border rounded-2">
-
-                                            <a href="javascript:void(0)"
-                                                class="py-6 px-7 d-flex    w-100">
+                                            <a href="javascript:void(0)" class="py-6 px-7 d-flex    w-100">
                                                 <span class="me-3">
-                                                    <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
-                                                        alt="user" class="rounded-circle" width="48"
-                                                        height="48">
+                                                    <img src="{{ asset($notification->image) }}" alt="user"
+                                                        class="rounded-circle" width="48" height="48">
                                                 </span>
                                                 <div class="w-75 d-inline-block v-middle ">
-                                                    <h6 class="mb-1 fw-semibold lh-base">Roman Joined the Team!</h6>
-                                                    <span class="fs-2 d-block text-body-secondary">Congratulate
-                                                        him
+                                                    <h6 class="mb-1 fw-semibold lh-base">{{ $notification->title }}</h6>
+                                                    <span class="fs-2 d-block text-body-secondary">
+                                                        {{ $notification->description }}
                                                         <small class="ms-3 d-md-inline-block  d-none">
-                                                            1hr ago
+                                                            {{ $notification->created_at->diffForHumans() }}
                                                         </small>
                                                     </span>
                                                 </div>
                                             </a>
 
-                                            <div class="text-end  p-2 justify-content-center d-md-flex flex-column ms-auto">
-
-
-                                                <i class="ti ti-trash fs-5"></i>
-
-                                            </div>
-
-                                            </div>
-
-
                                         </div>
-                                        <div >
-                                            <div class="d-md-flex items-center border rounded-2">
-
-                                            <a href="javascript:void(0)"
-                                                class="py-6 px-7 d-flex    w-100">
-                                                <span class="me-3">
-                                                    <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
-                                                        alt="user" class="rounded-circle" width="48"
-                                                        height="48">
-                                                </span>
-                                                <div class="w-75 d-inline-block v-middle ">
-                                                    <h6 class="mb-1 fw-semibold lh-base">Roman Joined the Team!</h6>
-                                                    <span class="fs-2 d-block text-body-secondary">Congratulate
-                                                        him
-                                                        <small class="ms-3 d-md-inline-block  d-none">
-                                                            1hr ago
-                                                        </small>
-                                                    </span>
-                                                </div>
-                                            </a>
-
-                                            <div class="text-end  p-2 justify-content-center d-md-flex flex-column ms-auto">
-
-
-                                                <i class="ti ti-trash fs-5"></i>
-
-                                            </div>
-
-                                            </div>
-
-
-                                        </div>
-                                        <div class="py-6 px-7 mb-1  ">
-                                            <button class="btn btn-outline-primary md-w ms-auto d-block" >Mark all as read
-                                            </button>
-                                        </div>
-
                                     </div>
-                                <!-- ------------------------------- -->
-                                <!-- end notification  -->
+                                @endforeach
+                            </div>
+
+                            <div class="py-6 px-7 mb-1  ">
+                                <form action="{{ route('admin.notification.mark.all.read') }}">
+                                    <button class="btn btn-outline-primary md-w ms-auto d-block">Mark all as read
+                                    </button>
+                                </form>
+                            </div>
+
+                        </div>
+                        <!-- ------------------------------- -->
+                        <!-- end notification  -->
                     </div>
                 </div>
             </div>

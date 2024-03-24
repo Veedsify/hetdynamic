@@ -22,11 +22,19 @@ use App\Http\Controllers\Admin\CitizenshipController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
+use App\Http\Controllers\OfficeAddressController;
 use App\Http\Controllers\TeamController;
+use App\Models\Notification;
+use Illuminate\Support\Facades\View as FacadesView;
 
 // Admin Route Web Endpoints
 
 Route::middleware(['auth', 'admin'])->group(function () {
+
+    FacadesView::composer('*', function ($view) {
+        $notifications = Notification::where('seen', 'unread')->orderBy('created_at', 'desc')->get();
+        $view->with('notifications', $notifications);
+    });
 
     Route::get("/admin", [AdminPagesController::class, "admin"])->name("admin");
     // Contact
@@ -82,7 +90,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get("/admin/teams", [TeamController::class, "teams"])->name("admin.teams");
     Route::post("/admin/teams/add", [TeamController::class, "createTeam"])->name("admin.teams.add");
     Route::delete("/admin/teams/delete/{id}", [TeamController::class, "deleteTeam"])->name("admin.teams.delete");
-    
+
 
     // Case Studies
     Route::prefix("/admin/certificates")->group(function () {
@@ -94,7 +102,6 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::prefix("/admin/study")->group(function () {
         Route::get("/case-studies", [StudyController::class, "caseStudy"])->name("admin.study.caseStudy");
         Route::get("/new", [StudyController::class, "newStudy"])->name("admin.new.study");
-
     });
 
     // citizenship
@@ -116,7 +123,14 @@ Route::middleware(['auth', 'admin'])->group(function () {
     });
     // notification
     Route::prefix("/admin")->group(function () {
-        Route::get("/notification", [NotificationController::class, "notification"])->name("admin.notification");
+        Route::get("/notification", [NotificationController::class, "getNotifications"])->name("admin.notification");
+        Route::get("/notification/{notificationId}", [NotificationController::class, "notificationView"])->name("admin.notification.view");
+        Route::get("/mark-all-read", [NotificationController::class, "markAllRead"])->name("admin.notification.mark.all.read");
+    });
+
+    Route::prefix("/admin/office")->group(function () {
+        Route::get("/address", [OfficeAddressController::class, 'showOfficeAddressPage'])->name("office.address");
+        Route::post("/add", [OfficeAddressController::class, 'addOfficeAddress'])->name("add.address");
     });
 
     Route::prefix("/admin/setting")->name("config.")->group(function () {
@@ -153,8 +167,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Configuration Post Updates
         Route::post("/update/details", [ConfigurationUpdateController::class, 'updateDetailsPage'])->name("details.update");
     });
-    
-    Route::prefix("/admin/settings/update")->name("admin.settings.update.")->group(function(){
+
+    Route::prefix("/admin/settings/update")->name("admin.settings.update.")->group(function () {
         Route::post("/banner", [HomepageController::class, 'updateBanner'])->name("banner");
         Route::post("/consulting", [HomepageController::class, 'updateConsulting'])->name("consulting");
         Route::post("/our-support", [HomepageController::class, 'updateOurSupport'])->name("our.support");

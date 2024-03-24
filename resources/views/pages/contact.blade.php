@@ -124,288 +124,152 @@
                 <div class="location-one__bottom">
                     <div class="location-one__main-tab-box tabs-box">
                         <ul class="tab-buttons clearfix list-unstyled">
-                            <li data-tab="#south-america" class="tab-btn active-btn"><span>South America</span></li>
-                            <li data-tab="#canada" class="tab-btn"><span>Canada</span></li>
-                            <li data-tab="#australia" class="tab-btn"><span>Australia</span></li>
-                            <li data-tab="#dubai" class="tab-btn"><span>Dubai</span></li>
+                            @foreach ($officeAddress as $tab)
+                                @if ($loop->first)
+                                    <li data-tab="#{{ $tab->id }}" class="tab-btn active-btn">
+                                        <span>{{ $tab->country }}</span>
+                                    </li>
+                                    @continue
+                                @endif
+                                <li data-tab="#{{ $tab->id }}" class="tab-btn"><span>{{ $tab->country }}</span></li>
+                            @endforeach
                         </ul>
                         <div class="tabs-content">
-                            <!--tab-->
-                            <div class="tab active-tab" id="south-america">
-                                <div class="location-one__tab-content-box">
-                                    <div class="location-one__tab-content-box-inner">
-                                        <div class="location-one__bg"
-                                            style="background-image: url(assets/images/backgrounds/location-one-bg.png);">
-                                        </div>
-                                        <div class="location-one__tab-content-left">
-                                            <div class="location-one__tab-content-img">
-                                                <img src="/assets/images/resources/location-one-tab-content-img-1.jpg"
-                                                    alt="">
+                            @foreach ($officeAddress as $office)
+                                <!--tab-->
+                                @if ($loop->first)
+                                    <div class="tab active-tab" id="{{ $office->id }}">
+                                        <div class="location-one__tab-content-box">
+                                            <div class="location-one__tab-content-box-inner">
+                                                <div class="location-one__bg"
+                                                    style="background-image: url({{ asset('assets/images/backgrounds/location-one-bg.png') }});">
+                                                </div>
+                                                <div class="location-one__tab-content-left">
+                                                    <div class="location-one__tab-content-img">
+                                                        <img src="{{ asset($office->image) }}" class="mx-w-370"
+                                                            alt="">
+                                                    </div>
+                                                    <div class="location-one__tab-content-contact">
+                                                        <h5 class="location-one__tab-content-contact-title">We’re Always
+                                                            Here
+                                                            for
+                                                            You</h5>
+                                                        <ul class="list-unstyled location-one__tab-content-contact-list">
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <i class="fas fa-map-marker-alt"></i>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p>{{ $office->address }}</p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <i class="fas fa-envelope"></i>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p><a
+                                                                            href="mailto:{{ $office->email }}">{{ $office->email }}</a>
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                            <li>
+                                                                <div class="icon">
+                                                                    <i class="fas fa-phone"></i>
+                                                                </div>
+                                                                <div class="content">
+                                                                    <p><a
+                                                                            href="tel:{{ $office->phone }} ">{{ $office->phone }}</a>
+                                                                    </p>
+                                                                </div>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                <div class="location-one__tab-content-right">
+                                                    <ul class="list-unstyled location-one__tab-content-time">
+                                                        @foreach ($office->openHours as $openHour)
+                                                            <li>
+                                                                <p class="location-one__tab-content-day-name">
+                                                                    {{ $openHour->day }}</p>
+                                                                <h4 class="location-one__tab-content-time-box">
+                                                                    {{ date('H:i A', strtotime($openHour->open)) }} -
+                                                                    {{ date('H:i A', strtotime($openHour->close)) }}
+                                                                </h4>
+                                                            </li>
+                                                        @endforeach
+                                                    </ul>
+                                                </div>
                                             </div>
-                                            <div class="location-one__tab-content-contact">
-                                                <h5 class="location-one__tab-content-contact-title">We’re Always Here
-                                                    for
-                                                    You</h5>
-                                                <ul class="list-unstyled location-one__tab-content-contact-list">
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-map-marker-alt"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p>30 Commercial Road <br>
-                                                                Fratton, Australia</p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-envelope"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a
-                                                                    href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-phone"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a href="tel:9288009850 ">+92 (8800) - 9850 </a></p>
-                                                        </div>
-                                                    </li>
+                                        </div>
+                                    </div>
+                                    @continue
+                                @endif
+                                <div class="tab" id="{{ $office->id }}">
+                                    <div class="location-one__tab-content-box">
+                                        <div class="location-one__tab-content-box-inner">
+                                            <div class="location-one__bg"
+                                                style="background-image: url({{ asset('assets/images/backgrounds/location-one-bg.png') }});">
+                                            </div>
+                                            <div class="location-one__tab-content-left">
+                                                <div class="location-one__tab-content-img">
+                                                    <img src="{{ asset($office->image) }}" class="mx-w-370"
+                                                        alt="">
+                                                </div>
+                                                <div class="location-one__tab-content-contact">
+                                                    <h5 class="location-one__tab-content-contact-title">We’re Always Here
+                                                        for
+                                                        You</h5>
+                                                    <ul class="list-unstyled location-one__tab-content-contact-list">
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fas fa-map-marker-alt"></i>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p>{{ $office->address }}</p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fas fa-envelope"></i>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p><a
+                                                                        href="mailto:{{ $office->email }}">{{ $office->email }}</a>
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                        <li>
+                                                            <div class="icon">
+                                                                <i class="fas fa-phone"></i>
+                                                            </div>
+                                                            <div class="content">
+                                                                <p><a
+                                                                        href="tel:{{ $office->phone }} ">{{ $office->phone }}</a>
+                                                                </p>
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div class="location-one__tab-content-right">
+                                                <ul class="list-unstyled location-one__tab-content-time">
+                                                    @foreach ($office->openHours as $openHour)
+                                                        <li>
+                                                            <p class="location-one__tab-content-day-name">
+                                                                {{ $openHour->day }}</p>
+                                                            <h4 class="location-one__tab-content-time-box">
+                                                                {{ date('H:i A', strtotime($openHour->open)) }} -
+                                                                {{ date('H:i A', strtotime($openHour->close)) }}
+                                                            </h4>
+                                                        </li>
+                                                    @endforeach
                                                 </ul>
                                             </div>
                                         </div>
-                                        <div class="location-one__tab-content-right">
-                                            <ul class="list-unstyled location-one__tab-content-time">
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Monday</p>
-                                                    <h4 class="location-one__tab-content-time-box">12:00 pm - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Tuesday to Friday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Saturday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am to 3:30 pm
-                                                    </h4>
-                                                </li>
-                                            </ul>
-                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <!--tab-->
-                            <div class="tab " id="canada">
-                                <div class="location-one__tab-content-box">
-                                    <div class="location-one__tab-content-box-inner">
-                                        <div class="location-one__bg"
-                                            style="background-image: url(assets/images/backgrounds/location-one-bg.png);">
-                                        </div>
-                                        <div class="location-one__tab-content-left">
-                                            <div class="location-one__tab-content-img">
-                                                <img src="/assets/images/resources/location-one-tab-content-img-2.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="location-one__tab-content-contact">
-                                                <h5 class="location-one__tab-content-contact-title">We’re Always Here
-                                                    for
-                                                    You</h5>
-                                                <ul class="list-unstyled location-one__tab-content-contact-list">
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-map-marker-alt"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p>30 Commercial Road <br>
-                                                                Fratton, Australia</p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-envelope"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a
-                                                                    href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-phone"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a href="tel:9288009850 ">+92 (8800) - 9850 </a></p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="location-one__tab-content-right">
-                                            <ul class="list-unstyled location-one__tab-content-time">
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Monday</p>
-                                                    <h4 class="location-one__tab-content-time-box">12:00 pm - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Tuesday to Friday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Saturday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am to 3:30 pm
-                                                    </h4>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--tab-->
-                            <div class="tab " id="australia">
-                                <div class="location-one__tab-content-box">
-                                    <div class="location-one__tab-content-box-inner">
-                                        <div class="location-one__bg"
-                                            style="background-image: url(assets/images/backgrounds/location-one-bg.png);">
-                                        </div>
-                                        <div class="location-one__tab-content-left">
-                                            <div class="location-one__tab-content-img">
-                                                <img src="/assets/images/resources/location-one-tab-content-img-3.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="location-one__tab-content-contact">
-                                                <h5 class="location-one__tab-content-contact-title">We’re Always Here
-                                                    for
-                                                    You</h5>
-                                                <ul class="list-unstyled location-one__tab-content-contact-list">
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-map-marker-alt"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p>30 Commercial Road <br>
-                                                                Fratton, Australia</p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-envelope"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a
-                                                                    href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-phone"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a href="tel:9288009850 ">+92 (8800) - 9850 </a></p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="location-one__tab-content-right">
-                                            <ul class="list-unstyled location-one__tab-content-time">
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Monday</p>
-                                                    <h4 class="location-one__tab-content-time-box">12:00 pm - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Tuesday to Friday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Saturday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am to 3:30 pm
-                                                    </h4>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <!--tab-->
-                            <div class="tab " id="dubai">
-                                <div class="location-one__tab-content-box">
-                                    <div class="location-one__tab-content-box-inner">
-                                        <div class="location-one__bg"
-                                            style="background-image: url(assets/images/backgrounds/location-one-bg.png);">
-                                        </div>
-                                        <div class="location-one__tab-content-left">
-                                            <div class="location-one__tab-content-img">
-                                                <img src="/assets/images/resources/location-one-tab-content-img-4.jpg"
-                                                    alt="">
-                                            </div>
-                                            <div class="location-one__tab-content-contact">
-                                                <h5 class="location-one__tab-content-contact-title">We’re Always Here
-                                                    for
-                                                    You</h5>
-                                                <ul class="list-unstyled location-one__tab-content-contact-list">
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-map-marker-alt"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p>30 Commercial Road <br>
-                                                                Fratton, Australia</p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-envelope"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a
-                                                                    href="mailto:needhelp@company.com">needhelp@company.com</a>
-                                                            </p>
-                                                        </div>
-                                                    </li>
-                                                    <li>
-                                                        <div class="icon">
-                                                            <i class="fas fa-phone"></i>
-                                                        </div>
-                                                        <div class="content">
-                                                            <p><a href="tel:9288009850 ">+92 (8800) - 9850 </a></p>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                        <div class="location-one__tab-content-right">
-                                            <ul class="list-unstyled location-one__tab-content-time">
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Monday</p>
-                                                    <h4 class="location-one__tab-content-time-box">12:00 pm - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Tuesday to Friday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am - 19:00 pm
-                                                    </h4>
-                                                </li>
-                                                <li>
-                                                    <p class="location-one__tab-content-day-name">Saturday</p>
-                                                    <h4 class="location-one__tab-content-time-box">8:00 am to 3:30 pm
-                                                    </h4>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -416,7 +280,7 @@
         <!--Google Map Two Start-->
         <section class="google-map-two">
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4562.753041141002!2d-118.80123790098536!3d34.152323469614075!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80e82469c2162619%3A0xba03efb7998eef6d!2sCostco+Wholesale!5e0!3m2!1sbn!2sbd!4v1562518641290!5m2!1sbn!2sbd"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4035001.2583403247!2d6.03107378588033!3d9.024396683844525!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104e0baf7da48d0d%3A0x99a8fe4168c50bc8!2sNigeria!5e0!3m2!1sen!2sng!4v1711281487117!5m2!1sen!2sng"
                 class="google-map__two" allowfullscreen></iframe>
 
         </section>

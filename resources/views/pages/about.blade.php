@@ -94,14 +94,15 @@
                         <div class="about-four__right">
                             <div class="about-four__img-box">
                                 <div class="about-four__img-one">
-                                    <img src="{{asset( $aboutExperience->experience_image_1 )}}" alt="">
+                                    <img src="{{ asset($aboutExperience->experience_image_1) }}" alt="">
                                 </div>
                                 <div class="about-four__img-two">
-                                    <img src="{{asset( $aboutExperience->experience_image_2 )}}" alt="">
+                                    <img src="{{ asset($aboutExperience->experience_image_2) }}" alt="">
                                 </div>
                                 <div class="about-four__experience">
                                     <div class="about-four__experience-inner count-box">
-                                        <h3 class="count-text" data-stop="{{ $aboutExperience->experience_years }}" data-speed="1500">00</h3>
+                                        <h3 class="count-text" data-stop="{{ $aboutExperience->experience_years }}"
+                                            data-speed="1500">00</h3>
                                         <p>Years of Experience</p>
                                         <div class="about-four__shape-1">
                                             <img src="/assets/images/shapes/about-two-shape-1.png" alt="">
@@ -332,7 +333,8 @@
                     <div class="col-xl-6">
                         <div class="faq-one__left">
                             <div class="faq-one__bg"
-                                style="background-image: url(assets/images/backgrounds/faq-one-bg.jpg);"></div>
+                                style="background-image: url({{ asset('assets/images/backgrounds/faq-one-bg.jpg') }});">
+                            </div>
                             <div class="faq-one__inner">
                                 <div class="faq-one__icon">
                                     <span class="icon-deal"></span>
@@ -422,128 +424,61 @@
         <!--Team One Start-->
         <section class="team-one">
             <div class="container">
-                <div class="section-title text-center">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">Professional people</span>
-                        <div class="section-title__border-box"></div>
+                @if ($teams->count() > 0)
+                    <div class="section-title text-center">
+                        <div class="section-title__tagline-box">
+                            <span class="section-title__tagline">Professional people</span>
+                            <div class="section-title__border-box"></div>
+                        </div>
+                        <h2 class="section-title__title">Meet {{ $pagedata->site_name }} Expert
+                            <br> Consultants
+                        </h2>
                     </div>
-                    <h2 class="section-title__title">Meet HetDynamic Expert Visa
-                        <br> Consultants
-                    </h2>
-                </div>
+                @endif
                 <div class="row">
-                    <!--Team One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="/assets/images/team/team-1-1.jpg" alt="">
+                    @foreach ($teams as $team)
+                        <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                            <div class="team-one__single">
+                                <div class="team-one__img-box">
+                                    <div class="team-one__img">
+                                        <img src="{{ asset($team->image) }}" alt="">
+                                    </div>
+                                    <div class="team-one__share-btn">
+                                        <a href="javascript:void(0)"><i class="fa fa-share-alt"></i></a>
+                                    </div>
+                                    <ul class="list-unstyled team-one__social">
+                                        @if ($team->facebook)
+                                            <li><a href="{{ $team->facebook }}"><i class="fab fa-facebook"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($team->twitter)
+                                            <li><a href="{{ $team->twitter }}"><i class="fab fa-twitter"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($team->pinterest)
+                                            <li><a href="{{ $team->pinterest }}"><i class="fab fa-pinterest-p"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($team->instagram)
+                                            <li><a href="{{ $team->instagram }}"><i class="fab fa-instagram"></i></a>
+                                            </li>
+                                        @endif
+                                        @if ($team->linkedin)
+                                            <li><a href="{{ $team->linkedin }}"><i class="fab fa-linkedin"></i></a>
+                                            </li>
+                                        @endif
+                                    </ul>
                                 </div>
-                                <div class="team-one__share-btn">
-                                    <a href="team-details.html"><i class="fa fa-share-alt"></i></a>
-                                </div>
-                                <ul class="list-unstyled team-one__social">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-one__content">
-                                <p class="team-one__sub-title">Consultants</p>
-                                <h3 class="team-one__title"><a href="team-details.html">Mike Hardson</a></h3>
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
-                    <!--Team One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="/assets/images/team/team-1-2.jpg" alt="">
-                                </div>
-                                <div class="team-one__share-btn">
-                                    <a href="team-details.html"><i class="fa fa-share-alt"></i></a>
-                                </div>
-                                <ul class="list-unstyled team-one__social">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-one__content">
-                                <p class="team-one__sub-title">Consultants</p>
-                                <h3 class="team-one__title"><a href="team-details.html">Jessica Brown</a></h3>
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
+                                <div class="team-one__content">
+                                    <p class="team-one__sub-title">
+                                        {{ $team->position }}
+                                    </p>
+                                    <h3 class="team-one__title"><a href="team-details.html"> {{ $team->name }}</a>
+                                    </h3>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <!--Team One Single End-->
-                    <!--Team One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="300ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="/assets/images/team/team-1-3.jpg" alt="">
-                                </div>
-                                <div class="team-one__share-btn">
-                                    <a href="team-details.html"><i class="fa fa-share-alt"></i></a>
-                                </div>
-                                <ul class="list-unstyled team-one__social">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-one__content">
-                                <p class="team-one__sub-title">Consultants</p>
-                                <h3 class="team-one__title"><a href="team-details.html">Kevin Martin</a></h3>
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
-                    <!--Team One Single Start-->
-                    <div class="col-xl-3 col-lg-6 col-md-6 wow fadeInUp" data-wow-delay="400ms">
-                        <div class="team-one__single">
-                            <div class="team-one__img-box">
-                                <div class="team-one__img">
-                                    <img src="/assets/images/team/team-1-4.jpg" alt="">
-                                </div>
-                                <div class="team-one__share-btn">
-                                    <a href="team-details.html"><i class="fa fa-share-alt"></i></a>
-                                </div>
-                                <ul class="list-unstyled team-one__social">
-                                    <li><a href="#"><i class="fab fa-facebook"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-pinterest-p"></i></a></li>
-                                    <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="team-one__content">
-                                <p class="team-one__sub-title">Consultants</p>
-                                <h3 class="team-one__title"><a href="team-details.html">Christine Eve</a></h3>
-                                <div class="team-one__arrow-box">
-                                    <a href="team-details.html" class="team-one__arrow"><i
-                                            class="fa fa-angle-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!--Team One Single End-->
+                    @endforeach
                 </div>
             </div>
         </section>

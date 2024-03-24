@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Team;
 use Illuminate\Http\Request;
 use App\Models\AboutpageAbout;
 use App\Models\AboutpageBanner;
@@ -17,14 +18,13 @@ class AboutController extends Controller
         $aboutBanners  = AboutpageBanner::first();
         $aboutExperience  = AboutpageExperience::first();
         $aboutUs  = AboutpageAbout::first();
+        $teams = Team::all();
 
-        return View::make('pages.about',[
+        return View::make('pages.about', [
             "aboutBanners" => $aboutBanners,
             "aboutExperience" => $aboutExperience,
-            "aboutUs" => $aboutUs
-
+            "aboutUs" => $aboutUs,
+            "teams" => $teams
         ]);
-
     }
-
 }

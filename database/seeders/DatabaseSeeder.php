@@ -109,11 +109,7 @@ class DatabaseSeeder extends Seeder
         PrivacypageContent::create([
             'privacy_title' => 'Your Title Here',
             'privacy_description' => 'privacy_description',
-
         ]);
-
-
-
 
         TermspageBanner::create([
             'terms_banner_title' => 'Your Title Here',
@@ -124,10 +120,7 @@ class DatabaseSeeder extends Seeder
         TermspageContent::create([
             'terms_title' => 'Your Title Here',
             'terms_description' => 'terms_description',
-
         ]);
-
-
 
         ReviewpageBanner::create([
             'review_banner_title' => 'Your Title Here',
@@ -141,10 +134,9 @@ class DatabaseSeeder extends Seeder
             'review_list_1' => 'Your Title Here',
             'review_list_2' => 'Your Title Here',
             'review_list_3' => 'Your Title Here',
-
         ]);
-        Category::factory(10)->create();
 
+        Category::factory(10)->create();
         GlobalSetting::factory(1)->create();
     }
 }

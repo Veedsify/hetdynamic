@@ -15,11 +15,9 @@
 
     <!-- fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    {{-- <link href="https://api.fontshare.com/v2/css?f[]=satoshi@900,700,500,301,701,300,501,401,901,400&display=swap"
-        rel="stylesheet"> --}}
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap"
+        rel="stylesheet">
 
 
     <!-- OG Tags -->
@@ -70,6 +68,25 @@
     <!-- template styles -->
     <link rel="stylesheet" href="{{ asset('assets/css/treck-min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/treck-responsive.css') }}" />
+
+    <style>
+        .preloader__image {
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+            -webkit-animation-name: flipInY;
+            animation-name: flipInY;
+            -webkit-animation-duration: 2s;
+            animation-duration: 2s;
+            -webkit-animation-iteration-count: infinite;
+            animation-iteration-count: infinite;
+            background-image: url('{{ asset($pagedata->site_logo) }}');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-size: 80px auto;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 
 <body>

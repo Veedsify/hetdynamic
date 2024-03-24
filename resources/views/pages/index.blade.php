@@ -919,7 +919,7 @@
                                             <img src="{{ asset($team->image) }}" alt="">
                                         </div>
                                         <div class="team-one__share-btn">
-                                            <a href="team-details.html"><i class="fa fa-share-alt"></i></a>
+                                            <a href="javascript:void(0)"><i class="fa fa-share-alt"></i></a>
                                         </div>
                                         <ul class="list-unstyled team-one__social">
                                             @if ($team->facebook)
@@ -950,10 +950,6 @@
                                         </p>
                                         <h3 class="team-one__title"><a href="team-details.html"> {{ $team->name }}</a>
                                         </h3>
-                                        <div class="team-one__arrow-box">
-                                            <a href="team-details.html" class="team-one__arrow"><i
-                                                    class="fa fa-angle-right"></i></a>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -1253,25 +1249,27 @@
         <!--Brand One End-->
 
         <!--Blog One Start-->
-        <section class="blog-one">
-            <div class="container">
-                <div class="section-title text-center">
-                    <div class="section-title__tagline-box">
-                        <span class="section-title__tagline">NEWS & UPDATES</span>
-                        <div class="section-title__border-box"></div>
+        @if ($blogs->count() > 0)
+            <section class="blog-one">
+                <div class="container">
+                    <div class="section-title text-center">
+                        <div class="section-title__tagline-box">
+                            <span class="section-title__tagline">NEWS & UPDATES</span>
+                            <div class="section-title__border-box"></div>
+                        </div>
+                        <h2 class="section-title__title">Latest News & Articles
+                            <br> From the Blog
+                        </h2>
                     </div>
-                    <h2 class="section-title__title">Latest News & Articles
-                        <br> From the Blog
-                    </h2>
+                    <div class="row">
+                        <!--Blog One Single Start-->
+                        @foreach ($blogs as $blog)
+                            <x-blogcard :blog="$blog" />
+                        @endforeach
+                    </div>
                 </div>
-                <div class="row">
-                    <!--Blog One Single Start-->
-                    @foreach ($blogs as $blog)
-                        <x-blogcard :blog="$blog" />
-                    @endforeach
-                </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!--Blog One End-->
 
         <!--Site Footer Start-->

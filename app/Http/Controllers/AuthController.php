@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\GlobalSetting;
+use App\Models\Notification;
 use App\Models\User;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
@@ -50,6 +52,15 @@ class AuthController extends Controller
         ]);
 
         $token = $user->email_verification_token;
+
+        Notification::create([
+            'type' => 'account',
+            'title' => 'New User Registration',
+            'description' =>  $user->fullname . ' has registered on ' . GlobalSetting::first()->site_name,
+            'seen' => 'unread',
+            'image' => "custom/notifications/user.svg",
+            'url' => '',
+        ]);
 
         return redirect(route('validate.email', $token));
     }

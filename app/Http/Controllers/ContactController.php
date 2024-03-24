@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 use App\Models\GlobalSetting;
 use App\Models\ContactpageBanner;
 use App\Models\ContactpageLocation;
+use App\Models\Notification;
+use App\Models\Office;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Config;
+use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
@@ -19,13 +22,13 @@ class ContactController extends Controller
     {
         $contactBanners  = ContactpageBanner::first();
         $contactLocation = ContactpageLocation::first();
-
-        return View::make('pages.contact',[
-
+        $officeAddress = Office::with('openHours')->get();
+        Log::info($officeAddress);
+        return View::make('pages.contact', [
             "contactBanners" => $contactBanners,
             "contactLocation" => $contactLocation,
-            ]);
-
+            'officeAddress' => $officeAddress
+        ]);
     }
 
     public function submitContactForm(Request $request)
@@ -50,7 +53,15 @@ class ContactController extends Controller
             ->bcc(GlobalSetting::first()->support_mail_address)
             ->send(new ContactMail($contact));
 
+        Notification::create([
+            'type' => 'contact',
+            'title' => 'New Contact Request',
+            'description' => 'New contact request from ' . $contact->name,
+            'seen' => 'unread',
+            'image' => "custom/notifications/contact.svg",
+            'url' => '',
+        ]);
+
         return redirect()->back()->with('message', 'Your message has been sent successfully!');
     }
-
 }

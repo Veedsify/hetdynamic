@@ -611,4 +611,34 @@ $(function () {
                 console.error(error);
             });
     }
+
 });
+
+
+function addnewtime() {
+    const time = document.querySelector('#add_more_template').cloneNode(true);
+    document.querySelector('#add_more_container').appendChild(time);
+}
+
+function previewImage(e) {
+    const fileInput = document.querySelector("#image_office_image")
+    const preview = document.querySelector("#image_office_preview");
+    const file = fileInput.files[0];
+    if (file.size > 2000000) {
+        swal({
+            icon: "error",
+            title: "Error",
+            text: "Image size should not exceed 2MB",
+        });
+        fileInput.value = "";
+        return;
+    }
+    const reader = new FileReader();
+    reader.onloadend = () => {
+        preview.src = reader.result;
+    };
+    if (file) {
+        preview.style.display = 'block';
+        reader.readAsDataURL(file);
+    }
+}

@@ -141,8 +141,9 @@
                                       </div>
                                       <div class="main-menu__call-content">
                                           <p class="main-menu__call-sub-title">Have Question?</p>
-                                          <h5 class="main-menu__call-number"><a href="tel:9288009850"><span>Free</span>
-                                                  +92 (8800) - 9850</a>
+                                          <h5 class="main-menu__call-number"><a
+                                                  href="tel:{{ $pagedata->site_phone }}"><span>Free</span>
+                                                  {{ $pagedata->site_phone }}</a>
                                           </h5>
                                       </div>
                                   </div>

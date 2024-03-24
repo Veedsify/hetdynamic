@@ -12,7 +12,8 @@ class Notification extends Model
         'title',
         'description',
         'image',
+        'url',
         'type',
-        'status'
+        'seen'
     ];
 }

@@ -64,7 +64,6 @@
     <script src="{{ asset('admin-assets/libs/owl.carousel/dist/owl.carousel.min.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/apexcharts@3.47.0/dist/apexcharts.min.js"></script>
     <script src="{{ asset('admin-assets/js/dashboards/dashboard.js') }}"></script>
-
 </body>
 
 </html>

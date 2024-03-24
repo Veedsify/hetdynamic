@@ -57,42 +57,7 @@
                 <span class="hide-menu">Categories</span>
             </a>
         </li>
-        <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Countries</span>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-flag"></i>
-                </span>
-                <span class="hide-menu">Countries</span>
-            </a>
-        </li>
-        <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Certificates</span>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.certificates') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-trophy"></i>
-                </span>
-                <span class="hide-menu">Certifications</span>
-            </a>
-        </li>
-        <li class="nav-small-cap">
-            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
-            <span class="hide-menu">Team</span>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.teams') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-users"></i>
-                </span>
-                <span class="hide-menu">Team</span>
-            </a>
-        </li>
+
         <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Study</span>
@@ -175,6 +140,66 @@
         </li>
         <li class="nav-small-cap">
             <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Countries</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.countries') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-flag"></i>
+                </span>
+                <span class="hide-menu">Countries</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Certificates</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.certificates') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-trophy"></i>
+                </span>
+                <span class="hide-menu">Certifications</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Office Address</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('office.address') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-map"></i>
+                </span>
+                <span class="hide-menu">Office Address</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Team</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.teams') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-users"></i>
+                </span>
+                <span class="hide-menu">Team</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">Users</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.teams') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-user"></i>
+                </span>
+                <span class="hide-menu">Users</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
             <span class="hide-menu">Contact</span>
         </li>
 
@@ -184,22 +209,6 @@
                     <i class="ti ti-phone"></i>
                 </span>
                 <span class="hide-menu">Contact</span>
-            </a>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.chat') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-messages"></i>
-                </span>
-                <span class="hide-menu">Chat</span>
-            </a>
-        </li>
-        <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.call') }}" aria-expanded="false">
-                <span>
-                    <i class="ti ti-dialpad"></i>
-                </span>
-                <span class="hide-menu">Get a call</span>
             </a>
         </li>
         <li class="nav-small-cap">
@@ -220,6 +229,18 @@
                     <i class="ti ti-mail"></i>
                 </span>
                 <span class="hide-menu">Support Mail</span>
+            </a>
+        </li>
+        <li class="nav-small-cap">
+            <i class="ti ti-dots nav-small-cap-icon fs-4"></i>
+            <span class="hide-menu">FAQ</span>
+        </li>
+        <li class="sidebar-item">
+            <a class="sidebar-link" href="{{ route('admin.email') }}" aria-expanded="false">
+                <span>
+                    <i class="ti ti-message"></i>
+                </span>
+                <span class="hide-menu">F.A.Q's</span>
             </a>
         </li>
         <li class="nav-small-cap">

@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -71,7 +76,8 @@
                                                 fw-semibold">Location
                                                 Tiltle</label>
                                             <input type="text" class="form-control" id="location_title"
-                                                name="location_title" value="{{ old('location_title') === NULL ? $data->location_title : old('location_title') }}">
+                                                name="location_title"
+                                                value="{{ old('location_title') === null ? $data->location_title : old('location_title') }}">
                                         </div>
                                     </div>
 
@@ -79,9 +85,10 @@
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                ">Location Description</label>
+                                                ">Location
+                                                Description</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="location_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('location_description') === NULL ? $data->location_description : old('location_description') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('location_description') === null ? $data->location_description : old('location_description') }}</textarea>
                                         </div>
                                     </div>
 

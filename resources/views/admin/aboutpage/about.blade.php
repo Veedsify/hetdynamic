@@ -1,11 +1,16 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-       <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -67,9 +72,11 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Title</label>
+                                                fw-semibold">About
+                                                Title</label>
                                             <input type="text" class="form-control" id="about_banner_title"
-                                                name="about_banner_title" value="{{ old('about_banner_title') === NULL ? $data->about_banner_title : old('about_banner_title') }}">
+                                                name="about_banner_title"
+                                                value="{{ old('about_banner_title') === null ? $data->about_banner_title : old('about_banner_title') }}">
                                         </div>
                                     </div>
 

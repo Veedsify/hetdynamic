@@ -1,4 +1,9 @@
-@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -66,9 +71,8 @@
                                                     id="chat_user_1" data-user-id="1">
                                                     <div class="d-flex align-items-center">
                                                         <span class="position-relative">
-                                                            <img src="{{ asset($office->image) }}"
-                                                                alt="user1" width="48" height="48"
-                                                                class="object-fit-cover">
+                                                            <img src="{{ asset($office->image) }}" alt="user1"
+                                                                width="48" height="48" class="object-fit-cover">
                                                         </span>
                                                         <div class="ms-3 d-inline-block w-75">
                                                             <h6 class="mb-1 fw-semibold chat-title"

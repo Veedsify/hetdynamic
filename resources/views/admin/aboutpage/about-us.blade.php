@@ -1,11 +1,16 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-    <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -68,30 +73,36 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Us
+                                                fw-semibold">About
+                                                Us
                                                 Tiltle</label>
                                             <input type="text" class="form-control" id="about_us_title"
-                                                name="about_us_title" value="{{ old('about_us_title') === NULL ? $data->about_us_title : old('about_us_title') }}">
+                                                name="about_us_title"
+                                                value="{{ old('about_us_title') === null ? $data->about_us_title : old('about_us_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Us
+                                                fw-semibold">About
+                                                Us
                                                 Sub-Tiltle 1</label>
                                             <input type="text" class="form-control" id="about_us_sub_title_1"
-                                                name="about_us_sub_title_1" value="{{ old('about_us_sub_title_1') === NULL ? $data->about_us_sub_title_1 : old('about_us_sub_title_1') }}">
+                                                name="about_us_sub_title_1"
+                                                value="{{ old('about_us_sub_title_1') === null ? $data->about_us_sub_title_1 : old('about_us_sub_title_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Us
+                                                fw-semibold">About
+                                                Us
                                                 Sub-Tiltle 2</label>
                                             <input type="text" class="form-control" id="about_us_sub_title_2"
-                                                name="about_us_sub_title_2" value="{{ old('about_us_sub_title_2') === NULL ? $data->about_us_sub_title_2 : old('about_us_sub_title_2') }}">
+                                                name="about_us_sub_title_2"
+                                                value="{{ old('about_us_sub_title_2') === null ? $data->about_us_sub_title_2 : old('about_us_sub_title_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -101,7 +112,7 @@
                                                 ">About Us
                                                 Description 1</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="about_us_description_1" rows="10"
-                                                aria-describedby="emailHelp">{{ old('about_us_description_1') === NULL ? $data->about_us_description_1 : old('about_us_description_1') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('about_us_description_1') === null ? $data->about_us_description_1 : old('about_us_description_1') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -111,27 +122,31 @@
                                                 ">About Us
                                                 Description 2</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="about_us_description_2" rows="10"
-                                                aria-describedby="emailHelp">{{ old('about_us_description_2') === NULL ? $data->about_us_description_2 : old('about_us_description_2') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('about_us_description_2') === null ? $data->about_us_description_2 : old('about_us_description_2') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Us
+                                                fw-semibold">About
+                                                Us
                                                 Feature 1</label>
                                             <input type="text" class="form-control" id="about_us_feature_1"
-                                                name="about_us_feature_1" value="{{ old('about_us_feature_1') === NULL ? $data->about_us_feature_1 : old('about_us_feature_1') }}">
+                                                name="about_us_feature_1"
+                                                value="{{ old('about_us_feature_1') === null ? $data->about_us_feature_1 : old('about_us_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">About Us
+                                                fw-semibold">About
+                                                Us
                                                 Feature 2</label>
                                             <input type="text" class="form-control" id="about_us_feature_2"
-                                                name="about_us_feature_2" value="{{ old('about_us_feature_2') === NULL ? $data->about_us_feature_2 : old('about_us_feature_2') }}">
+                                                name="about_us_feature_2"
+                                                value="{{ old('about_us_feature_2') === null ? $data->about_us_feature_2 : old('about_us_feature_2') }}">
                                         </div>
                                     </div>
 

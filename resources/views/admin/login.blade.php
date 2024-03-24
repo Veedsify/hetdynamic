@@ -1,4 +1,9 @@
-@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" width="150" alt="loader" class="lds-ripple img-fluid">

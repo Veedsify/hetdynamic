@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -71,7 +76,8 @@
                                                 fw-semibold">Consulting
                                                 Tiltle</label>
                                             <input type="text" class="form-control" id="consulting_title"
-                                                name="consulting_title" value="{{ old('consulting_title') === NULL ? $data->consulting_title : old('consulting_title') }}">
+                                                name="consulting_title"
+                                                value="{{ old('consulting_title') === null ? $data->consulting_title : old('consulting_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -81,7 +87,7 @@
                                                 ">Consulting
                                                 Description</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="consulting_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('consulting_description') === NULL ? $data->consulting_description : old('consulting_description') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('consulting_description') === null ? $data->consulting_description : old('consulting_description') }}</textarea>
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -91,7 +97,8 @@
                                                 fw-semibold">Consulting
                                                 Feature 1</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="consulting_feature_1" value="{{ old('consulting_feature_1') === NULL ? $data->consulting_feature_1 : old('consulting_feature_1') }}">
+                                                name="consulting_feature_1"
+                                                value="{{ old('consulting_feature_1') === null ? $data->consulting_feature_1 : old('consulting_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -101,7 +108,8 @@
                                                 fw-semibold">Consulting
                                                 Feature 2</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="consulting_feature_2" value="{{ old('consulting_feature_2') === NULL ? $data->consulting_feature_2 : old('consulting_feature_2') }}">
+                                                name="consulting_feature_2"
+                                                value="{{ old('consulting_feature_2') === null ? $data->consulting_feature_2 : old('consulting_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -111,7 +119,8 @@
                                                 fw-semibold">Consulting
                                                 Feature Desc. 1</label>
                                             <input type="text" class="form-control" id="banner_text_2"
-                                                name="consulting_desc_1" value="{{ old('consulting_desc_1') === NULL ? $data->consulting_desc_1 : old('consulting_desc_1') }}">
+                                                name="consulting_desc_1"
+                                                value="{{ old('consulting_desc_1') === null ? $data->consulting_desc_1 : old('consulting_desc_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -120,8 +129,9 @@
                                                 class="form-label
                                                 fw-semibold">Consulting
                                                 Feature Desc. 2</label>
-                                            <input type="text" class="form-control" id="banner_text_2" name="consulting_desc_2"
-                                                value="{{ old('consulting_desc_2') === NULL ? $data->consulting_desc_2 : old('consulting_desc_2') }}">
+                                            <input type="text" class="form-control" id="banner_text_2"
+                                                name="consulting_desc_2"
+                                                value="{{ old('consulting_desc_2') === null ? $data->consulting_desc_2 : old('consulting_desc_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">

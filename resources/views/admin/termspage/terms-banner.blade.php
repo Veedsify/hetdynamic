@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -67,15 +72,18 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Terms and Condition Title</label>
+                                                fw-semibold">Terms
+                                                and Condition Title</label>
                                             <input type="text" class="form-control" id="terms_banner_title"
-                                                name="terms_banner_title" value="{{ old('terms_banner_title') === NULL ? $data->terms_banner_title : old('terms_banner_title') }}">
+                                                name="terms_banner_title"
+                                                value="{{ old('terms_banner_title') === null ? $data->terms_banner_title : old('terms_banner_title') }}">
                                         </div>
                                     </div>
 
                                     <div class="col-md-12">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1" class="form-label">Terms and Condition Image </label>
+                                            <label for="exampleInputEmail1" class="form-label">Terms and Condition Image
+                                            </label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="terms_banner_image" aria-describedby="emailHelp">
                                         </div>

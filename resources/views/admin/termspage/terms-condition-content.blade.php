@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -71,8 +76,8 @@
                                                 fw-semibold">Terms
                                                 and Condition
                                                 Title</label>
-                                            <input type="text" class="form-control" id="terms_title"
-                                                name="terms_title" value="{{ old('terms_title') === NULL ? $data->terms_title : old('terms_title') }}">
+                                            <input type="text" class="form-control" id="terms_title" name="terms_title"
+                                                value="{{ old('terms_title') === null ? $data->terms_title : old('terms_title') }}">
                                         </div>
                                     </div>
 
@@ -84,7 +89,7 @@
                                                 and Condition
                                                 Description</label>
                                             <textarea class="form-control" id="terms_editor" rows="10" name="terms_description" aria-describedby="emailHelp">
-                                                {{ old('terms_description') === NULL ? $data->terms_description : old('terms_description') }}
+                                                {{ old('terms_description') === null ? $data->terms_description : old('terms_description') }}
                                             </textarea>
                                         </div>
                                     </div>

@@ -1,11 +1,16 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-         <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -71,7 +76,8 @@
                                                 fw-semibold">Experience
                                                 Tiltle</label>
                                             <input type="text" class="form-control" id="experience_title"
-                                                name="experience_title" value="{{ old('experience_title') === NULL ? $data->experience_title : old('experience_title') }}">
+                                                name="experience_title"
+                                                value="{{ old('experience_title') === null ? $data->experience_title : old('experience_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -81,7 +87,8 @@
                                                 fw-semibold">Experience
                                                 Sub-Tiltle</label>
                                             <input type="text" class="form-control" id="experience_sub_title"
-                                                name="experience_sub_title" value="{{ old('experience_sub_title') === NULL ? $data->experience_sub_title : old('experience_sub_title') }}">
+                                                name="experience_sub_title"
+                                                value="{{ old('experience_sub_title') === null ? $data->experience_sub_title : old('experience_sub_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -91,7 +98,7 @@
                                                 ">Experience
                                                 Description</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="experience_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('experience_description') === NULL ? $data->experience_description : old('experience_description') }}
+                                                aria-describedby="emailHelp">{{ old('experience_description') === null ? $data->experience_description : old('experience_description') }}
                                             </textarea>
                                         </div>
                                     </div>
@@ -102,7 +109,8 @@
                                                 fw-semibold">Experience
                                                 Feature 1</label>
                                             <input type="text" class="form-control" id="experience_feature_1"
-                                                name="experience_feature_1" value="{{ old('experience_feature_1') === NULL ? $data->experience_feature_1 : old('experience_feature_1') }}">
+                                                name="experience_feature_1"
+                                                value="{{ old('experience_feature_1') === null ? $data->experience_feature_1 : old('experience_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -112,16 +120,19 @@
                                                 fw-semibold">Experience
                                                 Feature 2</label>
                                             <input type="text" class="form-control" id="experience_feature_2"
-                                                name="experience_feature_2" value="{{ old('experience_feature_2') === NULL ? $data->experience_feature_2 : old('experience_feature_2') }}">
+                                                name="experience_feature_2"
+                                                value="{{ old('experience_feature_2') === null ? $data->experience_feature_2 : old('experience_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Years of Experience</label>
+                                                fw-semibold">Years
+                                                of Experience</label>
                                             <input type="text" class="form-control" id="experience_years"
-                                                name="experience_years" value="{{ old('experience_years') === NULL ? $data->experience_years : old('experience_years') }}">
+                                                name="experience_years"
+                                                value="{{ old('experience_years') === null ? $data->experience_years : old('experience_years') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">

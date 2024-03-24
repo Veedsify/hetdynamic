@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -67,9 +72,11 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Privacy Policy Title</label>
+                                                fw-semibold">Privacy
+                                                Policy Title</label>
                                             <input type="text" class="form-control" id="privacy_banner_title"
-                                                name="privacy_banner_title" value="{{ old('privacy_banner_title') === NULL ? $data->privacy_banner_title : old('privacy_banner_title') }}">
+                                                name="privacy_banner_title"
+                                                value="{{ old('privacy_banner_title') === null ? $data->privacy_banner_title : old('privacy_banner_title') }}">
                                         </div>
                                     </div>
 

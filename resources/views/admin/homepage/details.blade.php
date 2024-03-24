@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -102,8 +107,7 @@
                                                 class="form-label
                                                 ">Site
                                                 Keywords</label>
-                                            <textarea class="form-control" id="exampleInputEmail1" name="site_keywords" rows="10"
-                                                aria-describedby="emailHelp">{{ $pagedata->site_keywords }}</textarea>
+                                            <textarea class="form-control" id="exampleInputEmail1" name="site_keywords" rows="10" aria-describedby="emailHelp">{{ $pagedata->site_keywords }}</textarea>
                                         </div>
                                     </div>
 

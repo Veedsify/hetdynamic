@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -71,7 +76,7 @@
                                                 Text 1</label>
                                             <input type="text" class="form-control" id="banner_text_1"
                                                 name="banner_text_1"
-                                                value="{{ old('banner_text_1') === NULL ? $data->banner_text_1 : old('banner_text_1') }}">
+                                                value="{{ old('banner_text_1') === null ? $data->banner_text_1 : old('banner_text_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -82,7 +87,7 @@
                                                 Text 2</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2"
-                                                value="{{ old('banner_text_2') === NULL ? $data->banner_text_2 : old('banner_text_2') }}">
+                                                value="{{ old('banner_text_2') === null ? $data->banner_text_2 : old('banner_text_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -93,7 +98,7 @@
                                                 Text 3</label>
                                             <input type="text" class="form-control" id="banner_text_3"
                                                 name="banner_text_3"
-                                                value="{{ old('banner_text_3') === NULL ? $data->banner_text_3 : old('banner_text_3') }}">
+                                                value="{{ old('banner_text_3') === null ? $data->banner_text_3 : old('banner_text_3') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">

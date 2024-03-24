@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -23,7 +28,8 @@
                                             <li class="breadcrumb-item">
                                                 <a class="text-muted text-decoration-none" href="/">Home</a>
                                             </li>
-                                            <li class="breadcrumb-item" aria-current="page">Write-Review Content Details</li>
+                                            <li class="breadcrumb-item" aria-current="page">Write-Review Content Details
+                                            </li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -70,8 +76,8 @@
                                                 class="form-label
                                                 fw-semibold">Write-Review
                                                 Tiltle</label>
-                                            <input type="text" class="form-control" id="review_title"
-                                                name="review_title" value="{{ old('review_title') === NULL ? $data->review_title : old('review_title') }}">
+                                            <input type="text" class="form-control" id="review_title" name="review_title"
+                                                value="{{ old('review_title') === null ? $data->review_title : old('review_title') }}">
                                         </div>
                                     </div>
 
@@ -82,7 +88,7 @@
                                                 ">Write-Review
                                                 Description </label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="review_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('review_description') === NULL ? $data->review_description : old('review_description') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('review_description') === null ? $data->review_description : old('review_description') }}</textarea>
                                         </div>
                                     </div>
 
@@ -93,7 +99,8 @@
                                                 fw-semibold">Write-Review
                                                 list 1</label>
                                             <input type="text" class="form-control" id="review_list_1"
-                                                name="review_list_1" value="{{ old('review_list_1') === NULL ? $data->review_list_1 : old('review_list_1') }}">
+                                                name="review_list_1"
+                                                value="{{ old('review_list_1') === null ? $data->review_list_1 : old('review_list_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
@@ -103,7 +110,8 @@
                                                 fw-semibold">Write-Review
                                                 list 2</label>
                                             <input type="text" class="form-control" id="review_list_2"
-                                                name="review_list_2" value="{{ old('review_list_2') === NULL ? $data->review_list_2 : old('review_list_2') }}">
+                                                name="review_list_2"
+                                                value="{{ old('review_list_2') === null ? $data->review_list_2 : old('review_list_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-12">
@@ -113,7 +121,8 @@
                                                 fw-semibold">Write-Review
                                                 list 3</label>
                                             <input type="text" class="form-control" id="review_list_3"
-                                                name="review_list_3" value="{{ old('review_list_3') === NULL ? $data->review_list_3 : old('review_list_3') }}">
+                                                name="review_list_3"
+                                                value="{{ old('review_list_3') === null ? $data->review_list_3 : old('review_list_3') }}">
                                         </div>
                                     </div>
 

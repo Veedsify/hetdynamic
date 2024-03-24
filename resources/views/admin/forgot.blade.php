@@ -1,4 +1,9 @@
-@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" width="150" alt="loader" class="lds-ripple img-fluid">
@@ -39,8 +44,8 @@
                                     @csrf
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input type="email" class="form-control"  required id="exampleInputEmail1" name="email"
-                                            aria-describedby="emailHelp">
+                                        <input type="email" class="form-control" required id="exampleInputEmail1"
+                                            name="email" aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
                                         <a class="text-success fw-bold" href="javascript:sendResetPassword()">

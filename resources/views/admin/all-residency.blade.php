@@ -1,4 +1,9 @@
-@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -6,7 +11,7 @@
     </div>
     <div id="main-wrapper">
         <!-- Sidebar Start -->
-         <x-admin.aside />
+        <x-admin.aside />
         <!--  Sidebar End -->
         <div class="page-wrapper">
             {{-- Header start --}}

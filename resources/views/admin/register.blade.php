@@ -1,4 +1,9 @@
-﻿@extends('../layouts/admin/adminlayout')
+﻿@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" style="filter:invert(1);" class="lds-ripple img-fluid">
@@ -9,13 +14,11 @@
                 <div class="row">
                     <div class="col-xl-7 col-xxl-8">
                         <a href="{{ route('home') }}" class="text-nowrap logo-img d-block px-4 py-9 w-100">
-                            <img src="{{ asset($pagedata->site_logo) }}" class="dark-logo"
-                                 width="80"
-                                 alt="Logo-Dark">
+                            <img src="{{ asset($pagedata->site_logo) }}" class="dark-logo" width="80" alt="Logo-Dark">
                         </a>
                         <div class="d-none d-xl-flex align-items-center justify-content-center h-n80">
                             <img src="{{ asset('/admin-assets/images/backgrounds/login-security.svg') }}" alt=""
-                                 class="img-fluid" width="500">
+                                class="img-fluid" width="500">
                         </div>
                     </div>
                     <div class="col-xl-5 col-xxl-4">
@@ -44,8 +47,8 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Name</label>
                                         <input type="text" class="form-control" id="exampleInputtext" name="name"
-                                               aria-describedby="textHelp">
-                                        @if($errors->has('name'))
+                                            aria-describedby="textHelp">
+                                        @if ($errors->has('name'))
                                             <small class="text-danger">
                                                 {{ $errors->first('name') }}
                                             </small>
@@ -54,8 +57,8 @@
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                                         <input type="email" class="form-control" id="exampleInputEmail1" name="email"
-                                               aria-describedby="emailHelp">
-                                        @if($errors->has('email'))
+                                            aria-describedby="emailHelp">
+                                        @if ($errors->has('email'))
                                             <small class="text-danger">
                                                 {{ $errors->first('email') }}
                                             </small>
@@ -64,15 +67,14 @@
                                     <div class="mb-4">
                                         <label for="exampleInputPassword1" class="form-label">Password</label>
                                         <input type="password" class="form-control" name="password"
-                                               id="exampleInputPassword1">
-                                        @if($errors->has('password'))
+                                            id="exampleInputPassword1">
+                                        @if ($errors->has('password'))
                                             <small class="text-danger">
                                                 {{ $errors->first('password') }}
                                             </small>
                                         @endif
                                     </div>
-                                    <button type="submit"
-                                            class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign Up
+                                    <button type="submit" class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign Up
                                     </button>
                                     <div class="d-flex align-items-center">
                                         <p class="fs-4 mb-0 text-dark">Already have an Account?</p>

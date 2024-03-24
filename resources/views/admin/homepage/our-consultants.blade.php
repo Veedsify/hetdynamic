@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -67,7 +72,8 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Consultant Tittle</label>
+                                                fw-semibold">Our-Consultant
+                                                Tittle</label>
                                             <input type="text" class="form-control" id="banner_text_1"
                                                 name="banner_text_1" value="">
                                         </div>
@@ -76,7 +82,8 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Consultant 1</label>
+                                                fw-semibold">Our-Consultant
+                                                1</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2" value="">
                                         </div>
@@ -84,7 +91,8 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 1 Image</label>
+                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 1
+                                                Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="site_logo" aria-describedby="emailHelp">
                                         </div>
@@ -93,7 +101,8 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Consultant 2</label>
+                                                fw-semibold">Our-Consultant
+                                                2</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2" value="">
                                         </div>
@@ -101,16 +110,18 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 2 Image</label>
+                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 2
+                                                Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="site_logo" aria-describedby="emailHelp">
                                         </div>
                                     </div>
-                                                      <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Consultant 3</label>
+                                                fw-semibold">Our-Consultant
+                                                3</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2" value="">
                                         </div>
@@ -118,16 +129,18 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 3 Image</label>
+                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 3
+                                                Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="site_logo" aria-describedby="emailHelp">
                                         </div>
                                     </div>
-                                                     <div class="col-md-6">
+                                    <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Consultant 4</label>
+                                                fw-semibold">Our-Consultant
+                                                4</label>
                                             <input type="text" class="form-control" id="banner_text_2"
                                                 name="banner_text_2" value="">
                                         </div>
@@ -135,7 +148,8 @@
 
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 4 Image</label>
+                                            <label for="exampleInputEmail1" class="form-label">Our-Consultant 4
+                                                Image</label>
                                             <input type="file" class="form-control" id="exampleInputEmail1"
                                                 name="site_logo" aria-describedby="emailHelp">
                                         </div>

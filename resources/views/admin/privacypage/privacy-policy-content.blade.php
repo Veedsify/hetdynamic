@@ -1,11 +1,16 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
-       <x-admin.aside />
+        <x-admin.aside />
         <div class="page-wrapper">
             <!--  Header Start -->
             {{-- Header start --}}
@@ -68,10 +73,12 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Privacy Policy
+                                                fw-semibold">Privacy
+                                                Policy
                                                 Title</label>
                                             <input type="text" class="form-control" id="privacy_title"
-                                                name="privacy_title" value=" {{ old('privacy_title') === NULL ? $data->privacy_title : old('privacy_title') }}">
+                                                name="privacy_title"
+                                                value=" {{ old('privacy_title') === null ? $data->privacy_title : old('privacy_title') }}">
                                         </div>
                                     </div>
 
@@ -79,10 +86,11 @@
                                         <div class="mb-4">
                                             <label for="privacy_editor"
                                                 class="form-label
-                                                ">Privacy Policy
+                                                ">Privacy
+                                                Policy
                                                 Content</label>
                                             <textarea class="form-control" id="privacy_editor" name="privacy_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('privacy_description`') === NULL ? $data->privacy_description : old('privacy_description`') }}
+                                                aria-describedby="emailHelp">{{ old('privacy_description`') === null ? $data->privacy_description : old('privacy_description`') }}
                                             </textarea>
                                         </div>
                                     </div>

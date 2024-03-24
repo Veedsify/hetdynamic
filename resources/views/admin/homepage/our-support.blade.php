@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -67,45 +72,55 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Support Tittle</label>
+                                                fw-semibold">Our-Support
+                                                Tittle</label>
                                             <input type="text" class="form-control" id="banner_text_1"
-                                                name="support_title" value="{{ old('support_title') === NULL ? $data->support_title : old('support_title') }}">
+                                                name="support_title"
+                                                value="{{ old('support_title') === null ? $data->support_title : old('support_title') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Support Feature 1</label>
+                                                fw-semibold">Our-Support
+                                                Feature 1</label>
                                             <input type="text" class="form-control" id="support_feature_1"
-                                                name="support_feature_1" value="{{ old('support_feature_1') === NULL ? $data->support_feature_1 : old('support_feature_1') }}">
+                                                name="support_feature_1"
+                                                value="{{ old('support_feature_1') === null ? $data->support_feature_1 : old('support_feature_1') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Support Feature 2</label>
+                                                fw-semibold">Our-Support
+                                                Feature 2</label>
                                             <input type="text" class="form-control" id="support_feature_2"
-                                                name="support_feature_2" value="{{ old('support_feature_2') === NULL ? $data->support_feature_2 : old('support_feature_2') }}">
+                                                name="support_feature_2"
+                                                value="{{ old('support_feature_2') === null ? $data->support_feature_2 : old('support_feature_2') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Support Feature 3</label>
+                                                fw-semibold">Our-Support
+                                                Feature 3</label>
                                             <input type="text" class="form-control" id="support_feature_3"
-                                                name="support_feature_3" value="{{ old('support_feature_3') === NULL ? $data->support_feature_3 : old('support_feature_3') }}">
+                                                name="support_feature_3"
+                                                value="{{ old('support_feature_3') === null ? $data->support_feature_3 : old('support_feature_3') }}">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Our-Support video url</label>
+                                                fw-semibold">Our-Support
+                                                video url</label>
                                             <input type="text" class="form-control" id="support_video"
-                                                name="support_video" value="{{ old('support_video') === NULL ? $data->support_video : old('support_video') }}">
+                                                name="support_video"
+                                                value="{{ old('support_video') === null ? $data->support_video : old('support_video') }}">
                                         </div>
                                     </div>
 

@@ -1,8 +1,12 @@
-@extends('../layouts/admin/adminlayout')
+@extends('../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
-
     <!-- Preloader -->
-       <!-- Preloader -->
+    <!-- Preloader -->
     <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
@@ -12,7 +16,7 @@
         <x-admin.aside />
         <!--  Sidebar End -->
         <div class="page-wrapper">
-                {{-- Header start --}}
+            {{-- Header start --}}
             <x-admin.header />
             {{-- Header ends --}}
 
@@ -20,7 +24,7 @@
                 <!-- Sidebar scroll-->
                 <div>
                     <!-- Sidebar navigation-->
-                 <x-admin.sidebar />
+                    <x-admin.sidebar />
                     <!-- End Sidebar navigation -->
                 </div>
                 <!-- End Sidebar scroll-->
@@ -37,10 +41,12 @@
                                     <nav aria-label="breadcrumb">
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a class="text-muted text-decoration-none" href="{{route('admin')}}">Home</a>
+                                                <a class="text-muted text-decoration-none"
+                                                    href="{{ route('admin') }}">Home</a>
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">
-                                                <a class="text-muted text-decoration-none" href="{{route('admin.email')}}">Email</a>
+                                                <a class="text-muted text-decoration-none"
+                                                    href="{{ route('admin.email') }}">Email</a>
 
                                             </li>
                                             <li class="breadcrumb-item" aria-current="page">support Mail</li>
@@ -49,7 +55,7 @@
                                 </div>
                                 <div class="col-3">
                                     <div class="text-center mb-n5">
-                                        <img src="{{asset('admin-assets/images/breadcrumb/ChatBc.png')}}" alt=""
+                                        <img src="{{ asset('admin-assets/images/breadcrumb/ChatBc.png') }}" alt=""
                                             class="img-fluid mb-n4">
                                     </div>
                                 </div>
@@ -157,8 +163,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Kindly check this latest
                                                                 updated</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-dark"></i></span>
@@ -187,8 +192,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Newsletter from
                                                                 AdminMart Team</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-warning"></i></span>
@@ -217,8 +221,7 @@
                                                             </div>
                                                             <h6 class="text-dark">Kindly check this latest updated
                                                             </h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -247,8 +250,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Developer Community
                                                                 needs help</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -277,8 +279,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Kindly check this latest
                                                                 updated</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -307,8 +308,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">From your hosting
                                                                 provider - action</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -337,8 +337,7 @@
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Kindly check this latest
                                                                 updated</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -366,8 +365,7 @@
                                                                     class="badge text-bg-primary fs-2 rounded-4 py-1 px-2">Social</span>
                                                             </div>
                                                             <h6 class="fw-semibold text-dark">Developer Community</h6>
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <div class="d-flex align-items-center">
                                                                     <span><i
                                                                             class="ti ti-star fs-4 me-2 text-muted"></i></span>
@@ -420,16 +418,15 @@
                                                 </div>
                                                 <div class="position-relative overflow-hidden">
                                                     <div class="position-relative">
-                                                        <div class="chat-box email-box mh-n100 p-9"
-                                                            data-simplebar="init">
+                                                        <div class="chat-box email-box mh-n100 p-9" data-simplebar="init">
 
                                                             <div class="chat-list chat active-chat" data-user-id="1">
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-8.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-8.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -469,7 +466,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -489,7 +486,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -512,9 +509,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-2.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-2.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -554,7 +551,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -574,7 +571,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -597,9 +594,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-3.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-3.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -639,7 +636,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -659,7 +656,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -682,9 +679,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-4.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-4.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -724,7 +721,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -744,7 +741,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -767,9 +764,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-5.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-5.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -809,7 +806,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -829,7 +826,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -852,9 +849,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-6.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-6.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -894,7 +891,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -914,7 +911,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -937,9 +934,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-7.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-7.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -979,7 +976,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -999,7 +996,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -1022,9 +1019,9 @@
                                                                 <div
                                                                     class="hstack align-items-start mb-7 pb-1 align-items-center justify-content-between flex-wrap gap-6">
                                                                     <div class="d-flex align-items-center gap-2">
-                                                                        <img src="{{asset('admin-assets/images/profile/user-9.jpg')}}"
-                                                                            alt="user8" width="48"
-                                                                            height="48" class="rounded-circle">
+                                                                        <img src="{{ asset('admin-assets/images/profile/user-9.jpg') }}"
+                                                                            alt="user8" width="48" height="48"
+                                                                            class="rounded-circle">
                                                                         <div>
                                                                             <h6 class="fw-semibold mb-0">Alexandra
                                                                                 Flintoff</h6>
@@ -1064,7 +1061,7 @@
                                                                             class="hstack gap-3 mb-2 mb-sm-0">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-adobe.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-adobe.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -1084,7 +1081,7 @@
                                                                             class="hstack gap-3 file-chat-hover">
                                                                             <div class="d-flex align-items-center gap-3">
                                                                                 <div class="rounded-1 text-bg-light p-6">
-                                                                                    <img src="{{asset('admin-assets/images/chat/icon-zip-folder.svg')}}"
+                                                                                    <img src="{{ asset('admin-assets/images/chat/icon-zip-folder.svg') }}"
                                                                                         alt="" width="24"
                                                                                         height="24">
                                                                                 </div>
@@ -1106,8 +1103,7 @@
 
                                                         </div>
                                                         <div class="px-9 py-3 border-top chat-send-message-footer">
-                                                            <div
-                                                                class="d-flex align-items-center justify-content-between">
+                                                            <div class="d-flex align-items-center justify-content-between">
                                                                 <ul
                                                                     class="list-unstyled mb-0 d-flex align-items-center gap-7">
                                                                     <li>
@@ -1217,8 +1213,8 @@
                 <ul class="mb-0">
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="{{asset('admin-assets/images/products/product-1.jpg')}}" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-1.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>
@@ -1244,8 +1240,8 @@
                     </li>
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="{{asset('admin-assets/images/products/product-2.jpg')}}" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-2.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>
@@ -1271,8 +1267,8 @@
                     </li>
                     <li class="pb-7">
                         <div class="d-flex align-items-center">
-                            <img src="{{asset('admin-assets/images/products/product-3.jpg')}}" width="95" height="75"
-                                class="rounded-1 me-9 flex-shrink-0" alt="">
+                            <img src="{{ asset('admin-assets/images/products/product-3.jpg') }}" width="95"
+                                height="75" class="rounded-1 me-9 flex-shrink-0" alt="">
                             <div>
                                 <h6 class="mb-1">Supreme toys cooker</h6>
                                 <p class="mb-0 text-muted fs-2">Kitchenware Item</p>

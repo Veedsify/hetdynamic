@@ -1,4 +1,9 @@
-@extends('.../layouts/admin/adminlayout')
+@extends('.../layouts/admin/adminlayout', [
+    'pagedata' => $pagedata,
+    'title' => '',
+    'description' => '',
+    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+])
 @section('content')
     <!-- Preloader -->
     <div class="preloader">
@@ -23,7 +28,8 @@
                                             <li class="breadcrumb-item">
                                                 <a class="text-muted text-decoration-none" href="/">Home</a>
                                             </li>
-                                            <li class="breadcrumb-item" aria-current="page">Coaching and Training Details</li>
+                                            <li class="breadcrumb-item" aria-current="page">Coaching and Training Details
+                                            </li>
                                         </ol>
                                     </nav>
                                 </div>
@@ -59,7 +65,7 @@
                                     <p class="alert alert-danger">{{ $error }}</p>
                                 @endforeach
                             @endif
-                            <form action="{{ route("admin.settings.update.coaching.training") }}" method="post"
+                            <form action="{{ route('admin.settings.update.coaching.training') }}" method="post"
                                 enctype="multipart/form-data">
                                 @csrf
                                 <div class="row">
@@ -67,18 +73,21 @@
                                         <div class="mb-3">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                fw-semibold">Coaching and Training Tittle</label>
+                                                fw-semibold">Coaching
+                                                and Training Tittle</label>
                                             <input type="text" class="form-control" id="coaching_title"
-                                                name="coaching_title" value="{{ old('coaching_title') === NULL ? $data->coaching_title : old('coaching_title') }}">
+                                                name="coaching_title"
+                                                value="{{ old('coaching_title') === null ? $data->coaching_title : old('coaching_title') }}">
                                         </div>
                                     </div>
-                                      <div class="col-md-12">
+                                    <div class="col-md-12">
                                         <div class="mb-4">
                                             <label for="exampleInputEmail1"
                                                 class="form-label
-                                                ">Coaching and Training                                     Description</label>
+                                                ">Coaching
+                                                and Training Description</label>
                                             <textarea class="form-control" id="exampleInputEmail1" name="coaching_description" rows="10"
-                                                aria-describedby="emailHelp">{{ old('coaching_description') === NULL ? $data->coaching_description : old('coaching_description') }}</textarea>
+                                                aria-describedby="emailHelp">{{ old('coaching_description') === null ? $data->coaching_description : old('coaching_description') }}</textarea>
                                         </div>
                                     </div>
 

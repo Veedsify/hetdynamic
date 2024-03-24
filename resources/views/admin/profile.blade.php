@@ -2,7 +2,7 @@
     'pagedata' => $pagedata,
     'title' => '',
     'description' => '',
-    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+      'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])
 @section('content')
     {{-- <div class="preloader">

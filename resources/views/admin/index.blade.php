@@ -1,8 +1,8 @@
 ﻿@extends('../layouts/admin/adminlayout', [
     'pagedata' => $pagedata,
-    'title' => 'Admin Dashboard - '. $pagedata->site_name,
+    'title' => 'Admin Dashboard - ' . $pagedata->site_name,
     'description' => '',
-    'metatags' = explode(',', ['admin, dashboard, home, index, page']),
+    'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])
 @section('content')
     <!-- Preloader -->

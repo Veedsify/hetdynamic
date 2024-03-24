@@ -1,6 +1,6 @@
 ﻿@extends('../layouts/admin/adminlayout', [
     'pagedata' => $pagedata,
-    'title' => '',
+    'title' => 'Admin Dashboard - '. $pagedata->site_name,
     'description' => '',
     'metatags' = explode(',', ['admin, dashboard, home, index, page']),
 ])

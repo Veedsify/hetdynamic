@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\GlobalSetting;
-use App\Models\Notification;
 use App\Models\User;
+use App\Mail\WelcomeEmail;
 use Illuminate\Support\Str;
+use App\Models\Notification;
 use Illuminate\Http\Request;
+use App\Models\GlobalSetting;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\View;
 
 class AuthController extends Controller
@@ -62,6 +64,9 @@ class AuthController extends Controller
             'url' => '',
         ]);
 
+        $url = route('verify.email', $token);
+        Mail::send(new WelcomeEmail($user, $url));
+
         return redirect(route('validate.email', $token));
     }
 
@@ -77,22 +82,15 @@ class AuthController extends Controller
         ]);
     }
 
-    public function verifyEmail(Request $request)
+    public function verifyEmail($token)
     {
-        $request->validate([
-            'email' => 'required|email',
-            'token' => 'required'
-        ]);
-
-        $user = User::where("email", $request->email)->where("email_verification_token", $request->token)->first();
-
-        if (!$user) {
-            return redirect(route('home'));
-        }
-
+        
+        $user = User::where("email_verification_token", $token)->first();
+        $user->email_verified_at = now();
         $user->email_verified = true;
-        $user->email_verification_token = null;
         $user->save();
+
+        auth()->login($user, true);
 
         return redirect(route('login'))->with('success', 'Email Verified');
     }

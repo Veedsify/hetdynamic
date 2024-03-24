@@ -50,6 +50,7 @@ View::composer('*', function ($view) {
     Route::get("/register", [AuthController::class, 'showRegisterPage'])->name("register");
     Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
     Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
+    Route::get("/verify/email/{token}", [AuthController::class, 'verifyEmail'])->name("verify.email");
     Route::post("/login/submit", [AuthController::class, 'login'])->name("login.submit");
     Route::get("/logout", [AuthController::class, 'logout'])->name("logout");
 

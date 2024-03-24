@@ -45,9 +45,10 @@ class ContactMail extends Mailable implements ShouldQueue
     public function content(): Content
     {
         return new Content(
-            view: 'emails.contactemail',
+            view: 'emails.contact',
             with: [
                 'user' => $this->contact,
+                'site_data' => GlobalSetting::first()
             ]
         );
     }

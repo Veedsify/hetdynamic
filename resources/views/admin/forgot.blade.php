@@ -35,11 +35,11 @@
                                             aria-label="Close"></button>
                                     </div>
                                 @endif
-                                <form action="{{ route('login.submit') }}" method="post">
+                                <form action="{{ route('verify.password.reset') }}" method="post">
                                     @csrf
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Email</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                        <input type="email" class="form-control"  required id="exampleInputEmail1" name="email"
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
@@ -49,12 +49,12 @@
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">Verification Code</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                        <input type="tel" class="form-control" name="code" required
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-3">
                                         <label for="exampleInputEmail1" class="form-label">New Password</label>
-                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                        <input type="password" class="form-control" required id="password" name="password"
                                             placeholder="********" aria-describedby="emailHelp">
                                     </div>
                                     <button type="submit" class="btn btn-success w-100 py-8 mb-4 rounded-2">Reset

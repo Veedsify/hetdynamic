@@ -51,6 +51,7 @@ View::composer('*', function ($view) {
     Route::post("/register/new", [AuthController::class, 'register'])->name("register.new");
     Route::get("/forgot-password", [AuthController::class, 'showForgotPasswordPage'])->name("forgot.password");
     Route::post("/admin/send_reset_code", [AuthController::class, 'sendResetCode'])->name("reset.password.token");
+    Route::post("/admin/verify_reset_password", [AuthController::class, 'resetPassword'])->name("verify.password.reset");
     Route::get("/validate/email/{token}", [AuthController::class, 'validateEmail'])->name("validate.email");
     Route::get("/verify/email/{token}", [AuthController::class, 'verifyEmail'])->name("verify.email");
     Route::post("/login/submit", [AuthController::class, 'login'])->name("login.submit");

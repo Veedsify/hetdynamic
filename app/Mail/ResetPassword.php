@@ -2,14 +2,15 @@
 
 namespace App\Mail;
 
+use App\Models\User;
 use App\Models\GlobalSetting;
 use Illuminate\Bus\Queueable;
-use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Mail\Mailable;
 use Illuminate\Mail\Mailables\Address;
 use Illuminate\Mail\Mailables\Content;
-use Illuminate\Mail\Mailables\Envelope;
 use Illuminate\Queue\SerializesModels;
+use Illuminate\Mail\Mailables\Envelope;
+use Illuminate\Contracts\Queue\ShouldQueue;
 
 class ResetPassword extends Mailable
 {
@@ -33,7 +34,7 @@ class ResetPassword extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
-            subject: GlobalSetting::first()->site_name . ' - Reset Password',
+            subject: ' Reset Password -' . GlobalSetting::first()->site_name,
             from: new Address(GlobalSetting::first()->mail_address, GlobalSetting::first()->site_name),
             to: $this->user->email,
         );
@@ -45,10 +46,11 @@ class ResetPassword extends Mailable
     public function content(): Content
     {
         return new Content(
-            view: 'view.name',
+            view: 'emails.resetpassword',
             with: [
                 'user' => $this->user,
                 'code' => $this->code,
+                'site_data' => GlobalSetting::first()
             ]
         );
     }

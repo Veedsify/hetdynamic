@@ -1,8 +1,7 @@
 @extends('../layouts/admin/adminlayout')
 @section('content')
     <div class="preloader">
-        <img src="{{ asset($pagedata->site_logo) }}"  width="150" alt="loader"
-            class="lds-ripple img-fluid">
+        <img src="{{ asset($pagedata->site_logo) }}" width="150" alt="loader" class="lds-ripple img-fluid">
     </div>
     <div id="main-wrapper">
         <div class="position-relative overflow-hidden radial-gradient min-vh-100 w-100">
@@ -26,6 +25,13 @@
                                 @if (session('error'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         <strong>Error!</strong> {{ session('error') }}
+                                        <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                            aria-label="Close"></button>
+                                    </div>
+                                @endif
+                                @if (session('success'))
+                                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                        <strong>Success!</strong> {{ session('success') }}
                                         <button type="button" class="btn-close" data-bs-dismiss="alert"
                                             aria-label="Close"></button>
                                     </div>

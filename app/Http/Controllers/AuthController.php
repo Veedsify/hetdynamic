@@ -124,4 +124,29 @@ class AuthController extends Controller
         auth()->logout();
         return redirect(route('login'));
     }
+
+    public function showForgotPasswordPage()
+    {
+        return view('admin.forgot');
+    }
+
+    public function sendResetCode(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email'
+        ]);
+
+        $user = User::where("email", $request->email)->first();
+
+        if (!$user) {
+            return redirect(route('forgot.password'))->with('error', 'Invalid Email Address!');
+        }
+
+        $code = rand(100000, 999999);
+        session(['reset_code' => $code]);
+
+        Mail::send();
+
+        return response()->json(['status' => 'success', 'message' => 'Reset code sent to your email'])->status(200);
+    }
 }

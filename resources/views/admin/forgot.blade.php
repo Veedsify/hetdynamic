@@ -20,8 +20,7 @@
                         <div
                             class="authentication-login min-vh-100 bg-body row justify-content-center align-items-center p-4">
                             <div class="auth-max-width col-sm-8 col-md-6 col-xl-7 px-4">
-                                <h2 class="mb-1 fs-7 fw-bolder">Welcome to {{ ucwords($pagedata->site_name) }}</h2>
-                                <p class="mb-7">Login to your Account</p>
+                                <h2 class="mb-3 fs-7 fw-bolder">Reset Your Password</h2>
                                 @if (session('error'))
                                     <div class="alert alert-danger alert-dismissible fade show" role="alert">
                                         <strong>Error!</strong> {{ session('error') }}
@@ -44,23 +43,22 @@
                                             aria-describedby="emailHelp">
                                     </div>
                                     <div class="mb-4">
-                                        <label for="exampleInputPassword1" class="form-label">Password</label>
-                                        <input type="password" class="form-control" name="password"
-                                            id="exampleInputPassword1">
+                                        <a class="text-success fw-bold" href="javascript:sendResetPassword()">
+                                            <i class="ti ti-send"></i> Send Verification Code
+                                        </a>
                                     </div>
-                                    <div class="d-flex align-items-center justify-content-between mb-4">
-                                        <div class="form-check">
-                                            <input class="form-check-input success" type="checkbox" value=""
-                                                id="flexCheckChecked" checked="">
-                                            <label class="form-check-label text-dark fs-3" for="flexCheckChecked">
-                                                Remeber this Device
-                                            </label>
-                                        </div>
-                                        <a class="text-success fw-medium fs-3" href="{{ route('forgot.password') }}">Forgot
-                                            Password ?</a>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">Verification Code</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                            aria-describedby="emailHelp">
                                     </div>
-                                    <button type="submit" class="btn btn-success w-100 py-8 mb-4 rounded-2">Sign
-                                        In</button>
+                                    <div class="mb-3">
+                                        <label for="exampleInputEmail1" class="form-label">New Password</label>
+                                        <input type="email" class="form-control" id="exampleInputEmail1" name="email"
+                                            placeholder="********" aria-describedby="emailHelp">
+                                    </div>
+                                    <button type="submit" class="btn btn-success w-100 py-8 mb-4 rounded-2">Reset
+                                        Password</button>
                                     <div class="d-flex align-items-center justify-content-center">
                                         <p class="fs-4 mb-0 fw-medium">New to {{ $pagedata->site_name }}?</p>
                                         <a class="text-success fw-medium ms-2" href="{{ route('register') }}">Create an

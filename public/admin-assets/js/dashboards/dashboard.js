@@ -642,3 +642,39 @@ function previewImage(e) {
         reader.readAsDataURL(file);
     }
 }
+
+async function sendResetPassword() {
+    const email = document.querySelector('#email').value;
+    if (!email) {
+        swal({
+            icon: "error",
+            title: "Error",
+            text: "Email is required",
+        });
+        return;
+    }
+    const response = await fetch('/admin/send_reset_code', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+            _token: document.querySelector('input[name="_token"]').value,
+            email
+        })
+    });
+    const data = await response.json();
+    if (data.status === 'success') {
+        swal({
+            icon: "success",
+            title: "Success",
+            text: data.message,
+        });
+    } else {
+        swal({
+            icon: "error",
+            title: "Error",
+            text: data.message,
+        });
+    }
+}

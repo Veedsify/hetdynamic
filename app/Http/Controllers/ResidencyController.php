@@ -12,5 +12,8 @@ class ResidencyController extends Controller
         return view('pages.residency-details', ['pageId' => $pageId]);
     }
 
-   
+    public function showResidencyPage(Request $request)
+    {
+        return view("pages.residency");
+    }
 }

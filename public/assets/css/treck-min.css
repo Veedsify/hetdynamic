@@ -4,7 +4,7 @@
     --treck-gray-rgb: 114, 114, 114;
     --treck-white: #ffffff;
     --treck-white-rgb: 255, 255, 255;
-    --treck-base: #e20935;
+    --treck-base: #13adad;
     --treck-base-rgb: 226, 9, 53;
     --treck-black: #16171a;
     --treck-black-rgb: 22, 23, 26;
@@ -12,8 +12,8 @@
     --treck-primary-rgb: 242, 237, 235;
     --treck-bdr-color: #e3dbd8;
     --treck-bdr-color-rgb: 227, 219, 216;
-    --treck-update-color: #fcc9d3;
-    --treck-stats-color: -webkit-linear-gradient(180deg, rgb(255, 254, 254) 0%, rgb(226, 28, 28) 100%);
+    --treck-update-color: #c9f7fc;
+    --treck-stats-color: -webkit-linear-gradient(180deg, rgb(255, 254, 254) 0%, rgb(28, 226, 216) 100%);
 }
 
 .row {

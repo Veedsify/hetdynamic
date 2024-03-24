@@ -11,4 +11,9 @@ class WorkPermitController extends Controller
     {
         return view('pages.workpermit-details', ['pageId' => $pageId]);
     }
+
+    public function showWorkPermitPage(Request $request)
+    {
+        return view("pages.workpermit");
+    }
 }

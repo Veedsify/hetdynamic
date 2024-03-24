@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use App\Mail\WelcomeEmail;
+use App\Mail\ResetPassword;
 use Illuminate\Support\Str;
 use App\Models\Notification;
 use Illuminate\Http\Request;
@@ -145,8 +146,30 @@ class AuthController extends Controller
         $code = rand(100000, 999999);
         session(['reset_code' => $code]);
 
-        Mail::send();
+        Mail::send(new ResetPassword($user, $code));
+        return response()->json(['status' => 'success', 'message' => 'Reset code sent to your email']);
+    }
 
-        return response()->json(['status' => 'success', 'message' => 'Reset code sent to your email'])->status(200);
+    public function resetPassword(Request $request)
+    {
+        $request->validate([
+            'email' => 'required|email',
+            'code' => 'required',
+            'password' => 'required|min:8'
+        ]);
+
+        $code = session('reset_code');
+
+        if ($request->code != $code) {
+            return redirect(route('forgot.password'))->with('error', 'Invalid reset code!');
+        }
+
+        $user = User::where("email", $request->email)->first();
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect(route('login'))->with('success', 'Password reset successfully! Please login to continue.');
+
+        return view('admin.reset');
     }
 }

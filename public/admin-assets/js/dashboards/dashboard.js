@@ -644,7 +644,7 @@ function previewImage(e) {
 }
 
 async function sendResetPassword() {
-    const email = document.querySelector('#email').value;
+    const email = document.querySelector('#exampleInputEmail1').value;
     if (!email) {
         swal({
             icon: "error",

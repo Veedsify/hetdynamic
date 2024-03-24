@@ -123,11 +123,11 @@
                                 <div class="feature-one__img-one feature-one__img-three">
                                     <img src="/assets/images/resources/feature-1-3.png" alt="">
                                 </div>
-                                <p class="feature-one__sub-title">download form</p>
+                                <p class="feature-one__sub-title">Work Permit</p>
                                 <h3 class="feature-one__title"><a href="visa-details.html">Documents Required <br> for
                                         Visa</a></h3>
                                 <div class="feature-one__btn-box">
-                                    <a href="visa-details.html" class="feature-one__btn">Learn More</a>
+                                    <a href="{{ route('workpermit') }}" class="feature-one__btn">Learn More</a>
                                 </div>
                             </div>
                         </div>
@@ -268,7 +268,8 @@
                                         style="background-image: url(assets/images/resources/services-one-img-2.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Citezinship</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Citezinship</a>
+                                        </h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>
@@ -295,7 +296,8 @@
                                         style="background-image: url(assets/images/resources/services-one-img-3.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Work Permit</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Work Permit</a>
+                                        </h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>
@@ -322,7 +324,8 @@
                                         style="background-image: url(assets/images/resources/services-one-img-4.jpg);">
                                     </div>
                                     <div class="services-one__hover-title-box">
-                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Residency</a></h3>
+                                        <h3 class="services-one__hover-title"><a href="visa-details.html">Residency</a>
+                                        </h3>
                                         <div class="services-one__hover-shpae">
                                             <img src="/assets/images/shapes/services-one-hover-shape.png" alt="">
                                         </div>

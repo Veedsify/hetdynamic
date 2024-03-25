@@ -32,11 +32,11 @@ class HomepageController extends Controller
                 $banner_image_1->move(public_path('custom/settings'), $banner_image_1_name);
                 $filePath1 = 'custom/settings/' . $banner_image_1_name;
                 Log::info('Image path: ' . asset($filePath1));
-                $image = Image::useImageDriver("gd")->load(public_path($filePath1))
-                    ->width(1920)
-                    ->height(1080)
-                    ->quality(75)
-                    ->save(public_path($filePath1));
+                // $image = Image::useImageDriver("gd")->load(public_path($filePath1))
+                //     ->width(1920)
+                //     ->height(1080)
+                //     ->quality(75)
+                //     ->save(public_path($filePath1));
             }
             if ($request->hasFile('banner_image_2')) {
                 $banner_image_2 = $request->file('banner_image_2');

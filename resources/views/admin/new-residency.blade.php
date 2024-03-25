@@ -37,7 +37,7 @@
                             @if ($errors->has('title'))
                                 <p class="text-danger">{{ $errors->first('title') }}</p>
                             @endif
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
 
                                 <div class="form-group ">
                                     <input type="text" class="blog-title" id="title" name="title" value=""
@@ -58,7 +58,7 @@
 
 
                             {{-- Highlight Features --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Highlight Features
                                 </label>
@@ -83,7 +83,7 @@
                             </div>
 
                             {{-- Our Services --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Our Services
                                 </label>
@@ -104,7 +104,7 @@
                             </div>
 
                             {{-- Benefits Section --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Benefits Section
                                 </label>
@@ -126,7 +126,7 @@
                             </div>
 
                             {{-- Requirements 1 --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Requirements Section
                                 </label>
@@ -172,7 +172,7 @@
                             </div>
 
                             {{-- Requirements 2 --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Requirements Section 2
                                 </label>
@@ -215,7 +215,7 @@
                             </div>
 
                             {{-- OPTION 1 --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Options 1
                                 </label>
@@ -249,7 +249,7 @@
                             </div>
 
                             {{-- Option 2 --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Options 2
                                 </label>
@@ -283,7 +283,7 @@
                             </div>
 
                             {{-- Option 3 --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Options 3
                                 </label>
@@ -317,7 +317,7 @@
                             </div>
 
                             {{-- Extra Requirements --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Extra Requirements
                                 </label>
@@ -351,7 +351,7 @@
                             </div>
 
                             {{-- MANDATORY REQUIREMENTS --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Mandatory Requirements
                                 </label>
@@ -391,7 +391,7 @@
                             </div>
 
                             {{-- Timeline of Events --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Timeline Of Events
                                 </label>
@@ -435,7 +435,7 @@
                             </div>
 
                             {{-- Sponship Section --}}
-                            <div class="border p-3 m-3 border-2 border-success rounded-2">
+                            <div class="border p-3 m-1 border-success-subtle rounded-1">
                                 <label for="" class="mb-3 d-block fw-bolder fs-4">
                                     Sponsorship Section
                                 </label>
@@ -467,70 +467,69 @@
                                     </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
-
-                    <div class="card">
-                        <div class="card-body">
-                            <div class="form-group mb-3">
-                                <label class="fw-bold d-inline-block">
-                                    Tags
-                                </label>
-                                <input type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="tags"
-                                    name="tags" value="{{ old('tags') }}" placeholder="Tags here comma seperated">
-                            </div>
-                            <div class="form-group mb-3">
-                                <label class="fw-bold d-inline-block">
-                                    Select a Country
-                                </label>
-                                <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
-                                    name="category">
-                                    <option value="" selected disabled>{--- Select Country ---}</option>
-                                    {{-- @foreach ($categories as $category)
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-group mb-3">
+                                        <label class="fw-bold d-inline-block">
+                                            Tags
+                                        </label>
+                                        <input type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="tags"
+                                            name="tags" value="{{ old('tags') }}"
+                                            placeholder="Tags here comma seperated">
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="fw-bold d-inline-block">
+                                            Select a Country
+                                        </label>
+                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
+                                            name="category">
+                                            <option value="" selected disabled>{--- Select Country ---}</option>
+                                            {{-- @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach --}}
-                                </select>
+                                        </select>
+                                    </div>
+                                    <div class="form-group mb-3">
+                                        <label class="fw-bold d-inline-block">
+                                            Select a service
+                                        </label>
+                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
+                                            name="category">
+                                            <option value="" selected disabled>{--- Select Service ---}</option>
+                                            <option value="">
+                                                Study
+                                            </option>
+                                            <option value="">
+                                                Citezenship
+                                            </option>
+                                            <option value="">
+                                                Residency
+                                            </option>
+                                            <option value="">
+                                                Work Permit
+                                            </option>
+                                        </select>
+                                    </div>
+                                    @if ($errors->has('description'))
+                                        <p class="text-danger">{{ $errors->first('description') }}</p>
+                                    @endif
+                                    <div class="form-group ">
+                                        <label class="fw-bold d-inline-block">
+                                            Active Status
+                                        </label>
+                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="status"
+                                            name="status">
+                                            <option value="active" selected>Published</option>
+                                            <option value="draft">Draft</option>
+                                        </select>
+                                    </div>
+                                    <div class="d-flex justify-content-end">
+                                        <button type="submit" class="px-5 py-4 btn btn-primary">Publish</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group mb-3">
-                                <label class="fw-bold d-inline-block">
-                                    Select a service
-                                </label>
-                                <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
-                                    name="category">
-                                    <option value="" selected disabled>{--- Select Service ---}</option>
-                                    <option value="">
-                                        Study
-                                    </option>
-                                    <option value="">
-                                        Citezenship
-                                    </option>
-                                    <option value="">
-                                        Residency
-                                    </option>
-                                    <option value="">
-                                        Work Permit
-                                    </option>
-                                </select>
-                            </div>
-                            @if ($errors->has('description'))
-                                <p class="text-danger">{{ $errors->first('description') }}</p>
-                            @endif
-                            <div class="form-group ">
-                                <label class="fw-bold d-inline-block">
-                                    Active Status
-                                </label>
-                                <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="status"
-                                    name="status">
-                                    <option value="active" selected>Published</option>
-                                    <option value="draft">Draft</option>
-                                </select>
-                            </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="px-5 py-4 btn btn-primary">Publish</button>
-                            </div>
-                        </div>
+                        </form>
                     </div>
-                    </form>
                 </div>
             </div>
         </div>

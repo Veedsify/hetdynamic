@@ -1,6 +1,6 @@
 @extends('.../layouts/admin/adminlayout', [
     'pagedata' => $pagedata,
-    'title' => '',
+    'title' => 'Contactpage Location Configuration  - ' . $pagedata->site_name,
     'description' => '',
     'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])

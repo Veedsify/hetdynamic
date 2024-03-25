@@ -1,6 +1,6 @@
 @extends('../layouts/admin/adminlayout', [
     'pagedata' => $pagedata,
-    'title' => '',
+    'title' => 'All Consultants  - ' . $pagedata->site_name,
     'description' => '',
     'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])

@@ -5,12 +5,10 @@
     'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])
 @section('content')
-    <!-- Preloader -->
-    <!-- Preloader -->
-    <div class="preloader">
+      <!-- Preloader -->
+      <div class="preloader">
         <img src="{{ asset($pagedata->site_logo) }}" alt="loader" class="lds-ripple img-fluid">
     </div>
-    <div id="ma
     <div id="main-wrapper">
         <!-- Sidebar Start -->
         <x-admin.aside />
@@ -19,17 +17,6 @@
             {{-- Header start --}}
             <x-admin.header />
             {{-- Header ends --}}
-
-            <aside class="left-sidebar with-horizontal">
-                <!-- Sidebar scroll-->
-                <div>
-                    <!-- Sidebar navigation-->
-                    <x-admin.sidebar />
-                    <!-- End Sidebar navigation -->
-                </div>
-                <!-- End Sidebar scroll-->
-
-            </aside>
 
             <div class="body-wrapper">
                 <div class="container-fluid">

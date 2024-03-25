@@ -1,5 +1,10 @@
 @extends('layouts/index', [
     'title' => 'Home - HetDynamic',
+     'description' => 'Contact us for any inquiries, we are always available to help you out. Reach us on our hotlines or send us an email.',
+    'image' => $pagedata->site_logo,
+    'description' => $pagedata->site_description,
+    'image' => asset($pagedata->site_logo),
+    'meta_tags' => '',
 ])
 @section('content')
     <div class="preloader">

@@ -127,7 +127,7 @@
                               </div>
                           </div>
                       </div>
-                      <div class="main-menu__bottom">
+                    <div class="main-menu__bottom">
                           <div class="main-menu__bottom-inner">
                               <div class="main-menu__main-menu-box">
                                   <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>

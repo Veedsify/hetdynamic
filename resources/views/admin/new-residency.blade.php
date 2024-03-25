@@ -87,7 +87,8 @@
                                     <p>Featured Image</p>
                                     <input type="file" className="hidden d-none" id="featured_article_image"
                                         name="file" />
-                                    <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500" class="img-fluid"/>
+                                    <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500"
+                                        class="img-fluid" />
                                 </label>
 
                             </div>
@@ -510,19 +511,43 @@
                     <div class="card">
                         <div class="card-body">
                             <div class="form-group mb-3">
-                                @if ($errors->has('tags'))
-                                    <p class="text-danger">{{ $errors->first('tags') }}</p>
-                                @endif
+                                <label class="fw-bold d-inline-block">
+                                    Tags
+                                </label>
                                 <input type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="tags"
                                     name="tags" value="{{ old('tags') }}" placeholder="Tags here comma seperated">
                             </div>
                             <div class="form-group mb-3">
+                                <label class="fw-bold d-inline-block">
+                                    Select a Country
+                                </label>
                                 <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
                                     name="category">
                                     <option value="" selected disabled>{--- Select Country ---}</option>
                                     {{-- @foreach ($categories as $category)
                                         <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach --}}
+                                </select>
+                            </div>
+                            <div class="form-group mb-3">
+                                <label class="fw-bold d-inline-block">
+                                    Select a service
+                                </label>
+                                <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
+                                    name="category">
+                                    <option value="" selected disabled>{--- Select Service ---}</option>
+                                    <option value="">
+                                        Study
+                                    </option>
+                                    <option value="">
+                                        Citezenship
+                                    </option>
+                                    <option value="">
+                                        Residency
+                                    </option>
+                                    <option value="">
+                                        Work Permit
+                                    </option>
                                 </select>
                             </div>
                             @if ($errors->has('description'))

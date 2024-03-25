@@ -2,7 +2,7 @@
 const newArticle = document.getElementById('new-article');
 let JoditEditor;
 if (newArticle) {
-     JoditEditor = Jodit.make("#new-article", {
+    JoditEditor = Jodit.make("#new-article", {
         "uploader": {
             "insertImageAsBase64URI": true
         },
@@ -11,3 +11,25 @@ if (newArticle) {
     })
 }
 
+const smallEditors = document.querySelectorAll("[data-editor=\"true\"]")
+
+smallEditors.forEach(editor => {
+    ClassicEditor
+        .create(editor)
+        .then(editor => {
+            editor.editing.view.change(writer => {
+                writer.setStyle('min-height', '300px', editor.editing.view.document.getRoot());
+            })
+        })
+        .catch(error => {
+            console.error(error);
+        });
+})
+
+// Add cloned Items
+
+function addClone() {
+    const clone = this.$refs.itemTemplate.content.cloneNode(true);
+    this.clones.push({ newItem: '' });
+    this.$refs.container.appendChild(clone);
+}

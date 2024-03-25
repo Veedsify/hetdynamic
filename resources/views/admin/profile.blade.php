@@ -99,51 +99,16 @@
                                             {{-- <p></p> --}}
                                             <ul class="list-unstyled mb-0">
                                                 <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
-                                                    <i class="ti ti-user text-dark fs-6"></i>
-                                                    <h6 class="fs-4 fw-semibold mb-0">
-                                                        {{ auth()->user()->fullname }}
-                                                    </h6>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
                                                     <i class="ti ti-briefcase text-dark fs-6"></i>
                                                     <h6 class="fs-4 fw-semibold mb-0">
                                                         {{ auth()->user()->role }}
                                                     </h6>
                                                 </li>
-
                                                 <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
-                                                    <i class="ti ti-user text-dark fs-6"></i>
+                                                    <i class="ti ti-mail text-dark fs-6"></i>
                                                     <h6 class="fs-4 fw-semibold mb-0">
-                                                        {{ auth()->user()->user_id }}
+                                                        {{ auth()->user()->email }}
                                                     </h6>
-                                                </li>
-
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card shadow-none border">
-                                        <div class="card-body">
-                                            <h4 class="fw-semibold mb-3">Update Bio</h4>
-                                            {{-- <p></p> --}}
-                                            <form action="">
-
-                                            <ul class="list-unstyled mb-0">
-
-                                                <li class="flex-wrap mb-4">
-                                                    <label for="" class="d-flex align-items-center gap-6 flex-wrap ">
-
-                                                        <i class="ti ti-user text-dark fs-6"></i>
-                                                        <h6 class="fs-4 fw-semibold mb-0">
-                                                            Fullname
-                                                        </h6>
-                                                    </label>
-                                                    <div class="mt-2 " >
-
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
-                                                    </div>
                                                 </li>
                                                 <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
                                                     <i class="ti ti-user text-dark fs-6"></i>
@@ -159,8 +124,6 @@
                                                     </h6>
                                                 </li>
                                             </ul>
-                                        </form>
-
                                         </div>
                                     </div>
                                     {{-- <div class="card shadow-none border">
@@ -207,7 +170,7 @@
                                         </div>
                                     </div> --}}
                                 </div>
-                                {{-- <div class="col-lg-8">
+                                <div class="col-lg-8">
                                     <div class="card">
                                         @foreach ($blogs as $blog)
                                             <div class="card-body border-bottom">
@@ -255,7 +218,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -264,7 +227,7 @@
         </div>
 
         <!--  Search Bar -->
-        {{-- <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
             <div class="modal-dialog modal-dialog-scrollable modal-lg">
                 <div class="modal-content rounded-1">
                     <div class="modal-header border-bottom">
@@ -354,7 +317,7 @@
                     </div>
                 </div>
             </div>
-        </div> --}}
+        </div>
 
     </div>
 @endsection

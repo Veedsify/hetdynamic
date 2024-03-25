@@ -114,6 +114,7 @@
                                   <ul class="list-unstyled main-menu__top-menu">
 
                                       @auth
+                                          <li><a href="{{ route('account.setting') }}">Setting</a></li>
                                           <li><a href="{{ route('admin') }}">Dashboard</a></li>
                                           <li><a href="{{ route('logout') }}">Logout</a></li>
                                       @endauth

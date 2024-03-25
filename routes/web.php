@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TagsController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\IndexController;
 use App\Http\Controllers\PagesController;
@@ -15,8 +16,9 @@ use App\Http\Controllers\ContactController;
 use App\Http\Controllers\PrivacyController;
 use App\Http\Controllers\CoachingController;
 use App\Http\Controllers\ResidencyController;
-use App\Http\Controllers\TagsController;
 use App\Http\Controllers\WorkPermitController;
+use App\Http\Controllers\Account\SettingsController;
+use App\Http\Controllers\Account\NotificationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -93,4 +95,10 @@ View::composer('*', function ($view) {
     // Write a Review
 
     Route::get("/write-review", [ReviewController::class, 'showReviewPage'])->name("write.review");
+
+    // account settings
+    Route::get("/account", [SettingsController::class, 'setting'])->name("account.setting");
+
+    // account notification
+    Route::get("/notification", [NotificationController::class, 'notification'])->name("account.notification");
 

@@ -2,7 +2,7 @@
     'pagedata' => $pagedata,
     'title' => 'Profile  - ' . $pagedata->site_name,
     'description' => '',
-      'metatags' => implode(',', ['admin, dashboard, home, index, page']),
+    'metatags' => implode(',', ['admin, dashboard, home, index, page']),
 ])
 @section('content')
     {{-- <div class="preloader">
@@ -121,93 +121,48 @@
                                             </ul>
                                         </div>
                                     </div>
+                                    <div class="">
+                                        <div class="card shadow-none border">
+                                            <div class="card-body">
+                                                <h4 class="fw-semibold mb-3">Update Bio</h4>
+                                                {{-- <p></p> --}}
+                                                <form action="">
 
-                                </div>
-                                <div class="col-lg-8">
-                                    <div class="card shadow-none border">
-                                        <div class="card-body">
-                                            <h4 class="fw-semibold mb-3">Update Bio</h4>
-                                            {{-- <p></p> --}}
-                                            <form action="">
+                                                    <ul class="list-unstyled mb-0">
+                                                        <li class="flex-wrap mb-4">
+                                                            <label for=""
+                                                                class="d-flex align-items-center gap-6 flex-wrap ">
+                                                                <i class="ti ti-user text-dark fs-6"></i>
+                                                                <h6 class="fs-4 fw-semibold mb-0">
+                                                                    Fullname
+                                                                </h6>
+                                                            </label>
+                                                            <div class="mt-2 ">
+                                                                <input type="text " class="w-100 border rounded p-2"
+                                                                    style="outline: none;">
+                                                            </div>
+                                                        </li>
+                                                        <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
+                                                            <i class="ti ti-user text-dark fs-6"></i>
+                                                            <h6 class="fs-4 fw-semibold mb-0">
+                                                                {{ auth()->user()->user_id }}
+                                                            </h6>
+                                                        </li>
+                                                        <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
+                                                            <h6 class="fs-4 fw-semibold mb-0">
+                                                                <a href="#" class="btn btn-sm btn-success">
+                                                                    Edit User
+                                                                </a>
+                                                            </h6>
+                                                        </li>
+                                                    </ul>
+                                                </form>
 
-                                            <ul class="list-unstyled mb-0">
-
-                                                <li class="flex-wrap mb-4">
-                                                    <label for="" class="d-flex align-items-center gap-6 flex-wrap ">
-
-                                                        <i class="ti ti-user text-dark fs-6"></i>
-                                                        <h6 class="fs-4 fw-semibold mb-0">
-                                                            Fullname
-                                                        </h6>
-                                                    </label>
-                                                    <div class="mt-2 " >
-
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
-                                                    </div>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
-                                                    <i class="ti ti-user text-dark fs-6"></i>
-                                                    <h6 class="fs-4 fw-semibold mb-0">
-                                                        {{ auth()->user()->user_id }}
-                                                    </h6>
-                                                </li>
-                                                <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
-                                                    <h6 class="fs-4 fw-semibold mb-0">
-                                                        <a href="#" class="btn btn-sm btn-success">
-                                                            Edit User
-                                                        </a>
-                                                    </h6>
-                                                </li>
-                                            </ul>
-                                        </form>
-
-                                        </div>
-                                    </div>
-                                    {{-- <div class="card shadow-none border">
-                                        <div class="card-body">
-                                            <h4 class="fw-semibold mb-3">Photos</h4>
-                                            <div class="row">
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-2.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-3.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-4.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-5.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-6.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-7.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-9">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-8.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-6">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-9.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-6">
-                                                </div>
-                                                <div class="col-4">
-                                                    <img src="../assets/images/profile/user-10.jpg" alt=""
-                                                        class="rounded-2 img-fluid mb-6">
-                                                </div>
                                             </div>
                                         </div>
-                                    </div> --}}
+                                    </div>
                                 </div>
-                                {{-- <div class="col-lg-8">
+                                <div class="col-lg-8">
                                     <div class="card">
                                         @foreach ($blogs as $blog)
                                             <div class="card-body border-bottom">
@@ -215,7 +170,8 @@
                                                     <img src="
                                                         {{ $blog->user->avatar }}
                                                     "
-                                                        alt="" class="rounded-circle" width="40" height="40">
+                                                        alt="" class="rounded-circle" width="40"
+                                                        height="40">
                                                     <h6 class="fw-semibold mb-0 fs-4">
                                                         {{ $blog->user->fullname }}
                                                     </h6>
@@ -225,15 +181,17 @@
                                                     </span>
                                                 </div>
                                                 <h4 class="text-dark my-3 fw-bold">
-                                                    {{ $blog->title }}
+                                                    <a href="{{ route('blog.details', $blog->slug) }}" target="_blank">
+                                                        {{ $blog->title }}
+                                                    </a>
                                                 </h4>
                                                 <p class="text-dark my-3">
                                                     {{ $blog->description }}
                                                 </p>
-                                                <img src="
-                                                    {{ asset($blog->image) }}
-                                                "
-                                                    alt="" height="360" class="rounded-4 w-100 object-fit-cover">
+                                                <a href="{{ route('blog.details', $blog->slug) }}" target="_blank">
+                                                    <img src="{{ asset($blog->image) }}" alt="" height="360"
+                                                        class="rounded-4 w-100 object-fit-cover">
+                                                </a>
                                                 <div class="d-flex align-items-center my-3">
                                                     <div class="d-flex align-items-center gap-2 ms-4">
                                                         <a class="d-flex align-items-center justify-content-center text-bg-secondary p-2 fs-4 rounded-circle"
@@ -255,7 +213,7 @@
                                             </div>
                                         @endforeach
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                     </div>

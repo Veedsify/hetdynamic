@@ -75,159 +75,548 @@
                             @if ($errors->has('title'))
                                 <p class="text-danger">{{ $errors->first('title') }}</p>
                             @endif
-                            <div class="form-group ">
-                                <input type="text" class="blog-title" id="title" name="title"
-                                    value="{{ old('title') }}" placeholder="Add a title ...">
-                            </div>
-                            @if ($errors->has('html'))
-                                <p class="text-danger">{{ $errors->first('html') }}</p>
-                            @endif
-                            <div>
-                                <div id="new-article"></div>
-                                <textarea class="d-none"name="html" id="htmlarea">{{ old('html') }}</textarea>
-                            </div>
-                            <div class="form-group ">
-                                @if ($errors->has('tags'))
-                                    <p class="text-danger">{{ $errors->first('tags') }}</p>
-                                @endif
-                                <input type="text" class="blog-title slim-title" id="tags" name="tags"
-                                    value="{{ old('tags') }}" placeholder="Tags here comma seperated">
-                            </div>
-                            <div class="form-group ">
-                                <select type="text" class="blog-title slim-title" id="category" name="category">
-                                    <option value="" selected disabled>{--- Select Category ---}</option>
-                                    {{-- @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach --}}
-                                </select>
-                            </div>
-                            @if ($errors->has('description'))
-                                <p class="text-danger">{{ $errors->first('description') }}</p>
-                            @endif
-                            <textarea name="description" placeholder="Write a description" id="" cols="30" rows="10"
-                                class="form-control mb-3 border-1"></textarea>
 
-                            @if ($errors->has('file'))
-                                <p class="text-danger">{{ $errors->first('file') }}</p>
-                            @endif
+                            <div class="form-group ">
+                                <input type="text" class="blog-title" id="title" name="title" value=""
+                                    placeholder="Add a title ...">
+                            </div>
+
+
                             <label htmlFor="featured_article_image" id="file_upload_label">
                                 <p>Featured Image</p>
                                 <input type="file" className="hidden d-none" id="featured_article_image"
                                     name="file" />
                                 <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500" />
                             </label>
-                            <div class="form-group ">
-                                <label class="fw-bold fs-4">
-                                    Active Status
-                                </label>
-                                <select type="text" class="blog-title slim-title" id="status" name="status">
-                                    <option value="active" selected>Published</option>
-                                    <option value="draft">Draft</option>
-                                </select>
+
+                                <template>
+                                    <div>
+                                        <input type="text" class="form-control">
+                                        <button>Remove</button>
+                                    </div>
+                                </template>
                             </div>
-                            <div class="d-flex justify-content-end">
-                                <button type="submit" class="px-5 py-4 btn btn-primary">Publish</button>
+
+
+                            {{-- Highlight Features --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Highlight Features
+                                </label>
+                                <div>
+                                    <div class="form-group row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="title" name="title"
+                                                value="" placeholder="Highlighted Feature">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control" id="title" name="title"
+                                                value="" placeholder="Highlighted Feature ">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    Add more
+                                </a>
+                            </div>
+
+                            {{-- Our Services --}}
+                            <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                Our Services
+                            </label>
+                            <div class="form-group mb-3">
+                                <input type="text" class="form-control" id="title" name="title" value=""
+                                    placeholder="Services Title">
+                            </div>
+                            <div class="form-group row mb-3">
+                                <div class="col-md-6">
+                                    <textarea data-editor="true" rows="5" class="form-control" id="title" name="title" value=""
+                                        placeholder="First Content"></textarea>
+                                </div>
+                                <div class="col-md-6">
+                                    <textarea data-editor="true" rows="5" class="form-control" id="title" name="title" value=""
+                                        placeholder="Second Content"></textarea>
+                                </div>
+                            </div>
+
+                            {{-- Benefits Section --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Benefits Section
+                                </label>
+                                <div class="form-group mb-3">
+                                    <input type="text" class="form-control py-4" id="title" name="title"
+                                        value="" placeholder="Benefits Title">
+                                </div>
+                                <div class="form-group row mb-3">
+                                    <div class="col-md-12">
+                                        <input class="form-control" id="title" name="title" value=""
+                                            placeholder="Benefits">
+                                    </div>
+                                </div>
+                                <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    Add more
+                                </a>
+                            </div>
+
+                            {{-- Requirements 1 --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Requirements Section
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Requirements Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Benefits Title">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Benefits Title 2">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <input class="form-control" id="title" name="title" value=""
+                                                    placeholder="Requirements">
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            Add more
+                                        </a>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            {{-- Requirements 2 --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Requirements Section 2
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Benefits Title">
+                                        </div>
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Benefits Title 2">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <input class="form-control" id="title" name="title" value=""
+                                                    placeholder="Requirements">
+                                            </div>
+                                        </div>
+                                        <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                            <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                            Add more
+                                        </a>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Requirements Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- OPTION 1 --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Options 1
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Option Title">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <textarea data-editor="true" class="form-control" rows="8" id="title" name="title" value=""
+                                                    placeholder="Context"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Requirements Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Option 2 --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Options 2
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Option Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Option Title">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <textarea data-editor="true" class="form-control" rows="8" id="title" name="title" value=""
+                                                    placeholder="Context"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Option 3 --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Options 3
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Option Title">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <textarea data-editor="true" class="form-control" rows="8" id="title" name="title" value=""
+                                                    placeholder="Context"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Option Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- Extra Requirements --}}
+                            <div class="mb-3">
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Extra Requirements
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Option Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Requirements Title">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <textarea data-editor="true" class="form-control" rows="8" id="title" name="title" value=""
+                                                    placeholder="Context"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            {{-- MANDATORY REQUIREMENTS --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Mandatory Requirements
+                                </label>
+                                <div>
+                                    <div class="">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                            </label>
+                                            <input type="text" class="form-control py-2" id="requirement_image"
+                                                name="requirement_image" value="" placeholder="Requirements Title">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Requirements Title">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea data-editor="true" class="form-control w-100" rows="8" id="title" name="title"
+                                                value="" placeholder="Context"></textarea>
+                                        </div>
+                                    </div>
+                                </div> <!-- Add this closing div tag -->
+                                <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    Add more
+                                </a>
+                            </div>
+
+                            {{-- Timeline of Events --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Timeline Of Events
+                                </label>
+                                <div>
+                                    <div class="">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                            </label>
+                                            <input type="text" class="form-control py-2" id="requirement_image"
+                                                name="requirement_image" value="" placeholder="Requirements Title">
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md-6">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Requirements Title">
+                                        </div>
+                                        <div class="col-md-6">
+                                            <textarea data-editor="true" class="form-control w-100" rows="8" id="title" name="title"
+                                                value="" placeholder="Context"></textarea>
+                                        </div>
+                                    </div>
+                                </div> <!-- Add this closing div tag -->
+                                <a href="javascript:void()" class="text-success d-inline-block mb-5 my-2">
+                                    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                                    Add more
+                                </a>
+                            </div>
+
+                            {{-- Sponship Section --}}
+                            <div>
+                                <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    Sponsorship Section
+                                </label>
+                                <div class="row">
+                                    <div class="col-md-6 pt-4">
+                                        <div class="form-group mb-3">
+                                            <input type="text" class="form-control py-2" id="title"
+                                                name="title" value="" placeholder="Option Title">
+                                        </div>
+                                        <div class="form-group row mb-3">
+                                            <div class="col-md-12">
+                                                <textarea data-editor="true" class="form-control" rows="8" id="title" name="title" value=""
+                                                    placeholder="Context"></textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="form-group
+                                        mb-3">
+                                            <label for="requirement_image">
+                                                Option Image
+                                                <input type="file" class="form-control py-2" id="requirement_image"
+                                                    name="requirement_image" value=""
+                                                    placeholder="Requirements Title">
+                                                <img class="img-fluid object-fit-cover border" width="100%"
+                                                    src="{{ asset('custom/placeholder.png') }}" alt="">
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </form>
                     </div>
+
+
+                    <div class="form-group ">
+                        @if ($errors->has('tags'))
+                            <p class="text-danger">{{ $errors->first('tags') }}</p>
+                        @endif
+                        <input type="text" class="blog-title slim-title" id="tags" name="tags"
+                            value="{{ old('tags') }}" placeholder="Tags here comma seperated">
+                    </div>
+                    <div class="form-group ">
+                        <select type="text" class="blog-title slim-title" id="category" name="category">
+                            <option value="" selected disabled>{--- Select Country ---}</option>
+                            {{-- @foreach ($categories as $category)
+                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                    @endforeach --}}
+                        </select>
+                    </div>
+                    @if ($errors->has('description'))
+                        <p class="text-danger">{{ $errors->first('description') }}</p>
+                    @endif
+                    <div class="form-group ">
+                        <label class="fw-bold fs-4">
+                            Active Status
+                        </label>
+                        <select type="text" class="blog-title slim-title" id="status" name="status">
+                            <option value="active" selected>Published</option>
+                            <option value="draft">Draft</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button type="submit" class="px-5 py-4 btn btn-primary">Publish</button>
+                    </div>
+                    </form>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--  Search Bar -->
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-scrollable modal-lg">
-                <div class="modal-content rounded-1">
-                    <div class="modal-header border-bottom">
-                        <input type="search" class="form-control fs-3" placeholder="Search here" id="search">
-                        <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
-                            <i class="ti ti-x fs-5 ms-3"></i>
-                        </a>
-                    </div>
-                    <div class="modal-body message-body" data-simplebar="">
-                        <h5 class="mb-0 fs-5 p-1">Quick Page Links</h5>
-                        <ul class="list mb-0 py-2">
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Modern</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
-                                    <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/contacts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Posts</span>
-                                    <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Detail</span>
-                                    <span
-                                        class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
-                                </a>
-                            </li>
-                            <li class="p-1 mb-1 bg-hover-light-black">
-                                <a href="#">
-                                    <span class="fs-3 text-dark fw-normal d-block">Shop</span>
-                                    <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
+    <!--  Search Bar -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable modal-lg">
+            <div class="modal-content rounded-1">
+                <div class="modal-header border-bottom">
+                    <input type="search" class="form-control fs-3" placeholder="Search here" id="search">
+                    <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
+                        <i class="ti ti-x fs-5 ms-3"></i>
+                    </a>
+                </div>
+                <div class="modal-body message-body" data-simplebar="">
+                    <h5 class="mb-0 fs-5 p-1">Quick Page Links</h5>
+                    <ul class="list mb-0 py-2">
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Modern</span>
+                                <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
+                                <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
+                                <span class="fs-3 text-muted d-block">/apps/contacts</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Posts</span>
+                                <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Detail</span>
+                                <span
+                                    class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Shop</span>
+                                <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Modern</span>
+                                <span class="fs-3 text-muted d-block">/dashboards/dashboard1</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Dashboard</span>
+                                <span class="fs-3 text-muted d-block">/dashboards/dashboard2</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Contacts</span>
+                                <span class="fs-3 text-muted d-block">/apps/contacts</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Posts</span>
+                                <span class="fs-3 text-muted d-block">/apps/blog/posts</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Detail</span>
+                                <span
+                                    class="fs-3 text-muted d-block">/apps/blog/detail/streaming-video-way-before-it-was-cool-go-dark-tomorrow</span>
+                            </a>
+                        </li>
+                        <li class="p-1 mb-1 bg-hover-light-black">
+                            <a href="#">
+                                <span class="fs-3 text-dark fw-normal d-block">Shop</span>
+                                <span class="fs-3 text-muted d-block">/apps/ecommerce/shop</span>
+                            </a>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!--  Shopping Cart -->
+    <!--  Shopping Cart -->
     </div>
     <div class="dark-transparent sidebartoggler"></div>
 @endsection

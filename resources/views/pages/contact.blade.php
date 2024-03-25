@@ -99,46 +99,116 @@
         <!--Contact Five End-->
 
         <!--Location One Start-->
-        <section class="location-one">
-            <div class="container">
-                <div class="location-one__top">
-                    <div class="row">
-                        <div class="col-xl-7 col-lg-6">
-                            <div class="location-one__top-left">
-                                <div class="section-title text-left">
-                                    <div class="section-title__tagline-box">
-                                        <span class="section-title__tagline">checkout our locations</span>
-                                        <div class="section-title__border-box"></div>
+        @if ($officeAddress->count() > 0)
+            <section class="location-one">
+                <div class="container">
+                    <div class="location-one__top">
+                        <div class="row">
+                            <div class="col-xl-7 col-lg-6">
+                                <div class="location-one__top-left">
+                                    <div class="section-title text-left">
+                                        <div class="section-title__tagline-box">
+                                            <span class="section-title__tagline">checkout our locations</span>
+                                            <div class="section-title__border-box"></div>
+                                        </div>
+                                        <h2 class="section-title__title">{{ $contactLocation->location_title }}</h2>
                                     </div>
-                                    <h2 class="section-title__title">{{ $contactLocation->location_title }}</h2>
+                                </div>
+                            </div>
+                            <div class="col-xl-5 col-lg-6">
+                                <div class="location-one__top-right">
+                                    <p class="ocation-one__top-text">{{ $contactLocation->location_description }}</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-xl-5 col-lg-6">
-                            <div class="location-one__top-right">
-                                <p class="ocation-one__top-text">{{ $contactLocation->location_description }}</p>
-                            </div>
-                        </div>
                     </div>
-                </div>
-                <div class="location-one__bottom">
-                    <div class="location-one__main-tab-box tabs-box">
-                        <ul class="tab-buttons clearfix list-unstyled">
-                            @foreach ($officeAddress as $tab)
-                                @if ($loop->first)
-                                    <li data-tab="#{{ $tab->id }}" class="tab-btn active-btn">
-                                        <span>{{ $tab->country }}</span>
+                    <div class="location-one__bottom">
+                        <div class="location-one__main-tab-box tabs-box">
+                            <ul class="tab-buttons clearfix list-unstyled">
+                                @foreach ($officeAddress as $tab)
+                                    @if ($loop->first)
+                                        <li data-tab="#{{ $tab->id }}" class="tab-btn active-btn">
+                                            <span>{{ $tab->country }}</span>
+                                        </li>
+                                        @continue
+                                    @endif
+                                    <li data-tab="#{{ $tab->id }}" class="tab-btn"><span>{{ $tab->country }}</span>
                                     </li>
-                                    @continue
-                                @endif
-                                <li data-tab="#{{ $tab->id }}" class="tab-btn"><span>{{ $tab->country }}</span></li>
-                            @endforeach
-                        </ul>
-                        <div class="tabs-content">
-                            @foreach ($officeAddress as $office)
-                                <!--tab-->
-                                @if ($loop->first)
-                                    <div class="tab active-tab" id="{{ $office->id }}">
+                                @endforeach
+                            </ul>
+                            <div class="tabs-content">
+                                @foreach ($officeAddress as $office)
+                                    <!--tab-->
+                                    @if ($loop->first)
+                                        <div class="tab active-tab" id="{{ $office->id }}">
+                                            <div class="location-one__tab-content-box">
+                                                <div class="location-one__tab-content-box-inner">
+                                                    <div class="location-one__bg"
+                                                        style="background-image: url({{ asset('assets/images/backgrounds/location-one-bg.png') }});">
+                                                    </div>
+                                                    <div class="location-one__tab-content-left">
+                                                        <div class="location-one__tab-content-img">
+                                                            <img src="{{ asset($office->image) }}" class="mx-w-370"
+                                                                alt="">
+                                                        </div>
+                                                        <div class="location-one__tab-content-contact">
+                                                            <h5 class="location-one__tab-content-contact-title">We’re Always
+                                                                Here
+                                                                for
+                                                                You</h5>
+                                                            <ul
+                                                                class="list-unstyled location-one__tab-content-contact-list">
+                                                                <li>
+                                                                    <div class="icon">
+                                                                        <i class="fas fa-map-marker-alt"></i>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <p>{{ $office->address }}</p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="icon">
+                                                                        <i class="fas fa-envelope"></i>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <p><a
+                                                                                href="mailto:{{ $office->email }}">{{ $office->email }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="icon">
+                                                                        <i class="fas fa-phone"></i>
+                                                                    </div>
+                                                                    <div class="content">
+                                                                        <p><a
+                                                                                href="tel:{{ $office->phone }} ">{{ $office->phone }}</a>
+                                                                        </p>
+                                                                    </div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="location-one__tab-content-right">
+                                                        <ul class="list-unstyled location-one__tab-content-time">
+                                                            @foreach ($office->openHours as $openHour)
+                                                                <li>
+                                                                    <p class="location-one__tab-content-day-name">
+                                                                        {{ $openHour->day }}</p>
+                                                                    <h4 class="location-one__tab-content-time-box">
+                                                                        {{ date('H:i A', strtotime($openHour->open)) }} -
+                                                                        {{ date('H:i A', strtotime($openHour->close)) }}
+                                                                    </h4>
+                                                                </li>
+                                                            @endforeach
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        @continue
+                                    @endif
+                                    <div class="tab" id="{{ $office->id }}">
                                         <div class="location-one__tab-content-box">
                                             <div class="location-one__tab-content-box-inner">
                                                 <div class="location-one__bg"
@@ -203,78 +273,13 @@
                                             </div>
                                         </div>
                                     </div>
-                                    @continue
-                                @endif
-                                <div class="tab" id="{{ $office->id }}">
-                                    <div class="location-one__tab-content-box">
-                                        <div class="location-one__tab-content-box-inner">
-                                            <div class="location-one__bg"
-                                                style="background-image: url({{ asset('assets/images/backgrounds/location-one-bg.png') }});">
-                                            </div>
-                                            <div class="location-one__tab-content-left">
-                                                <div class="location-one__tab-content-img">
-                                                    <img src="{{ asset($office->image) }}" class="mx-w-370"
-                                                        alt="">
-                                                </div>
-                                                <div class="location-one__tab-content-contact">
-                                                    <h5 class="location-one__tab-content-contact-title">We’re Always Here
-                                                        for
-                                                        You</h5>
-                                                    <ul class="list-unstyled location-one__tab-content-contact-list">
-                                                        <li>
-                                                            <div class="icon">
-                                                                <i class="fas fa-map-marker-alt"></i>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p>{{ $office->address }}</p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="icon">
-                                                                <i class="fas fa-envelope"></i>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p><a
-                                                                        href="mailto:{{ $office->email }}">{{ $office->email }}</a>
-                                                                </p>
-                                                            </div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="icon">
-                                                                <i class="fas fa-phone"></i>
-                                                            </div>
-                                                            <div class="content">
-                                                                <p><a
-                                                                        href="tel:{{ $office->phone }} ">{{ $office->phone }}</a>
-                                                                </p>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div class="location-one__tab-content-right">
-                                                <ul class="list-unstyled location-one__tab-content-time">
-                                                    @foreach ($office->openHours as $openHour)
-                                                        <li>
-                                                            <p class="location-one__tab-content-day-name">
-                                                                {{ $openHour->day }}</p>
-                                                            <h4 class="location-one__tab-content-time-box">
-                                                                {{ date('H:i A', strtotime($openHour->open)) }} -
-                                                                {{ date('H:i A', strtotime($openHour->close)) }}
-                                                            </h4>
-                                                        </li>
-                                                    @endforeach
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            @endforeach
+                                @endforeach
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        @endif
         <!--Location One End-->
 
         <!--Google Map Two Start-->

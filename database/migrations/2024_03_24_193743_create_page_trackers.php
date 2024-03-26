@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('page_trackers', function (Blueprint $table) {
             $table->id();
             $table->string('ip_address');
+            $table->string('method');
             $table->string('url');
             $table->string('user_agent');
             $table->string('referrer');

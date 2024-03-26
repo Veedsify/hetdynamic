@@ -2,26 +2,34 @@
 
 namespace App\Http\Controllers\Account;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
+use Illuminate\Support\Facades\Validator;
 
 class SettingsController extends Controller
 {
     //
     public function setting(Request $request)
     {
-            // Check if user is logged in and has the "user" role (optional)
-            if (!Auth::check() || !Auth::user()->hasRole('user')) {
-                abort(403, 'Unauthorized');
-            }
-            $user = User::findOrFail($id);
+        // Check if user is logged in and has the "user" role (optional)
+        if (!Auth::check() || !Auth::user()->role === 'user') {
+            abort(403, 'Unauthorized');
+        }
+        $user = User::findOrFail(Auth::id());
 
         return View::make("account.settings");
+    }
 
+
+    public function update(Request $request, $id)
+    {
 
         // Check if user is logged in and has the "user" role (optional)
-        if (!Auth::check() || !Auth::user()->hasRole('user')) {
+        if (!Auth::check() || !Auth::user()->role === 'user') {
             abort(403, 'Unauthorized');
         }
 
@@ -47,7 +55,7 @@ class SettingsController extends Controller
         }
 
         // Flash a success message (optional)
-        $request->session()->flash('success', 'User data updated successfully!');
+        $request->redirect()->back()->with('success', 'User data updated successfully!');
 
         return redirect()->route('/ '); // Redirect to user list or desired location
     }

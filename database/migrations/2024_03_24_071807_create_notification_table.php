@@ -18,7 +18,8 @@ return new class extends Migration
             $table->string('image');
             $table->string('type');
             $table->string('url');
-            $table->string('seen');   
+            $table->string('user_id')->nullable();
+            $table->string('seen');
             $table->timestamps();
         });
     }

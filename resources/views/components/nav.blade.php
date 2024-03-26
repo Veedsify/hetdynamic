@@ -114,8 +114,11 @@
                                   <ul class="list-unstyled main-menu__top-menu">
 
                                       @auth
-                                          <li><a href="{{ route('account.setting') }}">Setting</a></li>
-                                          <li><a href="{{ route('admin') }}">Dashboard</a></li>
+                                          @if (auth()->user()->role === 'user')
+                                              <li><a href="{{ route('account.setting') }}">Dashboard</a></li>
+                                          @elseif(auth()->user()->role === 'admin')
+                                              <li><a href="{{ route('admin') }}">Dashboard</a></li>
+                                          @endif
                                           <li><a href="{{ route('logout') }}">Logout</a></li>
                                       @endauth
                                       @guest
@@ -128,7 +131,7 @@
                               </div>
                           </div>
                       </div>
-                    <div class="main-menu__bottom">
+                      <div class="main-menu__bottom">
                           <div class="main-menu__bottom-inner">
                               <div class="main-menu__main-menu-box">
                                   <a href="#" class="mobile-nav__toggler"><i class="fa fa-bars"></i></a>

@@ -58,7 +58,7 @@
                             @endif
 
                             <div
-                                {{-- style="overflow-y: auto; height: {{ $allNotifications->count() > 5 ? '500px' : 'auto' }}; padding: 2rem">
+                                style="overflow-y: auto; height: {{ $allNotifications->count() > 5 ? '500px' : 'auto' }}; padding: 2rem">
                                 @foreach ($allNotifications as $notification)
                                     <a href="{{ $notification->url }}" target="_blank">
                                         <div
@@ -84,34 +84,26 @@
                                         </div>
                                     </a>
                                 @endforeach
-                            </div> --}}
+                            </div>
 
-                            {{-- @if ($allNotifications->count() == 0)
+                            @if ($allNotifications->count() == 0)
                                 <div class="py-6 px-7 mb-1  ">
                                     <h6 class="text-center">No notification found</h6>
                                 </div>
                             @else
                                 <div class="py-6 px-7 mb-1  ">
-                                    <form action="{{ route('admin.notification.mark.all.read') }}">
+                                    <form action="{{ route('account.notification.mark.all.read') }}">
                                         <button class="btn btn-outline-primary md-w ms-auto d-block">Mark all as read
                                         </button>
                                     </form>
                                 </div>
-                            @endif --}}
+                            @endif
 
                         </div>
-                        <!-- ------------------------------- -->
-                        <!-- end notification  -->
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
-
-
     </div>
     <div class="dark-transparent sidebartoggler"></div>
 @endsection

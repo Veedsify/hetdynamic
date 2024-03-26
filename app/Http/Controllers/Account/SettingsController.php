@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Account;
 use App\Models\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\GlobalSetting;
+use App\Models\Notification;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\View;
@@ -44,6 +46,17 @@ class SettingsController extends Controller
             'avatar' => isset($filePath) ?   $filePath : User::find(auth()->user()->id)->avatar
         ]);
 
+        $user =   User::find(auth()->user()->id);
+
+        Notification::create([
+            'type' => 'account',
+            'title' => ucwords(explode(" ", $user->fullname)[0]) . ' changed settings on ' . GlobalSetting::first()->site_name,
+            'description' =>  'Your Profile settings has been updated',
+            'seen' => 'unread',
+            'user_id' => $user->id,
+            'image' => "custom/notifications/profile.svg",
+            'url' => '',
+        ]);
         // Redirect back with a success message
         return redirect()->route('account.setting')->with('success', 'Profile updated successfully.');
     }

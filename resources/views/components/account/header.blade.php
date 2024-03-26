@@ -61,28 +61,33 @@
                                         aria-labelledby="drop2">
                                         <div class="d-flex align-items-center justify-content-between py-3 px-7">
                                             <h5 class="mb-0 fs-5 fw-semibold">Notifications</h5>
-                                            @if ($notifications->count() > 0)
+                                            @if (isset($notifications[0]['user_id']) && $notifications[0]['user_id'] == auth()->user()->id
+                                                    ? $notifications->count()
+                                                    : 0)
                                                 <span class="badge text-bg-primary rounded-4 px-3 py-1 lh-sm">
-                                                    {{ $notifications->count() }}
+                                                    {{ isset($notifications[0]['user_id']) && $notifications[0]['user_id'] == auth()->user()->id ? $notifications->count() : 0 }}
                                                     new</span>
                                             @endif
                                         </div>
                                         <div class="message-body" data-simplebar="">
                                             @foreach ($notifications as $notification)
-                                                <a href="{{ route('admin.notification.view', $notification->id) }}"
-                                                    class="py-6 px-7 d-flex align-items-center dropdown-item">
-                                                    <span class="me-3">
-                                                        <img src="{{ asset($notification->image) }}" alt="user"
-                                                            class="rounded-circle" width="48" height="48">
-                                                    </span>
-                                                    <div class="w-75 d-inline-block v-middle">
-                                                        <h6 class="mb-1 fw-semibold lh-base">{{ $notification->title }}
-                                                        </h6>
-                                                        <span class="fs-2 d-block text-body-secondary">
-                                                            {{ $notification->description }}
+                                                @if ($notification->user_id == auth()->user()->id)
+                                                    <a href="{{ route('admin.notification.view', $notification->id) }}"
+                                                        class="py-6 px-7 d-flex align-items-center dropdown-item">
+                                                        <span class="me-3">
+                                                            <img src="{{ asset($notification->image) }}" alt="user"
+                                                                class="rounded-circle" width="48" height="48">
                                                         </span>
-                                                    </div>
-                                                </a>
+                                                        <div class="w-75 d-inline-block v-middle">
+                                                            <h6 class="mb-1 fw-semibold lh-base">
+                                                                {{ $notification->title }}
+                                                            </h6>
+                                                            <span class="fs-2 d-block text-body-secondary">
+                                                                {{ $notification->description }}
+                                                            </span>
+                                                        </div>
+                                                    </a>
+                                                @endif
                                                 @if ($loop->index == 5)
                                                 @break
                                             @endif

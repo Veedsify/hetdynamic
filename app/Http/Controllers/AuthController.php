@@ -66,6 +66,16 @@ class AuthController extends Controller
             'url' => '',
         ]);
 
+        Notification::create([
+            'type' => 'account',
+            'title' => 'Welcome to ' . GlobalSetting::first()->site_name,
+            'description' =>  $user->fullname . ' thanks for joining ' . GlobalSetting::first()->site_name,
+            'seen' => 'unread',
+            'user_id' => $user->id,
+            'image' => "custom/notifications/user.svg",
+            'url' => '',
+        ]);
+
         $url = route('verify.email', $token2);
         Mail::send(new WelcomeEmail($user, $url));
 
@@ -116,7 +126,6 @@ class AuthController extends Controller
         }
 
         auth()->login($user, true);
-
         return redirect(route('admin'));
     }
 

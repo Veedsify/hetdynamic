@@ -13,50 +13,38 @@ use Illuminate\Support\Facades\Validator;
 class SettingsController extends Controller
 {
     //
-    public function setting(Request $request)
+    public function setting()
     {
-        // Check if user is logged in and has the "user" role (optional)
-        if (!Auth::check() || !Auth::user()->role === 'user') {
-            abort(403, 'Unauthorized');
-        }
-        $user = User::findOrFail(Auth::id());
+        $user = auth()->user();
 
         return View::make("account.settings");
     }
-
-
-    public function update(Request $request, $id)
+    public function updateProfile(Request $request)
     {
+        // $user = User::find(auth()->user()->id); // Retrieve the authenticated user
 
-        // Check if user is logged in and has the "user" role (optional)
-        if (!Auth::check() || !Auth::user()->role === 'user') {
-            abort(403, 'Unauthorized');
-        }
-
-        $user = User::findOrFail($id);
-
-        $validatedData = Validator::make($request->all(), [
-            'name' => 'required|string|max:255',
-            'email' => 'required|string|email|unique:users,email,' . $user->id, // Exclude current user's email
+        // Validate the form data
+        $request->validate([
+            'fullname' => 'required',
+            'phone' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
         ]);
 
-        if ($validatedData->fails()) {
-            return redirect()->back()->withErrors($validatedData)->withInput();
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatar_name = $avatar->getClientOriginalName();
+            $avatar->move(public_path('custom/user'), $avatar_name);
+            $filePath = 'custom/user/' . $avatar_name;
         }
 
-        // Update user data
-        $user->update($validatedData->validated());
 
-        // Update password if provided (optional)
-        if ($request->has('password')) {
-            $user->update([
-                'password' => Hash::make($request->password)
-            ]);
-        }
+        User::where('id', '=', auth()->user()->id)->update([
+            'fullname' => $request->input('fullname'),
+            'phone' => $request->input('phone'),
+            'avatar' => isset($filePath) ?   $filePath : User::find(auth()->user()->id)->avatar
+        ]);
 
-        // Flash a success message (optional)
-        $request->redirect()->back()->with('success', 'User data updated successfully!');
-
-        return redirect()->route('/ '); // Redirect to user list or desired location
+        // Redirect back with a success message
+        return redirect()->route('account.setting')->with('success', 'Profile updated successfully.');
     }
 }

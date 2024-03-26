@@ -97,7 +97,8 @@ View::composer('*', function ($view) {
     Route::get("/write-review", [ReviewController::class, 'showReviewPage'])->name("write.review");
 
     // account settings
-    Route::get("/account", [SettingsController::class, 'setting'])->name("account.setting");
+    Route::get("/account", [SettingsController::class, 'setting'])->name("account.setting")->middleware('auth');
+    Route::put("/account", [SettingsController::class, 'updateProfile'])->name("account.setting")->middleware('auth');
 
     // account notification
     Route::get("/notification", [NotificationController::class, 'notification'])->name("account.notification");

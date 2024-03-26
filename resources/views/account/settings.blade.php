@@ -117,8 +117,8 @@
                                         <div class="card-body">
                                             <h4 class="fw-semibold mb-3">Update Bio</h4>
                                             {{-- <p></p> --}}
-                                            <form action="" method="POST">
-                                                @csrf
+                                            <form action="" >
+
                                             <ul class="list-unstyled mb-0">
 
                                                 <li class="flex-wrap mb-4">

@@ -20,23 +20,20 @@
                 <div class="container-fluid">
                     {{-- EDITOR HERE --}}
                     <div class="card rounded-2 overflow-hidden p-md-4 p-2">
-                        <form action="{{ route('admin.immigration.services') }}" method="post"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('admin.immigration.services') }}" method="post" enctype="multipart/form-data"
+                            id="addNewServiceForm">
                             @csrf
-                            @if (session()->has('success'))
-                                <div class="alert alert-success">
-                                    {{ session()->get('success') }}
-                                </div>
-                            @endif
-                            @if (session()->has('error'))
+
+                            @if ($errors->any())
                                 <div class="alert alert-danger">
-                                    {{ session()->get('error') }}
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
                                 </div>
                             @endif
 
-                            @if ($errors->has('title'))
-                                <p class="text-danger">{{ $errors->first('title') }}</p>
-                            @endif
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
 
                                 <div class="form-group ">
@@ -48,7 +45,7 @@
                                 <label htmlFor="featured_article_image" id="file_upload_label">
                                     <p>Featured Image</p>
                                     <input type="file" className="hidden d-none" id="featured_article_image"
-                                        name="file" />
+                                        name="image" />
                                     <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500"
                                         class="img-fluid" />
                                 </label>
@@ -58,9 +55,9 @@
                             {{-- Highlight Features --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Highlight Features
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="highlight_features_active">
                                         <span class="custom-slider custom-round"></span>
@@ -89,9 +86,9 @@
                             {{-- Our Services --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Our Services
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="service_features_active">
                                         <span class="custom-slider custom-round"></span>
@@ -103,12 +100,12 @@
                                 </div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-6">
-                                        <textarea data-editor="true" rows="5" class="form-control" id="title" name="services_content_1"
-                                            value="" placeholder="First Content"></textarea>
+                                        <textarea data-editor="true" rows="5" class="form-control" id="title" name="services_content_1" value=""
+                                            placeholder="First Content"></textarea>
                                     </div>
                                     <div class="col-md-6">
-                                        <textarea data-editor="true" rows="5" class="form-control" id="title" name="services_content_2"
-                                            value="" placeholder="Second Content"></textarea>
+                                        <textarea data-editor="true" rows="5" class="form-control" id="title" name="services_content_2" value=""
+                                            placeholder="Second Content"></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -116,9 +113,9 @@
                             {{-- Benefits Section --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Benefits Section
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="benefits_section_active">
                                         <span class="custom-slider custom-round"></span>
@@ -145,11 +142,12 @@
                             {{-- Requirements 1 --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Requirements Section
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="requirements_section_1_active">
+                                        <input type="checkbox" class="active_switch"
+                                            name="requirements_section_1_active">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -197,11 +195,12 @@
                             {{-- Requirements 2 --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Requirements Section 2
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="requirements_section_2_active">
+                                        <input type="checkbox" class="active_switch"
+                                            name="requirements_section_2_active">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -246,9 +245,9 @@
                             {{-- OPTION 1 --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Option 1
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="option_1_active">
                                         <span class="custom-slider custom-round"></span>
@@ -286,9 +285,9 @@
                             {{-- Option 2 --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Options 2
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="option_2_active">
                                         <span class="custom-slider custom-round"></span>
@@ -326,9 +325,9 @@
                             {{-- Option 3 --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Options 3
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="option_3_active">
                                         <span class="custom-slider custom-round"></span>
@@ -366,9 +365,9 @@
                             {{-- Extra Requirements --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Extra Requirements
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="extra_requirements_active">
                                         <span class="custom-slider custom-round"></span>
@@ -406,11 +405,12 @@
                             {{-- MANDATORY REQUIREMENTS --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Mandatory Requirements
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="mandatory_requirements_active">
+                                        <input type="checkbox" class="active_switch"
+                                            name="mandatory_requirements_active">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -452,9 +452,9 @@
                             {{-- Timeline of Events --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Timeline of Events
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="timeline_of_events_active">
                                         <span class="custom-slider custom-round"></span>
@@ -502,9 +502,9 @@
                             {{-- Sponship Section --}}
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
                                 <span class="d-flex gap-3 z-3000">
-                                    <label for="" class="mb-3 d-block fw-bolder fs-4">
+                                    <h1 data-title="title" class="mb-3 d-block fw-bolder fs-4">
                                         Sponsorship Section
-                                    </label>
+                                    </h1>
                                     <label class="custom-switch">
                                         <input type="checkbox" class="active_switch" name="sponsorship_active">
                                         <span class="custom-slider custom-round"></span>
@@ -552,21 +552,27 @@
                                         <label class="fw-bold d-inline-block">
                                             Select a Country
                                         </label>
-                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
-                                            name="category">
-                                            <option value="" selected disabled>{--- Select Country ---}</option>
-                                            {{-- @foreach ($categories as $category)
-                                        <option value="{{ $category->id }}">{{ $category->name }}</option>
-                                    @endforeach --}}
+                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="country"
+                                            name="country">
+                                            <option value="" selected disabled>(--- Select Country ---)</option>
+                                            <option value="">
+                                                Canada
+                                            </option>
+                                            <option value="">
+                                                USA
+                                            </option>
+                                            <option value="">
+                                                Australia
+                                            </option>
                                         </select>
                                     </div>
                                     <div class="form-group mb-3">
                                         <label class="fw-bold d-inline-block">
                                             Select a service
                                         </label>
-                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="category"
-                                            name="category">
-                                            <option value="" selected disabled>{--- Select Service ---}</option>
+                                        <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="service"
+                                            name="service">
+                                            <option value="" selected disabled>(--- Select Service ---)</option>
                                             <option value="">
                                                 Study
                                             </option>
@@ -581,9 +587,6 @@
                                             </option>
                                         </select>
                                     </div>
-                                    @if ($errors->has('description'))
-                                        <p class="text-danger">{{ $errors->first('description') }}</p>
-                                    @endif
                                     <div class="form-group mb-3">
                                         <label class="fw-bold d-inline-block">
                                             Active Status

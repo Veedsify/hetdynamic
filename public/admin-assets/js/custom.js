@@ -34,7 +34,8 @@ $(document).ready(function () {
                 left: 0,
                 width: "100%",
                 height: "100%",
-                background: "rgba(0, 0, 0, 0.1)",
+                background: "rgba(255, 255, 255, 0.2)",
+                backdropFilter: "blur(3px)",
                 zIndex: 1000
             });
             parent.prepend(overlay);
@@ -42,5 +43,63 @@ $(document).ready(function () {
     });
 
     $(".active_switch").trigger("change");
+
+
+    $('#addNewServiceForm').on("submit", function (e) {
+        try {
+            const checkBoxes = $(this).find("input[type=checkbox]:checked");
+            let allFieldsFilled = true;
+            let message = '';
+            const title = $(this).find("input[name=title]").val().length > 0;
+            const featured_image = $(this).find("input[name=image]").prop("files").length > 0;
+            const tags = $(this).find("input[name=tags]").val().length > 0;
+            const country = $(this).find("select[name=country]").val().length > 0;
+            const service = $(this).find("select[name=service]").val().length > 0;
+            const status = $(this).find("select[name=status]").val().length > 0;
+
+            if (!title || !featured_image || !tags || !country || !service || !status) {
+                allFieldsFilled = false;
+                message = `Please fill in these Details: 
+                    ${!title ? "Title" : ''}
+                    ${!featured_image ? "Featured Image" : ''}
+                    ${!tags ? "Tags" : ''}
+                    ${!country ? "Country" : ''} 
+                    ${!service ? "Service" : ''} 
+                    ${!status ? "Status" : ''}
+                `;
+                return false;
+            }
+
+            checkBoxes.each(function () {
+                const parent = $(this).closest("div");
+                const allInputs = parent.find("input").not(":checkbox");
+
+                allInputs.each(function () {
+                    if (!$(this).val() || ($(this).attr("type") === "file" && !$(this).prop("files").length)) {
+                        allFieldsFilled = false;
+                        message = parent.find("h1").text().trim();
+                        return false; // break the loop
+                    }
+                });
+
+                if (!allFieldsFilled) {
+                    return false; // break the loop
+                }
+            });
+
+            if (!allFieldsFilled) {
+                e.preventDefault();
+                swal({
+                    title: "Error!",
+                    text: `Please fill all fields in the ${message}`,
+                    icon: "error",
+                });
+            }
+
+        }
+        catch (error) {
+            console.log(error);
+        }
+    });
 
 });

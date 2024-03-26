@@ -22,6 +22,7 @@ use App\Http\Controllers\Admin\CitizenshipController;
 use App\Http\Controllers\Admin\NotificationController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
+use App\Http\Controllers\ImmigrationServiceController;
 use App\Http\Controllers\OfficeAddressController;
 use App\Http\Controllers\TeamController;
 use App\Models\Notification;
@@ -115,6 +116,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get("/all-residency", [ResidencyController::class, "allResidency"])->name("admin.residency.allResidency");
         Route::get("/new", [ResidencyController::class, "newResidency"])->name("admin.new.Residency");
     });
+    //Immigration Services  
+    Route::post("/admin/immigration-services", [ImmigrationServiceController::class, "immigrationServices"])->name("admin.immigration.services");
 
     // work permit
     Route::prefix("/admin/work-permit")->group(function () {

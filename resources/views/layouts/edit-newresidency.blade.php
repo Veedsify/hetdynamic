@@ -58,8 +58,8 @@
                 <div class="container-fluid">
                     {{-- EDITOR HERE --}}
                     <div class="card rounded-2 overflow-hidden p-md-4 p-2">
-                        <form action="{{ route('admin.immigration.services') }}" method="post"
-                            enctype="multipart/form-data">
+                        <form action="{{ route('blog.new.article') }}" method="post" enctype="multipart/form-data"
+                            id="newarticleform">
                             @csrf
                             @if (session()->has('success'))
                                 <div class="alert alert-success">
@@ -100,14 +100,14 @@
                                         Highlight Features
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="highlight_features_active">
+                                        <input type="checkbox" checked class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
                                 <div id="highlight_container">
                                     <div class="form-group row mb-3">
                                         <div class="col-md-6 mb-1">
-                                            <input type="text" class="form-control" name="highlight_feature[]"
+                                            <input type="text" class="form-control" name="highlight_title[]"
                                                 value="" placeholder="Highlighted Feature">
                                         </div>
                                         <div class="col-md-6">
@@ -131,7 +131,7 @@
                                         Our Services
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="service_features_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -158,7 +158,7 @@
                                         Benefits Section
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="benefits_section_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -187,7 +187,7 @@
                                         Requirements Section
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="requirements_section_1_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -239,7 +239,7 @@
                                         Requirements Section 2
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="requirements_section_2_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -288,7 +288,7 @@
                                         Option 1
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="option_1_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -328,7 +328,7 @@
                                         Options 2
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="option_2_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -368,7 +368,7 @@
                                         Options 3
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="option_3_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -388,10 +388,10 @@
                                     <div class="col-md-6">
                                         <div class="form-group
                                         mb-3">
-                                            <label for="options_3_image">
+                                            <label for="options_3_title">
                                                 Option Image
-                                                <input type="file" class="form-control py-2" id="options_3_image"
-                                                    name="options_3_image" value=""
+                                                <input type="file" class="form-control py-2" id="options_3_title"
+                                                    name="options_3_title" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -408,7 +408,7 @@
                                         Extra Requirements
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="extra_requirements_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -448,7 +448,7 @@
                                         Mandatory Requirements
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="mandatory_requirements_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -494,7 +494,7 @@
                                         Timeline of Events
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="timeline_of_events_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -544,7 +544,7 @@
                                         Sponsorship Section
                                     </label>
                                     <label class="custom-switch">
-                                        <input type="checkbox" class="active_switch" name="sponsorship_active">
+                                        <input type="checkbox" class="active_switch">
                                         <span class="custom-slider custom-round"></span>
                                     </label>
                                 </span>
@@ -622,7 +622,7 @@
                                     @if ($errors->has('description'))
                                         <p class="text-danger">{{ $errors->first('description') }}</p>
                                     @endif
-                                    <div class="form-group mb-3">
+                                    <div class="form-group ">
                                         <label class="fw-bold d-inline-block">
                                             Active Status
                                         </label>
@@ -633,7 +633,7 @@
                                         </select>
                                     </div>
                                     <div class="d-flex justify-content-end">
-                                        <button type="submit" class="px-4 py-3 btn btn-primary">Publish</button>
+                                        <button type="submit" class="px-5 py-4 btn btn-primary">Publish</button>
                                     </div>
                                 </div>
                             </div>

@@ -19554,7 +19554,7 @@ html[data-layout=horizontal] .body-wrapper>.container-xxl {
   height: 100%;
   top: 0px;
   position: fixed;
-  z-index: 99999;
+  z-index: 2000;
   background: #fff;
 }
 

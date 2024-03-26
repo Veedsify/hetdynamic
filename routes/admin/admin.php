@@ -87,7 +87,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::post("/admin/countries/add", [CountryController::class, "createCountry"])->name("admin.countries.add");
     Route::delete("/admin/countries/delete/{id}", [CountryController::class, "deleteCountry"])->name("admin.countries.delete");
 
-    //Teams 
+    //Teams
     Route::get("/admin/teams", [TeamController::class, "teams"])->name("admin.teams");
     Route::post("/admin/teams/add", [TeamController::class, "createTeam"])->name("admin.teams.add");
     Route::delete("/admin/teams/delete/{id}", [TeamController::class, "deleteTeam"])->name("admin.teams.delete");
@@ -116,7 +116,7 @@ Route::middleware(['auth', 'admin'])->group(function () {
         Route::get("/all-residency", [ResidencyController::class, "allResidency"])->name("admin.residency.allResidency");
         Route::get("/new", [ResidencyController::class, "newResidency"])->name("admin.new.Residency");
     });
-    //Immigration Services  
+    //Immigration Services
     Route::post("/admin/immigration-services", [ImmigrationServiceController::class, "immigrationServices"])->name("admin.immigration.services");
 
     // work permit
@@ -196,5 +196,8 @@ Route::middleware(['auth', 'admin'])->group(function () {
         // Write a review
         Route::post("/review-banner", [ReviewpageController::class, 'updateReviewBanner'])->name("review.banner");
         Route::post("/review-content", [ReviewpageController::class, 'updateReviewContent'])->name("write.review");
+        // profile
+        Route::put("/profile", [ConfigurationController::class, 'updateProfilePage'])->name("profile");
+
     });
 });

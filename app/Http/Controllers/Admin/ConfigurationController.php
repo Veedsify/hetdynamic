@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Models\Blog;
+use App\Models\User;
+use App\Models\Office;
 use Illuminate\Http\Request;
 use App\Models\AboutpageAbout;
 use App\Models\HomepageBanner;
@@ -20,8 +23,6 @@ use App\Models\AboutpageExperience;
 use App\Models\ContactpageLocation;
 use Illuminate\Support\Facades\Log;
 use App\Http\Controllers\Controller;
-use App\Models\Blog;
-use App\Models\Office;
 
 class ConfigurationController extends Controller
 {
@@ -158,5 +159,44 @@ class ConfigurationController extends Controller
             "blogs" => $blogs,
             'addresses' => Office::all()->count()
         ]);
+    }
+    public function updateProfilePage(Request $request)
+    {
+        // $user = User::find(auth()->user()->id); // Retrieve the authenticated user
+
+        // Validate the form data
+        $request->validate([
+            'fullname' => 'required',
+            'phone' => 'required',
+            'avatar' => 'image|mimes:jpeg,png,jpg,gif|max:2048'
+        ]);
+
+        if ($request->hasFile('avatar')) {
+            $avatar = $request->file('avatar');
+            $avatar_name = $avatar->getClientOriginalName();
+            $avatar->move(public_path('custom/user'), $avatar_name);
+            $filePath = 'custom/user/' . $avatar_name;
+        }
+
+
+        User::where('id', '=', auth()->user()->id)->update([
+            'fullname' => $request->input('fullname'),
+            'phone' => $request->input('phone'),
+            'avatar' => isset($filePath) ?   $filePath : User::find(auth()->user()->id)->avatar
+        ]);
+
+        $user =   User::find(auth()->user()->id);
+
+        // Notification::create([
+        //     'type' => 'admin',
+        //     'title' => ucwords(explode(" ", $user->fullname)[0]) . ' changed settings on ' . GlobalSetting::first()->site_name,
+        //     'description' =>  'Your Profile settings has been updated',
+        //     'seen' => 'unread',
+        //     'user_id' => $user->id,
+        //     'image' => "custom/notifications/profile.svg",
+        //     'url' => '',
+        // ]);
+        // Redirect back with a success message
+        return redirect()->route('config.profile')->with('success', 'Profile updated successfully.');
     }
 }

@@ -157,7 +157,7 @@
                                                         alt="" width="24" height="24">
                                                 </span>
                                                 <div class="w-75 d-inline-block v-middle ps-3">
-                                                    <h6 class="mb-1 fs-3 fw-semibold lh-base">My Inbox</h6>
+                                                    <h6 class="mb-1 fs-3 fw-semibold lh-base">My Notification</h6>
                                                     <span class="fs-2 d-block text-body-secondary">Messages &
                                                         Emails</span>
                                                 </div>

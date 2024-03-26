@@ -1,5 +1,5 @@
     <!-- Sidebar Start -->
-        <aside class="left-sidebar with-vertical">
+        <aside class="left-sidebar with-vertical" style="z-index: 99999;">
             <div><!-- ---------------------------------- -->
                 <!-- Start Vertical Layout Sidebar -->
                 <!-- ---------------------------------- -->

@@ -1,5 +1,5 @@
-<nav class="sidebar-nav scroll-sidebar" data-simplebar="">
-    <ul id="sidebarnav">
+<nav class="sidebar-nav scroll-sidebar" style="z-index: 99999;" data-simplebar="">
+    <ul id="sidebarnav"  >
         <!-- ---------------------------------- -->
         <!-- Home -->
         <!-- ---------------------------------- -->

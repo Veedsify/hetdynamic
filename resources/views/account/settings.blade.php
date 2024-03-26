@@ -225,7 +225,7 @@
                                                             <input type="file" className="hidden d-none"
                                                                 id="featured_article_image" name="avatar" />
                                                             <img src="{{ asset(auth()->user()->avatar) }}" alt=""
-                                                                width="500" />
+                                                            class="w-100" />
                                                             <small class="text-center d-block">click to upload
                                                                 image</small>
                                                         </label>

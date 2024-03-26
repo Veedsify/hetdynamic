@@ -113,12 +113,38 @@
 
                                 </div>
                                 <div class="col-lg-8">
+                                    @if (session('success'))
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Success!</strong> {{ session('success') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+
+                        @if (session('error'))
+                            <div class="alert alert-danger bg-danger alert-dismissible fade show" role="alert">
+                                <strong>Error!</strong> {{ session('error') }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
+                        @if ($errors->any())
+                            @foreach ($errors->all() as $error)
+                            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+                                <strong>error!</strong> {{ $error }}
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                            @endforeach
+                        @endif
+                        <div class="border p-4 py-5 rounded-4">
                                     <div class="card shadow-none border">
                                         <div class="card-body">
                                             <h4 class="fw-semibold mb-3">Update Bio</h4>
                                             {{-- <p></p> --}}
-                                            <form action="" >
-
+                                            <form id="updateProfileForm" method="POST" action="{{ route('account.setting') }}" enctype="multipart/form-data" >
+                                                @csrf
+                                                @method('PUT')
                                             <ul class="list-unstyled mb-0">
 
                                                 <li class="flex-wrap mb-4">
@@ -131,7 +157,7 @@
                                                     </label>
                                                     <div class="mt-2 " >
 
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
+                                                        <input type="text "  value="{{ old('fullname',auth()->user()->fullname) }}" required  name="fullname" class="w-100 border rounded p-2" style="outline: none;" >
                                                     </div>
                                                 </li>
                                                 <li class="flex-wrap mb-4">
@@ -144,7 +170,7 @@
                                                     </label>
                                                     <div class="mt-2 " >
 
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
+                                                        <input type="number "  name="phone"   class="w-100 border rounded p-2" style="outline: none;" value="{{ old('phone',auth()->user()->phone) }}" required  class="w-100 border rounded p-2" style="outline: none;" >
                                                     </div>
                                                 </li>
                                                 <li class="flex-wrap mb-4">
@@ -157,7 +183,7 @@
                                                     </label>
                                                     <div class="mt-2 " >
 
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
+                                                        <input type="email " name="email" value="{{ old('email',auth()->user()->email) }}" class="w-100 border rounded p-2" style="outline: none;"  disabled>
                                                     </div>
                                                 </li>
                                                 <li class="flex-wrap mb-4">
@@ -170,24 +196,21 @@
                                                     </label>
                                                     <div class="mt-2 " >
 
-                                                        <input type="text " class="w-100 border rounded p-2" style="outline: none;" >
+                                                        <input type="text " name="user_id" value="{{ old('user_id',auth()->user()->user_id) }}" class="w-100 border rounded p-2" style="outline: none;" disabled >
                                                     </div>
                                                 </li>
                                                 <label htmlFor="featured_article_image" id="file_upload_label">
                                                     <p>Profile Image</p>
                                                     <input type="file" className="hidden d-none" id="featured_article_image"
-                                                        name="file" />
-                                                    <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500" />
+                                                        name="avatar" />
+                                                    <img src="{{ asset(auth()->user()->avatar) }}" alt="" width="500" />
+                                                    <small class="text-center d-block">click to upload image</small>
                                                 </label>
 
-                                                <li class="d-flex align-items-center gap-6 flex-wrap mb-4">
-                                                    <h6 class="fs-4 fw-semibold mb-0">
-                                                        <a href="#" class="btn btn-sm btn-success">
-                                                            Update
-                                                        </a>
-                                                    </h6>
-                                                </li>
                                             </ul>
+                                            <button class="text-center  fw-bolder border-0 p-2 gap-6 flex-wrap mb-4 w-100 bg-info-subtle">
+                                                        Update
+                                            </button>
                                         </form>
 
                                         </div>
@@ -207,3 +230,30 @@
 
     </div>
 @endsection
+@push('scripts')
+    <script>
+        // Handle form submission asynchronously
+        document.getElementById('updateProfileForm').addEventListener('submit', function (event) {
+            event.preventDefault(); // Prevent default form submission
+
+            // Submit the form data using AJAX
+            fetch(this.action, {
+                method: 'POST',
+                body: new FormData(this),
+                headers: {
+                    'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content')
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Handle the response data (e.g., display success message)
+                alert('Profile updated successfully!');
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                // Handle errors (e.g., display error message)
+                alert('An error occurred while updating the profile.');
+            });
+        });
+    </script>
+@endpush

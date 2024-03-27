@@ -8,9 +8,14 @@
             <li class="dropdown">
                 <a href="#">Study</a>
                 <ul class="sub-menu">
-                    <li><a href="{{ route('coaching.details', 'canada') }}">Canada - Express Entry</a></li>
+                    @foreach($allServices as $study)
+                        {{-- @if($study->service == 'study') --}}
+                            <li><a href="{{ route('coaching.details', $study->slug) }}">{{ $study->title }}</a></li>
+                        {{-- @endif --}}
+                    @endforeach
+                    {{-- <li><a href="{{ route('coaching.details', 'canada') }}">Canada - Express Entry</a></li>
                     <li><a href="{{ route('coaching.details', 'turkey') }}">Turkey</a></li>
-                    <li><a href="{{ route('coaching.details', 'malta') }}">Malta</a></li>
+                    <li><a href="{{ route('coaching.details', 'malta') }}">Malta</a></li> --}}
                 </ul>
             </li>
             <li class="dropdown">

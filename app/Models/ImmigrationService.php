@@ -13,7 +13,7 @@ class ImmigrationService extends Model
 
     public function mandatoryRequirements()
     {
-        return $this->hasMany(ImmigrationMandatoryRequirement::class);
+        return $this->hasMany(ImmigrationRequirement::class);
     }
 
     public function secondRequirements()

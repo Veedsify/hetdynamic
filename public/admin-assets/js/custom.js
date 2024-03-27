@@ -5,9 +5,25 @@ $(document).ready(function () {
         // Empty the input fields
         const newcontent = container.children().first().clone(true);
         newcontent.find("input").val("");
-        newcontent.find("textarea").val("");
+
+        // Remove CKEditor toolbar div
+        newcontent.find(".ck").remove();
+
+        newcontent.find("textarea").val("").removeAttr("data-editor");
         container.append(newcontent);
+        ClassicEditor.create(newcontent.find("textarea")[0])
+            .then(editor => {
+                editor.editing.view.change(writer => {
+                    writer.setStyle('min-height', '300px', editor.editing.view.document.getRoot());
+                })
+                console.log('Editor initialized', editor);
+            })
+            .catch(error => {
+                console.error('Error initializing editor', error);
+            });
     });
+
+
 
     $(".remove_content_buttons").click(function (e) {
         const container = $("#" + $(e.target).data("container"));
@@ -44,7 +60,6 @@ $(document).ready(function () {
 
     $(".active_switch").trigger("change");
 
-
     $('#addNewServiceForm').on("submit", function (e) {
         try {
             const checkBoxes = $(this).find("input[type=checkbox]:checked");
@@ -53,39 +68,33 @@ $(document).ready(function () {
             const title = $(this).find("input[name=title]").val().length > 0;
             const featured_image = $(this).find("input[name=image]").prop("files").length > 0;
             const tags = $(this).find("input[name=tags]").val().length > 0;
-            const country = $(this).find("select[name=country]").val().length > 0;
-            const service = $(this).find("select[name=service]").val().length > 0;
-            const status = $(this).find("select[name=status]").val().length > 0;
 
-            if (!title || !featured_image || !tags || !country || !service || !status) {
+            if (!title || !featured_image || !tags) {
                 allFieldsFilled = false;
-                message = `Please fill in these Details: 
-                    ${!title ? "Title" : ''}
-                    ${!featured_image ? "Featured Image" : ''}
-                    ${!tags ? "Tags" : ''}
-                    ${!country ? "Country" : ''} 
-                    ${!service ? "Service" : ''} 
-                    ${!status ? "Status" : ''}
-                `;
-                return false;
-            }
+                message = ` 
+                ${!title ? "Title" : ''}
+                ${!featured_image ? "Featured Image" : ''}
+                ${!tags ? "Tags" : ''}
+            `;
+            } else {
+                checkBoxes.each(function () {
+                    const parent = $(this).closest("div");
+                    const allInputs = parent.find("[data-selected='true']")
 
-            checkBoxes.each(function () {
-                const parent = $(this).closest("div");
-                const allInputs = parent.find("input").not(":checkbox");
+                    allInputs.each(function () {
+                        if (!$(this).val() || ($(this).attr("type") === "file" && !$(this).prop("files").length)) {
+                            allFieldsFilled = false;
+                            message = parent.find("h1").text().trim();
+                            console.log($(this))
+                            return false; // break the loop
+                        }
+                    });
 
-                allInputs.each(function () {
-                    if (!$(this).val() || ($(this).attr("type") === "file" && !$(this).prop("files").length)) {
-                        allFieldsFilled = false;
-                        message = parent.find("h1").text().trim();
+                    if (!allFieldsFilled) {
                         return false; // break the loop
                     }
                 });
-
-                if (!allFieldsFilled) {
-                    return false; // break the loop
-                }
-            });
+            }
 
             if (!allFieldsFilled) {
                 e.preventDefault();
@@ -96,10 +105,10 @@ $(document).ready(function () {
                 });
             }
 
-        }
-        catch (error) {
+        } catch (error) {
             console.log(error);
         }
     });
+
 
 });

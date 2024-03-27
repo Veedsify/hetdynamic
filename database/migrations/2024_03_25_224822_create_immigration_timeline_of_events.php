@@ -13,10 +13,10 @@ return new class extends Migration
     {
         Schema::create('immigration_timeline_of_events', function (Blueprint $table) {
             $table->id();
-            $table->string('duration');
-            $table->string('plan');
-            $table->longText('timeline_context');
-            $table->foreignId('timeline_id')->references('id')->on('immigration_services')->onDelete('cascade');
+            $table->string('duration')->nullable();
+            $table->string('plan')->nullable();
+            $table->longText('timeline_context')->nullable();
+            $table->foreignId('immigration_service_id')->references('id')->on('immigration_services')->onDelete('cascade');
             $table->timestamps();
         });
     }

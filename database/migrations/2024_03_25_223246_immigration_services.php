@@ -29,8 +29,8 @@ return new class extends Migration
             $table->boolean("timeline_of_events_active")->default(0);
             $table->boolean("sponsorship_active")->default(0);
             $table->string("services_title")->nullable();
-            $table->string("services_first_content")->nullable();
-            $table->string("services_second_content")->nullable();
+            $table->longText("services_first_content")->nullable();
+            $table->longText("services_second_content")->nullable();
             $table->string("benefits_title")->nullable();
             $table->string("requirements_section_1_image")->nullable();
             $table->string("requirements_section_1_title")->nullable();

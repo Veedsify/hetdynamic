@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('immigration_benefits', function (Blueprint $table) {
             $table->id();
-            $table->string('benefits');
-            $table->foreignId('benefit_id')->references('id')->on('immigration_services')->onDelete('cascade');
+            $table->string('benefits')->nullable();
+            $table->foreignId('immigration_service_id')->references('id')->on('immigration_services')->onDelete('cascade');
             $table->timestamps();
         });
     }

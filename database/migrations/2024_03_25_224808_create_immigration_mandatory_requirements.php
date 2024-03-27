@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('immigration_mandatory_requirements', function (Blueprint $table) {
+        Schema::create('mandatory_requirements', function (Blueprint $table) {
             $table->id();
-            $table->string('requirements');
-            $table->longText('requirement_context');
-            $table->foreignId('requirement_id')->references('id')->on('immigration_services')->onDelete('cascade');
+            $table->string('requirements')->nullable();
+            $table->longText('requirement_context')->nullable();
+            $table->foreignId('immigration_service_id')->references('id')->on('immigration_services')->onDelete('cascade');
             $table->timestamps();
         });
     }

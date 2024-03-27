@@ -19554,7 +19554,7 @@ html[data-layout=horizontal] .body-wrapper>.container-xxl {
   height: 100%;
   top: 0px;
   position: fixed;
-  z-index: 99999;
+  z-index: 999999;
   background: #fff;
 }
 
@@ -31423,5 +31423,5 @@ body .dp-nav.dp-nav-right::before {
 
 .z-3000 {
   position: relative;
-  z-index: 9999;
+  z-index: 3000;
 }

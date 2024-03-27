@@ -25,11 +25,3 @@ smallEditors.forEach(editor => {
             console.error(error);
         });
 })
-
-// Add cloned Items
-
-function addClone() {
-    const clone = this.$refs.itemTemplate.content.cloneNode(true);
-    this.clones.push({ newItem: '' });
-    this.$refs.container.appendChild(clone);
-}

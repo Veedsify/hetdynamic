@@ -13,9 +13,9 @@ return new class extends Migration
     {
         Schema::create('immigration_highlights', function (Blueprint $table) {
             $table->id();
-            $table->string('feature_title');
-            $table->longText('feature_context');
-            $table->foreignId('feature_id')->references('id')->on('immigration_services')->onDelete('cascade');
+            $table->string('feature_title')->nullable();
+            $table->longText('feature_context')->nullable();
+            $table->foreignId('immigration_service_id')->refrences('id')->on("immigration_services")->onDelete('cascade');
             $table->timestamps();
         });
     }

@@ -1,6 +1,8 @@
 <?php
 
 use App\Models\GlobalSetting;
+use App\Models\ImmigrationService;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
@@ -37,7 +39,15 @@ require_once  __DIR__ . '/admin/admin.php';
 //  Pass settings to all views
 View::composer('*', function ($view) {
     $settings = \App\Models\GlobalSetting::query()->first();
-    $view->with('pagedata', $settings);
+    $services = ImmigrationService::where('status', '=', true)->with([
+        'highlights',
+        'benefits',
+        'requirements',
+        'secondRequirements',
+        'mandatoryRequirements',
+        'timelineOfEvents',
+    ])->get();
+    $view->with('pagedata', $settings)->with('allServices', $services);
 });
 
 

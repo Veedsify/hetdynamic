@@ -19,11 +19,21 @@
             <div class="body-wrapper">
                 <div class="container-fluid">
                     {{-- EDITOR HERE --}}
-                    <div class="card rounded-2 overflow-hidden p-md-4 p-2">
-                        <form action="{{ route('admin.immigration.services') }}" method="post" enctype="multipart/form-data"
-                            id="addNewServiceForm">
-                            @csrf
+                    @if (session('success'))
+                        <div class="alert alert-success">
+                            {{ session('success') }}
+                        </div>
+                    @endif
+                    @if (session('error'))
+                        <div class="alert alert-danger">
+                            {{ session('error') }}
+                        </div>
+                    @endif
 
+                    <div class="card rounded-2 overflow-hidden p-md-4 p-2">
+                        <form action="{{ route('admin.immigration.services') }}" method="post"
+                            enctype="multipart/form-data" id="addNewServiceForm">
+                            @csrf
                             @if ($errors->any())
                                 <div class="alert alert-danger">
                                     <ul>
@@ -37,15 +47,15 @@
                             <div class="border p-3 m-1 border-success-subtle rounded-1 position-relative">
 
                                 <div class="form-group ">
-                                    <input type="text" class="blog-title" id="title" name="title" value=""
-                                        placeholder="Add a title ...">
+                                    <input data-selected="true" type="text" class="blog-title" id="title"
+                                        name="title" value="" required placeholder="Add a title ...">
                                 </div>
 
 
                                 <label htmlFor="featured_article_image" id="file_upload_label">
                                     <p>Featured Image</p>
-                                    <input type="file" className="hidden d-none" id="featured_article_image"
-                                        name="image" />
+                                    <input data-selected="true" type="file" className="hidden d-none"
+                                        id="featured_article_image" name="image" />
                                     <img src="{{ asset('custom/placeholder.png') }}" alt="" width="500"
                                         class="img-fluid" />
                                 </label>
@@ -66,12 +76,13 @@
                                 <div id="highlight_container">
                                     <div class="form-group row mb-3">
                                         <div class="col-md-6 mb-1">
-                                            <input type="text" class="form-control" name="highlight_feature[]"
-                                                value="" placeholder="Highlighted Feature">
+                                            <input data-selected="true" type="text" class="form-control"
+                                                name="highlight_feature[]" value="" placeholder="Highlighted Feature">
                                         </div>
                                         <div class="col-md-6">
-                                            <input type="text" class="form-control" name="highlight_title[]"
-                                                value="" placeholder="Highlighted Context ">
+                                            <input data-selected="true" type="text" class="form-control"
+                                                name="highlight_context[]" value=""
+                                                placeholder="Highlighted Context ">
                                         </div>
                                     </div>
                                 </div>
@@ -95,8 +106,8 @@
                                     </label>
                                 </span>
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control" id="title" name="services_title"
-                                        value="" placeholder="Services Title">
+                                    <input data-selected="true" type="text" class="form-control" id="title"
+                                        name="services_title" value="" placeholder="Services Title">
                                 </div>
                                 <div class="form-group row mb-3">
                                     <div class="col-md-6">
@@ -123,8 +134,8 @@
                                 </span>
 
                                 <div class="form-group mb-3">
-                                    <input type="text" class="form-control py-4" id="title" name="benefits_title"
-                                        value="" placeholder="Benefits Title">
+                                    <input data-selected="true" type="text" class="form-control py-4" id="title"
+                                        name="benefits_title" value="" placeholder="Benefits Title">
                                 </div>
                                 <div class="form-group row mb-3" id="benefits_container">
                                     <div class="col-md-12 mb-2">
@@ -157,8 +168,8 @@
                                         mb-3">
                                             <label for="requirement_image">
                                                 Requirements Image
-                                                <input type="file" class="form-control py-2" id="requirement_image"
-                                                    name="requirement_image" value=""
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="requirement_image" name="requirement_image" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -168,18 +179,18 @@
                                     </div>
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="requirements_title" value=""
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="requirements_title" value=""
                                                 placeholder="Requirements Title">
                                         </div>
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="requirement_subtitle" value=""
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="requirement_subtitle" value=""
                                                 placeholder="Requirements Subtitle">
                                         </div>
                                         <div class="form-group row mb-3" id="requirements_container">
                                             <div class="col-md-12 mb-2">
-                                                <textarea class="form-control" id="requirement[]" name="title" value="" placeholder="Requirements"></textarea>
+                                                <textarea class="form-control" id="requirement" name="requirement[]" value="" placeholder="Requirements"></textarea>
                                             </div>
                                         </div>
                                         <a href="javascript:void(0)" data-container="requirements_container"
@@ -207,12 +218,14 @@
                                 <div class="row">
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="title" value="" placeholder="Requirements 2 Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="requirements_title_2" value=""
+                                                placeholder="Requirements 2 Title">
                                         </div>
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="title" value="" placeholder="Requirements  2 Subtitle">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="requirement_subtitle_2" value=""
+                                                placeholder="Requirements  2 Subtitle">
                                         </div>
                                         <div class="form-group row mb-3" id="requirements_container2">
                                             <div class="col-md-12 mb-2">
@@ -230,8 +243,8 @@
                                         mb-3">
                                             <label for="requirement2_image">
                                                 Requirements Image
-                                                <input type="file" class="form-control py-2" id="requirement2_image"
-                                                    name="requirement2_image" value=""
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="requirement2_image" name="requirement2_image" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -256,8 +269,9 @@
                                 <div class="row">
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="options_1_title" value="" placeholder="Option Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="options_1_title" value=""
+                                                placeholder="Option Title">
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-md-12">
@@ -271,8 +285,8 @@
                                         mb-3">
                                             <label for="options_1_image">
                                                 Option 1 Image
-                                                <input type="file" class="form-control py-2" id="options_1_image"
-                                                    name="options_1_image" value="">
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="options_1_image" name="options_1_image" value="">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
                                             </label>
@@ -299,8 +313,8 @@
                                         mb-3">
                                             <label for="options_2_image">
                                                 Option Image
-                                                <input type="file" class="form-control py-2" id="options_2_image"
-                                                    name="options_2_image" value=""
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="options_2_image" name="options_2_image" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -309,8 +323,9 @@
                                     </div>
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="options_2_title" value="" placeholder="Option Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="options_2_title" value=""
+                                                placeholder="Option Title">
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-md-12">
@@ -336,8 +351,9 @@
                                 <div class="row">
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="options_3_title"
-                                                name="options_3_title" value="" placeholder="Option Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="options_3_title" name="options_3_title" value=""
+                                                placeholder="Option Title">
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-md-12">
@@ -351,8 +367,8 @@
                                         mb-3">
                                             <label for="options_3_image">
                                                 Option Image
-                                                <input type="file" class="form-control py-2" id="options_3_image"
-                                                    name="options_3_image" value=""
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="options_3_image" name="options_3_image" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -378,9 +394,9 @@
                                         <div class="form-group
                                         mb-3">
                                             <label for="extra_requirements">
-                                                <input type="file" class="form-control py-2" id="extra_requirements"
-                                                    name="extra_requirements_image" value=""
-                                                    placeholder="Requirements Title">
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="extra_requirements" name="extra_requirements_image"
+                                                    value="" placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
                                             </label>
@@ -388,9 +404,9 @@
                                     </div>
                                     <div class="col-md-6 pt-2">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="extra_requirements_title"
-                                                name="extra_requirements_title" value=""
-                                                placeholder="Extra Requirements">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="extra_requirements_title" name="extra_requirements_title"
+                                                value="" placeholder="Extra Requirements">
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-md-12">
@@ -420,7 +436,7 @@
                                         mb-3">
                                             <label for="mandatory_requirements_title">
                                             </label>
-                                            <input type="text" class="form-control py-2"
+                                            <input data-selected="true" type="text" class="form-control py-2"
                                                 id="mandatory_requirements_title" name="mandatory_requirements_title"
                                                 value="" placeholder="Requirements Title">
                                         </div>
@@ -429,9 +445,9 @@
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <div class="mb-2">
-                                                    <input type="text" class="form-control py-2" id=""
-                                                        name="mandatory_requirements_text[]" value=""
-                                                        placeholder="Requirements">
+                                                    <input data-selected="true" type="text" class="form-control py-2"
+                                                        id="" name="mandatory_requirements_text[]"
+                                                        value="" placeholder="Requirements">
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
@@ -466,22 +482,22 @@
                                         mb-3">
                                             <label for="timeline_of_events_title">
                                             </label>
-                                            <input type="text" class="form-control py-2" id="timeline_of_events_title"
-                                                name="timeline_of_events_title" value=""
-                                                placeholder="Timeline Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="timeline_of_events_title" name="timeline_of_events_title"
+                                                value="" placeholder="Timeline Title">
                                         </div>
                                     </div>
                                     <div id="timeline_of_events_container">
                                         <div class="row mb-3">
                                             <div class="col-md-6">
                                                 <div class="mb-2">
-                                                    <input type="text" class="form-control py-2" id=""
-                                                        name="timeline_of_events_duration[]" value=""
-                                                        placeholder="Duration">
+                                                    <input data-selected="true" type="text" class="form-control py-2"
+                                                        id="" name="timeline_of_events_duration[]"
+                                                        value="" placeholder="Duration">
                                                 </div>
                                                 <div class="mb-2">
-                                                    <input type="text" class="form-control py-2" id=""
-                                                        name="timeline_of_events_plan[]" value=""
+                                                    <input data-selected="true" type="text" class="form-control py-2"
+                                                        id="" name="timeline_of_events_plan[]" value=""
                                                         placeholder="Plan">
                                                 </div>
                                             </div>
@@ -513,8 +529,9 @@
                                 <div class="row">
                                     <div class="col-md-6 pt-4">
                                         <div class="form-group mb-3">
-                                            <input type="text" class="form-control py-2" id="title"
-                                                name="sponsorship_title" value="" placeholder="Sponsorship Title">
+                                            <input data-selected="true" type="text" class="form-control py-2"
+                                                id="title" name="sponsorship_title" value=""
+                                                placeholder="Sponsorship Title">
                                         </div>
                                         <div class="form-group row mb-3">
                                             <div class="col-md-12">
@@ -528,8 +545,8 @@
                                         mb-3">
                                             <label for="sponsorship_image">
                                                 Sponsorship Image
-                                                <input type="file" class="form-control py-2" id="sponsorship_image"
-                                                    name="sponsorship_image" value=""
+                                                <input data-selected="true" type="file" class="form-control py-2"
+                                                    id="sponsorship_image" name="sponsorship_image" value=""
                                                     placeholder="Requirements Title">
                                                 <img class="img-fluid object-fit-cover border" width="100%"
                                                     src="{{ asset('custom/placeholder.png') }}" alt="">
@@ -544,24 +561,24 @@
                                         <label class="fw-bold d-inline-block">
                                             Tags
                                         </label>
-                                        <input type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="tags"
-                                            name="tags" value="{{ old('tags') }}"
-                                            placeholder="Tags here comma seperated">
+                                        <input data-selected="true" type="text"
+                                            class="form-control px-2 py-2 fs-5 fw-bold" id="tags" name="tags"
+                                            value="{{ old('tags') }}" placeholder="Tags here comma seperated">
                                     </div>
                                     <div class="form-group mb-3">
                                         <label class="fw-bold d-inline-block">
                                             Select a Country
                                         </label>
                                         <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="country"
-                                            name="country">
+                                            required name="country">
                                             <option value="" selected disabled>(--- Select Country ---)</option>
-                                            <option value="">
+                                            <option value="canada">
                                                 Canada
                                             </option>
-                                            <option value="">
+                                            <option value="united states">
                                                 USA
                                             </option>
-                                            <option value="">
+                                            <option value="Australia">
                                                 Australia
                                             </option>
                                         </select>
@@ -571,18 +588,18 @@
                                             Select a service
                                         </label>
                                         <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="service"
-                                            name="service">
+                                            required name="service">
                                             <option value="" selected disabled>(--- Select Service ---)</option>
-                                            <option value="">
+                                            <option value="study">
                                                 Study
                                             </option>
-                                            <option value="">
+                                            <option value="citizenship">
                                                 Citezenship
                                             </option>
-                                            <option value="">
+                                            <option value="residency">
                                                 Residency
                                             </option>
-                                            <option value="">
+                                            <option value="work-permit">
                                                 Work Permit
                                             </option>
                                         </select>
@@ -592,7 +609,7 @@
                                             Active Status
                                         </label>
                                         <select type="text" class="form-control px-2 py-2 fs-5 fw-bold" id="status"
-                                            name="status">
+                                            required name="status">
                                             <option value="active" selected>Published</option>
                                             <option value="draft">Draft</option>
                                         </select>
@@ -614,7 +631,8 @@
         <div class="modal-dialog modal-dialog-scrollable modal-lg">
             <div class="modal-content rounded-1">
                 <div class="modal-header border-bottom">
-                    <input type="search" class="form-control fs-3" placeholder="Search here" id="search">
+                    <input data-selected="true" type="search" class="form-control fs-3" placeholder="Search here"
+                        id="search">
                     <a href="javascript:void(0)" data-bs-dismiss="modal" class="lh-1">
                         <i class="ti ti-x fs-5 ms-3"></i>
                     </a>

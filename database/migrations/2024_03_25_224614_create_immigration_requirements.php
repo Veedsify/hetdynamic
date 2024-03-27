@@ -13,8 +13,8 @@ return new class extends Migration
     {
         Schema::create('immigration_requirements', function (Blueprint $table) {
             $table->id();
-            $table->string('requirements');
-            $table->foreignId('requirement_id')->references('id')->on('immigration_services')->onDelete('cascade');
+            $table->string('requirements')->nullable();
+            $table->foreignId('immigration_service_id')->references('id')->on('immigration_services')->onDelete('cascade');
             $table->timestamps();
         });
     }

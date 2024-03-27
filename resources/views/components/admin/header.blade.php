@@ -1,5 +1,5 @@
         <!--  Header Start -->
-        <header class="topbar" style="z-index: 19999;">
+        <header class="topbar" style="z-index: 4000;">
             <div class="with-vertical"><!-- ---------------------------------- -->
                 <!-- Start Vertical Layout Header -->
                 <!-- ---------------------------------- -->

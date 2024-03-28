@@ -63,11 +63,11 @@
         {{-- CONTINUE FROM HERE --}}
         {{-- ALSO SEE WHY ALL THE IMAGES ARE OF THE SAME FILE --}}
         @if ($thisService->option_2_active == true)
-            <x-services.option2 :sponsorship="$thisService->sponsorship" />
+            <x-services.option2 :title="$thisService->option_2_title" :text="$thisService->option_2_content" :image="$thisService->option_2_image" />
         @endif
 
         @if ($thisService->option_3_active == true)
-            <x-services.option1 :sponsorship="$thisService->sponsorship" />
+            <x-services.option1 :title="$thisService->option_2_title" :text="$thisService->option_2_content" :image="$thisService->option_2_image" />
         @endif
 
         @if ($thisService->extra_requirements_active == true)

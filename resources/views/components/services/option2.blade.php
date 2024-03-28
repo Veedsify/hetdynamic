@@ -10,22 +10,19 @@
                             <div class="section-title__border-box mt-0"></div>
                         </div>
                         <h3 class="coaching-details__title-1 m-0 mt-2 ">
-                            Provincial Nominee Programs (PNP)</h3>
+                            {{$title}}</h3>
                     </div>
 
-                    <p>The Canadian provinces offer a range of distinctive immigration programs
-                        for skilled workers who are outside Canada. Although many of these PNPs
-                        offer good immigration options there can be numerous complications with
-                        these programs. Our team will carefully explain the advantages and
-                        disadvantages of these programs to help you make the right decisions
-                        regarding your future.</p>
+                    <div>
+                        {!! $text !!}
+                    </div>
 
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="">
-                    <img src="https://www.hetdynamic.com/wp-content/uploads/2023/10/pexels-pixabay-163037-800x600.jpg"
-                        alt="" width="100%">
+                    <img src="{{ asset($image) }}"
+                        alt="" width="100%" style="aspect-ratio: 16/11; object-fit:cover;">
                 </div>
             </div>
         </div>

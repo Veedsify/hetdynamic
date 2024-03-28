@@ -47,3 +47,9 @@ class UserController extends Controller
     }
 
 }
+
+
+// Address: Head office: No 3 Akpoguma Street, Kilo Bus Stop Surulere Lagos.
+// Branch office: No 45, Nouakchott  Street, Wuse Zone 1, Abuja Nigeria.
+// Phone: 08087775056,07017322039
+// Email: admin@hetdynamic.com, info@hetdynamic.com

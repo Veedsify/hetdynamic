@@ -43,7 +43,7 @@
                         </div>
                     </div>
 
-                  
+
 
 
                     <div class="widget-content searchable-container list">
@@ -89,8 +89,8 @@
                                                     <form action="{{ route('admin.users.upgrade', $user) }}" method="post">
                                                         @csrf
                                                         @method('PUT')
-                                                        <label for="role">{{ $user->role }}</label>
-                                                        <select name="role" id="role" >
+                                                        <select name="role" id="role"  value={{ $user->role }}>
+                                                            <option value={{ $user->role }} >{{ $user->role }}</option>
                                                             <option value="user">User</option>
                                                             <option value="admin">Admin</option>
                                                         </select>

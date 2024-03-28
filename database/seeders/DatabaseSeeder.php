@@ -136,6 +136,7 @@ class DatabaseSeeder extends Seeder
             'review_list_3' => 'Your Title Here',
         ]);
 
+
         Category::factory(10)->create();
         GlobalSetting::factory(1)->create();
     }

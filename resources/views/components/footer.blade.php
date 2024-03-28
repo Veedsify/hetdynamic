@@ -36,7 +36,7 @@
                 </div>
                 <div class="site-footer__call-content">
                     <p class="site-footer__call-sub-title">Have Question?</p>
-                    <h5 class="site-footer__call-number"><a href="tel:9288009850"><span>Free</span>
+                    <h5 class="site-footer__call-number"><a href="tel:{{ $pagedata->site_phone }}"><span>Free</span>
                             {{ $pagedata->site_phone }}</a></h5>
                 </div>
             </div>
@@ -98,7 +98,7 @@
                                     <span class="fas fa-envelope"></span>
                                 </div>
                                 <div class="text">
-                                    <p><a href="mailto:needhelp@company.com">{{ $pagedata->site_email }}</a></p>
+                                    <p><a href="mailto:{{ $pagedata->site_email }}">{{ $pagedata->site_email }}</a></p>
                                 </div>
                             </li>
                             <li>

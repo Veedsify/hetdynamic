@@ -1,8 +1,8 @@
 @extends('layouts/index', [
-    'title' => 'Residency Details - HetDynamic',
-    'description' => $pagedata->site_description,
-    'image' => asset($pagedata->site_logo),
-    'meta_tags' => '',
+    'title' => ucwords($thisService->title) . ' ' . ucwords($thisService->service) . ' - ' . ucwords($pagedata->site_name),
+    'description' => $thisService->services_title,
+    'image' => asset($thisService->featured_image),
+    'meta_tags' => implode(',', explode(' ', $thisService->tags)),
 ])
 @section('content')
     <div class="preloader">
@@ -21,7 +21,7 @@
 
         <!--Page Header Start-->
         <section class="page-header">
-            <div class="page-header-bg" style="background-image: url({{asset($thisService->featured_image)}})">
+            <div class="page-header-bg" style="background-image: url({{ asset($thisService->featured_image) }})">
             </div>
             <div class="container">
                 <div class="page-header__inner">
@@ -40,49 +40,49 @@
             <x-services.header :highlights="$thisService->highlights" :featuredimage="$thisService->featured_image" />
         @endif
 
-        @if($thisService->service_features_active == true)
+        @if ($thisService->service_features_active == true)
             <x-services.servicedata :title="$thisService->services_title" :firstcontent="$thisService->services_first_content" :secondcontent="$thisService->services_second_content" />
         @endif
 
-        @if($thisService->benefits_active == true)
+        @if ($thisService->benefits_active == true)
             <x-services.benefits :benefits="$thisService->benefits" />
         @endif
 
-        @if($thisService->requirements_section_1_active == true)
+        @if ($thisService->requirements_section_1_active == true)
             <x-services.requirement1 :requirements="$thisService->requirements" />
         @endif
 
-        @if($thisService->requirements_section_2_active == true)
+        @if ($thisService->requirements_section_2_active == true)
             <x-services.requirement2 :requirements="$thisService->requirements" />
         @endif
 
-        @if($thisService->option_1_active == true)
+        @if ($thisService->option_1_active == true)
             <x-services.option1 :title="$thisService->option_1_title" :text="$thisService->option_1_content" :image="$thisService->option_1_image" />
         @endif
-        
+
         {{-- CONTINUE FROM HERE --}}
         {{-- ALSO SEE WHY ALL THE IMAGES ARE OF THE SAME FILE --}}
-        @if($thisService->option_2_active == true)
+        @if ($thisService->option_2_active == true)
             <x-services.option2 :sponsorship="$thisService->sponsorship" />
         @endif
-        
-        @if($thisService->option_3_active == true)
+
+        @if ($thisService->option_3_active == true)
             <x-services.option1 :sponsorship="$thisService->sponsorship" />
         @endif
 
-        @if($thisService->extra_requirements_active == true)
+        @if ($thisService->extra_requirements_active == true)
             <x-services.extrarequirement :sponsorship="$thisService->sponsorship" />
         @endif
 
-        @if($thisService->mandatory_requirements_active == true)
+        @if ($thisService->mandatory_requirements_active == true)
             <x-services.mandatory :sponsorship="$thisService->sponsorship" />
         @endif
 
-        @if($thisService->timeline_of_events_active == true)
+        @if ($thisService->timeline_of_events_active == true)
             <x-services.timeline :sponsorship="$thisService->sponsorship" />
         @endif
 
-        @if($thisService->sponsorship_active == true)
+        @if ($thisService->sponsorship_active == true)
             <x-services.sponsorship :sponsorship="$thisService->sponsorship" />
         @endif
 

@@ -23,7 +23,9 @@ class ResidencyController extends Controller
             'status' => true
         ])->first();
 
-        Log::info($immigrationService);
+        if (!$immigrationService) {
+            abort(404);
+        }
 
         return view('pages.residency-details', [
             'pageId' => $pageId,

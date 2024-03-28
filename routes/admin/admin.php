@@ -1,7 +1,10 @@
 <?php
 
+use App\Models\Notification;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BlogController;
+use App\Http\Controllers\TeamController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AboutController;
 use App\Http\Controllers\EmailController;
 use App\Http\Controllers\StudyController;
@@ -14,19 +17,17 @@ use App\Http\Controllers\CertificateController;
 use App\Http\Controllers\ContactpageController;
 use App\Http\Controllers\PrivacypageController;
 use App\Http\Controllers\Admin\ContactController;
+use App\Http\Controllers\OfficeAddressController;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ResidencyController;
+use Illuminate\Support\Facades\View as FacadesView;
 use App\Http\Controllers\Admin\AdminPagesController;
 use App\Http\Controllers\Admin\WorkPermitController;
 use App\Http\Controllers\Admin\CitizenshipController;
 use App\Http\Controllers\Admin\NotificationController;
+use App\Http\Controllers\ImmigrationServiceController;
 use App\Http\Controllers\Admin\ConfigurationController;
 use App\Http\Controllers\Admin\ConfigurationUpdateController;
-use App\Http\Controllers\ImmigrationServiceController;
-use App\Http\Controllers\OfficeAddressController;
-use App\Http\Controllers\TeamController;
-use App\Models\Notification;
-use Illuminate\Support\Facades\View as FacadesView;
 
 // Admin Route Web Endpoints
 
@@ -91,6 +92,15 @@ Route::middleware(['auth', 'admin'])->group(function () {
     Route::get("/admin/teams", [TeamController::class, "teams"])->name("admin.teams");
     Route::post("/admin/teams/add", [TeamController::class, "createTeam"])->name("admin.teams.add");
     Route::delete("/admin/teams/delete/{id}", [TeamController::class, "deleteTeam"])->name("admin.teams.delete");
+
+
+
+    // User
+
+    Route::get("/admin/users", [UserController::class, "user"])->name("admin.user");
+    Route::delete("/admin/users/delete/{id}", [UserController::class, "deleteUser"])->name("admin.users.delete");
+    Route::put('/admin/users/{user}/upgrade', [UserController::class, 'upgradeUser'])->name('admin.users.upgrade');
+
 
 
     // Case Studies

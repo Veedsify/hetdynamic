@@ -191,7 +191,7 @@
             <span class="hide-menu">Users</span>
         </li>
         <li class="sidebar-item">
-            <a class="sidebar-link" href="{{ route('admin.teams') }}" aria-expanded="false">
+            <a class="sidebar-link" href="{{ route('admin.user') }}" aria-expanded="false">
                 <span>
                     <i class="ti ti-user"></i>
                 </span>
